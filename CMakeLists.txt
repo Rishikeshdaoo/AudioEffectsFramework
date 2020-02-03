@@ -3,7 +3,6 @@ project (AudioFxFramework
         VERSION 0.0.0.1)
 
 
-
 #######################################################################################################
 ## includes
 # where to look for the default stuff...
@@ -29,7 +28,8 @@ include(AddIncDirectories)
 # set directories
 set (PROJECT_DIRECTORIES)
 list (APPEND PROJECT_DIRECTORIES ${CMAKE_SOURCE_DIR}/src/AudioFxFrameworkExec)       
-list (APPEND PROJECT_DIRECTORIES ${CMAKE_SOURCE_DIR}/src/AudioEffect) 
+list (APPEND PROJECT_DIRECTORIES ${CMAKE_SOURCE_DIR}/src/AudioEffect)
+list (APPEND PROJECT_DIRECTORIES ${CMAKE_SOURCE_DIR}/src/AudioFileIO)  
     
 # set includes
 set (PROJECT_INCLUDES)
