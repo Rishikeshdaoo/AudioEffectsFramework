@@ -10,8 +10,7 @@
 #define AudioEffectIF_h
 
 #include <stdio.h>
-
-class CAudioEffect;
+#include <ErrorDef.h>
 
 class CAudioEffectIF
 {
@@ -28,24 +27,31 @@ public:
       kParamGain
     };
     
-    void create();
-    void destroy();
-    void init(EffectType_t eEffectType, EffectParam_t params[], int iNumParams, float fSampleRateInHz, int iNumChannels);
-    void reset();
-    void setParam(EffectType_t eParam, float fValue);
-    void getParam(EffectType_t eParam);
+    static Error_t create(CAudioEffectIF *& pCAudioEffect);
+    static Error_t destroy(CAudioEffectIF *& pCAudioEffect);
+    Error_t init(EffectType_t eEffectType, EffectParam_t params[], int iNumParams, float fSampleRateInHz, int iNumChannels);
+    Error_t reset();
+    Error_t setParam(EffectType_t eParam, float fValue);
+    float getParam(EffectType_t eParam);
     
-    void process(float **ppfInputBuffer, float **ppfOutputBuffer, int iNumberOfFrames);
+    Error_t process(float **ppfInputBuffer, float **ppfOutputBuffer, int iNumberOfFrames);
     
 protected:
     CAudioEffectIF();
     virtual ~CAudioEffectIF();
     
 private:
+    virtual Error_t initIntern(EffectType_t eEffectType, EffectParam_t params[], int iNumParams, float fSampleRateInHz, int iNumChannels) = 0;
+    virtual Error_t resetIntern() = 0;
+
+    virtual Error_t setParamIntern(EffectType_t eParam, float fValue) = 0;
+    virtual float getParamIntern(EffectType_t eParam) const = 0;
+
+    virtual Error_t processIntern(float **ppfInputBuffer, float **ppfOutputBuffer, int iNumberOfFrames) = 0;
+
     bool m_bIsInitialized;
-    
-    CAudioEffect *m_pCAudioEffect;
-    
+    CAudioEffectIF *m_pCAudioEffect;
+
     float m_fSampleRate;
     
 };
