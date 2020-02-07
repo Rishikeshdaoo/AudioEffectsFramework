@@ -32,4 +32,5 @@ cur_sin=abs(sin_ref(i)); %abs of current sin val 0-1
 cur_delay=ceil(cur_sin*max_samp_delay);
 % add delayed sample
 y(i) = (amp*x(i)) + amp*(x(i-cur_delay));
+
 end

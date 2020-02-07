@@ -9,19 +9,16 @@ function [MSE] = compare(audio_cpp, audio_mat)
 %      output:
 %      MSE = mean square error of the two input signals
 
-MSE = immse(audio_cpp,audio_mat); % mean square error
-% MSE = mean((audio_cpp - audio_mat).^2)
+MSE = immse(audio_cpp, audio_mat); % mean square error
 
 figure(1);
 hold on
 subplot(3,1,1);
 plot(audio_mat);
-% title('Flanger (MATLAB)');
 title('MATLAB');
 
 subplot(3,1,2);
 plot(audio_cpp);
-% title('Flanger (C++)');
 title('C++');
 
 subplot(3,1,3);
