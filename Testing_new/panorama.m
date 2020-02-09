@@ -1,4 +1,4 @@
-function [y, MSE] = panorama(audio_test, monox, initial_angle, final_angle, segments)
+function [y] = panorama(monox, initial_angle, final_angle, segments)
 
 
 %This is a pan effect.
@@ -33,25 +33,3 @@ for i=1:segments
  y = [y, A * stereox];
  angle = angle + angle_increment; pointer = pointer + lenseg;
 end;
-
-figure(1);
-hold on
-subplot(6,1,1);
-plot(y(1,:));
-title('Stereo Panned Signal Channel 1 (L) (MATLAB)');
-subplot(6,1,2);
-plot(y(2,:));
-title('Stereo Panned Signal Channel 2 (R) (MATLAB)');
-subplot(6,1,3);
-plot(audio_test(1,:));
-title('Stereo Panned Signal Channel 1 (L) (C++)');
-subplot(6,1,4);
-plot(audio_test(2,:));
-title('Stereo Panned Signal Channel 2 (R) (C++)');
-subplot(6,1,5);
-plot((audio_test - y)(1,:));
-title('Difference Channel 1 (L)');
-subplot(6,1,6);
-plot((audio_test - y)(2,:));
-title('Difference Channel 2 (R)');
-
