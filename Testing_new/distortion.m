@@ -1,4 +1,4 @@
-function [x, MSE]=distortion(audio_test, a,x)
+function [x]=distortion(a,x)
 %[Y] = distortion(audio_test, A, X) Guitar Distortion
 %
 %   Distortion creates a distortion effect like that of
@@ -16,19 +16,3 @@ function [x, MSE]=distortion(audio_test, a,x)
 
 k = 2*a/(1-a);
 x = (1+k)*(x)./(1+k*abs(x));
-
-
-MSE = mean( (x - audio_test).^2 )
-
-
-figure(1);
-hold on
-subplot(3,1,1);
-plot(x);
-title('Distorted Audio (MATLAB)');
-subplot(3,1,2);
-plot(audio_test);
-title('Distorted Audio (C++)');
-subplot(3,1,3);
-plot(audio_test - x);
-title('Difference');
