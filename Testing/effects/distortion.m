@@ -16,3 +16,5 @@ function [x]=distortion(a,x)
 
 k = 2*a/(1-a);
 x = (1+k)*(x)./(1+k*abs(x));
+
+end

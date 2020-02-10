@@ -19,3 +19,5 @@ for n=1:length(x)
     y(n)=FF*Delayline(M)+BL*xh; 
     Delayline=[xh;Delayline(1:M-1)];
 end
+
+end

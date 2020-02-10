@@ -1,4 +1,4 @@
-function y = compexp(x, CT, CS, ET, ES)
+function y = comp_exp(x, CT, CS, ET, ES)
 %
 % Author: M. Holters
 %

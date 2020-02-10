@@ -1,4 +1,4 @@
-function outputvector = myPeak(inputvector, freqvalue, qvalue, gain, Fs)
+function outputvector = Biquad(inputvector, freqvalue, qvalue, gain, Fs)
 
 %This is an implementation of a biquad filter.
 %

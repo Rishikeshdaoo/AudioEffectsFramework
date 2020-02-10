@@ -1,4 +1,4 @@
-function [modulated_output, MSE] = chorus(audio_test, input, Fs, max_time_delay, modulation_depth, modulation_rate, feedback)
+function [modulated_output] = chorus(input, Fs, max_time_delay, modulation_depth, modulation_rate, feedback)
 % function [y, MSE] = chorus(audio_test, x, Fs, max_time_delay, rate)
 
 

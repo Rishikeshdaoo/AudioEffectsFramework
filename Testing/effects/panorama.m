@@ -32,4 +32,6 @@ for i=1:segments
  stereox = [monox(pointer:pointer+lenseg)'; monox(pointer:pointer+lenseg)'];
  y = [y, A * stereox];
  angle = angle + angle_increment; pointer = pointer + lenseg;
-end;
+end
+
+end
