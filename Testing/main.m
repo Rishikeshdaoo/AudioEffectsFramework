@@ -1,4 +1,5 @@
 % main function
+addpath('./effects/');
 
 %% flanger test
 

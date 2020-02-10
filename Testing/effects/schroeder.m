@@ -16,10 +16,11 @@ function [y,b,a]=schroeder(x,n,g,d,k)
 % Chapter 7: Digital Audio Effects by Prof David Marshall and Dr Kirill Sidorov, 
 % Cardiff School of Computer Science.
 
+addpath('./Schroeder/');
 
 [y,b,a] = allpass(x,g,d(1));
 % send the output of each allpass filter to the input of the next allpass filter
-for i = 2:n,
+for i = 2:n
 [y,b1,a1] = allpass(y,g,d(i));
 [b,a] = seriescoefficients(b1,a1,b,a);
 end
@@ -28,3 +29,5 @@ end
 y = y + k*x;
 % normalize the output signal
 y = y/max(y);
+
+end
