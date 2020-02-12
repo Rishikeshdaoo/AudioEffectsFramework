@@ -18,10 +18,10 @@ switch effect
         audio_mat = flanger(audio_raw, param(1), param(2), param(3));
         MSE = compare(audio_cpp, audio_mat);
     case "chorus"
-        audio_mat = flanger(audio_raw, param(4), param(5), param(6), param(7), param(8));
+        audio_mat = flanger(audio_raw, param(1), param(2), param(3), param(4), param(5));
         MSE = compare(audio_cpp, audio_mat);
     case "reverb"
-        audio_mat = flanger(audio_raw, param(9), param(10), param(11), param(12));
+        audio_mat = flanger(audio_raw, param(1), param(2), param(3), param(4));
         MSE = compare(audio_cpp, audio_mat);
 end
 end
