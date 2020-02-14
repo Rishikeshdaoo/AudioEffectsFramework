@@ -1,22 +1,22 @@
 #include <iostream>
 #include <ctime>
 
-//#include "MUSI6106Config.h"
-
 #include "AudioFileIf.h"
+#include "AudioEffect.h"
+#include "AudioEffectGain.h"
 
 using std::cout;
 using std::endl;
 
 // local function declarations
-void    showClInfo ();
+void showClInfo ();
 void testCases();
 
 /////////////////////////////////////////////////////////////////////////////////
 // main function
 int main(int argc, char* argv[])
 {
-    std::string             sInputFilePath ,                 //!< file paths
+    std::string             sInputFilePath,                 //!< file paths
                             sOutputFilePath;
 
     static const int        kBlockSize = 1024;
@@ -26,12 +26,10 @@ int main(int argc, char* argv[])
     float                   **ppfAudioInput = 0,
                             **ppfAudioOutput = 0;
 
-    float                   s_maxDelayTime = 0,
-                            s_delayTime = 0,
-                            s_delayGain = 0;
-
     CAudioFileIf            *phAudioInputFile = 0,
                             *phAudioOutputFile = 0;
+    
+    CAudioEffectGain          *phAudioEffect = 0;
 
     std::fstream             hOutputFile;
     CAudioFileIf::FileSpec_t stFileSpec;
@@ -44,7 +42,8 @@ int main(int argc, char* argv[])
 
     if (argc < 5)
     {
-
+        sInputFilePath = "sweep.wav";
+        sOutputFilePath = "sweep_post.wav";
     }
 
     //////////////////////////////////////////////////////////////////////////////
@@ -81,27 +80,37 @@ int main(int argc, char* argv[])
 
     //////////////////////////////////////////////////////////////////////////////
     // Initializing the  effect
-
-    //TODO: Call to init function of effect
-
+    
+    int iNumParams = 1;
+    CAudioEffect::EffectParam_t param[iNumParams];
+    float value[iNumParams];
+    param[0] = CAudioEffect::kParamGain;
+    value[0] = 0.5f;
+    
+    phAudioEffect = new CAudioEffectGain();
+    phAudioEffect->init(param,value,iNumParams,stFileSpec.fSampleRateInHz,stFileSpec.iNumChannels);
+    
+    phAudioEffect = new CAudioEffectGain(param,value,iNumParams,stFileSpec.fSampleRateInHz,stFileSpec.iNumChannels);
 
     //////////////////////////////////////////////////////////////////////////////
     // get audio data and write it to the output file
 
-    cout << "\r" << "reading and writing";
+    cout << "\r" << "reading and writing" << endl;
+    
     while (!phAudioInputFile->isEof())
     {
         long long iNumFrames = kBlockSize;
         phAudioInputFile->readData(ppfAudioInput,iNumFrames);
 
-        //TODO: Call to the process function; the effect implementation function
+        // Call to the process function; the effect implementation function
+        phAudioEffect->process(ppfAudioInput, ppfAudioOutput, iNumFrames);
 
         Error_t error = kNoError;
         if(error != kNoError){
             return -1;
         }
 
-        phAudioOutputFile->writeData(ppfAudioInput, iNumFrames);
+        phAudioOutputFile->writeData(ppfAudioOutput, iNumFrames);
     }
 
     cout << "\nreading/writing done in: \t" << (clock() - time)*1.F / CLOCKS_PER_SEC << " seconds." << endl;
@@ -110,8 +119,9 @@ int main(int argc, char* argv[])
     // clean-up
     CAudioFileIf::destroy(phAudioInputFile);
     CAudioFileIf::destroy(phAudioOutputFile);
-
-
+    
+    delete phAudioEffect;
+    phAudioEffect = 0;
 
     for (int i = 0; i < stFileSpec.iNumChannels; i++){
         delete[] ppfAudioInput[i];
