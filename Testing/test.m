@@ -32,5 +32,11 @@ switch effect
     case "delay"
         audio_mat = delay(audio_raw, param(1), param(2), param(3));
         MSE = compare(audio_cpp, audio_mat);
+    case "EQ"
+        audio_mat = Biquad(audio_raw, param(1), param(2), param(3));
+        MSE = compare(audio_cpp, audio_mat);
+    case "pan"
+        audio_mat = panorama(audio_raw, param(1), param(2), param(3));
+        MSE = compare(audio_cpp, audio_mat);
 end
 end
