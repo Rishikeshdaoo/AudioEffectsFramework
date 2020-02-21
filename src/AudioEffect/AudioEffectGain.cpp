@@ -10,7 +10,7 @@
 
 CAudioEffectGain::CAudioEffectGain()
 {
-    m_eEffectType = kEffectGain;
+    m_eEffectType = kGain;
     m_fGain = 0.f;
     m_iNumChannels = 0;
     m_fSampleRateInHz = 0;
@@ -19,7 +19,7 @@ CAudioEffectGain::CAudioEffectGain()
 
 CAudioEffectGain::CAudioEffectGain(EffectParam_t params[], float values[], int iNumParams, float fSampleRateInHz, int iNumChannels)
 {
-    m_eEffectType = kEffectGain;
+    m_eEffectType = kGain;
     init(params, values, iNumParams, fSampleRateInHz, iNumChannels);
 }
 

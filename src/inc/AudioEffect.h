@@ -11,31 +11,28 @@
 
 #include <stdio.h>
 #include <ErrorDef.h>
+#include <EffectDef.h>
+
 
 class CAudioEffect
 {
 public:
     CAudioEffect();
     ~CAudioEffect();
-    
-    enum EffectType_t
-    {
-        kEffectNone,
-        kEffectGain,
-        kEffectPan
-    };
-    
+            
     enum EffectParam_t
     {
         kParamGain
     };
+    
+    Effect_t getEffectType();
 
 private:
     
 protected:
     
     bool m_bIsInitialized;
-    EffectType_t m_eEffectType;
+    Effect_t m_eEffectType;
     float m_fSampleRateInHz;
     int m_iNumChannels;
     

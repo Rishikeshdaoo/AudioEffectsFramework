@@ -2,7 +2,7 @@
 #include <ctime>
 
 #include "AudioFileIf.h"
-#include "AudioEffect.h"
+//#include "AudioEffect.h"
 #include "AudioEffectGain.h"
 
 using std::cout;
@@ -103,9 +103,7 @@ int main(int argc, char* argv[])
         phAudioInputFile->readData(ppfAudioInput,iNumFrames);
 
         // Call to the process function; the effect implementation function
-        phAudioEffect->process(ppfAudioInput, ppfAudioOutput, iNumFrames);
-
-        Error_t error = kNoError;
+        Error_t error = phAudioEffect->process(ppfAudioInput, ppfAudioOutput, iNumFrames);
         if(error != kNoError){
             return -1;
         }
