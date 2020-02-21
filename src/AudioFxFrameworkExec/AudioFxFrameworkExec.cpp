@@ -1,5 +1,6 @@
 #include <iostream>
 #include <ctime>
+#include <AudioEffectDelay.h>
 
 #include "AudioFileIf.h"
 //#include "AudioEffect.h"
@@ -29,7 +30,8 @@ int main(int argc, char* argv[])
     CAudioFileIf            *phAudioInputFile = 0,
                             *phAudioOutputFile = 0;
     
-    CAudioEffectGain          *phAudioEffect = 0;
+    CAudioEffectGain        *phAudioEffect = 0;
+    CAudioEffectDelay       *phAudioEffectDelay = 0;
 
     std::fstream             hOutputFile;
     CAudioFileIf::FileSpec_t stFileSpec;
@@ -88,8 +90,9 @@ int main(int argc, char* argv[])
     value[0] = 0.5f;
     
     phAudioEffect = new CAudioEffectGain();
+
     phAudioEffect->init(param,value,iNumParams,stFileSpec.fSampleRateInHz,stFileSpec.iNumChannels);
-    
+
     phAudioEffect = new CAudioEffectGain(param,value,iNumParams,stFileSpec.fSampleRateInHz,stFileSpec.iNumChannels);
 
     //////////////////////////////////////////////////////////////////////////////

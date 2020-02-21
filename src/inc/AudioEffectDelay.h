@@ -1,5 +1,6 @@
 //
 // Created by Rishikesh Daoo on 2/15/20.
+//  Copyright © 2020 Rishikesh Daoo. All rights reserved.
 //
 
 #ifndef AUDIOFXFRAMEWORK_AUDIOEFFECTDELAY_H
@@ -7,6 +8,7 @@
 
 
 #include "AudioEffect.h"
+#include "RingBuffer.h"
 
 #include <stdio.h>
 #include <iostream>
@@ -15,10 +17,10 @@ class CAudioEffectDelay: public CAudioEffect
 {
 public:
     CAudioEffectDelay();
-    CAudioEffectDelay(EffectParam_t params[], float values[], int iNumParams, float fSampleRateInHz, int iNumChannels);
+    CAudioEffectDelay(EffectParam_t params[], float values[], int iNumParams, float fSampleRateInHz, int iNumChannels, int iMaxDelayInSec);
     ~CAudioEffectDelay();
 
-    Error_t init(EffectParam_t params[], float values[], int iNumParams, float fSampleRateInHz, int iNumChannels);
+    Error_t init(float fSampleRateInHz, int iNumChannels, int iMaxDelayInSec);
     Error_t reset();
 
     Error_t setParam(EffectParam_t eParam, float fValue);
@@ -26,11 +28,13 @@ public:
 
     Error_t process(float **ppfInputBuffer, float **ppfOutputBuffer, int iNumberOfFrames);
 
-protected:
+private:
+
+    CRingBuffer<float>  **m_ppCRingBuffer;
 
     float m_fGain;
-    float m_fDelayInSec;
-
+    float m_fDelay;
+    float m_fMaxDelay;
 };
 
 
