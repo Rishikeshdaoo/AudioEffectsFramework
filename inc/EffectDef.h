@@ -10,6 +10,7 @@
 
 enum Effect_t
 {
+    kNone,
     kGain,
     kPan,
     kDistortion,

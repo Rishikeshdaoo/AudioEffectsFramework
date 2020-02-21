@@ -13,7 +13,7 @@ using namespace std;
 
 CAudioEffect::CAudioEffect()
 {
-    m_eEffectType = kEffectNone;
+    m_eEffectType = kNone;
     m_bIsInitialized = false;
 };
 
@@ -22,7 +22,12 @@ CAudioEffect::~CAudioEffect()
 
 };
 
-//Error_t CAudioEffect::init(EffectType_t eEffectType, EffectParam_t params[], int iNumParams, float fSampleRateInHz, int iNumChannels)
+Effect_t CAudioEffect::getEffectType()
+{
+    return m_eEffectType;
+}
+
+//Error_t CAudioEffect::init(Effect_t eEffectType, EffectParam_t params[], int iNumParams, float fSampleRateInHz, int iNumChannels)
 //{
 //    std::cout << "Init Intern from Base Class." << std::endl;
 //    return kNoError;
