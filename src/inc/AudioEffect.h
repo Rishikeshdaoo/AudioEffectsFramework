@@ -27,7 +27,8 @@ public:
     
     enum EffectParam_t
     {
-        kParamGain
+        kParamGain,
+        kParamPan
     };
 
 private:
