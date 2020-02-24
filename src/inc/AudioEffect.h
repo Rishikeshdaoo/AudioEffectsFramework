@@ -23,7 +23,8 @@ public:
     enum EffectParam_t
     {
         kParamGain,
-        kParamPan
+        kParamPan,
+        kParamDelayInSecs
     };
     
     Effect_t getEffectType();

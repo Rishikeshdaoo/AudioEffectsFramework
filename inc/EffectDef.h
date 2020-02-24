@@ -1,5 +1,6 @@
 //
 // Created by Rishikesh Daoo on 2/13/20.
+// Copyright © 2020 Rishikesh Daoo. All rights reserved.
 //
 
 #ifndef AUDIOFXFRAMEWORK_EFFECTTYPE_H
