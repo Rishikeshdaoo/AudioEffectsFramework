@@ -24,7 +24,8 @@ public:
     {
         kParamGain,
         kParamPan,
-        kParamDelayInSecs
+        kParamDelayInSecs,
+        kParamDistortion
     };
     
     Effect_t getEffectType();
