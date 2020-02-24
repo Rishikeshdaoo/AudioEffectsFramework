@@ -2,9 +2,7 @@ set (APP TestExec)
 
 set (TestLIB UnitTest++)
 
-set (FilterLIB CombFilter)
-#set (DtwLIB Dtw)
-set (VibratoLIB Vibrato)
+set (AudioEffectLIB AudioEffect)
 set (AudioLIB AudioFileIO)
 set (SndLIB sndlib)
 

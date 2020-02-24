@@ -1,4 +1,4 @@
-#include "MUSI6106Config.h"
+#include "AudioFxFrameworkConfig.h"
 
 #ifdef WITH_TESTS
 #include <cassert>

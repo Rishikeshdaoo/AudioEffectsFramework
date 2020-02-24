@@ -3,7 +3,7 @@
 #include <UnitTest++.h>
 #include "TestReporterStdout.h"
 
-#include "MUSI6106Config.h"
+#include "AudioFxFrameworkConfig.h"
 
 // include project headers
 #include "AudioFileIf.h"
