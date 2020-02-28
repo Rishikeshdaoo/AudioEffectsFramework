@@ -18,10 +18,10 @@ class CAudioEffectDistortion: public CAudioEffect
 {
 public:
     CAudioEffectDistortion();
-    CAudioEffectDistortion(EffectParam_t params[], float values[], int iNumParams, float fSampleRateInHz, int iNumChannels);
+    CAudioEffectDistortion(float fSampleRateInHz, int iNumChannels, EffectParam_t params[], float values[], int iNumParams);
     ~CAudioEffectDistortion();
     
-    Error_t init(EffectParam_t params[], float values[], int iNumParams, float fSampleRateInHz, int iNumChannels);
+    Error_t init(float fSampleRateInHz, int iNumChannels, EffectParam_t params[], float values[], int iNumParams);
     Error_t reset();
     
     Error_t setParam(EffectParam_t eParam, float fValue);
