@@ -97,7 +97,7 @@ Error_t CAudioEffectPan::process(float **ppfInputBuffer, float **ppfOutputBuffer
         for (int frame = 0; frame < iNumberOfFrames; frame++)
         {
             ppfOutputBuffer[0][frame] = gain_left * ppfInputBuffer[0][frame];
-            ppfOutputBuffer[1][frame] = gain_right * ppfInputBuffer[1][frame];
+            ppfOutputBuffer[1][frame] = gain_right * ppfInputBuffer[0][frame];
         }
     }
     
@@ -106,10 +106,16 @@ Error_t CAudioEffectPan::process(float **ppfInputBuffer, float **ppfOutputBuffer
     {
         for (int frame = 0; frame < iNumberOfFrames; frame++)
         {
-            if (m_fPan > 0)
+            if (m_fPan >= 0)
+            {
                 ppfOutputBuffer[0][frame] = (1 - m_fPan) * ppfInputBuffer[0][frame];
+                ppfOutputBuffer[1][frame] = ppfInputBuffer[1][frame];
+            }
             else if (m_fPan < 0)
+            {
+                ppfOutputBuffer[0][frame] = ppfInputBuffer[0][frame];
                 ppfOutputBuffer[1][frame] = (1 + m_fPan) * ppfInputBuffer[1][frame];
+            }
         }
     }
     
