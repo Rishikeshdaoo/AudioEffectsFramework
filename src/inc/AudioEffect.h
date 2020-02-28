@@ -27,7 +27,11 @@ public:
         kParamDelayInSecs,
         kParamDistortion,
         kParamCenterFrequency,
-        kParamQ
+        kParamQ,
+        kParamCompressorThreshold,
+        kParamCompressorSlope,
+        kParamExpanderThreshold,
+        kParamExpanderSlope,
     };
     
     Effect_t getEffectType();
