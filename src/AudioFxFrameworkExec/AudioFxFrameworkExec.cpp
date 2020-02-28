@@ -31,7 +31,7 @@ int main(int argc, char* argv[])
                             *phAudioOutputFile = 0;
     
     CAudioEffectGain        *phAudioEffect = 0;
-    CAudioEffectDelay       *phAudioEffectDelay = 0;
+//    CAudioEffectDelay       *phAudioEffectDelay = 0;
 
     std::fstream             hOutputFile;
     CAudioFileIf::FileSpec_t stFileSpec;
@@ -89,11 +89,10 @@ int main(int argc, char* argv[])
     param[0] = CAudioEffect::kParamGain;
     value[0] = 0.5f;
     
-    phAudioEffect = new CAudioEffectGain();
+//    phAudioEffect = new CAudioEffectGain();
+//    phAudioEffect->init(stFileSpec.fSampleRateInHz,stFileSpec.iNumChannels,param,value,iNumParams);
 
-    phAudioEffect->init(param,value,iNumParams,stFileSpec.fSampleRateInHz,stFileSpec.iNumChannels);
-
-    phAudioEffect = new CAudioEffectGain(param,value,iNumParams,stFileSpec.fSampleRateInHz,stFileSpec.iNumChannels);
+    phAudioEffect = new CAudioEffectGain(stFileSpec.fSampleRateInHz,stFileSpec.iNumChannels,param,value,iNumParams);
 
     //////////////////////////////////////////////////////////////////////////////
     // get audio data and write it to the output file

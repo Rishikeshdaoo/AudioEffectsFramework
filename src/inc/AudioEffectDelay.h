@@ -16,8 +16,9 @@
 class CAudioEffectDelay: public CAudioEffect
 {
 public:
+    
     CAudioEffectDelay();
-    CAudioEffectDelay(EffectParam_t params[], float values[], int iNumParams, float fSampleRateInHz, int iNumChannels, int iMaxDelayInSec);
+    CAudioEffectDelay(float fSampleRateInHz, int iNumChannels, int iMaxDelayInSec, EffectParam_t params[], float values[], int iNumParams);
     ~CAudioEffectDelay();
 
     Error_t init(float fSampleRateInHz, int iNumChannels, int iMaxDelayInSec);

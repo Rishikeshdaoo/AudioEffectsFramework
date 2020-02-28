@@ -25,7 +25,9 @@ public:
         kParamGain,
         kParamPan,
         kParamDelayInSecs,
-        kParamDistortion
+        kParamDistortion,
+        kParamCenterFrequency,
+        kParamQ
     };
     
     Effect_t getEffectType();
