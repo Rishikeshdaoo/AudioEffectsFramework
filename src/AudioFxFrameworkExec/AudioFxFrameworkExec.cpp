@@ -3,7 +3,7 @@
 #include <AudioEffectDelay.h>
 
 #include "AudioFileIf.h"
-//#include "AudioEffect.h"
+#include "AudioEffectBiquad.h"
 #include "AudioEffectGain.h"
 
 using std::cout;
@@ -30,7 +30,7 @@ int main(int argc, char* argv[])
     CAudioFileIf            *phAudioInputFile = 0,
                             *phAudioOutputFile = 0;
     
-    CAudioEffectGain        *phAudioEffect = 0;
+    CAudioEffectBiquad        *phAudioEffect = 0;
 //    CAudioEffectDelay       *phAudioEffectDelay = 0;
 
     std::fstream             hOutputFile;
@@ -83,16 +83,22 @@ int main(int argc, char* argv[])
     //////////////////////////////////////////////////////////////////////////////
     // Initializing the  effect
     
-    int iNumParams = 1;
+    int iNumParams = 3;
     CAudioEffect::EffectParam_t param[iNumParams];
     float value[iNumParams];
     param[0] = CAudioEffect::kParamGain;
     value[0] = 0.5f;
+    param[1] = CAudioEffect::kParamCenterFrequency;
+    value[1] = 1000.0f;
+    param[2] = CAudioEffect::kParamQ;
+    value[2] = 0.707f;
     
 //    phAudioEffect = new CAudioEffectGain();
 //    phAudioEffect->init(stFileSpec.fSampleRateInHz,stFileSpec.iNumChannels,param,value,iNumParams);
 
-    phAudioEffect = new CAudioEffectGain(stFileSpec.fSampleRateInHz,stFileSpec.iNumChannels,param,value,iNumParams);
+    phAudioEffect = new CAudioEffectBiquad(stFileSpec.fSampleRateInHz,stFileSpec.iNumChannels,param,value,iNumParams);
+    
+    phAudioEffect->setFilterType(CAudioEffectBiquad::FilterType_t::kBandpass);
 
     //////////////////////////////////////////////////////////////////////////////
     // get audio data and write it to the output file

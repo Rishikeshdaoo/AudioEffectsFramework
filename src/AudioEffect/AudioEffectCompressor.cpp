@@ -156,5 +156,6 @@ Error_t CAudioEffectCompressor::process(float **ppfInputBuffer, float **ppfOutpu
             m_ppfDelayBuffer[c]->putPostInc(ppfInputBuffer[c][i]);
         }
     }
+    return kNoError;
 }
 

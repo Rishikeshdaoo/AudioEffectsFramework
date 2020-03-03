@@ -20,10 +20,10 @@ CAudioEffectBiquad::CAudioEffectBiquad()
     m_fQ = 0.f;
 };
 
-CAudioEffectBiquad::CAudioEffectBiquad(float fSampleRateInHz, int iNumChannels, int iMaxDelayInSec, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0)
+CAudioEffectBiquad::CAudioEffectBiquad(float fSampleRateInHz, int iNumChannels, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0)
 {
     m_eEffectType = kBiquad;
-    init(fSampleRateInHz, iNumChannels, iMaxDelayInSec, params, values, iNumParams);
+    init(fSampleRateInHz, iNumChannels, params, values, iNumParams);
 }
 
 
@@ -32,7 +32,7 @@ CAudioEffectBiquad::~CAudioEffectBiquad()
 
 };
 
-Error_t CAudioEffectBiquad::init(float fSampleRateInHz, int iNumChannels, int iMaxDelayInSec, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0)
+Error_t CAudioEffectBiquad::init(float fSampleRateInHz, int iNumChannels, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0)
 {
 
     m_fSampleRateInHz = fSampleRateInHz;

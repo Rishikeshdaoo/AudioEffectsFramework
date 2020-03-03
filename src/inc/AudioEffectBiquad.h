@@ -28,10 +28,10 @@ public:
     };
     
     CAudioEffectBiquad();
-    CAudioEffectBiquad(float fSampleRateInHz, int iNumChannels, int iMaxDelayInSec, EffectParam_t params[], float values[], int iNumParams);
+    CAudioEffectBiquad(float fSampleRateInHz, int iNumChannels, EffectParam_t params[], float values[], int iNumParams);
     ~CAudioEffectBiquad();
 
-    Error_t init(float fSampleRateInHz, int iNumChannels, int iMaxDelayInSec, EffectParam_t params[], float values[], int iNumParams);
+    Error_t init(float fSampleRateInHz, int iNumChannels, EffectParam_t params[], float values[], int iNumParams);
     Error_t reset();
 
     Error_t setParam(EffectParam_t eParam, float fValue);
