@@ -62,7 +62,13 @@ if (WITH_TESTS)
     
     # add tests here
     add_test(AudioIo ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/TestExec AudioIo "${CMAKE_SOURCE_DIR}/src/Tests/TestData/")
-    add_test(AudioEffect ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/TestExec AudioEffect)
+    add_test(AudioEffectGain ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/TestExec AudioEffectGain)
+    add_test(AudioEffectPan ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/TestExec AudioEffectPan)
+    add_test(AudioEffectDelay ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/TestExec AudioEffectDelay)
+    add_test(AudioEffectDelay ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/TestExec AudioEffectCompressor)
+    add_test(AudioEffectDelay ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/TestExec AudioEffectBiquad)
+    add_test(AudioEffectDelay ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/TestExec AudioEffectDistortion)
+
     
     add_cppcheck_test ()
 endif (WITH_TESTS)
