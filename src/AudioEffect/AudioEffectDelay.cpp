@@ -23,7 +23,7 @@ CAudioEffectDelay::CAudioEffectDelay()
 CAudioEffectDelay::CAudioEffectDelay(float fSampleRateInHz, int iNumChannels, int iMaxDelayInSec, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0)
 {
     m_eEffectType = Effect_t::kDelay;
-    init(fSampleRateInHz, iNumChannels, iMaxDelayInSec);
+    init(fSampleRateInHz, iNumChannels, iMaxDelayInSec, params, values, iNumParams);
 
     m_ppCRingBuffer = new CRingBuffer<float>*[m_iNumChannels];
     for (int c = 0; c < m_iNumChannels; c++)
