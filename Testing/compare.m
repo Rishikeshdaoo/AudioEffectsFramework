@@ -1,9 +1,10 @@
-function [MSE] = compare(audio_cpp, audio_mat)
+function [MSE] = compare(effect, audio_cpp, audio_mat)
 
 % Compares two input signals, calculate MSE, and plot the two signals 
 % along with the difference signal.
 %
 %where input:
+%      effect = effect type
 %      audio_cpp = audio signal generated from cpp implementation 
 %      audio_mat = audio signal generated from matlab implementation 
 %      output:
@@ -12,7 +13,8 @@ function [MSE] = compare(audio_cpp, audio_mat)
 MSE = immse(audio_cpp, audio_mat); % mean square error
 
 figure(1);
-hold on
+sgtitle(effect);
+
 subplot(3,1,1);
 plot(audio_mat);
 title('MATLAB');
