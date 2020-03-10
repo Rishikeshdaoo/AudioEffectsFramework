@@ -20,7 +20,7 @@ CAudioEffectDelay::CAudioEffectDelay()
 CAudioEffectDelay::CAudioEffectDelay(float fSampleRateInHz, int iNumChannels, int iMaxDelayInSec, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0)
 {
     m_eEffectType = kDelay;
-    init(fSampleRateInHz, iNumChannels, iMaxDelayInSec);
+    init(fSampleRateInHz, iNumChannels, iMaxDelayInSec, params, values, iNumParams);
 
     m_ppCRingBuffer = new CRingBuffer<float>*[m_iNumChannels];
     for (int c = 0; c < m_iNumChannels; c++)
@@ -33,13 +33,40 @@ CAudioEffectDelay::~CAudioEffectDelay()
 
 };
 
-Error_t CAudioEffectDelay::init(float fSampleRateInHz, int iNumChannels, int iMaxDelayInSec)
+Error_t CAudioEffectDelay::init(float fSampleRateInHz, int iNumChannels, int iMaxDelayInSec, EffectParam_t params[], float values[], int iNumParams)
 {
-
     m_fSampleRateInHz = fSampleRateInHz;
     m_iNumChannels = iNumChannels;
 
     m_fMaxDelay = iMaxDelayInSec * m_fSampleRateInHz;
+
+    m_ppCRingBuffer = new CRingBuffer<float>*[m_iNumChannels];
+    for (int c = 0; c < m_iNumChannels; c++)
+        m_ppCRingBuffer[c]  = new CRingBuffer<float>(iMaxDelayInSec * m_fSampleRateInHz);
+
+    for (int i = 0; i < iNumParams; i++)
+    {
+        switch (params[i]) {
+            case kParamGain:
+                m_fGain = values[i];
+                break;
+            case kParamDelayInSecs:
+                m_fDelay = values[i] * m_fSampleRateInHz;
+
+                if(m_fDelay > m_fMaxDelay)
+                    return kFunctionInvalidArgsError;
+
+                for (int c = 0; c < m_iNumChannels; c++) {
+                    for (int i = 0; i < m_fDelay; i++) {
+                        m_ppCRingBuffer[c]->putPostInc(0.F);
+                    }
+                }
+
+                break;
+            default:
+                return kNoError;
+        }
+    }
 
     m_bIsInitialized = true;
 
@@ -48,6 +75,7 @@ Error_t CAudioEffectDelay::init(float fSampleRateInHz, int iNumChannels, int iMa
 
 Error_t CAudioEffectDelay::reset()
 {
+
     return kNoError;
 };
 
@@ -71,9 +99,9 @@ Error_t CAudioEffectDelay::setParam(EffectParam_t eParam, float fValue)
                     m_ppCRingBuffer[c]->putPostInc(0.F);
                 }
             }
+            break;
         default:
             return kFunctionInvalidArgsError;
-            break;
     }
 
     return kNoError;

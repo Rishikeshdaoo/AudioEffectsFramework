@@ -21,7 +21,7 @@ public:
     CAudioEffectDelay(float fSampleRateInHz, int iNumChannels, int iMaxDelayInSec, EffectParam_t params[], float values[], int iNumParams);
     ~CAudioEffectDelay();
 
-    Error_t init(float fSampleRateInHz, int iNumChannels, int iMaxDelayInSec);
+    Error_t init(float fSampleRateInHz, int iNumChannels, int iMaxDelayInSec, EffectParam_t params[], float values[], int iNumParams);
     Error_t reset();
 
     Error_t setParam(EffectParam_t eParam, float fValue);
