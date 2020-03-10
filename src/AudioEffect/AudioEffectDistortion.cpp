@@ -38,7 +38,7 @@ Error_t CAudioEffectDistortion::init(float fSampleRateInHz, int iNumChannels, Ef
     for (int i = 0; i < iNumParams; i++)
     {
         switch (params[i]) {
-            case kParamGain:
+            case kParamDistortion:
                 m_fDistortion = values[i];
                 break;
             default:
