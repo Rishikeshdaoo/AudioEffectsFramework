@@ -13,6 +13,18 @@ audio_path_cpp = 'Guitar_sample_biquad.wav';
 param_biquad = {'bandpass' 1000 0.707 0.5 Fs}; 
 [audio_mat_biquad, MSE_biquad] = test(audio_raw, audio_cpp, "biquad", param_biquad);
 
+%% distortion test
+
+audio_path_raw = 'Guitar_sample.wav';
+audio_path_cpp = 'Guitar_sample_distortion.wav';
+
+[audio_raw,~] = audioread(audio_path_raw);
+[audio_cpp,Fs] = audioread(audio_path_cpp);
+
+% params for distortion: [gain, mix]
+param_distortion = [5, 0.5]; 
+[audio_mat_distortion, MSE_distortion] = test(audio_raw, audio_cpp, "distortion", param_distortion);
+
 %% other test
 
 % param_flanger = [Fs, 0.002, 1]; % params for flanger effect: [Fs, max_time_delay, rate]

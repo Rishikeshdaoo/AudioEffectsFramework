@@ -31,7 +31,8 @@ public:
     
 protected:
     
-    float m_fDistortion;
+    float m_fGain;
+    float m_fDryWetMix;
     
 };
 #endif /* AudioEffectDistortion_h */

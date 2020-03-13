@@ -27,13 +27,14 @@ public:
         kParamDelayInSecs,
         kParamModFreqInHz,
         kParamModWidthInS,
-        kParamDistortion,
+//        kParamDistortion,
         kParamCenterFrequency,
         kParamQ,
         kParamCompressorThreshold,
         kParamCompressorSlope,
         kParamExpanderThreshold,
         kParamExpanderSlope,
+        kParamDryWetMix
     };
     
     Effect_t getEffectType();
