@@ -20,7 +20,6 @@ enum Effect_t
     kReverb,
     kBiquad,
     kFlanger,
-    kPanorama,
     kChorus,
     kPitchShift,
 };
