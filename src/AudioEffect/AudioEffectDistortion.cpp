@@ -12,7 +12,8 @@
 CAudioEffectDistortion::CAudioEffectDistortion()
 {
     m_eEffectType = kDistortion;
-    m_fDistortion = 0.f;
+    m_fGain = 0.f;
+    m_fDryWetMix = 1.f;
     m_iNumChannels = 0;
     m_fSampleRateInHz = 0;
     m_bIsInitialized = false;
@@ -38,8 +39,11 @@ Error_t CAudioEffectDistortion::init(float fSampleRateInHz, int iNumChannels, Ef
     for (int i = 0; i < iNumParams; i++)
     {
         switch (params[i]) {
-            case kParamDistortion:
-                m_fDistortion = values[i];
+            case kParamGain:
+                m_fGain = values[i];
+                break;
+            case kParamDryWetMix:
+                m_fDryWetMix = values[i];
                 break;
             default:
                 break;
@@ -63,7 +67,10 @@ Error_t CAudioEffectDistortion::setParam(EffectParam_t eParam, float fValue)
     
     switch (eParam) {
         case kParamDistortion:
-            m_fDistortion = fValue;
+            m_fGain = fValue;
+            break;
+        case kParamDryWetMix:
+            m_fDryWetMix = fValue;
             break;
         default:
             return kFunctionInvalidArgsError;
@@ -78,8 +85,11 @@ float CAudioEffectDistortion::getParam(EffectParam_t eParam)
         return kNotInitializedError;
     
     switch (eParam) {
-        case kParamDistortion:
-            return m_fDistortion;
+        case kParamGain:
+            return m_fGain;
+            break;
+        case kParamDryWetMix:
+            return m_fDryWetMix;
             break;
             
         default:
@@ -90,12 +100,13 @@ float CAudioEffectDistortion::getParam(EffectParam_t eParam)
 
 Error_t CAudioEffectDistortion::process(float **ppfInputBuffer, float **ppfOutputBuffer, int iNumberOfFrames)
 {
-    auto k = 2 * m_fDistortion /(1 - m_fDistortion);
     for (int channel = 0; channel < m_iNumChannels; channel++)
     {
         for (int frame = 0; frame < iNumberOfFrames; frame++)
         {
-            ppfOutputBuffer[channel][frame] = (1 + k) * ppfInputBuffer[channel][frame] / (1 + k * abs(ppfInputBuffer[channel][frame]));
+            float q = ppfInputBuffer[channel][frame] * m_fGain;
+            float z = copysign(1-exp(-abs(q)), q);
+            ppfOutputBuffer[channel][frame] = m_fDryWetMix*z + (1-m_fDryWetMix) * ppfInputBuffer[channel][frame];
         }
     }
     return kNoError;

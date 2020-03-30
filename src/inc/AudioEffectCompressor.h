@@ -28,14 +28,11 @@ public:
 private:
 
     const float m_fTav;
-    const float m_fAt;
-    const float m_fRt;
+    const float m_fAttackTime;
+    const float m_fReleaseTime;
 
-    float m_fCompressorThreshold;
-    float m_fCompressorSlope;
-    float m_fExpanderThreshold;
-    float m_fExpanderSlope;
-    int m_iMaxDelay;
+    float m_fThreshold;
+    float m_fSlope;
 
     CRingBuffer<float> **m_ppfDelayBuffer;
 };
