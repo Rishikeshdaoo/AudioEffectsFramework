@@ -66,7 +66,7 @@ Error_t CAudioEffectDistortion::setParam(EffectParam_t eParam, float fValue)
         return kNotInitializedError;
     
     switch (eParam) {
-        case kParamDistortion:
+        case kParamGain:
             m_fGain = fValue;
             break;
         case kParamDryWetMix:
