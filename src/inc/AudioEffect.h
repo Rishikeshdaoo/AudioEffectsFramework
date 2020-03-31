@@ -32,6 +32,7 @@ public:
         kParamQ,
         kParamThreshold,
         kParamSlope,
+        kParamDryWetMix
     };
     
     Effect_t getEffectType();
