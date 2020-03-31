@@ -26,7 +26,7 @@ CAudioEffectCompressor::CAudioEffectCompressor(float fSampleRateInHz, int iNumCh
         m_fReleaseTime(0.003)
 {
     m_eEffectType = kBiquad;
-    init(fSampleRateInHz, iNumChannels, iMaxDelayInSec, params, values, iNumParams);
+    init(fSampleRateInHz, iNumChannels, params, values, iNumParams);
 }
 
 Error_t CAudioEffectCompressor::init(float fSampleRateInHz, int iNumChannels, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0)
