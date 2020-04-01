@@ -16,6 +16,7 @@ enum Effect_t
     kPan,
     kDistortion,
     kCompressor,
+    kExpander,
     kDelay,
     kReverb,
     kBiquad,
