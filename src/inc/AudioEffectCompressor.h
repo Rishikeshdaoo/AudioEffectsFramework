@@ -3,21 +3,21 @@
 // Copyright © 2020 Rishikesh Daoo. All rights reserved.
 //
 
-#ifndef AUDIOFXFRAMEWORK_AUDIOEFFECTCOMPRESSOR_H
-#define AUDIOFXFRAMEWORK_AUDIOEFFECTCOMPRESSOR_H
+#ifndef AUDIOFXFRAMEWORK_AUDIOEFFECTCOMPRESSOREXPANDER_H
+#define AUDIOFXFRAMEWORK_AUDIOEFFECTCOMPRESSOREXPANDER_H
 
 #include <AudioEffect.h>
 #include "RingBuffer.h"
 
-class CAudioEffectCompressor: public CAudioEffect
+class CAudioEffectCompressorExpander: public CAudioEffect
 {
 public:
 
-    CAudioEffectCompressor();
-    CAudioEffectCompressor(float fSampleRateInHz, int iNumChannels, int iMaxDelayInSec, EffectParam_t params[], float values[], int iNumParams);
-    ~CAudioEffectCompressor();
+    CAudioEffectCompressorExpander();
+    CAudioEffectCompressorExpander(Effect_t effectType, float fSampleRateInHz, int iNumChannels, int iMaxDelayInSec, EffectParam_t params[], float values[], int iNumParams);
+    ~CAudioEffectCompressorExpander();
 
-    Error_t init(float fSampleRateInHz, int iNumChannels, int iMaxDelayInSec, EffectParam_t params[], float values[], int iNumParams);
+    Error_t init(Effect_t effectType, float fSampleRateInHz, int iNumChannels, EffectParam_t params[], float values[], int iNumParams);
     Error_t reset();
 
     Error_t setParam(EffectParam_t eParam, float fValue);
@@ -27,9 +27,9 @@ public:
 
 private:
 
-    const float m_fTav;
-    const float m_fAttackTime;
-    const float m_fReleaseTime;
+    float m_fTav;
+    float m_fAttackTime;
+    float m_fReleaseTime;
 
     float m_fThreshold;
     float m_fSlope;
@@ -37,7 +37,7 @@ private:
     CRingBuffer<float> **m_ppfDelayBuffer;
 };
 
-#endif //AUDIOFXFRAMEWORK_AUDIOEFFECTCOMPRESSOR_H
+#endif //AUDIOFXFRAMEWORK_AUDIOEFFECTCOMPRESSOREXPANDER_H
 
 
 

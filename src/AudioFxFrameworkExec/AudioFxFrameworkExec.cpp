@@ -1,6 +1,7 @@
 #include <iostream>
 #include <ctime>
 #include <AudioEffectDelay.h>
+#include <AudioEffectCompressor.h>
 
 #include "AudioFileIf.h"
 #include "AudioEffectBiquad.h"
@@ -30,8 +31,9 @@ int main(int argc, char* argv[])
     CAudioFileIf            *phAudioInputFile = 0,
                             *phAudioOutputFile = 0;
     
-//    CAudioEffectBiquad        *phAudioEffect = 0;
-    CAudioEffectDelay       *phAudioEffectDelay = 0;
+//    CAudioEffectBiquad            *phAudioEffect = 0;
+    CAudioEffectDelay               *phAudioEffectDelay = 0;
+    CAudioEffectCompressorExpander  *phAudioEffectCompressorExpander = 0;
 
     std::fstream             hOutputFile;
     CAudioFileIf::FileSpec_t stFileSpec;
@@ -44,8 +46,8 @@ int main(int argc, char* argv[])
 
 //    if (argc < 5)
 //    {
-        sInputFilePath = "/Users/marketinggramusic/Documents/Sem2/AudioSoftwareEngg/sweep.wav";
-        sOutputFilePath = "/Users/marketinggramusic/Documents/Sem2/AudioSoftwareEngg/sweep_post.wav";
+        sInputFilePath = "/Users/marketinggramusic/Documents/Sem2/AudioSoftwareEngg/click.wav";
+        sOutputFilePath = "/Users/marketinggramusic/Documents/Sem2/AudioSoftwareEngg/click_post.wav";
 //    }
 
     //////////////////////////////////////////////////////////////////////////////
@@ -86,9 +88,9 @@ int main(int argc, char* argv[])
     int iNumParams = 2;
     CAudioEffect::EffectParam_t param[iNumParams];
     float value[iNumParams];
-    param[0] = CAudioEffect::kParamDelayInSecs;
-    value[0] = 0.5f;
-    param[1] = CAudioEffect::kParamGain;
+    param[0] = CAudioEffect::kParamThreshold;
+    value[0] = -40.f;
+    param[1] = CAudioEffect::kParamSlope;
     value[1] = 0.5f;
     
 //    phAudioEffect = new CAudioEffectGain();
@@ -97,8 +99,11 @@ int main(int argc, char* argv[])
 //    phAudioEffect = new CAudioEffectBiquad(stFileSpec.fSampleRateInHz,stFileSpec.iNumChannels,param,value,iNumParams);
 //    phAudioEffect->setFilterType(CAudioEffectBiquad::FilterType_t::kBandpass);
 
-    phAudioEffectDelay = new CAudioEffectDelay();
-    phAudioEffectDelay->init(stFileSpec.fSampleRateInHz, stFileSpec.iNumChannels, 2.f, param, value, iNumParams);
+//    phAudioEffectDelay = new CAudioEffectDelay();
+//    phAudioEffectDelay->init(stFileSpec.fSampleRateInHz, stFileSpec.iNumChannels, 2.f, param, value, iNumParams);
+
+    phAudioEffectCompressorExpander = new CAudioEffectCompressorExpander();
+    phAudioEffectCompressorExpander -> init(kCompressor, stFileSpec.fSampleRateInHz, stFileSpec.iNumChannels, param, value, iNumParams);
 
     //////////////////////////////////////////////////////////////////////////////
     // get audio data and write it to the output file
@@ -111,7 +116,8 @@ int main(int argc, char* argv[])
         phAudioInputFile->readData(ppfAudioInput,iNumFrames);
 
         // Call to the process function; the effect implementation function
-        Error_t error = phAudioEffectDelay->process(ppfAudioInput, ppfAudioOutput, iNumFrames);
+//        Error_t error = phAudioEffectDelay->process(ppfAudioInput, ppfAudioOutput, iNumFrames);
+        Error_t error = phAudioEffectCompressorExpander->process(ppfAudioInput, ppfAudioOutput, iNumFrames);
         if(error != kNoError){
             return -1;
         }

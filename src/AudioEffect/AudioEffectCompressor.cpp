@@ -5,10 +5,11 @@
 
 
 #include <AudioEffectCompressor.h>
+#include <iostream>
 
-CAudioEffectCompressor::CAudioEffectCompressor():   m_fTav(0.01),
-                                                    m_fAttackTime(0.03),
-                                                    m_fReleaseTime(0.003)
+CAudioEffectCompressorExpander::CAudioEffectCompressorExpander():   m_fTav(0.01),
+                                                                    m_fAttackTime(0.03),
+                                                                    m_fReleaseTime(0.003)
 {
     m_eEffectType = kCompressor;
     m_iNumChannels = 0;
@@ -20,18 +21,17 @@ CAudioEffectCompressor::CAudioEffectCompressor():   m_fTav(0.01),
 
 }
 
-CAudioEffectCompressor::CAudioEffectCompressor(float fSampleRateInHz, int iNumChannels, int iMaxDelayInSec, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0):
+CAudioEffectCompressorExpander::CAudioEffectCompressorExpander(Effect_t effectType, float fSampleRateInHz, int iNumChannels, int iMaxDelayInSec, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0):
         m_fTav(0.01),
         m_fAttackTime(0.03),
         m_fReleaseTime(0.003)
 {
-    m_eEffectType = kBiquad;
-    init(fSampleRateInHz, iNumChannels, iMaxDelayInSec, params, values, iNumParams);
+    init(effectType, fSampleRateInHz, iNumChannels, params, values, iNumParams);
 }
 
-Error_t CAudioEffectCompressor::init(float fSampleRateInHz, int iNumChannels, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0)
+Error_t CAudioEffectCompressorExpander::init(Effect_t effectType, float fSampleRateInHz, int iNumChannels, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0)
 {
-
+    m_eEffectType = effectType;
     m_fSampleRateInHz = fSampleRateInHz;
     m_iNumChannels = iNumChannels;
     m_bIsInitialized = true;
@@ -61,12 +61,12 @@ Error_t CAudioEffectCompressor::init(float fSampleRateInHz, int iNumChannels, Ef
     return kNoError;
 }
 
-Error_t CAudioEffectCompressor::reset(){
+Error_t CAudioEffectCompressorExpander::reset(){
 
     return kNoError;
 }
 
-Error_t CAudioEffectCompressor::setParam(EffectParam_t eParam, float fValue)
+Error_t CAudioEffectCompressorExpander::setParam(EffectParam_t eParam, float fValue)
 {
     if (!m_bIsInitialized)
         return kNotInitializedError;
@@ -85,7 +85,7 @@ Error_t CAudioEffectCompressor::setParam(EffectParam_t eParam, float fValue)
     return kNoError;
 }
 
-float CAudioEffectCompressor::getParam(EffectParam_t eParam)
+float CAudioEffectCompressorExpander::getParam(EffectParam_t eParam)
 {
     if (!m_bIsInitialized)
         return kNotInitializedError;
@@ -103,29 +103,39 @@ float CAudioEffectCompressor::getParam(EffectParam_t eParam)
     }
 }
 
-Error_t CAudioEffectCompressor::process(float **ppfInputBuffer, float **ppfOutputBuffer, int iNumberOfFrames){
+Error_t CAudioEffectCompressorExpander::process(float **ppfInputBuffer, float **ppfOutputBuffer, int iNumberOfFrames){
 
     float f_inputSample = 0.f;
-    float f_rms = 0.f;
-    float f_X = 0.f;
-    float f_G = 0.f;
+    float f_rmsSignal = 0.f;
+    float f_logRmsSignal = 0.f;
+    float f_gain = 0.f;
     float f_g = 1.f;
     float f_f = 0.f;
     float f_coeff = 0.f;
 
-    for(int c = 0; c < m_iNumChannels; c++)
-    {
-        for (int i = 0; i < iNumberOfFrames; i++)
-        {
+    for (int c = 0; c < m_iNumChannels; c++) {
+        for (int i = 0; i < iNumberOfFrames; i++) {
             m_ppfDelayBuffer[c]->putPostInc(ppfInputBuffer[c][i]);
             f_inputSample = ppfInputBuffer[c][i];
-            f_rms = (1 - m_fTav) * f_rms + m_fTav * (pow(f_inputSample, 2));
-            f_X = 10 * log10(f_rms);
-            f_G = fmin(0, m_fSlope * (m_fThreshold - f_X));
+            f_rmsSignal = (1 - m_fTav) * f_rmsSignal + m_fTav * (pow(f_inputSample, 2));
+            f_logRmsSignal = 10 * log10(f_rmsSignal);
 
-            f_f = pow(10, (f_G/20));
+            if(m_eEffectType == kCompressor) {
+                if(f_logRmsSignal > m_fThreshold)
+                    f_gain = m_fSlope * (m_fThreshold - f_logRmsSignal);
+                else
+                    f_gain = 0.f;
+            }
+            else if(m_eEffectType == kExpander){
+                if(f_logRmsSignal < m_fThreshold)
+                    f_gain = m_fSlope * (m_fThreshold - f_logRmsSignal);
+                else
+                    f_gain = 0.f;
+            }
 
-            if(f_f < f_G)
+            f_f = pow(10, (f_gain / 20));
+
+            if (f_f < f_g)
                 f_coeff = m_fAttackTime;
             else
                 f_coeff = m_fReleaseTime;
@@ -133,8 +143,8 @@ Error_t CAudioEffectCompressor::process(float **ppfInputBuffer, float **ppfOutpu
             f_g = (1 - f_coeff) * f_g + f_coeff * f_f;
 
             ppfOutputBuffer[c][i] = m_ppfDelayBuffer[c]->getPostInc() * f_g;
+            }
         }
-    }
+
     return kNoError;
 }
-
