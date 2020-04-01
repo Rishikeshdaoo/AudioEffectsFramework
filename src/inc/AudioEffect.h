@@ -27,7 +27,6 @@ public:
         kParamDelayInSecs,
         kParamModFreqInHz,
         kParamModWidthInS,
-//        kParamDistortion,
         kParamCenterFrequency,
         kParamQ,
         kParamThreshold,
