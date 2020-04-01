@@ -9,12 +9,15 @@
 #include <AudioEffect.h>
 #include "RingBuffer.h"
 
+#include <stdio.h>
+#include <iostream>
+
 class CAudioEffectCompressor: public CAudioEffect
 {
 public:
 
     CAudioEffectCompressor();
-    CAudioEffectCompressor(float fSampleRateInHz, int iNumChannels, int iMaxDelayInSec, EffectParam_t params[], float values[], int iNumParams);
+    CAudioEffectCompressor(float fSampleRateInHz, int iNumChannels, EffectParam_t params[], float values[], int iNumParams);
     ~CAudioEffectCompressor();
 
     Error_t init(float fSampleRateInHz, int iNumChannels, EffectParam_t params[], float values[], int iNumParams);

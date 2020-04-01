@@ -20,14 +20,18 @@ CAudioEffectCompressor::CAudioEffectCompressor():   m_fTav(0.01),
 
 }
 
-CAudioEffectCompressor::CAudioEffectCompressor(float fSampleRateInHz, int iNumChannels, int iMaxDelayInSec, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0):
+CAudioEffectCompressor::CAudioEffectCompressor(float fSampleRateInHz, int iNumChannels, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0):
         m_fTav(0.01),
         m_fAttackTime(0.03),
         m_fReleaseTime(0.003)
 {
-    m_eEffectType = kBiquad;
+    m_eEffectType = kCompressor;
     init(fSampleRateInHz, iNumChannels, params, values, iNumParams);
 }
+
+CAudioEffectCompressor::~CAudioEffectCompressor()
+{
+};
 
 Error_t CAudioEffectCompressor::init(float fSampleRateInHz, int iNumChannels, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0)
 {
