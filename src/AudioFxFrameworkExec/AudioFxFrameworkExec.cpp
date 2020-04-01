@@ -89,7 +89,7 @@ int main(int argc, char* argv[])
     CAudioEffect::EffectParam_t param[iNumParams];
     float value[iNumParams];
     param[0] = CAudioEffect::kParamThreshold;
-    value[0] = -40.f;
+    value[0] = -50.f;
     param[1] = CAudioEffect::kParamSlope;
     value[1] = 0.5f;
     
@@ -103,7 +103,7 @@ int main(int argc, char* argv[])
 //    phAudioEffectDelay->init(stFileSpec.fSampleRateInHz, stFileSpec.iNumChannels, 2.f, param, value, iNumParams);
 
     phAudioEffectCompressorExpander = new CAudioEffectCompressorExpander();
-    phAudioEffectCompressorExpander -> init(kCompressor, stFileSpec.fSampleRateInHz, stFileSpec.iNumChannels, param, value, iNumParams);
+    phAudioEffectCompressorExpander -> init(kExpander, stFileSpec.fSampleRateInHz, stFileSpec.iNumChannels, param, value, iNumParams);
 
     //////////////////////////////////////////////////////////////////////////////
     // get audio data and write it to the output file

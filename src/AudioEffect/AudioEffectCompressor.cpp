@@ -29,6 +29,10 @@ CAudioEffectCompressorExpander::CAudioEffectCompressorExpander(Effect_t effectTy
     init(effectType, fSampleRateInHz, iNumChannels, params, values, iNumParams);
 }
 
+CAudioEffectCompressorExpander::~CAudioEffectCompressorExpander(){
+    
+}
+
 Error_t CAudioEffectCompressorExpander::init(Effect_t effectType, float fSampleRateInHz, int iNumChannels, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0)
 {
     m_eEffectType = effectType;
