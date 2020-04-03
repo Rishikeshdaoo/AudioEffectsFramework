@@ -30,7 +30,7 @@ CAudioEffectCompressorExpander::CAudioEffectCompressorExpander(Effect_t effectTy
 }
 
 CAudioEffectCompressorExpander::~CAudioEffectCompressorExpander(){
-    
+
 }
 
 Error_t CAudioEffectCompressorExpander::init(Effect_t effectType, float fSampleRateInHz, int iNumChannels, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0)
@@ -58,6 +58,7 @@ Error_t CAudioEffectCompressorExpander::init(Effect_t effectType, float fSampleR
         }
     }
 
+    m_pfRmsSignal = new float[m_iNumChannels];
     m_ppfDelayBuffer = new CRingBuffer<float>*[m_iNumChannels];
     for (int c = 0; c < m_iNumChannels; c++)
         m_ppfDelayBuffer[c]  = new CRingBuffer<float>(iBufferSize);
@@ -121,8 +122,8 @@ Error_t CAudioEffectCompressorExpander::process(float **ppfInputBuffer, float **
         for (int i = 0; i < iNumberOfFrames; i++) {
             m_ppfDelayBuffer[c]->putPostInc(ppfInputBuffer[c][i]);
             f_inputSample = ppfInputBuffer[c][i];
-            f_rmsSignal = (1 - m_fTav) * f_rmsSignal + m_fTav * (pow(f_inputSample, 2));
-            f_logRmsSignal = 10 * log10(f_rmsSignal);
+            m_pfRmsSignal[c] = (1 - m_fTav) * f_rmsSignal + m_fTav * (pow(f_inputSample, 2));
+            f_logRmsSignal = 10 * log10(m_pfRmsSignal[c]);
 
             if(m_eEffectType == kCompressor) {
                 if(f_logRmsSignal > m_fThreshold)

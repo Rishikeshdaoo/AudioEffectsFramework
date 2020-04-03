@@ -34,6 +34,8 @@ private:
     float m_fThreshold;
     float m_fSlope;
 
+    float* m_pfRmsSignal;
+
     CRingBuffer<float> **m_ppfDelayBuffer;
 };
 
