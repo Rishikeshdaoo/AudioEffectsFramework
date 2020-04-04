@@ -42,7 +42,9 @@ Error_t CAudioEffectCompressorExpander::init(Effect_t effectType, float fSampleR
 
     assert(iNumChannels > 0);
 
-    int iBufferSize = 1024;
+//    int iBufferSize = 1024;
+    int iBufferSize = 150;
+
 
     for (int i = 0; i < iNumParams; i++)
     {
@@ -61,7 +63,13 @@ Error_t CAudioEffectCompressorExpander::init(Effect_t effectType, float fSampleR
     m_pfRmsSignal = new float[m_iNumChannels];
     m_ppfDelayBuffer = new CRingBuffer<float>*[m_iNumChannels];
     for (int c = 0; c < m_iNumChannels; c++)
+    {
+        m_pfRmsSignal[c] = 0;
         m_ppfDelayBuffer[c]  = new CRingBuffer<float>(iBufferSize);
+        for (int i = 0; i < iBufferSize; i++) {
+            m_ppfDelayBuffer[c]->putPostInc(0.F);
+        }
+    }
 
     return kNoError;
 }
@@ -111,7 +119,7 @@ float CAudioEffectCompressorExpander::getParam(EffectParam_t eParam)
 Error_t CAudioEffectCompressorExpander::process(float **ppfInputBuffer, float **ppfOutputBuffer, int iNumberOfFrames){
 
     float f_inputSample = 0.f;
-    float f_rmsSignal = 0.f;
+//    float f_rmsSignal = 0.f;
     float f_logRmsSignal = 0.f;
     float f_gain = 0.f;
     float f_g = 1.f;
@@ -120,9 +128,10 @@ Error_t CAudioEffectCompressorExpander::process(float **ppfInputBuffer, float **
 
     for (int c = 0; c < m_iNumChannels; c++) {
         for (int i = 0; i < iNumberOfFrames; i++) {
-            m_ppfDelayBuffer[c]->putPostInc(ppfInputBuffer[c][i]);
+//            m_ppfDelayBuffer[c]->putPostInc(ppfInputBuffer[c][i]);
             f_inputSample = ppfInputBuffer[c][i];
-            m_pfRmsSignal[c] = (1 - m_fTav) * f_rmsSignal + m_fTav * (pow(f_inputSample, 2));
+//            m_pfRmsSignal[c] = (1 - m_fTav) * f_rmsSignal + m_fTav * (pow(f_inputSample, 2));
+            m_pfRmsSignal[c] = (1 - m_fTav) * m_pfRmsSignal[c] + m_fTav * (pow(f_inputSample, 2));
             f_logRmsSignal = 10 * log10(m_pfRmsSignal[c]);
 
             if(m_eEffectType == kCompressor) {
@@ -138,7 +147,7 @@ Error_t CAudioEffectCompressorExpander::process(float **ppfInputBuffer, float **
                     f_gain = 0.f;
             }
 
-            f_f = pow(10, (f_gain / 20));
+            f_f = pow(10, (f_gain / 20.f));
 
             if (f_f < f_g)
                 f_coeff = m_fAttackTime;
@@ -148,6 +157,9 @@ Error_t CAudioEffectCompressorExpander::process(float **ppfInputBuffer, float **
             f_g = (1 - f_coeff) * f_g + f_coeff * f_f;
 
             ppfOutputBuffer[c][i] = m_ppfDelayBuffer[c]->getPostInc() * f_g;
+
+            m_ppfDelayBuffer[c]->putPostInc(ppfInputBuffer[c][i]);
+
             }
         }
 
