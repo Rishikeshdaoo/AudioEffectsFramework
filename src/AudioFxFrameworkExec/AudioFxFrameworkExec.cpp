@@ -46,8 +46,8 @@ int main(int argc, char* argv[])
 
 //    if (argc < 5)
 //    {
-        sInputFilePath = "/Users/marketinggramusic/Documents/Sem2/AudioSoftwareEngg/click.wav";
-        sOutputFilePath = "/Users/marketinggramusic/Documents/Sem2/AudioSoftwareEngg/click_post.wav";
+        sInputFilePath = "/Users/marketinggramusic/Documents/Sem2/AudioSoftwareEngg/sweep.wav";
+        sOutputFilePath = "/Users/marketinggramusic/Documents/Sem2/AudioSoftwareEngg/sweep_post.wav";
 //    }
 
     //////////////////////////////////////////////////////////////////////////////
@@ -89,7 +89,7 @@ int main(int argc, char* argv[])
     CAudioEffect::EffectParam_t param[iNumParams];
     float value[iNumParams];
     param[0] = CAudioEffect::kParamThreshold;
-    value[0] = -60.f;
+    value[0] = -50.f;
     param[1] = CAudioEffect::kParamSlope;
     value[1] = 0.5f;
     

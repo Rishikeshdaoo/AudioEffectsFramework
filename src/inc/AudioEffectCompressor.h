@@ -27,7 +27,7 @@ public:
 
 private:
 
-    float m_fTav;
+    float m_fAveragingTime;
     float m_fAttackTime;
     float m_fReleaseTime;
 
@@ -35,7 +35,7 @@ private:
     float m_fSlope;
 
     float* m_pfRmsSignal;
-    float* m_pf_g;
+    float* m_pf_gain;
 
     CRingBuffer<float> **m_ppfDelayBuffer;
 };
