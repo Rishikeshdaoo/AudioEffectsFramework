@@ -35,6 +35,7 @@ private:
     float m_fSlope;
 
     float* m_pfRmsSignal;
+    float* m_pf_g;
 
     CRingBuffer<float> **m_ppfDelayBuffer;
 };

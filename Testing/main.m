@@ -38,6 +38,18 @@ audio_path_cpp = 'Guitar_sample_delay.wav';
 param_delay = [1, 0.4, 0, 0.8*Fs]; 
 [audio_mat_delay, MSE_delay] = test(audio_raw, audio_cpp, "delay", param_delay);
 
+%% compressor test
+
+audio_path_raw = 'Guitar_sample.wav';
+audio_path_cpp = 'Guitar_sample_compressor.wav';
+
+[audio_raw,~] = audioread(audio_path_raw);
+[audio_cpp,Fs] = audioread(audio_path_cpp);
+
+% params for compressor: [CT, CS, ET, ES]
+param_compressor = [-50, 0.5, 0, 0]; 
+[audio_mat_compressor, MSE_compressor] = test(audio_raw, audio_cpp, "compressor", param_compressor);
+
 %% other test
 
 % param_flanger = [Fs, 0.002, 1]; % params for flanger effect: [Fs, max_time_delay, rate]

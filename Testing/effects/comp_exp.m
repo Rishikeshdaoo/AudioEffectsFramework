@@ -32,11 +32,13 @@ for n = 1:length(x)
   X = 10*log10(xrms);
   G = min([0, CS*(CT-X), ES*(ET-X)]);
   f = 10^(G/20);
+  
   if f < g
     coeff = at;
   else
     coeff = rt;
   end;
+  
   g = (1-coeff) * g + coeff * f;
   y(n) = g * buffer(end);
   buffer = [x(n) buffer(1:end-1)];

@@ -61,10 +61,12 @@ Error_t CAudioEffectCompressorExpander::init(Effect_t effectType, float fSampleR
     }
 
     m_pfRmsSignal = new float[m_iNumChannels];
+    m_pf_g = new float[m_iNumChannels];
     m_ppfDelayBuffer = new CRingBuffer<float>*[m_iNumChannels];
     for (int c = 0; c < m_iNumChannels; c++)
     {
         m_pfRmsSignal[c] = 0;
+        m_pf_g[c] = 1;
         m_ppfDelayBuffer[c]  = new CRingBuffer<float>(iBufferSize);
         for (int i = 0; i < iBufferSize; i++) {
             m_ppfDelayBuffer[c]->putPostInc(0.F);
@@ -119,18 +121,14 @@ float CAudioEffectCompressorExpander::getParam(EffectParam_t eParam)
 Error_t CAudioEffectCompressorExpander::process(float **ppfInputBuffer, float **ppfOutputBuffer, int iNumberOfFrames){
 
     float f_inputSample = 0.f;
-//    float f_rmsSignal = 0.f;
     float f_logRmsSignal = 0.f;
     float f_gain = 0.f;
-    float f_g = 1.f;
     float f_f = 0.f;
     float f_coeff = 0.f;
 
     for (int c = 0; c < m_iNumChannels; c++) {
         for (int i = 0; i < iNumberOfFrames; i++) {
-//            m_ppfDelayBuffer[c]->putPostInc(ppfInputBuffer[c][i]);
             f_inputSample = ppfInputBuffer[c][i];
-//            m_pfRmsSignal[c] = (1 - m_fTav) * f_rmsSignal + m_fTav * (pow(f_inputSample, 2));
             m_pfRmsSignal[c] = (1 - m_fTav) * m_pfRmsSignal[c] + m_fTav * (pow(f_inputSample, 2));
             f_logRmsSignal = 10 * log10(m_pfRmsSignal[c]);
 
@@ -149,17 +147,14 @@ Error_t CAudioEffectCompressorExpander::process(float **ppfInputBuffer, float **
 
             f_f = pow(10, (f_gain / 20.f));
 
-            if (f_f < f_g)
+            if (f_f < m_pf_g[c])
                 f_coeff = m_fAttackTime;
             else
                 f_coeff = m_fReleaseTime;
 
-            f_g = (1 - f_coeff) * f_g + f_coeff * f_f;
-
-            ppfOutputBuffer[c][i] = m_ppfDelayBuffer[c]->getPostInc() * f_g;
-
+            m_pf_g[c] = (1 - f_coeff) * m_pf_g[c] + f_coeff * f_f;
+            ppfOutputBuffer[c][i] = m_ppfDelayBuffer[c]->getPostInc() * m_pf_g[c];
             m_ppfDelayBuffer[c]->putPostInc(ppfInputBuffer[c][i]);
-
             }
         }
 
