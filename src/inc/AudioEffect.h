@@ -25,8 +25,12 @@ public:
         kParamGain,
         kParamPan,
         kParamDelayInSecs,
-        kParamModFreqInHz,
-        kParamModWidthInS,
+
+        kParamModRateInHz,
+        kParamModWidthInSecs,
+
+        kParamDistortion,
+
         kParamCenterFrequency,
         kParamQ,
         kParamThreshold,
