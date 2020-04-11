@@ -24,15 +24,15 @@ y = zeros(length(x),1);
 % to avoid referencing of negative samples
 y(1:MaxDelayinSamps)=x(1:MaxDelayinSamps);
 % set amp suggested coefficient from page 71 DAFX
-amp=0.7;
+gain=0.7;
 
 % for each sample
-for i = (max_samp_delay+1):length(x)
+for i = (MaxDelayinSamps+1):length(x)
     cur_sin=abs(sin_ref(i)); %abs of current sin val 0-1
     % generate delay from 1-max_samp_delay and ensure whole number
-    cur_delay=ceil(cur_sin*max_samp_delay);
+    cur_delay=ceil(cur_sin*MaxDelayinSamps);
     % add delayed sample
-    y(i) = (amp*x(i)) + amp*(x(i-cur_delay));
+    y(i) = (gain*x(i)) + gain*(x(i-cur_delay));
 
 end
 
