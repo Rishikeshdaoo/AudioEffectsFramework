@@ -199,7 +199,7 @@ Error_t CAudioEffectDelay::process(float **ppfInputBuffer, float **ppfOutputBuff
     for(int i = 0; i < iNumberOfFrames; i++)
     {
         
-        float fOffset = m_pCLfo->getNext();
+        float fOffset = m_pCLfo->getNext()*m_fModGain;
 //        if (count % 1000 == 0)
 //        {
 //            std::cout << iOffset << std::endl;
