@@ -27,10 +27,10 @@ public:
     };
     
     CAudioEffectDelay();
-    CAudioEffectDelay(float fSampleRateInHz, int iNumChannels, int iMaxDelayInSec, EffectParam_t params[], float values[], int iNumParams);
+    CAudioEffectDelay(float fSampleRateInHz, int iNumChannels, float iMaxDelayInSec, EffectParam_t params[], float values[], int iNumParams);
     ~CAudioEffectDelay();
 
-    Error_t init(float fSampleRateInHz, int iNumChannels, int iMaxDelayInSec, EffectParam_t params[], float values[], int iNumParams);
+    Error_t init(float fSampleRateInHz, int iNumChannels, float iMaxDelayInSec, EffectParam_t params[], float values[], int iNumParams);
     Error_t reset();
 
     Error_t setParam(EffectParam_t eParam, float fValue);
@@ -50,6 +50,8 @@ private:
     float m_fGain;
     float m_fDelay;
     float m_fMaxDelay;
+    float m_fModWidthinSamps;
+    float m_fModFreq;
     
     CLfo *m_pCLfo;
 //    CRingBuffer<float> **m_ppCRingBuff;
