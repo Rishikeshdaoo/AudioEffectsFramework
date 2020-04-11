@@ -7,6 +7,7 @@
 
 #include "RingBuffer.h"
 #include "Lfo.h"
+#include <math.h>
 
 CAudioEffectDelay::CAudioEffectDelay()
 {
@@ -20,7 +21,7 @@ CAudioEffectDelay::CAudioEffectDelay()
     m_fMaxDelay = 0;
 };
 
-CAudioEffectDelay::CAudioEffectDelay(float fSampleRateInHz, int iNumChannels, int iMaxDelayInSec, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0)
+CAudioEffectDelay::CAudioEffectDelay(float fSampleRateInHz, int iNumChannels, float iMaxDelayInSec, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0)
 {
     m_eEffectType = Effect_t::kDelay;
     init(fSampleRateInHz, iNumChannels, iMaxDelayInSec, params, values, iNumParams);
@@ -32,7 +33,7 @@ CAudioEffectDelay::~CAudioEffectDelay()
 
 };
 
-Error_t CAudioEffectDelay::init(float fSampleRateInHz, int iNumChannels, int iMaxDelayInSec, EffectParam_t params[], float values[], int iNumParams)
+Error_t CAudioEffectDelay::init(float fSampleRateInHz, int iNumChannels, float iMaxDelayInSec, EffectParam_t params[], float values[], int iNumParams)
 {
     m_fSampleRateInHz = fSampleRateInHz;
     m_iNumChannels = iNumChannels;
@@ -42,8 +43,13 @@ Error_t CAudioEffectDelay::init(float fSampleRateInHz, int iNumChannels, int iMa
     m_pCLfo             = new CLfo(m_fSampleRateInHz);
 
     m_ppCRingBuffer = new CRingBuffer<float>*[m_iNumChannels];
-    for (int c = 0; c < m_iNumChannels; c++)
-        m_ppCRingBuffer[c]  = new CRingBuffer<float>(iMaxDelayInSec * m_fSampleRateInHz);
+//    for (int c = 0; c < m_iNumChannels; c++)
+//        m_ppCRingBuffer[c]  = new CRingBuffer<float>(iMaxDelayInSec * m_fSampleRateInHz);
+    for (int c= 0; c < m_iNumChannels; c++)
+    {
+        m_ppCRingBuffer[c]= new CRingBuffer<float>(CUtil::float2int<int>(iMaxDelayInSec*m_fSampleRateInHz*2+1));
+        m_ppCRingBuffer[c]->setWriteIdx(CUtil::float2int<int>(iMaxDelayInSec*m_fSampleRateInHz+1));
+    }
 
     for (int i = 0; i < iNumParams; i++)
     {
@@ -63,6 +69,13 @@ Error_t CAudioEffectDelay::init(float fSampleRateInHz, int iNumChannels, int iMa
                     }
                 }
                 break;
+            case kParamModRateInHz :
+                m_fModFreq = m_pCLfo->setParam(CLfo::kLfoParamFrequency, values[i]);
+                break;
+            case kParamModWidthInSecs :
+                m_fModWidthinSamps = m_pCLfo->setParam(CLfo::kLfoParamAmplitude, values[i] * m_fSampleRateInHz);
+                break;
+            
             default:
                 return kNoError;
         }
@@ -75,8 +88,15 @@ Error_t CAudioEffectDelay::init(float fSampleRateInHz, int iNumChannels, int iMa
 
 Error_t CAudioEffectDelay::reset()
 {
+    for (int c= 0; c < m_iNumChannels; c++)
+        delete m_ppCRingBuffer[c];
+    delete [] m_ppCRingBuffer;
+    m_ppCRingBuffer       = 0;
     delete m_pCLfo;
     m_pCLfo             = 0;
+    
+    m_iNumChannels      = 0;
+    m_bIsInitialized    = false;
     
     return kNoError;
 };
@@ -102,12 +122,14 @@ Error_t CAudioEffectDelay::setParam(EffectParam_t eParam, float fValue)
                 }
             }
             break;
-        case kParamModFreqInHz:
+
+        case kParamModRateInHz:
             m_pCLfo->setParam(CLfo::kLfoParamFrequency, fValue);
             break;
-        case kParamModWidthInS:
+        case kParamModWidthInSecs:
             m_pCLfo->setParam(CLfo::kLfoParamAmplitude, fValue * m_fSampleRateInHz);
             break;
+
 
     
         default:
@@ -125,14 +147,14 @@ float CAudioEffectDelay::getParam(EffectParam_t eParam)
     switch (eParam) {
         case kParamGain:
             return m_fGain;
-            break;
         case kParamDelayInSecs:
             return m_fDelay;
+
             break;
-        case kParamModFreqInHz:
+        case kParamModRateInHz:
             return m_pCLfo->getParam(CLfo::kLfoParamFrequency);
             break;
-        case kParamModWidthInS:
+        case kParamModWidthInSecs:
             return m_pCLfo->getParam(CLfo::kLfoParamAmplitude) / m_fSampleRateInHz;
             break;
         default:
@@ -172,14 +194,29 @@ CAudioEffectDelay::DelayType_t CAudioEffectDelay::getDelayType()
 
 Error_t CAudioEffectDelay::process(float **ppfInputBuffer, float **ppfOutputBuffer, int iNumberOfFrames)
 {
-    for(int c = 0; c < m_iNumChannels; c++)
+//    int count = 0;
+//    m_fModGain = 1;
+    for(int i = 0; i < iNumberOfFrames; i++)
     {
-        for (int i = 0; i < iNumberOfFrames; i++)
+        
+        float fOffset = m_pCLfo->getNext();
+//        if (count % 1000 == 0)
+//        {
+//            std::cout << iOffset << std::endl;
+//        }
+//        int iCurrentDelay = ceil(m_fDelay + (fOffset * m_fModGain));
+        
+        for (int c = 0; c < m_iNumChannels; c++)
         {
-            ppfOutputBuffer[c][i] = ppfInputBuffer[c][i] + m_fGain * m_ppCRingBuffer[c]->getPostInc();
-            m_ppCRingBuffer[c]->putPostInc(ppfOutputBuffer[c][i]);
+            m_ppCRingBuffer[c]->putPostInc(ppfInputBuffer[c][i]);
+//            ppfOu tputBuffer[c][i] = ppfInputBuffer[c][i] + m_fGain * m_ppCRingBuffer[c]->getPostInc(fCurrentDelay);
+//            m_ppCRingBuffer[c]->putPostInc(ppfOutputBuffer[c][i]);
+            ppfOutputBuffer[c][i]   = ppfInputBuffer[c][i]*m_fGain + m_ppCRingBuffer[c]->get(fOffset)*m_fGain;
+            m_ppCRingBuffer[c]->getPostInc();
         }
     }
     return kNoError;
 };
+
+
 
