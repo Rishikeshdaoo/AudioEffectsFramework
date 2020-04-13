@@ -184,9 +184,21 @@ Error_t CAudioEffectBiquad::setFilterConstants()
             m_fa1 = -2 * cos(w0);
             m_fa2 = 1 - alpha;
             break;
+        case kAllpass:
+            m_fb0 = 1 - alpha;
+            m_fb1 = -2 * cos(w0);
+            m_fb2 = 1 + alpha;
+            m_fa0 = 1 + alpha;
+            m_fa1 = -2 * cos(w0);
+            m_fa2 = 1 - alpha;
+            break;
         case kPeak:
-            std::cout << "Peak not implemented" << std::endl;
-            return kFunctionInvalidArgsError;
+            m_fb0 = 1 + alpha * A;
+            m_fb1 = -2 * cos(w0);
+            m_fb2 = 1 - alpha * A;
+            m_fa0 = 1 + alpha / A;
+            m_fa1 = -2 * cos(w0);
+            m_fa2 = 1 - alpha / A;
             break;
         case kNotch:
             m_fb0 =   1;
