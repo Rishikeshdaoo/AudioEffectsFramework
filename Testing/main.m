@@ -64,15 +64,6 @@ audio_path_cpp = 'Guitar_sample_flanger.wav';
 param_flanger = [Fs, 0.02, 2.5]; 
 [audio_mat_flanger, MSE_flanger] = test(audio_raw, audio_cpp, "flanger", param_flanger);
 
-% flanger_cpp = audio_cpp;
-% flanger_matlab = flanger(audio_raw, Fs, 0.02, 2.5);
-% vibrato_cpp = vibrato(audio_raw, Fs, 5, 0.02);
-
-figure;
-plot(audio_cpp);
-hold on;
-plot(audio_mat_flanger);
-
 %% other test
 
 % param_flanger = [Fs, 0.002, 1]; % params for flanger effect: [Fs, max_time_delay, rate]
