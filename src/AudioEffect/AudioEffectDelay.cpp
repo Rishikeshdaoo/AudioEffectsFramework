@@ -49,6 +49,7 @@ Error_t CAudioEffectDelay::init(float fSampleRateInHz, int iNumChannels, float i
     {
         m_ppCRingBuffer[c]= new CRingBuffer<float>(CUtil::float2int<int>(iMaxDelayInSec*m_fSampleRateInHz*2+1));
         m_ppCRingBuffer[c]->setWriteIdx(CUtil::float2int<int>(iMaxDelayInSec*m_fSampleRateInHz+1));
+        m_ppCRingBuffer[c]->setReadIdx(CUtil::float2int<int>(iMaxDelayInSec*m_fSampleRateInHz+1));
     }
 
     for (int i = 0; i < iNumParams; i++)
@@ -73,6 +74,8 @@ Error_t CAudioEffectDelay::init(float fSampleRateInHz, int iNumChannels, float i
                 m_fModFreq = m_pCLfo->setParam(CLfo::kLfoParamFrequency, values[i]);
                 break;
             case kParamModWidthInSecs :
+                if(kParamModWidthInSecs > m_fDelay)
+                    return kFunctionInvalidArgsError;
                 m_fModWidthinSamps = m_pCLfo->setParam(CLfo::kLfoParamAmplitude, values[i] * m_fSampleRateInHz);
                 break;
             
@@ -127,6 +130,8 @@ Error_t CAudioEffectDelay::setParam(EffectParam_t eParam, float fValue)
             m_pCLfo->setParam(CLfo::kLfoParamFrequency, fValue);
             break;
         case kParamModWidthInSecs:
+            if(kParamModWidthInSecs > m_fDelay)
+                    return kFunctionInvalidArgsError;
             m_pCLfo->setParam(CLfo::kLfoParamAmplitude, fValue * m_fSampleRateInHz);
             break;
 
