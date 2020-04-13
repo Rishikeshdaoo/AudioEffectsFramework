@@ -1,4 +1,6 @@
 % main function
+close all;
+clear all;
 addpath('./effects/');
 
 %% biquad test
@@ -49,6 +51,27 @@ audio_path_cpp = 'Guitar_sample_compressor.wav';
 % params for compressor: [CT, CS, ET, ES]
 param_compressor = [-50, 0.5, 0, 0]; 
 [audio_mat_compressor, MSE_compressor] = test(audio_raw, audio_cpp, "compressor", param_compressor);
+
+%%
+
+audio_path_raw = 'Guitar_sample.wav';
+audio_path_cpp = 'Guitar_sample_flanger.wav';
+
+[audio_raw,~] = audioread(audio_path_raw);
+[audio_cpp,Fs] = audioread(audio_path_cpp);
+
+% params for compressor: [Fs, DelayinSecs, ModRateinHz]
+param_flanger = [Fs, 0.02, 2.5]; 
+[audio_mat_flanger, MSE_flanger] = test(audio_raw, audio_cpp, "flanger", param_flanger);
+
+% flanger_cpp = audio_cpp;
+% flanger_matlab = flanger(audio_raw, Fs, 0.02, 2.5);
+% vibrato_cpp = vibrato(audio_raw, Fs, 5, 0.02);
+
+figure;
+plot(audio_cpp);
+hold on;
+plot(audio_mat_flanger);
 
 %% other test
 

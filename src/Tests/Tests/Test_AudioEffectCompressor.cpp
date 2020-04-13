@@ -24,7 +24,7 @@ SUITE(Compressor)
             m_ppfOutputData(0),
             m_iDataLength(35131),
             m_iBlockLength(171),
-            m_iNumChannels(1),
+            m_iNumChannels(3),
             m_fSampleRate(8000),
             m_iBufferSize(1024)
         {

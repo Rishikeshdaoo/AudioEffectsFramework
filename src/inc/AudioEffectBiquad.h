@@ -21,7 +21,7 @@ public:
       kLowpass,
       kHighpass,
       kBandpass,
-      kAllpass
+      kAllpass,
       kPeak,
       kNotch,
       kLowshelf,

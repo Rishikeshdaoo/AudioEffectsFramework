@@ -222,6 +222,3 @@ Error_t CAudioEffectDelay::process(float **ppfInputBuffer, float **ppfOutputBuff
     }
     return kNoError;
 };
-
-
-

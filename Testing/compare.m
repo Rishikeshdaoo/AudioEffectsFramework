@@ -10,7 +10,7 @@ function [MSE] = compare(effect, audio_cpp, audio_mat)
 %      output:
 %      MSE = mean square error of the two input signals
 
-MSE = immse(audio_cpp, audio_mat'); % mean square error
+MSE = immse(audio_cpp, audio_mat); % mean square error
 
 figure(1);
 sgtitle(effect);
@@ -24,7 +24,7 @@ plot(audio_cpp);
 title('C++');
 
 subplot(3,1,3);
-plot(audio_cpp - audio_mat');
+plot(audio_cpp - audio_mat);
 title('Difference');
 
 end
