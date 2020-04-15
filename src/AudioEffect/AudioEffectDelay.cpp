@@ -21,10 +21,10 @@ CAudioEffectDelay::CAudioEffectDelay()
     m_fMaxDelay = 0;
 };
 
-CAudioEffectDelay::CAudioEffectDelay(float fSampleRateInHz, int iNumChannels, float iMaxDelayInSec, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0)
+CAudioEffectDelay::CAudioEffectDelay(float fSampleRateInHz, int iNumChannels, float fMaxDelayInSec, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0)
 {
     m_eEffectType = Effect_t::kDelay;
-    init(fSampleRateInHz, iNumChannels, iMaxDelayInSec, params, values, iNumParams);
+    init(fSampleRateInHz, iNumChannels, fMaxDelayInSec, params, values, iNumParams);
 };
 
 
@@ -33,23 +33,23 @@ CAudioEffectDelay::~CAudioEffectDelay()
 
 };
 
-Error_t CAudioEffectDelay::init(float fSampleRateInHz, int iNumChannels, float iMaxDelayInSec, EffectParam_t params[], float values[], int iNumParams)
+Error_t CAudioEffectDelay::init(float fSampleRateInHz, int iNumChannels, float fMaxDelayInSec, EffectParam_t params[], float values[], int iNumParams)
 {
     m_fSampleRateInHz = fSampleRateInHz;
     m_iNumChannels = iNumChannels;
 
-    m_fMaxDelay = iMaxDelayInSec * m_fSampleRateInHz;
+    m_fMaxDelay = fMaxDelayInSec * m_fSampleRateInHz;
     
     m_pCLfo             = new CLfo(m_fSampleRateInHz);
 
     m_ppCRingBuffer = new CRingBuffer<float>*[m_iNumChannels];
 //    for (int c = 0; c < m_iNumChannels; c++)
-//        m_ppCRingBuffer[c]  = new CRingBuffer<float>(iMaxDelayInSec * m_fSampleRateInHz);
+//        m_ppCRingBuffer[c]  = new CRingBuffer<float>(fMaxDelayInSec * m_fSampleRateInHz);
     for (int c= 0; c < m_iNumChannels; c++)
     {
-        m_ppCRingBuffer[c]= new CRingBuffer<float>(CUtil::float2int<int>(iMaxDelayInSec*m_fSampleRateInHz*2+1));
-        m_ppCRingBuffer[c]->setWriteIdx(CUtil::float2int<int>(iMaxDelayInSec*m_fSampleRateInHz+1));
-        m_ppCRingBuffer[c]->setReadIdx(CUtil::float2int<int>(iMaxDelayInSec*m_fSampleRateInHz+1));
+        m_ppCRingBuffer[c]= new CRingBuffer<float>(CUtil::float2int<int>(fMaxDelayInSec*m_fSampleRateInHz*2+1));
+        m_ppCRingBuffer[c]->setWriteIdx(CUtil::float2int<int>(fMaxDelayInSec*m_fSampleRateInHz+1));
+        m_ppCRingBuffer[c]->setReadIdx(CUtil::float2int<int>(fMaxDelayInSec*m_fSampleRateInHz+1));
     }
 
     for (int i = 0; i < iNumParams; i++)

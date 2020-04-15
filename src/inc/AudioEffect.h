@@ -33,9 +33,14 @@ public:
 
         kParamCenterFrequency,
         kParamQ,
+        
         kParamThreshold,
         kParamSlope,
-        kParamDryWetMix
+        kParamDryWetMix,
+        
+        kParamNumFilters,
+        kParamFilterGains,
+        
     };
     
     Effect_t getEffectType();
