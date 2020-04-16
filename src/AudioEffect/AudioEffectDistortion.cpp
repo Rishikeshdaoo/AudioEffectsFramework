@@ -46,7 +46,7 @@ Error_t CAudioEffectDistortion::init(float fSampleRateInHz, int iNumChannels, Ef
                 m_fDryWetMix = values[i];
                 break;
             default:
-                break;
+                return kFunctionInvalidArgsError;
         }
     }
     

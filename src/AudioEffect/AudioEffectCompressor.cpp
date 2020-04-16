@@ -56,7 +56,7 @@ Error_t CAudioEffectCompressorExpander::init(Effect_t effectType, float fSampleR
                 m_fSlope = values[i];
                 break;
             default:
-                break;
+                return kFunctionInvalidArgsError;
         }
     }
 

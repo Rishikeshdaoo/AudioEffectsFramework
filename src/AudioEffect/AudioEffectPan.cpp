@@ -35,7 +35,7 @@ Error_t CAudioEffectPan::init(float fSampleRateInHz, int iNumChannels, EffectPar
                 m_fPan = values[i];
                 break;
             default:
-                break;
+                return kFunctionInvalidArgsError;
         }
     }
     

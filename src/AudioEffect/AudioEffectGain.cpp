@@ -41,7 +41,7 @@ Error_t CAudioEffectGain::init(float fSampleRateInHz, int iNumChannels, EffectPa
                 m_fGain = values[i];
                 break;
             default:
-                break;
+                return kFunctionInvalidArgsError;
         }
     }
     

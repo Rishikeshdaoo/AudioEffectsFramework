@@ -58,7 +58,7 @@ Error_t CAudioEffectBiquad::init(float fSampleRateInHz, int iNumChannels, Effect
                 m_fQ = values[i];
                 break;
             default:
-                break;
+                return kFunctionInvalidArgsError;
         }
     }
 

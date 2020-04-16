@@ -79,7 +79,7 @@ Error_t CAudioEffectDelay::init(float fSampleRateInHz, int iNumChannels, float f
                 break;
             
             default:
-                return kNoError;
+                return kFunctionInvalidArgsError;
         }
     }
 
