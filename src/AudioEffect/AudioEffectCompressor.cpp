@@ -30,7 +30,7 @@ CAudioEffectCompressorExpander::CAudioEffectCompressorExpander(Effect_t effectTy
 }
 
 CAudioEffectCompressorExpander::~CAudioEffectCompressorExpander(){
-
+    this->reset();
 }
 
 Error_t CAudioEffectCompressorExpander::init(Effect_t effectType, float fSampleRateInHz, int iNumChannels, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0)
@@ -77,6 +77,15 @@ Error_t CAudioEffectCompressorExpander::init(Effect_t effectType, float fSampleR
 }
 
 Error_t CAudioEffectCompressorExpander::reset(){
+
+    for (int c= 0; c < m_iNumChannels; c++)
+        delete m_ppfDelayBuffer[c];
+    delete [] m_ppfDelayBuffer;
+    m_ppfDelayBuffer = 0;
+
+    m_iNumChannels = 0;
+    m_fSampleRateInHz = 0;
+    m_bIsInitialized = false;
 
     return kNoError;
 }

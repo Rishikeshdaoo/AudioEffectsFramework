@@ -27,7 +27,7 @@ CAudioEffectDistortion::CAudioEffectDistortion(float fSampleRateInHz, int iNumCh
 
 CAudioEffectDistortion::~CAudioEffectDistortion()
 {
-    
+    this->reset();
 };
 
 Error_t CAudioEffectDistortion::init(float fSampleRateInHz, int iNumChannels, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0)
@@ -57,6 +57,10 @@ Error_t CAudioEffectDistortion::init(float fSampleRateInHz, int iNumChannels, Ef
 
 Error_t CAudioEffectDistortion::reset()
 {
+    m_iNumChannels = 0;
+    m_fSampleRateInHz = 0;
+    m_bIsInitialized = false;
+
     return kNoError;
 };
 

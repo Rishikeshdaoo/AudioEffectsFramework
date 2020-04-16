@@ -25,7 +25,7 @@ CAudioEffectGain::CAudioEffectGain(float fSampleRateInHz, int iNumChannels, Effe
 
 CAudioEffectGain::~CAudioEffectGain()
 {
-
+    this->reset();
 };
 
 Error_t CAudioEffectGain::init(float fSampleRateInHz, int iNumChannels, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0)
@@ -52,6 +52,10 @@ Error_t CAudioEffectGain::init(float fSampleRateInHz, int iNumChannels, EffectPa
 
 Error_t CAudioEffectGain::reset()
 {
+    m_iNumChannels = 0;
+    m_fSampleRateInHz = 0;
+    m_bIsInitialized = false;
+
     return kNoError;
 };
 

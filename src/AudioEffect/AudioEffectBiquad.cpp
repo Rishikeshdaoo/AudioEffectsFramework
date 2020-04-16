@@ -35,7 +35,7 @@ CAudioEffectBiquad::CAudioEffectBiquad(float fSampleRateInHz, int iNumChannels, 
 
 CAudioEffectBiquad::~CAudioEffectBiquad()
 {
-
+    this->reset();
 };
 
 Error_t CAudioEffectBiquad::init(float fSampleRateInHz, int iNumChannels, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0)
@@ -85,9 +85,10 @@ Error_t CAudioEffectBiquad::reset()
     delete m_fxn2;
     delete m_fyn1;
     delete m_fyn2;
-    
-    m_iNumChannels      = 0;
-    m_bIsInitialized    = false;
+
+    m_iNumChannels = 0;
+    m_fSampleRateInHz = 0;
+    m_bIsInitialized = false;
     
     return kNoError;
 };

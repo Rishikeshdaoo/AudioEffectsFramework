@@ -98,6 +98,7 @@ Error_t CAudioEffectDelay::reset()
     m_pCLfo = 0;
     
     m_iNumChannels = 0;
+    m_fSampleRateInHz = 0;
     m_bIsInitialized = false;
     
     return kNoError;
