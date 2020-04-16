@@ -20,10 +20,10 @@ public:
     
     enum DelayType_t
     {
-        kDelay,
-        kFlanger,
-        kChorus,
-        kPhaser
+        kNone = 0,
+        kDelay = 1,
+        kFlanger = 2,
+        kChorus = 3,
     };
     
     CAudioEffectDelay();
@@ -45,17 +45,12 @@ private:
 
     CRingBuffer<float>  **m_ppCRingBuffer;
     DelayType_t m_eDelayType;
-    float m_fModGain;
     
     float m_fGain;
-    float m_fDelay;
-    float m_fMaxDelay;
-    float m_fModWidthinSamps;
-    float m_fModFreq;
+    float m_fDelayInSamples;
+    float m_fMaxDelayInSamples;
     
     CLfo *m_pCLfo;
-//    CRingBuffer<float> **m_ppCRingBuff;
-    
 };
 
 
