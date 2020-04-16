@@ -28,9 +28,7 @@ public:
 
         kParamModRateInHz,
         kParamModWidthInSecs,
-
-        kParamDistortion,
-
+        
         kParamCenterFrequency,
         kParamQ,
         
