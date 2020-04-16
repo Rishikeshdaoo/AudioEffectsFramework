@@ -21,7 +21,7 @@ public:
     enum DelayType_t
     {
         kNone = 0,
-        kDelay = 1,
+        kBasicDelay = 1,
         kFlanger = 2,
         kChorus = 3,
     };

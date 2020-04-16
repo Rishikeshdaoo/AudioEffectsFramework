@@ -10,7 +10,8 @@ CAudioEffectCompressorExpander::CAudioEffectCompressorExpander():   m_fAveraging
                                                                     m_fAttackTime(0.03),
                                                                     m_fReleaseTime(0.003)
 {
-    m_eEffectType = kCompressor;
+    m_eEffectType = kCompressorExpander;
+    m_eCompressorType = kNone;
     m_iNumChannels = 0;
     m_fSampleRateInHz = 0;
     m_bIsInitialized = false;
@@ -21,21 +22,22 @@ CAudioEffectCompressorExpander::CAudioEffectCompressorExpander():   m_fAveraging
 
 }
 
-CAudioEffectCompressorExpander::CAudioEffectCompressorExpander(Effect_t effectType, float fSampleRateInHz, int iNumChannels, int iLookaheadBufferSize, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0):
+CAudioEffectCompressorExpander::CAudioEffectCompressorExpander(Effect_t effectType, EffectSubtype_t subType, float fSampleRateInHz, int iNumChannels, int iLookaheadBufferSize, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0):
         m_fAveragingTime(0.01),
         m_fAttackTime(0.03),
         m_fReleaseTime(0.003)
 {
-    init(effectType, fSampleRateInHz, iNumChannels, iLookaheadBufferSize, params, values, iNumParams);
+    init(effectType, subType, fSampleRateInHz, iNumChannels, iLookaheadBufferSize, params, values, iNumParams);
 }
 
 CAudioEffectCompressorExpander::~CAudioEffectCompressorExpander(){
     this->reset();
 }
 
-Error_t CAudioEffectCompressorExpander::init(Effect_t effectType, float fSampleRateInHz, int iNumChannels, int iLookaheadBufferSize, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0)
+Error_t CAudioEffectCompressorExpander::init(Effect_t effectType, EffectSubtype_t subType, float fSampleRateInHz, int iNumChannels, int iLookaheadBufferSize, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0)
 {
     m_eEffectType = effectType;
+    m_eCompressorType = subType;
     m_fSampleRateInHz = fSampleRateInHz;
     m_iNumChannels = iNumChannels;
     m_iLookaheadBufferSize = iLookaheadBufferSize;
@@ -125,6 +127,21 @@ float CAudioEffectCompressorExpander::getParam(EffectParam_t eParam)
     }
 }
 
+Error_t CAudioEffectCompressorExpander::setEffectSubtype(EffectSubtype_t eValue) {
+
+    if (!m_bIsInitialized)
+        return kNotInitializedError;
+
+    m_eCompressorType = eValue;
+
+    return kNoError;
+}
+
+CAudioEffectCompressorExpander::EffectSubtype_t CAudioEffectCompressorExpander::getEffectSubtype() {
+
+    return m_eCompressorType;
+}
+
 Error_t CAudioEffectCompressorExpander::process(float **ppfInputBuffer, float **ppfOutputBuffer, int iNumberOfFrames){
 
     float f_inputSample = 0.f;
@@ -139,13 +156,13 @@ Error_t CAudioEffectCompressorExpander::process(float **ppfInputBuffer, float **
             m_pfRmsSignal[c] = (1 - m_fAveragingTime) * m_pfRmsSignal[c] + m_fAveragingTime * (pow(f_inputSample, 2));
             f_logRmsSignal = 10 * log10(m_pfRmsSignal[c]);
 
-            if(m_eEffectType == kCompressor) {
+            if(m_eCompressorType == kCompressor) {
                 if(f_logRmsSignal > m_fThreshold)
                     f_logGain = m_fSlope * (m_fThreshold - f_logRmsSignal);
                 else
                     f_logGain = 0.f;
             }
-            else if(m_eEffectType == kExpander){
+            else if(m_eCompressorType == kExpander){
                 if(f_logRmsSignal < m_fThreshold)
                     f_logGain = m_fSlope * (m_fThreshold - f_logRmsSignal);
                 else

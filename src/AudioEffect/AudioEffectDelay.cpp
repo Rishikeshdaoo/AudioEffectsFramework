@@ -11,7 +11,7 @@
 
 CAudioEffectDelay::CAudioEffectDelay()
 {
-    m_eEffectType = Effect_t::kDelay;
+    m_eEffectType = kDelay;
     m_fGain = 0.f;
     m_fDelayInSamples = 0.f;
     m_iNumChannels = 0;
@@ -23,7 +23,7 @@ CAudioEffectDelay::CAudioEffectDelay()
 
 CAudioEffectDelay::CAudioEffectDelay(float fSampleRateInHz, int iNumChannels, float fMaxDelayInSec, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0)
 {
-    m_eEffectType = Effect_t::kDelay;
+    m_eEffectType = kDelay;
     init(fSampleRateInHz, iNumChannels, fMaxDelayInSec, params, values, iNumParams);
 };
 

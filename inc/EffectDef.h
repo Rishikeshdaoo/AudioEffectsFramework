@@ -15,12 +15,8 @@ enum Effect_t
     kGain,
     kPan,
     kDistortion,
-    kCompressor,
-    kExpander,
+    kCompressorExpander,
     kDelay,
     kReverb,
     kBiquad,
-    kFlanger,
-    kChorus,
-    kPitchShift,
 };
