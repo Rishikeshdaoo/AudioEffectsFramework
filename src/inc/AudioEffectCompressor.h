@@ -14,10 +14,10 @@ class CAudioEffectCompressorExpander: public CAudioEffect
 public:
 
     CAudioEffectCompressorExpander();
-    CAudioEffectCompressorExpander(Effect_t effectType, float fSampleRateInHz, int iNumChannels, int iMaxDelayInSec, EffectParam_t params[], float values[], int iNumParams);
+    CAudioEffectCompressorExpander(Effect_t effectType, float fSampleRateInHz, int iNumChannels, int iLookaheadBufferSize, EffectParam_t params[], float values[], int iNumParams);
     ~CAudioEffectCompressorExpander();
 
-    Error_t init(Effect_t effectType, float fSampleRateInHz, int iNumChannels, EffectParam_t params[], float values[], int iNumParams);
+    Error_t init(Effect_t effectType, float fSampleRateInHz, int iNumChannels, int iLookaheadBufferSize, EffectParam_t params[], float values[], int iNumParams);
     Error_t reset();
 
     Error_t setParam(EffectParam_t eParam, float fValue);
@@ -26,6 +26,8 @@ public:
     Error_t process(float **ppfInputBuffer, float **ppfOutputBuffer, int iNumberOfFrames);
 
 private:
+
+    int m_iLookaheadBufferSize;
 
     float m_fAveragingTime;
     float m_fAttackTime;

@@ -5,7 +5,6 @@
 
 
 #include <AudioEffectCompressor.h>
-#include <iostream>
 
 CAudioEffectCompressorExpander::CAudioEffectCompressorExpander():   m_fAveragingTime(0.01),
                                                                     m_fAttackTime(0.03),
@@ -18,32 +17,31 @@ CAudioEffectCompressorExpander::CAudioEffectCompressorExpander():   m_fAveraging
 
     m_fThreshold = 0.f;
     m_fSlope = 0.f;
+    m_iLookaheadBufferSize = 0;
 
 }
 
-CAudioEffectCompressorExpander::CAudioEffectCompressorExpander(Effect_t effectType, float fSampleRateInHz, int iNumChannels, int iMaxDelayInSec, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0):
+CAudioEffectCompressorExpander::CAudioEffectCompressorExpander(Effect_t effectType, float fSampleRateInHz, int iNumChannels, int iLookaheadBufferSize, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0):
         m_fAveragingTime(0.01),
         m_fAttackTime(0.03),
         m_fReleaseTime(0.003)
 {
-    init(effectType, fSampleRateInHz, iNumChannels, params, values, iNumParams);
+    init(effectType, fSampleRateInHz, iNumChannels, iLookaheadBufferSize, params, values, iNumParams);
 }
 
 CAudioEffectCompressorExpander::~CAudioEffectCompressorExpander(){
     this->reset();
 }
 
-Error_t CAudioEffectCompressorExpander::init(Effect_t effectType, float fSampleRateInHz, int iNumChannels, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0)
+Error_t CAudioEffectCompressorExpander::init(Effect_t effectType, float fSampleRateInHz, int iNumChannels, int iLookaheadBufferSize, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0)
 {
     m_eEffectType = effectType;
     m_fSampleRateInHz = fSampleRateInHz;
     m_iNumChannels = iNumChannels;
+    m_iLookaheadBufferSize = iLookaheadBufferSize;
     m_bIsInitialized = true;
 
     assert(iNumChannels > 0);
-
-//    int iBufferSize = 1024;
-    int iBufferSize = 150;
 
 
     for (int i = 0; i < iNumParams; i++)
@@ -67,8 +65,8 @@ Error_t CAudioEffectCompressorExpander::init(Effect_t effectType, float fSampleR
     {
         m_pfRmsSignal[c] = 0;
         m_pf_gain[c] = 1;
-        m_ppfDelayBuffer[c]  = new CRingBuffer<float>(iBufferSize);
-        for (int i = 0; i < iBufferSize; i++) {
+        m_ppfDelayBuffer[c]  = new CRingBuffer<float>(m_iLookaheadBufferSize);
+        for (int i = 0; i < m_iLookaheadBufferSize; i++) {
             m_ppfDelayBuffer[c]->putPostInc(0.F);
         }
     }
