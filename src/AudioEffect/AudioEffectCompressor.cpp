@@ -163,7 +163,7 @@ Error_t CAudioEffectCompressorExpander::process(float **ppfInputBuffer, float **
                     f_logGain = 0.f;
             }
             else if(m_eCompressorType == kExpander){
-                if(f_logRmsSignal < m_fThreshold)
+                if(f_logRmsSignal < m_fThreshold && f_logRmsSignal != -(1.0/0.0))
                     f_logGain = m_fSlope * (m_fThreshold - f_logRmsSignal);
                 else
                     f_logGain = 0.f;
