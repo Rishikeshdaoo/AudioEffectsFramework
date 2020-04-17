@@ -38,6 +38,8 @@ Error_t CAudioEffectGain::init(float fSampleRateInHz, int iNumChannels, EffectPa
     {
         switch (params[i]) {
             case kParamGain:
+                if(values[i]<0 || values[i]>1)
+                    return kFunctionInvalidArgsError;
                 m_fGain = values[i];
                 break;
             default:
@@ -66,6 +68,8 @@ Error_t CAudioEffectGain::setParam(EffectParam_t eParam, float fValue)
     
     switch (eParam) {
         case kParamGain:
+            if(fValue<0 || fValue>1)
+                return kFunctionInvalidArgsError;
             m_fGain = fValue;
             break;
         default:

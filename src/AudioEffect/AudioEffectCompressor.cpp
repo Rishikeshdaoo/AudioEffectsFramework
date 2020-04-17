@@ -5,6 +5,7 @@
 
 
 #include <AudioEffectCompressor.h>
+#include <iostream>
 
 CAudioEffectCompressorExpander::CAudioEffectCompressorExpander():   m_fAveragingTime(0.01),
                                                                     m_fAttackTime(0.03),
@@ -53,7 +54,20 @@ Error_t CAudioEffectCompressorExpander::init(Effect_t effectType, EffectSubtype_
                 m_fThreshold = values[i];
                 break;
             case kParamSlope:
-                m_fSlope = values[i];
+                // Compressor: 0 < CS < 1
+                // Expander: ES < 0
+                if(m_eCompressorType==kCompressor){
+                    if(values[i]>=0 && values[i]<=1)
+                        m_fSlope = values[i];
+                    else
+                        return kFunctionInvalidArgsError;
+                }
+                else if (m_eCompressorType==kExpander){
+                    if(values[i]<=0)
+                        m_fSlope = values[i];
+                    else
+                        return kFunctionInvalidArgsError;
+                }
                 break;
             default:
                 return kFunctionInvalidArgsError;
@@ -100,6 +114,14 @@ Error_t CAudioEffectCompressorExpander::setParam(EffectParam_t eParam, float fVa
             m_fThreshold = fValue;
             break;
         case kParamSlope:
+             if(m_eCompressorType==kCompressor){
+                 if(fValue<0 || fValue>1)
+                     return kFunctionInvalidArgsError;
+             }
+             else if (m_eCompressorType==kExpander){
+                 if(fValue>0)
+                     return kFunctionInvalidArgsError;
+             }
             m_fSlope = fValue;
             break;
         default:

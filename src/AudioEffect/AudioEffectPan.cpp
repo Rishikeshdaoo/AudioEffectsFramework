@@ -5,7 +5,7 @@
 CAudioEffectPan::CAudioEffectPan()
 {
     m_eEffectType = kPan;
-    m_fPan = 0.f; // -1 to 1
+    m_fPan = 0.f;
     m_iNumChannels = 0;
     m_fSampleRateInHz = 0;
     m_bIsInitialized = false;
@@ -32,6 +32,8 @@ Error_t CAudioEffectPan::init(float fSampleRateInHz, int iNumChannels, EffectPar
     {
         switch (params[i]) {
             case kParamPan:
+                if(values[i]<-1 || values[i]>1)
+                    return kFunctionInvalidArgsError;
                 m_fPan = values[i];
                 break;
             default:
@@ -60,6 +62,8 @@ Error_t CAudioEffectPan::setParam(EffectParam_t eParam, float fValue)
     
     switch (eParam) {
         case kParamPan:
+            if(fValue<-1 || fValue>1)
+                return kFunctionInvalidArgsError;
             m_fPan = fValue;
             break;
         default:

@@ -40,9 +40,13 @@ Error_t CAudioEffectDistortion::init(float fSampleRateInHz, int iNumChannels, Ef
     {
         switch (params[i]) {
             case kParamGain:
+                if(values[i]<0)
+                    return kFunctionInvalidArgsError;
                 m_fGain = values[i];
                 break;
             case kParamDryWetMix:
+                if(values[i]<0 || values[i]>1)
+                    return kFunctionInvalidArgsError;
                 m_fDryWetMix = values[i];
                 break;
             default:
@@ -71,9 +75,13 @@ Error_t CAudioEffectDistortion::setParam(EffectParam_t eParam, float fValue)
     
     switch (eParam) {
         case kParamGain:
+            if(fValue<0)
+                return kFunctionInvalidArgsError;
             m_fGain = fValue;
             break;
         case kParamDryWetMix:
+            if(fValue<0 || fValue>1)
+                return kFunctionInvalidArgsError;
             m_fDryWetMix = fValue;
             break;
         default:
