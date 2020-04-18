@@ -193,25 +193,19 @@ Error_t CAudioEffectDelay::process(float **ppfInputBuffer, float **ppfOutputBuff
         
         for (int c = 0; c < m_iNumChannels; c++)
         {
-
             
             m_ppCRingBuffer[c]->putPostInc(ppfInputBuffer[c][i]);
             
-//            ppfOutputBuffer[c][i]   = m_fGain * ppfInputBuffer[c][i] + m_fGain * m_ppCRingBuffer[c]->get((m_eDelayType & 2) / 2 * fOffset + (m_eDelayType & 1) * m_fDelayInSamples);
             
             ppfOutputBuffer[c][i]   = ppfInputBuffer[c][i] + m_fGain * m_ppCRingBuffer[c]->get((((m_eDelayType >> 0) & 1) * m_fDelayInSamples) + (((m_eDelayType >> 1) & 1) * fOffset) - (((m_eDelayType >> 2) & 1) * abs(fOffset)));
             
             
             m_ppCRingBuffer[c]->getPostInc();
-            
-            
-            
+           
         }
         
     }
    
-//    std::cout<<m_eDelayType<<", "<<((m_eDelayType >> 0) & 1)<<", "<<((m_eDelayType >> 1) & 1)<<", "<<((m_eDelayType >> 2) & 1)<<std::endl;
-
 
     
     return kNoError;
