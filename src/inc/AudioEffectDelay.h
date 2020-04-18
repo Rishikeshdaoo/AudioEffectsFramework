@@ -20,29 +20,29 @@ public:
     
     enum DelayType_t
     {
-        kNone = 0,
-        kBasicDelay = 1,
-        kFlanger = 2,
-        kChorus = 3,
+//        kNone = 0,
+        kDelay = 0,
+        kChorus = 2,
+        kFlanger = 5,
     };
     
     CAudioEffectDelay();
     CAudioEffectDelay(float fSampleRateInHz, int iNumChannels, float iMaxDelayInSec, EffectParam_t params[], float values[], int iNumParams);
     ~CAudioEffectDelay();
-
+    
     Error_t init(float fSampleRateInHz, int iNumChannels, float iMaxDelayInSec, EffectParam_t params[], float values[], int iNumParams);
     Error_t reset();
-
+    
     Error_t setParam(EffectParam_t eParam, float fValue);
     float getParam(EffectParam_t eParam);
     
     Error_t setDelayType(DelayType_t eValue);
     DelayType_t getDelayType();
-
+    
     Error_t process(float **ppfInputBuffer, float **ppfOutputBuffer, int iNumberOfFrames);
-
+    
 private:
-
+    
     CRingBuffer<float>  **m_ppCRingBuffer;
     DelayType_t m_eDelayType;
     
