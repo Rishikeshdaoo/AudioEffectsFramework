@@ -128,14 +128,36 @@ int main(int argc, char* argv[])
         float value[iNumParams];
 
     
-        param[0] = CAudioEffect::kParamDelayInSecs;
-        value[0] = 0.002f;
-        param[1] = CAudioEffect::kParamModRateInHz;
-        value[1] = 1.5f;
-        param[2] = CAudioEffect::kParamModWidthInSecs;
-        value[2] = 0.01f;
-        param[3] = CAudioEffect::kParamGain;
-        value[3] = 0.7f;
+    //Simple delay values
+//    param[0] = CAudioEffect::kParamDelayInSecs;
+//    value[0] = 0.4f;
+//    param[1] = CAudioEffect::kParamModRateInHz;
+//    value[1] = 1.5f;
+//    param[2] = CAudioEffect::kParamModWidthInSecs;
+//    value[2] = 0.01f;
+//    param[3] = CAudioEffect::kParamGain;
+//    value[3] = 0.7f;
+    
+    
+    //Chorus values
+//    param[0] = CAudioEffect::kParamDelayInSecs;
+//    value[0] = 0.015f;
+//    param[1] = CAudioEffect::kParamModRateInHz;
+//    value[1] = 0.5f;
+//    param[2] = CAudioEffect::kParamModWidthInSecs;
+//    value[2] = 0.01f;
+//    param[3] = CAudioEffect::kParamGain;
+//    value[3] = 0.7f;
+    
+    //Flanger values
+    param[0] = CAudioEffect::kParamDelayInSecs;
+    value[0] = 0.002f;
+    param[1] = CAudioEffect::kParamModRateInHz;
+    value[1] = 0.5f;
+    param[2] = CAudioEffect::kParamModWidthInSecs;
+    value[2] = 0.002f;
+    param[3] = CAudioEffect::kParamGain;
+    value[3] = 0.7f;
 
 
 //    phAudioEffect = new CAudioEffectBiquad(stFileSpec.fSampleRateInHz,stFileSpec.iNumChannels,param,value,iNumParams);
