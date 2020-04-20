@@ -31,6 +31,7 @@ SUITE(Distortion)
             m_ppfOutputData = new float*[m_iNumChannels];
             m_ppfInputTmp   = new float*[m_iNumChannels];
             m_ppfOutputTmp  = new float*[m_iNumChannels];
+            
             for (int i = 0; i < m_iNumChannels; i++)
             {
                 m_ppfInputData[i]   = new float [m_iDataLength];
@@ -51,7 +52,6 @@ SUITE(Distortion)
             delete [] m_ppfOutputData;
             delete [] m_ppfInputData;
 
-            //destroy?
             m_phDistortion->reset();
             delete m_phDistortion;
             m_phDistortion = 0;
@@ -113,7 +113,32 @@ SUITE(Distortion)
         value[0] = 5.f;
         param[1] = CAudioEffect::kParamDryWetMix;
         value[1] = 0.5f;
+        
         m_phDistortion->init(m_fSampleRate,m_iNumChannels,param,value,iNumParams);
+        
+        TestProcess();
+
+        for (int c = 0; c < m_iNumChannels; c++)
+            CHECK_ARRAY_CLOSE(m_ppfInputData[c], m_ppfOutputData[c], m_iDataLength, 1e-3);
+
+        m_phDistortion->reset();
+    }
+    
+    // DryWetMix = 0 -> same output
+    TEST_FIXTURE(DistortionData, DryTest)
+    {
+        int iNumParams = 2;
+        CAudioEffect::EffectParam_t param[iNumParams];
+        float value[iNumParams];
+        param[0] = CAudioEffect::kParamGain;
+        value[0] = 5.f;
+        param[1] = CAudioEffect::kParamDryWetMix;
+        value[1] = 0.f;
+        
+        m_phDistortion->init(m_fSampleRate,m_iNumChannels,param,value,iNumParams);
+        
+        for (int c = 0; c < m_iNumChannels; c++)
+        CSynthesis::generateSine (m_ppfInputData[c], 440, m_fSampleRate, m_iDataLength, .8F, static_cast<float>(c*M_PI_2));
         
         TestProcess();
 
@@ -134,6 +159,7 @@ SUITE(Distortion)
         value[0] = 5.f;
         param[1] = CAudioEffect::kParamDryWetMix;
         value[1] = 0.5f;
+        
         m_phDistortion->init(m_fSampleRate,m_iNumChannels,param,value,iNumParams);
 
         TestProcess();

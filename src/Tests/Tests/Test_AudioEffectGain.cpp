@@ -51,7 +51,6 @@ SUITE(Gain)
             delete [] m_ppfOutputData;
             delete [] m_ppfInputData;
 
-            //destroy?
             m_phGain->reset();
             delete m_phGain;
             m_phGain = 0;

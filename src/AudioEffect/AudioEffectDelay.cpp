@@ -199,7 +199,6 @@ Error_t CAudioEffectDelay::process(float **ppfInputBuffer, float **ppfOutputBuff
             
             ppfOutputBuffer[c][i]   = ppfInputBuffer[c][i] + m_fGain * m_ppCRingBuffer[c]->get((((m_eDelayType >> 0) & 1) * m_fDelayInSamples) + (((m_eDelayType >> 1) & 1) * fOffset) - (((m_eDelayType >> 2) & 1) * abs(fOffset)));
             
-            
             m_ppCRingBuffer[c]->getPostInc();
            
         }

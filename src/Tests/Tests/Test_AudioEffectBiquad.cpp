@@ -26,11 +26,11 @@ SUITE(Biquad)
             m_fSampleRate(8000)
         {
             m_phBiquad = new CAudioEffectBiquad();
-
             m_ppfInputData  = new float*[m_iNumChannels];
             m_ppfOutputData = new float*[m_iNumChannels];
             m_ppfInputTmp   = new float*[m_iNumChannels];
             m_ppfOutputTmp  = new float*[m_iNumChannels];
+            
             for (int i = 0; i < m_iNumChannels; i++)
             {
                 m_ppfInputData[i]   = new float [m_iDataLength];
@@ -51,7 +51,6 @@ SUITE(Biquad)
             delete [] m_ppfOutputData;
             delete [] m_ppfInputData;
 
-            //destroy?
             m_phBiquad->reset();
             delete m_phBiquad;
             m_phBiquad = 0;
@@ -115,6 +114,7 @@ SUITE(Biquad)
         value[1] = 1000.0f;
         param[2] = CAudioEffect::kParamQ;
         value[2] = 0.707f;
+        
         m_phBiquad->init(m_fSampleRate,m_iNumChannels,param,value,iNumParams);
         m_phBiquad->setFilterType(CAudioEffectBiquad::FilterType_t::kBandpass);
         
@@ -126,7 +126,6 @@ SUITE(Biquad)
         m_phBiquad->reset();
     }
     
-   
     
     // varying block length
     TEST_FIXTURE(BiquadData, VaryingBlocksize)
@@ -140,6 +139,7 @@ SUITE(Biquad)
         value[1] = 1000.0f;
         param[2] = CAudioEffect::kParamQ;
         value[2] = 0.707f;
+        
         m_phBiquad->init(m_fSampleRate,m_iNumChannels,param,value,iNumParams);
         m_phBiquad->setFilterType(CAudioEffectBiquad::FilterType_t::kBandpass);
         
