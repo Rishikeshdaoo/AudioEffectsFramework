@@ -26,6 +26,7 @@ public:
         kParamPan,
         kParamDelayInSecs,
 
+        kParamFeedback,
         kParamModRateInHz,
         kParamModWidthInSecs,
         
