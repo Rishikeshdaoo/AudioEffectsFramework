@@ -1,0 +1,133 @@
+\hypertarget{class_c_audio_file_raw}{}\doxysection{C\+Audio\+File\+Raw Class Reference}
+\label{class_c_audio_file_raw}\index{CAudioFileRaw@{CAudioFileRaw}}
+
+
+open, read, and write raw audio files in 16 bit integer little endian format.  
+
+
+
+
+{\ttfamily \#include $<$Audio\+File.\+h$>$}
+
+
+
+Inheritance diagram for C\+Audio\+File\+Raw\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=165pt]{class_c_audio_file_raw__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for C\+Audio\+File\+Raw\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=165pt]{class_c_audio_file_raw__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_audio_file_raw_a0ebcef6b814032ce6548b06fa4ed3cd4}{C\+Audio\+File\+Raw}} ()
+\item 
+virtual \mbox{\hyperlink{class_c_audio_file_raw_a364e7c7ea00669a797e2b537eb2671f3}{$\sim$\+C\+Audio\+File\+Raw}} ()
+\item 
+Error\+\_\+t \mbox{\hyperlink{class_c_audio_file_raw_a3e0ef78b8e6ff49a3138d0a153906253}{open\+File}} (std\+::string c\+Audio\+File\+Name, \mbox{\hyperlink{class_c_audio_file_if_ad06ff073ba665b85c00694036aa31b99}{File\+Io\+Type\+\_\+t}} e\+Io\+Type, \mbox{\hyperlink{struct_c_audio_file_if_1_1_file_spec__t}{File\+Spec\+\_\+t}} const $\ast$ps\+File\+Spec=0) override
+\item 
+Error\+\_\+t \mbox{\hyperlink{class_c_audio_file_raw_a5d678d9ff6ccd1a3b196c34979572e7f}{close\+File}} () override
+\item 
+bool \mbox{\hyperlink{class_c_audio_file_raw_a60893760e85db822cde577a40509e9ef}{is\+Eof}} () override
+\item 
+bool \mbox{\hyperlink{class_c_audio_file_raw_ad37de78b503da0145f73767c142f5c18}{is\+Open}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+open, read, and write raw audio files in 16 bit integer little endian format. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_c_audio_file_raw_a0ebcef6b814032ce6548b06fa4ed3cd4}\label{class_c_audio_file_raw_a0ebcef6b814032ce6548b06fa4ed3cd4}} 
+\index{CAudioFileRaw@{CAudioFileRaw}!CAudioFileRaw@{CAudioFileRaw}}
+\index{CAudioFileRaw@{CAudioFileRaw}!CAudioFileRaw@{CAudioFileRaw}}
+\doxysubsubsection{\texorpdfstring{CAudioFileRaw()}{CAudioFileRaw()}}
+{\footnotesize\ttfamily C\+Audio\+File\+Raw\+::\+C\+Audio\+File\+Raw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_c_audio_file_raw_a364e7c7ea00669a797e2b537eb2671f3}\label{class_c_audio_file_raw_a364e7c7ea00669a797e2b537eb2671f3}} 
+\index{CAudioFileRaw@{CAudioFileRaw}!````~CAudioFileRaw@{$\sim$CAudioFileRaw}}
+\index{````~CAudioFileRaw@{$\sim$CAudioFileRaw}!CAudioFileRaw@{CAudioFileRaw}}
+\doxysubsubsection{\texorpdfstring{$\sim$CAudioFileRaw()}{~CAudioFileRaw()}}
+{\footnotesize\ttfamily C\+Audio\+File\+Raw\+::$\sim$\+C\+Audio\+File\+Raw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_c_audio_file_raw_a5d678d9ff6ccd1a3b196c34979572e7f}\label{class_c_audio_file_raw_a5d678d9ff6ccd1a3b196c34979572e7f}} 
+\index{CAudioFileRaw@{CAudioFileRaw}!closeFile@{closeFile}}
+\index{closeFile@{closeFile}!CAudioFileRaw@{CAudioFileRaw}}
+\doxysubsubsection{\texorpdfstring{closeFile()}{closeFile()}}
+{\footnotesize\ttfamily Error\+\_\+t C\+Audio\+File\+Raw\+::close\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+close the current file \begin{DoxyReturn}{Returns}
+Error\+\_\+t 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_c_audio_file_if_a9b8022f870f94a4b8c5a1f25cf24d2f9}{C\+Audio\+File\+If}}.
+
+\mbox{\Hypertarget{class_c_audio_file_raw_a60893760e85db822cde577a40509e9ef}\label{class_c_audio_file_raw_a60893760e85db822cde577a40509e9ef}} 
+\index{CAudioFileRaw@{CAudioFileRaw}!isEof@{isEof}}
+\index{isEof@{isEof}!CAudioFileRaw@{CAudioFileRaw}}
+\doxysubsubsection{\texorpdfstring{isEof()}{isEof()}}
+{\footnotesize\ttfamily bool C\+Audio\+File\+Raw\+::is\+Eof (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+check if E\+OF is true \begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_c_audio_file_if_a02a1c69fa0fc5b9aa8cb275315697be4}{C\+Audio\+File\+If}}.
+
+\mbox{\Hypertarget{class_c_audio_file_raw_ad37de78b503da0145f73767c142f5c18}\label{class_c_audio_file_raw_ad37de78b503da0145f73767c142f5c18}} 
+\index{CAudioFileRaw@{CAudioFileRaw}!isOpen@{isOpen}}
+\index{isOpen@{isOpen}!CAudioFileRaw@{CAudioFileRaw}}
+\doxysubsubsection{\texorpdfstring{isOpen()}{isOpen()}}
+{\footnotesize\ttfamily bool C\+Audio\+File\+Raw\+::is\+Open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+check if a file is opened \begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_c_audio_file_if_a7d946177a6591600dc03a423feb38cb3}{C\+Audio\+File\+If}}.
+
+\mbox{\Hypertarget{class_c_audio_file_raw_a3e0ef78b8e6ff49a3138d0a153906253}\label{class_c_audio_file_raw_a3e0ef78b8e6ff49a3138d0a153906253}} 
+\index{CAudioFileRaw@{CAudioFileRaw}!openFile@{openFile}}
+\index{openFile@{openFile}!CAudioFileRaw@{CAudioFileRaw}}
+\doxysubsubsection{\texorpdfstring{openFile()}{openFile()}}
+{\footnotesize\ttfamily Error\+\_\+t C\+Audio\+File\+Raw\+::open\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{c\+Audio\+File\+Name,  }\item[{\mbox{\hyperlink{class_c_audio_file_if_ad06ff073ba665b85c00694036aa31b99}{File\+Io\+Type\+\_\+t}}}]{e\+Io\+Type,  }\item[{\mbox{\hyperlink{struct_c_audio_file_if_1_1_file_spec__t}{File\+Spec\+\_\+t}} const $\ast$}]{ps\+File\+Spec = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+open a file for reading or writing 
+\begin{DoxyParams}{Parameters}
+{\em c\+Audio\+File\+Name} & \\
+\hline
+{\em e\+Io\+Type} & \\
+\hline
+{\em ps\+File\+Spec} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error\+\_\+t 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_c_audio_file_if_ac845c2e45bc7bab904b73d432b00a05b}{C\+Audio\+File\+If}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Audio\+File\+I\+O/\mbox{\hyperlink{_audio_file_8h}{Audio\+File.\+h}}\item 
+src/\+Audio\+File\+I\+O/\mbox{\hyperlink{_audio_file_8cpp}{Audio\+File.\+cpp}}\end{DoxyCompactItemize}

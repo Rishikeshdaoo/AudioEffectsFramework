@@ -1,0 +1,171 @@
+\hypertarget{class_c_audio_effect}{}\doxysection{C\+Audio\+Effect Class Reference}
+\label{class_c_audio_effect}\index{CAudioEffect@{CAudioEffect}}
+
+
+{\ttfamily \#include $<$Audio\+Effect.\+h$>$}
+
+
+
+Inheritance diagram for C\+Audio\+Effect\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_audio_effect__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}} \{ \newline
+\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659ea560e1b20c61513df8c5e2409609d61c3}{k\+Param\+Gain}}, 
+\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659eab3954dad8e2cb3c8edcf9aef516a03f8}{k\+Param\+Pan}}, 
+\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659eab721847e4b20bf69f9f05d516e02df2c}{k\+Param\+Delay\+In\+Secs}}, 
+\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659eada631f5d036dec3dda2386b6f00f0f8f}{k\+Param\+Mod\+Rate\+In\+Hz}}, 
+\newline
+\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659ea05e953e3f70678b944785d62ca5473bd}{k\+Param\+Mod\+Width\+In\+Secs}}, 
+\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659ea9318cd6b7a59a95c3ca445d021e38fd6}{k\+Param\+Center\+Frequency}}, 
+\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659ea3938e87ca92657368d510f672c13226d}{k\+ParamQ}}, 
+\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659ea1aa9db030d81fe7035af3e99e91fb207}{k\+Param\+Threshold}}, 
+\newline
+\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659eaf013e0c5d5c6dc572a1323150378ba45}{k\+Param\+Slope}}, 
+\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659ea57623dd94f3676447daa02b305f8b8ab}{k\+Param\+Dry\+Wet\+Mix}}, 
+\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659eabe24aef363365ff79a05791ed67cfdc3}{k\+Param\+Num\+Filters}}, 
+\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659ea9ed1f4300967713df3f119fdff185b9c}{k\+Param\+Filter\+Gains}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_audio_effect_a14f9404fce00feb5531ab625eb631c0f}{C\+Audio\+Effect}} ()
+\item 
+\mbox{\hyperlink{class_c_audio_effect_a2e1dec4b934cbb0ec8e8078d8ed8f387}{$\sim$\+C\+Audio\+Effect}} ()
+\item 
+Effect\+\_\+t \mbox{\hyperlink{class_c_audio_effect_aac8ef1d0c6f0aa6b6eabfb00440757e0}{get\+Effect\+Type}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_c_audio_effect_af52460b342f8c04b6a8c3eec7495c9aa}{m\+\_\+b\+Is\+Initialized}}
+\item 
+Effect\+\_\+t \mbox{\hyperlink{class_c_audio_effect_a284bea2d4ccec96b7f3e6ed22817abae}{m\+\_\+e\+Effect\+Type}}
+\item 
+float \mbox{\hyperlink{class_c_audio_effect_a255debd1a84e32f585d04e56db64e78e}{m\+\_\+f\+Sample\+Rate\+In\+Hz}}
+\item 
+int \mbox{\hyperlink{class_c_audio_effect_a9ab909b8d6f35a7834711286c105c4b7}{m\+\_\+i\+Num\+Channels}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}\label{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}} 
+\index{CAudioEffect@{CAudioEffect}!EffectParam\_t@{EffectParam\_t}}
+\index{EffectParam\_t@{EffectParam\_t}!CAudioEffect@{CAudioEffect}}
+\doxysubsubsection{\texorpdfstring{EffectParam\_t}{EffectParam\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{C\+Audio\+Effect\+::\+Effect\+Param\+\_\+t}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kParamGain@{kParamGain}!CAudioEffect@{CAudioEffect}}\index{CAudioEffect@{CAudioEffect}!kParamGain@{kParamGain}}}\mbox{\Hypertarget{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659ea560e1b20c61513df8c5e2409609d61c3}\label{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659ea560e1b20c61513df8c5e2409609d61c3}} 
+k\+Param\+Gain&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kParamPan@{kParamPan}!CAudioEffect@{CAudioEffect}}\index{CAudioEffect@{CAudioEffect}!kParamPan@{kParamPan}}}\mbox{\Hypertarget{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659eab3954dad8e2cb3c8edcf9aef516a03f8}\label{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659eab3954dad8e2cb3c8edcf9aef516a03f8}} 
+k\+Param\+Pan&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kParamDelayInSecs@{kParamDelayInSecs}!CAudioEffect@{CAudioEffect}}\index{CAudioEffect@{CAudioEffect}!kParamDelayInSecs@{kParamDelayInSecs}}}\mbox{\Hypertarget{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659eab721847e4b20bf69f9f05d516e02df2c}\label{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659eab721847e4b20bf69f9f05d516e02df2c}} 
+k\+Param\+Delay\+In\+Secs&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kParamModRateInHz@{kParamModRateInHz}!CAudioEffect@{CAudioEffect}}\index{CAudioEffect@{CAudioEffect}!kParamModRateInHz@{kParamModRateInHz}}}\mbox{\Hypertarget{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659eada631f5d036dec3dda2386b6f00f0f8f}\label{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659eada631f5d036dec3dda2386b6f00f0f8f}} 
+k\+Param\+Mod\+Rate\+In\+Hz&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kParamModWidthInSecs@{kParamModWidthInSecs}!CAudioEffect@{CAudioEffect}}\index{CAudioEffect@{CAudioEffect}!kParamModWidthInSecs@{kParamModWidthInSecs}}}\mbox{\Hypertarget{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659ea05e953e3f70678b944785d62ca5473bd}\label{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659ea05e953e3f70678b944785d62ca5473bd}} 
+k\+Param\+Mod\+Width\+In\+Secs&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kParamCenterFrequency@{kParamCenterFrequency}!CAudioEffect@{CAudioEffect}}\index{CAudioEffect@{CAudioEffect}!kParamCenterFrequency@{kParamCenterFrequency}}}\mbox{\Hypertarget{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659ea9318cd6b7a59a95c3ca445d021e38fd6}\label{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659ea9318cd6b7a59a95c3ca445d021e38fd6}} 
+k\+Param\+Center\+Frequency&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kParamQ@{kParamQ}!CAudioEffect@{CAudioEffect}}\index{CAudioEffect@{CAudioEffect}!kParamQ@{kParamQ}}}\mbox{\Hypertarget{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659ea3938e87ca92657368d510f672c13226d}\label{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659ea3938e87ca92657368d510f672c13226d}} 
+k\+ParamQ&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kParamThreshold@{kParamThreshold}!CAudioEffect@{CAudioEffect}}\index{CAudioEffect@{CAudioEffect}!kParamThreshold@{kParamThreshold}}}\mbox{\Hypertarget{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659ea1aa9db030d81fe7035af3e99e91fb207}\label{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659ea1aa9db030d81fe7035af3e99e91fb207}} 
+k\+Param\+Threshold&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kParamSlope@{kParamSlope}!CAudioEffect@{CAudioEffect}}\index{CAudioEffect@{CAudioEffect}!kParamSlope@{kParamSlope}}}\mbox{\Hypertarget{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659eaf013e0c5d5c6dc572a1323150378ba45}\label{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659eaf013e0c5d5c6dc572a1323150378ba45}} 
+k\+Param\+Slope&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kParamDryWetMix@{kParamDryWetMix}!CAudioEffect@{CAudioEffect}}\index{CAudioEffect@{CAudioEffect}!kParamDryWetMix@{kParamDryWetMix}}}\mbox{\Hypertarget{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659ea57623dd94f3676447daa02b305f8b8ab}\label{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659ea57623dd94f3676447daa02b305f8b8ab}} 
+k\+Param\+Dry\+Wet\+Mix&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kParamNumFilters@{kParamNumFilters}!CAudioEffect@{CAudioEffect}}\index{CAudioEffect@{CAudioEffect}!kParamNumFilters@{kParamNumFilters}}}\mbox{\Hypertarget{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659eabe24aef363365ff79a05791ed67cfdc3}\label{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659eabe24aef363365ff79a05791ed67cfdc3}} 
+k\+Param\+Num\+Filters&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kParamFilterGains@{kParamFilterGains}!CAudioEffect@{CAudioEffect}}\index{CAudioEffect@{CAudioEffect}!kParamFilterGains@{kParamFilterGains}}}\mbox{\Hypertarget{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659ea9ed1f4300967713df3f119fdff185b9c}\label{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659ea9ed1f4300967713df3f119fdff185b9c}} 
+k\+Param\+Filter\+Gains&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_c_audio_effect_a14f9404fce00feb5531ab625eb631c0f}\label{class_c_audio_effect_a14f9404fce00feb5531ab625eb631c0f}} 
+\index{CAudioEffect@{CAudioEffect}!CAudioEffect@{CAudioEffect}}
+\index{CAudioEffect@{CAudioEffect}!CAudioEffect@{CAudioEffect}}
+\doxysubsubsection{\texorpdfstring{CAudioEffect()}{CAudioEffect()}}
+{\footnotesize\ttfamily C\+Audio\+Effect\+::\+C\+Audio\+Effect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_c_audio_effect_a2e1dec4b934cbb0ec8e8078d8ed8f387}\label{class_c_audio_effect_a2e1dec4b934cbb0ec8e8078d8ed8f387}} 
+\index{CAudioEffect@{CAudioEffect}!````~CAudioEffect@{$\sim$CAudioEffect}}
+\index{````~CAudioEffect@{$\sim$CAudioEffect}!CAudioEffect@{CAudioEffect}}
+\doxysubsubsection{\texorpdfstring{$\sim$CAudioEffect()}{~CAudioEffect()}}
+{\footnotesize\ttfamily C\+Audio\+Effect\+::$\sim$\+C\+Audio\+Effect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_c_audio_effect_aac8ef1d0c6f0aa6b6eabfb00440757e0}\label{class_c_audio_effect_aac8ef1d0c6f0aa6b6eabfb00440757e0}} 
+\index{CAudioEffect@{CAudioEffect}!getEffectType@{getEffectType}}
+\index{getEffectType@{getEffectType}!CAudioEffect@{CAudioEffect}}
+\doxysubsubsection{\texorpdfstring{getEffectType()}{getEffectType()}}
+{\footnotesize\ttfamily Effect\+\_\+t C\+Audio\+Effect\+::get\+Effect\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_c_audio_effect_af52460b342f8c04b6a8c3eec7495c9aa}\label{class_c_audio_effect_af52460b342f8c04b6a8c3eec7495c9aa}} 
+\index{CAudioEffect@{CAudioEffect}!m\_bIsInitialized@{m\_bIsInitialized}}
+\index{m\_bIsInitialized@{m\_bIsInitialized}!CAudioEffect@{CAudioEffect}}
+\doxysubsubsection{\texorpdfstring{m\_bIsInitialized}{m\_bIsInitialized}}
+{\footnotesize\ttfamily bool C\+Audio\+Effect\+::m\+\_\+b\+Is\+Initialized\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_c_audio_effect_a284bea2d4ccec96b7f3e6ed22817abae}\label{class_c_audio_effect_a284bea2d4ccec96b7f3e6ed22817abae}} 
+\index{CAudioEffect@{CAudioEffect}!m\_eEffectType@{m\_eEffectType}}
+\index{m\_eEffectType@{m\_eEffectType}!CAudioEffect@{CAudioEffect}}
+\doxysubsubsection{\texorpdfstring{m\_eEffectType}{m\_eEffectType}}
+{\footnotesize\ttfamily Effect\+\_\+t C\+Audio\+Effect\+::m\+\_\+e\+Effect\+Type\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_c_audio_effect_a255debd1a84e32f585d04e56db64e78e}\label{class_c_audio_effect_a255debd1a84e32f585d04e56db64e78e}} 
+\index{CAudioEffect@{CAudioEffect}!m\_fSampleRateInHz@{m\_fSampleRateInHz}}
+\index{m\_fSampleRateInHz@{m\_fSampleRateInHz}!CAudioEffect@{CAudioEffect}}
+\doxysubsubsection{\texorpdfstring{m\_fSampleRateInHz}{m\_fSampleRateInHz}}
+{\footnotesize\ttfamily float C\+Audio\+Effect\+::m\+\_\+f\+Sample\+Rate\+In\+Hz\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_c_audio_effect_a9ab909b8d6f35a7834711286c105c4b7}\label{class_c_audio_effect_a9ab909b8d6f35a7834711286c105c4b7}} 
+\index{CAudioEffect@{CAudioEffect}!m\_iNumChannels@{m\_iNumChannels}}
+\index{m\_iNumChannels@{m\_iNumChannels}!CAudioEffect@{CAudioEffect}}
+\doxysubsubsection{\texorpdfstring{m\_iNumChannels}{m\_iNumChannels}}
+{\footnotesize\ttfamily int C\+Audio\+Effect\+::m\+\_\+i\+Num\+Channels\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/inc/\mbox{\hyperlink{_audio_effect_8h}{Audio\+Effect.\+h}}\item 
+src/\+Audio\+Effect/\mbox{\hyperlink{_audio_effect_8cpp}{Audio\+Effect.\+cpp}}\end{DoxyCompactItemize}

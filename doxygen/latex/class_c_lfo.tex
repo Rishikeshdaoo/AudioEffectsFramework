@@ -1,0 +1,129 @@
+\hypertarget{class_c_lfo}{}\doxysection{C\+Lfo Class Reference}
+\label{class_c_lfo}\index{CLfo@{CLfo}}
+
+
+{\ttfamily \#include $<$Lfo.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_c_lfo_ab5e12634f435afa3fe99d9df1896cfc9}{Lfo\+Type\+\_\+t}} \{ \mbox{\hyperlink{class_c_lfo_ab5e12634f435afa3fe99d9df1896cfc9a02f36ecb96557bfef46a014f37c4228d}{k\+Sine}}, 
+\mbox{\hyperlink{class_c_lfo_ab5e12634f435afa3fe99d9df1896cfc9a559fe0bff8a39c758e3cc4920f30cee8}{k\+Saw}}, 
+\mbox{\hyperlink{class_c_lfo_ab5e12634f435afa3fe99d9df1896cfc9a781f2b258ae4bd50242c0919c68a5009}{k\+Rect}}, 
+\mbox{\hyperlink{class_c_lfo_ab5e12634f435afa3fe99d9df1896cfc9ae069269afaecce299170e87fdd0fc002}{k\+Num\+Lfo\+Types}}
+ \}
+\item 
+enum \mbox{\hyperlink{class_c_lfo_a79f4a1b3586fd7315f9bce8e5b88b674}{Lfo\+Param\+\_\+t}} \{ \mbox{\hyperlink{class_c_lfo_a79f4a1b3586fd7315f9bce8e5b88b674a58590a2366a7f40f2ce300c627b65ed8}{k\+Lfo\+Param\+Amplitude}}, 
+\mbox{\hyperlink{class_c_lfo_a79f4a1b3586fd7315f9bce8e5b88b674a2234a0979994157c9a18eb242ebec91a}{k\+Lfo\+Param\+Frequency}}, 
+\mbox{\hyperlink{class_c_lfo_a79f4a1b3586fd7315f9bce8e5b88b674a02b7fff8db8b030f0b7ab441930a42c6}{k\+Num\+Lfo\+Params}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_lfo_a12fc205ad6f6daeb3abd78e108cd6790}{C\+Lfo}} (float f\+Sample\+Rate)
+\item 
+virtual \mbox{\hyperlink{class_c_lfo_a3394e3758b1b421e71b7070c38a8f829}{$\sim$\+C\+Lfo}} ()
+\item 
+Error\+\_\+t \mbox{\hyperlink{class_c_lfo_a33d44ada59f89aed15f510d7c5fe019a}{set\+Lfo\+Type}} (\mbox{\hyperlink{class_c_lfo_ab5e12634f435afa3fe99d9df1896cfc9}{Lfo\+Type\+\_\+t}} e\+Type)
+\item 
+Error\+\_\+t \mbox{\hyperlink{class_c_lfo_a03a1198e1f45a5db183c7340553bd0ca}{set\+Param}} (\mbox{\hyperlink{class_c_lfo_a79f4a1b3586fd7315f9bce8e5b88b674}{Lfo\+Param\+\_\+t}} e\+Param, float f\+Value)
+\item 
+float \mbox{\hyperlink{class_c_lfo_a48e2c9e14216431f343ffdbde98d710c}{get\+Param}} (\mbox{\hyperlink{class_c_lfo_a79f4a1b3586fd7315f9bce8e5b88b674}{Lfo\+Param\+\_\+t}} e\+Param) const
+\item 
+float \mbox{\hyperlink{class_c_lfo_a9e71576cbcfc7af6667778053335efaf}{get\+Next}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_c_lfo_a79f4a1b3586fd7315f9bce8e5b88b674}\label{class_c_lfo_a79f4a1b3586fd7315f9bce8e5b88b674}} 
+\index{CLfo@{CLfo}!LfoParam\_t@{LfoParam\_t}}
+\index{LfoParam\_t@{LfoParam\_t}!CLfo@{CLfo}}
+\doxysubsubsection{\texorpdfstring{LfoParam\_t}{LfoParam\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_c_lfo_a79f4a1b3586fd7315f9bce8e5b88b674}{C\+Lfo\+::\+Lfo\+Param\+\_\+t}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kLfoParamAmplitude@{kLfoParamAmplitude}!CLfo@{CLfo}}\index{CLfo@{CLfo}!kLfoParamAmplitude@{kLfoParamAmplitude}}}\mbox{\Hypertarget{class_c_lfo_a79f4a1b3586fd7315f9bce8e5b88b674a58590a2366a7f40f2ce300c627b65ed8}\label{class_c_lfo_a79f4a1b3586fd7315f9bce8e5b88b674a58590a2366a7f40f2ce300c627b65ed8}} 
+k\+Lfo\+Param\+Amplitude&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kLfoParamFrequency@{kLfoParamFrequency}!CLfo@{CLfo}}\index{CLfo@{CLfo}!kLfoParamFrequency@{kLfoParamFrequency}}}\mbox{\Hypertarget{class_c_lfo_a79f4a1b3586fd7315f9bce8e5b88b674a2234a0979994157c9a18eb242ebec91a}\label{class_c_lfo_a79f4a1b3586fd7315f9bce8e5b88b674a2234a0979994157c9a18eb242ebec91a}} 
+k\+Lfo\+Param\+Frequency&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kNumLfoParams@{kNumLfoParams}!CLfo@{CLfo}}\index{CLfo@{CLfo}!kNumLfoParams@{kNumLfoParams}}}\mbox{\Hypertarget{class_c_lfo_a79f4a1b3586fd7315f9bce8e5b88b674a02b7fff8db8b030f0b7ab441930a42c6}\label{class_c_lfo_a79f4a1b3586fd7315f9bce8e5b88b674a02b7fff8db8b030f0b7ab441930a42c6}} 
+k\+Num\+Lfo\+Params&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{class_c_lfo_ab5e12634f435afa3fe99d9df1896cfc9}\label{class_c_lfo_ab5e12634f435afa3fe99d9df1896cfc9}} 
+\index{CLfo@{CLfo}!LfoType\_t@{LfoType\_t}}
+\index{LfoType\_t@{LfoType\_t}!CLfo@{CLfo}}
+\doxysubsubsection{\texorpdfstring{LfoType\_t}{LfoType\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_c_lfo_ab5e12634f435afa3fe99d9df1896cfc9}{C\+Lfo\+::\+Lfo\+Type\+\_\+t}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kSine@{kSine}!CLfo@{CLfo}}\index{CLfo@{CLfo}!kSine@{kSine}}}\mbox{\Hypertarget{class_c_lfo_ab5e12634f435afa3fe99d9df1896cfc9a02f36ecb96557bfef46a014f37c4228d}\label{class_c_lfo_ab5e12634f435afa3fe99d9df1896cfc9a02f36ecb96557bfef46a014f37c4228d}} 
+k\+Sine&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kSaw@{kSaw}!CLfo@{CLfo}}\index{CLfo@{CLfo}!kSaw@{kSaw}}}\mbox{\Hypertarget{class_c_lfo_ab5e12634f435afa3fe99d9df1896cfc9a559fe0bff8a39c758e3cc4920f30cee8}\label{class_c_lfo_ab5e12634f435afa3fe99d9df1896cfc9a559fe0bff8a39c758e3cc4920f30cee8}} 
+k\+Saw&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kRect@{kRect}!CLfo@{CLfo}}\index{CLfo@{CLfo}!kRect@{kRect}}}\mbox{\Hypertarget{class_c_lfo_ab5e12634f435afa3fe99d9df1896cfc9a781f2b258ae4bd50242c0919c68a5009}\label{class_c_lfo_ab5e12634f435afa3fe99d9df1896cfc9a781f2b258ae4bd50242c0919c68a5009}} 
+k\+Rect&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kNumLfoTypes@{kNumLfoTypes}!CLfo@{CLfo}}\index{CLfo@{CLfo}!kNumLfoTypes@{kNumLfoTypes}}}\mbox{\Hypertarget{class_c_lfo_ab5e12634f435afa3fe99d9df1896cfc9ae069269afaecce299170e87fdd0fc002}\label{class_c_lfo_ab5e12634f435afa3fe99d9df1896cfc9ae069269afaecce299170e87fdd0fc002}} 
+k\+Num\+Lfo\+Types&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_c_lfo_a12fc205ad6f6daeb3abd78e108cd6790}\label{class_c_lfo_a12fc205ad6f6daeb3abd78e108cd6790}} 
+\index{CLfo@{CLfo}!CLfo@{CLfo}}
+\index{CLfo@{CLfo}!CLfo@{CLfo}}
+\doxysubsubsection{\texorpdfstring{CLfo()}{CLfo()}}
+{\footnotesize\ttfamily C\+Lfo\+::\+C\+Lfo (\begin{DoxyParamCaption}\item[{float}]{f\+Sample\+Rate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_c_lfo_a3394e3758b1b421e71b7070c38a8f829}\label{class_c_lfo_a3394e3758b1b421e71b7070c38a8f829}} 
+\index{CLfo@{CLfo}!````~CLfo@{$\sim$CLfo}}
+\index{````~CLfo@{$\sim$CLfo}!CLfo@{CLfo}}
+\doxysubsubsection{\texorpdfstring{$\sim$CLfo()}{~CLfo()}}
+{\footnotesize\ttfamily virtual C\+Lfo\+::$\sim$\+C\+Lfo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_c_lfo_a9e71576cbcfc7af6667778053335efaf}\label{class_c_lfo_a9e71576cbcfc7af6667778053335efaf}} 
+\index{CLfo@{CLfo}!getNext@{getNext}}
+\index{getNext@{getNext}!CLfo@{CLfo}}
+\doxysubsubsection{\texorpdfstring{getNext()}{getNext()}}
+{\footnotesize\ttfamily float C\+Lfo\+::get\+Next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_c_lfo_a48e2c9e14216431f343ffdbde98d710c}\label{class_c_lfo_a48e2c9e14216431f343ffdbde98d710c}} 
+\index{CLfo@{CLfo}!getParam@{getParam}}
+\index{getParam@{getParam}!CLfo@{CLfo}}
+\doxysubsubsection{\texorpdfstring{getParam()}{getParam()}}
+{\footnotesize\ttfamily float C\+Lfo\+::get\+Param (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_lfo_a79f4a1b3586fd7315f9bce8e5b88b674}{Lfo\+Param\+\_\+t}}}]{e\+Param }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_c_lfo_a33d44ada59f89aed15f510d7c5fe019a}\label{class_c_lfo_a33d44ada59f89aed15f510d7c5fe019a}} 
+\index{CLfo@{CLfo}!setLfoType@{setLfoType}}
+\index{setLfoType@{setLfoType}!CLfo@{CLfo}}
+\doxysubsubsection{\texorpdfstring{setLfoType()}{setLfoType()}}
+{\footnotesize\ttfamily Error\+\_\+t C\+Lfo\+::set\+Lfo\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_lfo_ab5e12634f435afa3fe99d9df1896cfc9}{Lfo\+Type\+\_\+t}}}]{e\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_c_lfo_a03a1198e1f45a5db183c7340553bd0ca}\label{class_c_lfo_a03a1198e1f45a5db183c7340553bd0ca}} 
+\index{CLfo@{CLfo}!setParam@{setParam}}
+\index{setParam@{setParam}!CLfo@{CLfo}}
+\doxysubsubsection{\texorpdfstring{setParam()}{setParam()}}
+{\footnotesize\ttfamily Error\+\_\+t C\+Lfo\+::set\+Param (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_lfo_a79f4a1b3586fd7315f9bce8e5b88b674}{Lfo\+Param\+\_\+t}}}]{e\+Param,  }\item[{float}]{f\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/inc/\mbox{\hyperlink{_lfo_8h}{Lfo.\+h}}\end{DoxyCompactItemize}

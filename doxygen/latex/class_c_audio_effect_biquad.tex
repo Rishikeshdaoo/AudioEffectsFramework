@@ -1,0 +1,178 @@
+\hypertarget{class_c_audio_effect_biquad}{}\doxysection{C\+Audio\+Effect\+Biquad Class Reference}
+\label{class_c_audio_effect_biquad}\index{CAudioEffectBiquad@{CAudioEffectBiquad}}
+
+
+{\ttfamily \#include $<$Audio\+Effect\+Biquad.\+h$>$}
+
+
+
+Inheritance diagram for C\+Audio\+Effect\+Biquad\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=185pt]{class_c_audio_effect_biquad__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for C\+Audio\+Effect\+Biquad\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=185pt]{class_c_audio_effect_biquad__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_c_audio_effect_biquad_aa75f8e70545c4b5301ac60d7ff7416d6}{Filter\+Type\+\_\+t}} \{ \newline
+\mbox{\hyperlink{class_c_audio_effect_biquad_aa75f8e70545c4b5301ac60d7ff7416d6a93d91123248d4a2631d123db6b3fc6de}{k\+Lowpass}}, 
+\mbox{\hyperlink{class_c_audio_effect_biquad_aa75f8e70545c4b5301ac60d7ff7416d6ab5eb3806dfd1ceb26e92d99d992dda46}{k\+Highpass}}, 
+\mbox{\hyperlink{class_c_audio_effect_biquad_aa75f8e70545c4b5301ac60d7ff7416d6aad074bff87d8b1785d467c61ab3f0d7e}{k\+Bandpass}}, 
+\mbox{\hyperlink{class_c_audio_effect_biquad_aa75f8e70545c4b5301ac60d7ff7416d6ab0f79ededbb1d5972fd5c32a85192326}{k\+Allpass}}, 
+\newline
+\mbox{\hyperlink{class_c_audio_effect_biquad_aa75f8e70545c4b5301ac60d7ff7416d6a82ab43795c6a8aad5875345502480b23}{k\+Peak}}, 
+\mbox{\hyperlink{class_c_audio_effect_biquad_aa75f8e70545c4b5301ac60d7ff7416d6abb8046b126be03dd46a93c3fd6b3c0a5}{k\+Notch}}, 
+\mbox{\hyperlink{class_c_audio_effect_biquad_aa75f8e70545c4b5301ac60d7ff7416d6a65329e59db92debca51b4c08531f4725}{k\+Lowshelf}}, 
+\mbox{\hyperlink{class_c_audio_effect_biquad_aa75f8e70545c4b5301ac60d7ff7416d6a1fd642796c7b91fb98fd3e21dff2666e}{k\+Highshelf}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_audio_effect_biquad_ab8420b0bfc937c72bce4ff28ac38b7d1}{C\+Audio\+Effect\+Biquad}} ()
+\item 
+\mbox{\hyperlink{class_c_audio_effect_biquad_a5c694214ea1673e66ea7de3b5ea745e9}{C\+Audio\+Effect\+Biquad}} (float f\+Sample\+Rate\+In\+Hz, int i\+Num\+Channels, \mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}} params\mbox{[}$\,$\mbox{]}, float values\mbox{[}$\,$\mbox{]}, int i\+Num\+Params)
+\item 
+\mbox{\hyperlink{class_c_audio_effect_biquad_a1dda829417642e8f6d61317121378974}{$\sim$\+C\+Audio\+Effect\+Biquad}} ()
+\item 
+Error\+\_\+t \mbox{\hyperlink{class_c_audio_effect_biquad_aa1db3b87ffb2ee10952c5a466bba4536}{init}} (float f\+Sample\+Rate\+In\+Hz, int i\+Num\+Channels, \mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}} params\mbox{[}$\,$\mbox{]}, float values\mbox{[}$\,$\mbox{]}, int i\+Num\+Params)
+\item 
+Error\+\_\+t \mbox{\hyperlink{class_c_audio_effect_biquad_a0b7a6155fcfb09ed9bea0dddd4afe913}{reset}} ()
+\item 
+Error\+\_\+t \mbox{\hyperlink{class_c_audio_effect_biquad_a4be8604a1e80c9caad5d2fcbe31cb352}{set\+Param}} (\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}} e\+Param, float f\+Value)
+\item 
+float \mbox{\hyperlink{class_c_audio_effect_biquad_ab96de6b63271c007fd8f3d82f60d3e13}{get\+Param}} (\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}} e\+Param)
+\item 
+Error\+\_\+t \mbox{\hyperlink{class_c_audio_effect_biquad_aaee9c3027dea3d99c076e1fe851a9dbc}{set\+Filter\+Type}} (\mbox{\hyperlink{class_c_audio_effect_biquad_aa75f8e70545c4b5301ac60d7ff7416d6}{Filter\+Type\+\_\+t}} e\+Value)
+\item 
+\mbox{\hyperlink{class_c_audio_effect_biquad_aa75f8e70545c4b5301ac60d7ff7416d6}{Filter\+Type\+\_\+t}} \mbox{\hyperlink{class_c_audio_effect_biquad_a7ea4f42f9b4647d1ae42da11b1d4d306}{get\+Filter\+Type}} ()
+\item 
+Error\+\_\+t \mbox{\hyperlink{class_c_audio_effect_biquad_a6e380772a2770a5e95c1329c0f41f5bb}{process}} (float $\ast$$\ast$ppf\+Input\+Buffer, float $\ast$$\ast$ppf\+Output\+Buffer, int i\+Number\+Of\+Frames)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_c_audio_effect_biquad_aa75f8e70545c4b5301ac60d7ff7416d6}\label{class_c_audio_effect_biquad_aa75f8e70545c4b5301ac60d7ff7416d6}} 
+\index{CAudioEffectBiquad@{CAudioEffectBiquad}!FilterType\_t@{FilterType\_t}}
+\index{FilterType\_t@{FilterType\_t}!CAudioEffectBiquad@{CAudioEffectBiquad}}
+\doxysubsubsection{\texorpdfstring{FilterType\_t}{FilterType\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_c_audio_effect_biquad_aa75f8e70545c4b5301ac60d7ff7416d6}{C\+Audio\+Effect\+Biquad\+::\+Filter\+Type\+\_\+t}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kLowpass@{kLowpass}!CAudioEffectBiquad@{CAudioEffectBiquad}}\index{CAudioEffectBiquad@{CAudioEffectBiquad}!kLowpass@{kLowpass}}}\mbox{\Hypertarget{class_c_audio_effect_biquad_aa75f8e70545c4b5301ac60d7ff7416d6a93d91123248d4a2631d123db6b3fc6de}\label{class_c_audio_effect_biquad_aa75f8e70545c4b5301ac60d7ff7416d6a93d91123248d4a2631d123db6b3fc6de}} 
+k\+Lowpass&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kHighpass@{kHighpass}!CAudioEffectBiquad@{CAudioEffectBiquad}}\index{CAudioEffectBiquad@{CAudioEffectBiquad}!kHighpass@{kHighpass}}}\mbox{\Hypertarget{class_c_audio_effect_biquad_aa75f8e70545c4b5301ac60d7ff7416d6ab5eb3806dfd1ceb26e92d99d992dda46}\label{class_c_audio_effect_biquad_aa75f8e70545c4b5301ac60d7ff7416d6ab5eb3806dfd1ceb26e92d99d992dda46}} 
+k\+Highpass&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kBandpass@{kBandpass}!CAudioEffectBiquad@{CAudioEffectBiquad}}\index{CAudioEffectBiquad@{CAudioEffectBiquad}!kBandpass@{kBandpass}}}\mbox{\Hypertarget{class_c_audio_effect_biquad_aa75f8e70545c4b5301ac60d7ff7416d6aad074bff87d8b1785d467c61ab3f0d7e}\label{class_c_audio_effect_biquad_aa75f8e70545c4b5301ac60d7ff7416d6aad074bff87d8b1785d467c61ab3f0d7e}} 
+k\+Bandpass&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kAllpass@{kAllpass}!CAudioEffectBiquad@{CAudioEffectBiquad}}\index{CAudioEffectBiquad@{CAudioEffectBiquad}!kAllpass@{kAllpass}}}\mbox{\Hypertarget{class_c_audio_effect_biquad_aa75f8e70545c4b5301ac60d7ff7416d6ab0f79ededbb1d5972fd5c32a85192326}\label{class_c_audio_effect_biquad_aa75f8e70545c4b5301ac60d7ff7416d6ab0f79ededbb1d5972fd5c32a85192326}} 
+k\+Allpass&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kPeak@{kPeak}!CAudioEffectBiquad@{CAudioEffectBiquad}}\index{CAudioEffectBiquad@{CAudioEffectBiquad}!kPeak@{kPeak}}}\mbox{\Hypertarget{class_c_audio_effect_biquad_aa75f8e70545c4b5301ac60d7ff7416d6a82ab43795c6a8aad5875345502480b23}\label{class_c_audio_effect_biquad_aa75f8e70545c4b5301ac60d7ff7416d6a82ab43795c6a8aad5875345502480b23}} 
+k\+Peak&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kNotch@{kNotch}!CAudioEffectBiquad@{CAudioEffectBiquad}}\index{CAudioEffectBiquad@{CAudioEffectBiquad}!kNotch@{kNotch}}}\mbox{\Hypertarget{class_c_audio_effect_biquad_aa75f8e70545c4b5301ac60d7ff7416d6abb8046b126be03dd46a93c3fd6b3c0a5}\label{class_c_audio_effect_biquad_aa75f8e70545c4b5301ac60d7ff7416d6abb8046b126be03dd46a93c3fd6b3c0a5}} 
+k\+Notch&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kLowshelf@{kLowshelf}!CAudioEffectBiquad@{CAudioEffectBiquad}}\index{CAudioEffectBiquad@{CAudioEffectBiquad}!kLowshelf@{kLowshelf}}}\mbox{\Hypertarget{class_c_audio_effect_biquad_aa75f8e70545c4b5301ac60d7ff7416d6a65329e59db92debca51b4c08531f4725}\label{class_c_audio_effect_biquad_aa75f8e70545c4b5301ac60d7ff7416d6a65329e59db92debca51b4c08531f4725}} 
+k\+Lowshelf&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kHighshelf@{kHighshelf}!CAudioEffectBiquad@{CAudioEffectBiquad}}\index{CAudioEffectBiquad@{CAudioEffectBiquad}!kHighshelf@{kHighshelf}}}\mbox{\Hypertarget{class_c_audio_effect_biquad_aa75f8e70545c4b5301ac60d7ff7416d6a1fd642796c7b91fb98fd3e21dff2666e}\label{class_c_audio_effect_biquad_aa75f8e70545c4b5301ac60d7ff7416d6a1fd642796c7b91fb98fd3e21dff2666e}} 
+k\+Highshelf&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_c_audio_effect_biquad_ab8420b0bfc937c72bce4ff28ac38b7d1}\label{class_c_audio_effect_biquad_ab8420b0bfc937c72bce4ff28ac38b7d1}} 
+\index{CAudioEffectBiquad@{CAudioEffectBiquad}!CAudioEffectBiquad@{CAudioEffectBiquad}}
+\index{CAudioEffectBiquad@{CAudioEffectBiquad}!CAudioEffectBiquad@{CAudioEffectBiquad}}
+\doxysubsubsection{\texorpdfstring{CAudioEffectBiquad()}{CAudioEffectBiquad()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily C\+Audio\+Effect\+Biquad\+::\+C\+Audio\+Effect\+Biquad (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_c_audio_effect_biquad_a5c694214ea1673e66ea7de3b5ea745e9}\label{class_c_audio_effect_biquad_a5c694214ea1673e66ea7de3b5ea745e9}} 
+\index{CAudioEffectBiquad@{CAudioEffectBiquad}!CAudioEffectBiquad@{CAudioEffectBiquad}}
+\index{CAudioEffectBiquad@{CAudioEffectBiquad}!CAudioEffectBiquad@{CAudioEffectBiquad}}
+\doxysubsubsection{\texorpdfstring{CAudioEffectBiquad()}{CAudioEffectBiquad()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+Audio\+Effect\+Biquad\+::\+C\+Audio\+Effect\+Biquad (\begin{DoxyParamCaption}\item[{float}]{f\+Sample\+Rate\+In\+Hz,  }\item[{int}]{i\+Num\+Channels,  }\item[{\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}}}]{params\mbox{[}$\,$\mbox{]} = {\ttfamily NULL},  }\item[{float}]{values\mbox{[}$\,$\mbox{]} = {\ttfamily NULL},  }\item[{int}]{i\+Num\+Params = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_c_audio_effect_biquad_a1dda829417642e8f6d61317121378974}\label{class_c_audio_effect_biquad_a1dda829417642e8f6d61317121378974}} 
+\index{CAudioEffectBiquad@{CAudioEffectBiquad}!````~CAudioEffectBiquad@{$\sim$CAudioEffectBiquad}}
+\index{````~CAudioEffectBiquad@{$\sim$CAudioEffectBiquad}!CAudioEffectBiquad@{CAudioEffectBiquad}}
+\doxysubsubsection{\texorpdfstring{$\sim$CAudioEffectBiquad()}{~CAudioEffectBiquad()}}
+{\footnotesize\ttfamily C\+Audio\+Effect\+Biquad\+::$\sim$\+C\+Audio\+Effect\+Biquad (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_c_audio_effect_biquad_a7ea4f42f9b4647d1ae42da11b1d4d306}\label{class_c_audio_effect_biquad_a7ea4f42f9b4647d1ae42da11b1d4d306}} 
+\index{CAudioEffectBiquad@{CAudioEffectBiquad}!getFilterType@{getFilterType}}
+\index{getFilterType@{getFilterType}!CAudioEffectBiquad@{CAudioEffectBiquad}}
+\doxysubsubsection{\texorpdfstring{getFilterType()}{getFilterType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_c_audio_effect_biquad_aa75f8e70545c4b5301ac60d7ff7416d6}{C\+Audio\+Effect\+Biquad\+::\+Filter\+Type\+\_\+t}} C\+Audio\+Effect\+Biquad\+::get\+Filter\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_c_audio_effect_biquad_ab96de6b63271c007fd8f3d82f60d3e13}\label{class_c_audio_effect_biquad_ab96de6b63271c007fd8f3d82f60d3e13}} 
+\index{CAudioEffectBiquad@{CAudioEffectBiquad}!getParam@{getParam}}
+\index{getParam@{getParam}!CAudioEffectBiquad@{CAudioEffectBiquad}}
+\doxysubsubsection{\texorpdfstring{getParam()}{getParam()}}
+{\footnotesize\ttfamily float C\+Audio\+Effect\+Biquad\+::get\+Param (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}}}]{e\+Param }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_c_audio_effect_biquad_aa1db3b87ffb2ee10952c5a466bba4536}\label{class_c_audio_effect_biquad_aa1db3b87ffb2ee10952c5a466bba4536}} 
+\index{CAudioEffectBiquad@{CAudioEffectBiquad}!init@{init}}
+\index{init@{init}!CAudioEffectBiquad@{CAudioEffectBiquad}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily Error\+\_\+t C\+Audio\+Effect\+Biquad\+::init (\begin{DoxyParamCaption}\item[{float}]{f\+Sample\+Rate\+In\+Hz,  }\item[{int}]{i\+Num\+Channels,  }\item[{\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}}}]{params\mbox{[}$\,$\mbox{]} = {\ttfamily NULL},  }\item[{float}]{values\mbox{[}$\,$\mbox{]} = {\ttfamily NULL},  }\item[{int}]{i\+Num\+Params = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_c_audio_effect_biquad_a6e380772a2770a5e95c1329c0f41f5bb}\label{class_c_audio_effect_biquad_a6e380772a2770a5e95c1329c0f41f5bb}} 
+\index{CAudioEffectBiquad@{CAudioEffectBiquad}!process@{process}}
+\index{process@{process}!CAudioEffectBiquad@{CAudioEffectBiquad}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily Error\+\_\+t C\+Audio\+Effect\+Biquad\+::process (\begin{DoxyParamCaption}\item[{float $\ast$$\ast$}]{ppf\+Input\+Buffer,  }\item[{float $\ast$$\ast$}]{ppf\+Output\+Buffer,  }\item[{int}]{i\+Number\+Of\+Frames }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_c_audio_effect_biquad_a0b7a6155fcfb09ed9bea0dddd4afe913}\label{class_c_audio_effect_biquad_a0b7a6155fcfb09ed9bea0dddd4afe913}} 
+\index{CAudioEffectBiquad@{CAudioEffectBiquad}!reset@{reset}}
+\index{reset@{reset}!CAudioEffectBiquad@{CAudioEffectBiquad}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily Error\+\_\+t C\+Audio\+Effect\+Biquad\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_c_audio_effect_biquad_aaee9c3027dea3d99c076e1fe851a9dbc}\label{class_c_audio_effect_biquad_aaee9c3027dea3d99c076e1fe851a9dbc}} 
+\index{CAudioEffectBiquad@{CAudioEffectBiquad}!setFilterType@{setFilterType}}
+\index{setFilterType@{setFilterType}!CAudioEffectBiquad@{CAudioEffectBiquad}}
+\doxysubsubsection{\texorpdfstring{setFilterType()}{setFilterType()}}
+{\footnotesize\ttfamily Error\+\_\+t C\+Audio\+Effect\+Biquad\+::set\+Filter\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_audio_effect_biquad_aa75f8e70545c4b5301ac60d7ff7416d6}{Filter\+Type\+\_\+t}}}]{e\+Value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_c_audio_effect_biquad_a4be8604a1e80c9caad5d2fcbe31cb352}\label{class_c_audio_effect_biquad_a4be8604a1e80c9caad5d2fcbe31cb352}} 
+\index{CAudioEffectBiquad@{CAudioEffectBiquad}!setParam@{setParam}}
+\index{setParam@{setParam}!CAudioEffectBiquad@{CAudioEffectBiquad}}
+\doxysubsubsection{\texorpdfstring{setParam()}{setParam()}}
+{\footnotesize\ttfamily Error\+\_\+t C\+Audio\+Effect\+Biquad\+::set\+Param (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}}}]{e\+Param,  }\item[{float}]{f\+Value }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/inc/\mbox{\hyperlink{_audio_effect_biquad_8h}{Audio\+Effect\+Biquad.\+h}}\item 
+src/\+Audio\+Effect/\mbox{\hyperlink{_audio_effect_biquad_8cpp}{Audio\+Effect\+Biquad.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,9 @@
+<map id="CAudioEffect" name="CAudioEffect">
+<area shape="rect" id="node1" title=" " alt="" coords="5,129,104,155"/>
+<area shape="rect" id="node2" href="$class_c_audio_effect_biquad.html" title=" " alt="" coords="196,5,337,31"/>
+<area shape="rect" id="node3" href="$class_c_audio_effect_compressor_expander.html" title="audio effect class for compression and expander" alt="" coords="152,55,381,80"/>
+<area shape="rect" id="node4" href="$class_c_audio_effect_delay.html" title=" " alt="" coords="200,104,333,129"/>
+<area shape="rect" id="node5" href="$class_c_audio_effect_distortion.html" title="audio effect class for distortion" alt="" coords="189,153,344,179"/>
+<area shape="rect" id="node6" href="$class_c_audio_effect_gain.html" title="audio effect class for gain" alt="" coords="203,203,330,228"/>
+<area shape="rect" id="node7" href="$class_c_audio_effect_pan.html" title="audio effect class for pan" alt="" coords="205,252,328,277"/>
+</map>
