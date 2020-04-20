@@ -1,0 +1,227 @@
+\hypertarget{class_c_audio_effect_compressor_expander}{}\doxysection{C\+Audio\+Effect\+Compressor\+Expander Class Reference}
+\label{class_c_audio_effect_compressor_expander}\index{CAudioEffectCompressorExpander@{CAudioEffectCompressorExpander}}
+
+
+audio effect class for compression and expander  
+
+
+
+
+{\ttfamily \#include $<$Audio\+Effect\+Compressor.\+h$>$}
+
+
+
+Inheritance diagram for C\+Audio\+Effect\+Compressor\+Expander\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=251pt]{class_c_audio_effect_compressor_expander__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for C\+Audio\+Effect\+Compressor\+Expander\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=251pt]{class_c_audio_effect_compressor_expander__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_c_audio_effect_compressor_expander_a4a962f94692f984b06e13378c7cdb0e4}{Effect\+Subtype\+\_\+t}} \{ \mbox{\hyperlink{class_c_audio_effect_compressor_expander_a4a962f94692f984b06e13378c7cdb0e4a885ec03daf5407cfe835528768edbaae}{k\+None}} = 0, 
+\mbox{\hyperlink{class_c_audio_effect_compressor_expander_a4a962f94692f984b06e13378c7cdb0e4ae15a8fd4dc283e9ff86a63a1db79bf39}{k\+Compressor}} = 1, 
+\mbox{\hyperlink{class_c_audio_effect_compressor_expander_a4a962f94692f984b06e13378c7cdb0e4ab352127d0e5f992ecfcda6a22f82d226}{k\+Expander}} = 2
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_audio_effect_compressor_expander_abf0f3e3663b2da2792fdceac654e5ca9}{C\+Audio\+Effect\+Compressor\+Expander}} ()
+\item 
+\mbox{\hyperlink{class_c_audio_effect_compressor_expander_a8452236208040cacc45f7ad84165e8f3}{C\+Audio\+Effect\+Compressor\+Expander}} (Effect\+\_\+t effect\+Type, \mbox{\hyperlink{class_c_audio_effect_compressor_expander_a4a962f94692f984b06e13378c7cdb0e4}{Effect\+Subtype\+\_\+t}} sub\+Type, float f\+Sample\+Rate\+In\+Hz, int i\+Num\+Channels, int i\+Lookahead\+Buffer\+Size, \mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}} params\mbox{[}$\,$\mbox{]}, float values\mbox{[}$\,$\mbox{]}, int i\+Num\+Params)
+\item 
+\mbox{\hyperlink{class_c_audio_effect_compressor_expander_af3bb126489f621920d452b4305671ad3}{$\sim$\+C\+Audio\+Effect\+Compressor\+Expander}} ()
+\item 
+Error\+\_\+t \mbox{\hyperlink{class_c_audio_effect_compressor_expander_a5814e8f98d1bec41445a5dc0b4ad353d}{init}} (Effect\+\_\+t effect\+Type, \mbox{\hyperlink{class_c_audio_effect_compressor_expander_a4a962f94692f984b06e13378c7cdb0e4}{Effect\+Subtype\+\_\+t}} sub\+Type, float f\+Sample\+Rate\+In\+Hz, int i\+Num\+Channels, int i\+Lookahead\+Buffer\+Size, \mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}} params\mbox{[}$\,$\mbox{]}, float values\mbox{[}$\,$\mbox{]}, int i\+Num\+Params)
+\item 
+Error\+\_\+t \mbox{\hyperlink{class_c_audio_effect_compressor_expander_affaa7225be3f5e90eaa142b9f8a711ff}{reset}} ()
+\item 
+Error\+\_\+t \mbox{\hyperlink{class_c_audio_effect_compressor_expander_a887221db9f4028dc6ee4b69b24ac849b}{set\+Param}} (\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}} e\+Param, float f\+Value)
+\item 
+float \mbox{\hyperlink{class_c_audio_effect_compressor_expander_a689ef4b4a051c45f5db3c3ea67214944}{get\+Param}} (\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}} e\+Param)
+\item 
+Error\+\_\+t \mbox{\hyperlink{class_c_audio_effect_compressor_expander_a319ff694aadc6697d97bba37cc0d4143}{set\+Effect\+Subtype}} (\mbox{\hyperlink{class_c_audio_effect_compressor_expander_a4a962f94692f984b06e13378c7cdb0e4}{Effect\+Subtype\+\_\+t}} e\+Value)
+\item 
+\mbox{\hyperlink{class_c_audio_effect_compressor_expander_a4a962f94692f984b06e13378c7cdb0e4}{Effect\+Subtype\+\_\+t}} \mbox{\hyperlink{class_c_audio_effect_compressor_expander_a4590fe5c3581bed536eefc0689093c89}{get\+Effect\+Subtype}} ()
+\item 
+Error\+\_\+t \mbox{\hyperlink{class_c_audio_effect_compressor_expander_a250978b867447681d8976604e8c69faf}{process}} (float $\ast$$\ast$ppf\+Input\+Buffer, float $\ast$$\ast$ppf\+Output\+Buffer, int i\+Number\+Of\+Frames)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+audio effect class for compression and expander 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_c_audio_effect_compressor_expander_a4a962f94692f984b06e13378c7cdb0e4}\label{class_c_audio_effect_compressor_expander_a4a962f94692f984b06e13378c7cdb0e4}} 
+\index{CAudioEffectCompressorExpander@{CAudioEffectCompressorExpander}!EffectSubtype\_t@{EffectSubtype\_t}}
+\index{EffectSubtype\_t@{EffectSubtype\_t}!CAudioEffectCompressorExpander@{CAudioEffectCompressorExpander}}
+\doxysubsubsection{\texorpdfstring{EffectSubtype\_t}{EffectSubtype\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_c_audio_effect_compressor_expander_a4a962f94692f984b06e13378c7cdb0e4}{C\+Audio\+Effect\+Compressor\+Expander\+::\+Effect\+Subtype\+\_\+t}}}
+
+list of sub types for compression and expander \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kNone@{kNone}!CAudioEffectCompressorExpander@{CAudioEffectCompressorExpander}}\index{CAudioEffectCompressorExpander@{CAudioEffectCompressorExpander}!kNone@{kNone}}}\mbox{\Hypertarget{class_c_audio_effect_compressor_expander_a4a962f94692f984b06e13378c7cdb0e4a885ec03daf5407cfe835528768edbaae}\label{class_c_audio_effect_compressor_expander_a4a962f94692f984b06e13378c7cdb0e4a885ec03daf5407cfe835528768edbaae}} 
+k\+None&none \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kCompressor@{kCompressor}!CAudioEffectCompressorExpander@{CAudioEffectCompressorExpander}}\index{CAudioEffectCompressorExpander@{CAudioEffectCompressorExpander}!kCompressor@{kCompressor}}}\mbox{\Hypertarget{class_c_audio_effect_compressor_expander_a4a962f94692f984b06e13378c7cdb0e4ae15a8fd4dc283e9ff86a63a1db79bf39}\label{class_c_audio_effect_compressor_expander_a4a962f94692f984b06e13378c7cdb0e4ae15a8fd4dc283e9ff86a63a1db79bf39}} 
+k\+Compressor&compressor \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kExpander@{kExpander}!CAudioEffectCompressorExpander@{CAudioEffectCompressorExpander}}\index{CAudioEffectCompressorExpander@{CAudioEffectCompressorExpander}!kExpander@{kExpander}}}\mbox{\Hypertarget{class_c_audio_effect_compressor_expander_a4a962f94692f984b06e13378c7cdb0e4ab352127d0e5f992ecfcda6a22f82d226}\label{class_c_audio_effect_compressor_expander_a4a962f94692f984b06e13378c7cdb0e4ab352127d0e5f992ecfcda6a22f82d226}} 
+k\+Expander&expander \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_c_audio_effect_compressor_expander_abf0f3e3663b2da2792fdceac654e5ca9}\label{class_c_audio_effect_compressor_expander_abf0f3e3663b2da2792fdceac654e5ca9}} 
+\index{CAudioEffectCompressorExpander@{CAudioEffectCompressorExpander}!CAudioEffectCompressorExpander@{CAudioEffectCompressorExpander}}
+\index{CAudioEffectCompressorExpander@{CAudioEffectCompressorExpander}!CAudioEffectCompressorExpander@{CAudioEffectCompressorExpander}}
+\doxysubsubsection{\texorpdfstring{CAudioEffectCompressorExpander()}{CAudioEffectCompressorExpander()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily C\+Audio\+Effect\+Compressor\+Expander\+::\+C\+Audio\+Effect\+Compressor\+Expander (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_c_audio_effect_compressor_expander_a8452236208040cacc45f7ad84165e8f3}\label{class_c_audio_effect_compressor_expander_a8452236208040cacc45f7ad84165e8f3}} 
+\index{CAudioEffectCompressorExpander@{CAudioEffectCompressorExpander}!CAudioEffectCompressorExpander@{CAudioEffectCompressorExpander}}
+\index{CAudioEffectCompressorExpander@{CAudioEffectCompressorExpander}!CAudioEffectCompressorExpander@{CAudioEffectCompressorExpander}}
+\doxysubsubsection{\texorpdfstring{CAudioEffectCompressorExpander()}{CAudioEffectCompressorExpander()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+Audio\+Effect\+Compressor\+Expander\+::\+C\+Audio\+Effect\+Compressor\+Expander (\begin{DoxyParamCaption}\item[{Effect\+\_\+t}]{effect\+Type,  }\item[{\mbox{\hyperlink{class_c_audio_effect_compressor_expander_a4a962f94692f984b06e13378c7cdb0e4}{Effect\+Subtype\+\_\+t}}}]{sub\+Type,  }\item[{float}]{f\+Sample\+Rate\+In\+Hz,  }\item[{int}]{i\+Num\+Channels,  }\item[{int}]{i\+Lookahead\+Buffer\+Size,  }\item[{\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}}}]{params\mbox{[}$\,$\mbox{]} = {\ttfamily NULL},  }\item[{float}]{values\mbox{[}$\,$\mbox{]} = {\ttfamily NULL},  }\item[{int}]{i\+Num\+Params = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_c_audio_effect_compressor_expander_af3bb126489f621920d452b4305671ad3}\label{class_c_audio_effect_compressor_expander_af3bb126489f621920d452b4305671ad3}} 
+\index{CAudioEffectCompressorExpander@{CAudioEffectCompressorExpander}!````~CAudioEffectCompressorExpander@{$\sim$CAudioEffectCompressorExpander}}
+\index{````~CAudioEffectCompressorExpander@{$\sim$CAudioEffectCompressorExpander}!CAudioEffectCompressorExpander@{CAudioEffectCompressorExpander}}
+\doxysubsubsection{\texorpdfstring{$\sim$CAudioEffectCompressorExpander()}{~CAudioEffectCompressorExpander()}}
+{\footnotesize\ttfamily C\+Audio\+Effect\+Compressor\+Expander\+::$\sim$\+C\+Audio\+Effect\+Compressor\+Expander (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_c_audio_effect_compressor_expander_a4590fe5c3581bed536eefc0689093c89}\label{class_c_audio_effect_compressor_expander_a4590fe5c3581bed536eefc0689093c89}} 
+\index{CAudioEffectCompressorExpander@{CAudioEffectCompressorExpander}!getEffectSubtype@{getEffectSubtype}}
+\index{getEffectSubtype@{getEffectSubtype}!CAudioEffectCompressorExpander@{CAudioEffectCompressorExpander}}
+\doxysubsubsection{\texorpdfstring{getEffectSubtype()}{getEffectSubtype()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_c_audio_effect_compressor_expander_a4a962f94692f984b06e13378c7cdb0e4}{C\+Audio\+Effect\+Compressor\+Expander\+::\+Effect\+Subtype\+\_\+t}} C\+Audio\+Effect\+Compressor\+Expander\+::get\+Effect\+Subtype (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+return the value of the specified sub type \begin{DoxyReturn}{Returns}
+Effect\+Subtype\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_audio_effect_compressor_expander_a689ef4b4a051c45f5db3c3ea67214944}\label{class_c_audio_effect_compressor_expander_a689ef4b4a051c45f5db3c3ea67214944}} 
+\index{CAudioEffectCompressorExpander@{CAudioEffectCompressorExpander}!getParam@{getParam}}
+\index{getParam@{getParam}!CAudioEffectCompressorExpander@{CAudioEffectCompressorExpander}}
+\doxysubsubsection{\texorpdfstring{getParam()}{getParam()}}
+{\footnotesize\ttfamily float C\+Audio\+Effect\+Compressor\+Expander\+::get\+Param (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}}}]{e\+Param }\end{DoxyParamCaption})}
+
+return the value of the specified parameter 
+\begin{DoxyParams}{Parameters}
+{\em e\+Param} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_audio_effect_compressor_expander_a5814e8f98d1bec41445a5dc0b4ad353d}\label{class_c_audio_effect_compressor_expander_a5814e8f98d1bec41445a5dc0b4ad353d}} 
+\index{CAudioEffectCompressorExpander@{CAudioEffectCompressorExpander}!init@{init}}
+\index{init@{init}!CAudioEffectCompressorExpander@{CAudioEffectCompressorExpander}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily Error\+\_\+t C\+Audio\+Effect\+Compressor\+Expander\+::init (\begin{DoxyParamCaption}\item[{Effect\+\_\+t}]{effect\+Type,  }\item[{\mbox{\hyperlink{class_c_audio_effect_compressor_expander_a4a962f94692f984b06e13378c7cdb0e4}{Effect\+Subtype\+\_\+t}}}]{sub\+Type,  }\item[{float}]{f\+Sample\+Rate\+In\+Hz,  }\item[{int}]{i\+Num\+Channels,  }\item[{int}]{i\+Lookahead\+Buffer\+Size,  }\item[{\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}}}]{params\mbox{[}$\,$\mbox{]} = {\ttfamily NULL},  }\item[{float}]{values\mbox{[}$\,$\mbox{]} = {\ttfamily NULL},  }\item[{int}]{i\+Num\+Params = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+initializes a distortion instance 
+\begin{DoxyParams}{Parameters}
+{\em effect\+Type} & audio effect type \\
+\hline
+{\em sub\+Type} & audio effect sub type \\
+\hline
+{\em f\+Sample\+Rate\+In\+Hz} & sample rate in Hz \\
+\hline
+{\em i\+Num\+Channels} & number of audio channels \\
+\hline
+{\em i\+Lookahead\+Buffer\+Size} & look ahead buffer size in samples \\
+\hline
+{\em params\mbox{[}$\,$\mbox{]}} & list of parameter types \\
+\hline
+{\em values\mbox{[}$\,$\mbox{]}} & list of parameter values \\
+\hline
+{\em i\+Num\+Params} & number of parameters \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_audio_effect_compressor_expander_a250978b867447681d8976604e8c69faf}\label{class_c_audio_effect_compressor_expander_a250978b867447681d8976604e8c69faf}} 
+\index{CAudioEffectCompressorExpander@{CAudioEffectCompressorExpander}!process@{process}}
+\index{process@{process}!CAudioEffectCompressorExpander@{CAudioEffectCompressorExpander}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily Error\+\_\+t C\+Audio\+Effect\+Compressor\+Expander\+::process (\begin{DoxyParamCaption}\item[{float $\ast$$\ast$}]{ppf\+Input\+Buffer,  }\item[{float $\ast$$\ast$}]{ppf\+Output\+Buffer,  }\item[{int}]{i\+Number\+Of\+Frames }\end{DoxyParamCaption})}
+
+processes one block of audio 
+\begin{DoxyParams}{Parameters}
+{\em ppf\+Input\+Buffer} & input buffer \mbox{[}num\+Channels\mbox{]}\mbox{[}i\+Number\+Of\+Frames\mbox{]} \\
+\hline
+{\em ppf\+Output\+Buffer} & output buffer \mbox{[}num\+Channels\mbox{]}\mbox{[}i\+Number\+Of\+Frames\mbox{]} \\
+\hline
+{\em i\+Number\+Of\+Frames} & buffer length (per channel) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_audio_effect_compressor_expander_affaa7225be3f5e90eaa142b9f8a711ff}\label{class_c_audio_effect_compressor_expander_affaa7225be3f5e90eaa142b9f8a711ff}} 
+\index{CAudioEffectCompressorExpander@{CAudioEffectCompressorExpander}!reset@{reset}}
+\index{reset@{reset}!CAudioEffectCompressorExpander@{CAudioEffectCompressorExpander}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily Error\+\_\+t C\+Audio\+Effect\+Compressor\+Expander\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+resets the internal variables (requires new call of init) \begin{DoxyReturn}{Returns}
+Error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_audio_effect_compressor_expander_a319ff694aadc6697d97bba37cc0d4143}\label{class_c_audio_effect_compressor_expander_a319ff694aadc6697d97bba37cc0d4143}} 
+\index{CAudioEffectCompressorExpander@{CAudioEffectCompressorExpander}!setEffectSubtype@{setEffectSubtype}}
+\index{setEffectSubtype@{setEffectSubtype}!CAudioEffectCompressorExpander@{CAudioEffectCompressorExpander}}
+\doxysubsubsection{\texorpdfstring{setEffectSubtype()}{setEffectSubtype()}}
+{\footnotesize\ttfamily Error\+\_\+t C\+Audio\+Effect\+Compressor\+Expander\+::set\+Effect\+Subtype (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_audio_effect_compressor_expander_a4a962f94692f984b06e13378c7cdb0e4}{Effect\+Subtype\+\_\+t}}}]{e\+Value }\end{DoxyParamCaption})}
+
+sets a compression/expander sub type 
+\begin{DoxyParams}{Parameters}
+{\em e\+Value} & value of the sub type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_audio_effect_compressor_expander_a887221db9f4028dc6ee4b69b24ac849b}\label{class_c_audio_effect_compressor_expander_a887221db9f4028dc6ee4b69b24ac849b}} 
+\index{CAudioEffectCompressorExpander@{CAudioEffectCompressorExpander}!setParam@{setParam}}
+\index{setParam@{setParam}!CAudioEffectCompressorExpander@{CAudioEffectCompressorExpander}}
+\doxysubsubsection{\texorpdfstring{setParam()}{setParam()}}
+{\footnotesize\ttfamily Error\+\_\+t C\+Audio\+Effect\+Compressor\+Expander\+::set\+Param (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}}}]{e\+Param,  }\item[{float}]{f\+Value }\end{DoxyParamCaption})}
+
+sets a compression/expander parameter 
+\begin{DoxyParams}{Parameters}
+{\em e\+Param} & what parameter \\
+\hline
+{\em f\+Value} & value of the parameter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error\+\_\+t 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/inc/\mbox{\hyperlink{_audio_effect_compressor_8h}{Audio\+Effect\+Compressor.\+h}}\item 
+src/\+Audio\+Effect/\mbox{\hyperlink{_audio_effect_compressor_8cpp}{Audio\+Effect\+Compressor.\+cpp}}\end{DoxyCompactItemize}

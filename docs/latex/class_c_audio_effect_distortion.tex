@@ -1,0 +1,193 @@
+\hypertarget{class_c_audio_effect_distortion}{}\doxysection{C\+Audio\+Effect\+Distortion Class Reference}
+\label{class_c_audio_effect_distortion}\index{CAudioEffectDistortion@{CAudioEffectDistortion}}
+
+
+audio effect class for distortion  
+
+
+
+
+{\ttfamily \#include $<$Audio\+Effect\+Distortion.\+h$>$}
+
+
+
+Inheritance diagram for C\+Audio\+Effect\+Distortion\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{class_c_audio_effect_distortion__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for C\+Audio\+Effect\+Distortion\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{class_c_audio_effect_distortion__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_audio_effect_distortion_adcd0e4bc2847d28980c97a0769a6e2d9}{C\+Audio\+Effect\+Distortion}} ()
+\item 
+\mbox{\hyperlink{class_c_audio_effect_distortion_ab63a539efebeae57aaf941b0c0df9597}{C\+Audio\+Effect\+Distortion}} (float f\+Sample\+Rate\+In\+Hz, int i\+Num\+Channels, \mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}} params\mbox{[}$\,$\mbox{]}, float values\mbox{[}$\,$\mbox{]}, int i\+Num\+Params)
+\item 
+\mbox{\hyperlink{class_c_audio_effect_distortion_a64605db59f14ab93cdf24635285967f1}{$\sim$\+C\+Audio\+Effect\+Distortion}} ()
+\item 
+Error\+\_\+t \mbox{\hyperlink{class_c_audio_effect_distortion_a8612e3162929707bc6a02de5f94e5d21}{init}} (float f\+Sample\+Rate\+In\+Hz, int i\+Num\+Channels, \mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}} params\mbox{[}$\,$\mbox{]}, float values\mbox{[}$\,$\mbox{]}, int i\+Num\+Params)
+\item 
+Error\+\_\+t \mbox{\hyperlink{class_c_audio_effect_distortion_ad08d1317b15076ac02525989af6e3159}{reset}} ()
+\item 
+Error\+\_\+t \mbox{\hyperlink{class_c_audio_effect_distortion_a4e8d259eb494ddb925ab41970013196b}{set\+Param}} (\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}} e\+Param, float f\+Value)
+\item 
+float \mbox{\hyperlink{class_c_audio_effect_distortion_a81b276676f792ea0e636c7f379ae9ff4}{get\+Param}} (\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}} e\+Param)
+\item 
+Error\+\_\+t \mbox{\hyperlink{class_c_audio_effect_distortion_a7f28fb9bee030dcd4842b1785b1f493d}{process}} (float $\ast$$\ast$ppf\+Input\+Buffer, float $\ast$$\ast$ppf\+Output\+Buffer, int i\+Number\+Of\+Frames)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_c_audio_effect_distortion_a3a051ac4d55b1ff03cc0d598d072c54a}{m\+\_\+f\+Gain}}
+\begin{DoxyCompactList}\small\item\em amount of distortion, $>$0 \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_c_audio_effect_distortion_af8fd1e68dc0fd648e434bf7f037a0fef}{m\+\_\+f\+Dry\+Wet\+Mix}}
+\begin{DoxyCompactList}\small\item\em mix of original and distorted sound, 1=only distorted, 0=only dry \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+audio effect class for distortion 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_c_audio_effect_distortion_adcd0e4bc2847d28980c97a0769a6e2d9}\label{class_c_audio_effect_distortion_adcd0e4bc2847d28980c97a0769a6e2d9}} 
+\index{CAudioEffectDistortion@{CAudioEffectDistortion}!CAudioEffectDistortion@{CAudioEffectDistortion}}
+\index{CAudioEffectDistortion@{CAudioEffectDistortion}!CAudioEffectDistortion@{CAudioEffectDistortion}}
+\doxysubsubsection{\texorpdfstring{CAudioEffectDistortion()}{CAudioEffectDistortion()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily C\+Audio\+Effect\+Distortion\+::\+C\+Audio\+Effect\+Distortion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_c_audio_effect_distortion_ab63a539efebeae57aaf941b0c0df9597}\label{class_c_audio_effect_distortion_ab63a539efebeae57aaf941b0c0df9597}} 
+\index{CAudioEffectDistortion@{CAudioEffectDistortion}!CAudioEffectDistortion@{CAudioEffectDistortion}}
+\index{CAudioEffectDistortion@{CAudioEffectDistortion}!CAudioEffectDistortion@{CAudioEffectDistortion}}
+\doxysubsubsection{\texorpdfstring{CAudioEffectDistortion()}{CAudioEffectDistortion()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+Audio\+Effect\+Distortion\+::\+C\+Audio\+Effect\+Distortion (\begin{DoxyParamCaption}\item[{float}]{f\+Sample\+Rate\+In\+Hz,  }\item[{int}]{i\+Num\+Channels,  }\item[{\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}}}]{params\mbox{[}$\,$\mbox{]} = {\ttfamily NULL},  }\item[{float}]{values\mbox{[}$\,$\mbox{]} = {\ttfamily NULL},  }\item[{int}]{i\+Num\+Params = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_c_audio_effect_distortion_a64605db59f14ab93cdf24635285967f1}\label{class_c_audio_effect_distortion_a64605db59f14ab93cdf24635285967f1}} 
+\index{CAudioEffectDistortion@{CAudioEffectDistortion}!````~CAudioEffectDistortion@{$\sim$CAudioEffectDistortion}}
+\index{````~CAudioEffectDistortion@{$\sim$CAudioEffectDistortion}!CAudioEffectDistortion@{CAudioEffectDistortion}}
+\doxysubsubsection{\texorpdfstring{$\sim$CAudioEffectDistortion()}{~CAudioEffectDistortion()}}
+{\footnotesize\ttfamily C\+Audio\+Effect\+Distortion\+::$\sim$\+C\+Audio\+Effect\+Distortion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_c_audio_effect_distortion_a81b276676f792ea0e636c7f379ae9ff4}\label{class_c_audio_effect_distortion_a81b276676f792ea0e636c7f379ae9ff4}} 
+\index{CAudioEffectDistortion@{CAudioEffectDistortion}!getParam@{getParam}}
+\index{getParam@{getParam}!CAudioEffectDistortion@{CAudioEffectDistortion}}
+\doxysubsubsection{\texorpdfstring{getParam()}{getParam()}}
+{\footnotesize\ttfamily float C\+Audio\+Effect\+Distortion\+::get\+Param (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}}}]{e\+Param }\end{DoxyParamCaption})}
+
+return the value of the specified parameter 
+\begin{DoxyParams}{Parameters}
+{\em e\+Param} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_audio_effect_distortion_a8612e3162929707bc6a02de5f94e5d21}\label{class_c_audio_effect_distortion_a8612e3162929707bc6a02de5f94e5d21}} 
+\index{CAudioEffectDistortion@{CAudioEffectDistortion}!init@{init}}
+\index{init@{init}!CAudioEffectDistortion@{CAudioEffectDistortion}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily Error\+\_\+t C\+Audio\+Effect\+Distortion\+::init (\begin{DoxyParamCaption}\item[{float}]{f\+Sample\+Rate\+In\+Hz,  }\item[{int}]{i\+Num\+Channels,  }\item[{\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}}}]{params\mbox{[}$\,$\mbox{]} = {\ttfamily NULL},  }\item[{float}]{values\mbox{[}$\,$\mbox{]} = {\ttfamily NULL},  }\item[{int}]{i\+Num\+Params = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+initializes a distortion instance 
+\begin{DoxyParams}{Parameters}
+{\em f\+Sample\+Rate\+In\+Hz} & sample rate in Hz \\
+\hline
+{\em i\+Num\+Channels} & number of audio channels \\
+\hline
+{\em params\mbox{[}$\,$\mbox{]}} & list of parameter types \\
+\hline
+{\em values\mbox{[}$\,$\mbox{]}} & list of parameter values \\
+\hline
+{\em i\+Num\+Params} & number of parameters \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_audio_effect_distortion_a7f28fb9bee030dcd4842b1785b1f493d}\label{class_c_audio_effect_distortion_a7f28fb9bee030dcd4842b1785b1f493d}} 
+\index{CAudioEffectDistortion@{CAudioEffectDistortion}!process@{process}}
+\index{process@{process}!CAudioEffectDistortion@{CAudioEffectDistortion}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily Error\+\_\+t C\+Audio\+Effect\+Distortion\+::process (\begin{DoxyParamCaption}\item[{float $\ast$$\ast$}]{ppf\+Input\+Buffer,  }\item[{float $\ast$$\ast$}]{ppf\+Output\+Buffer,  }\item[{int}]{i\+Number\+Of\+Frames }\end{DoxyParamCaption})}
+
+processes one block of audio 
+\begin{DoxyParams}{Parameters}
+{\em ppf\+Input\+Buffer} & input buffer \mbox{[}num\+Channels\mbox{]}\mbox{[}i\+Number\+Of\+Frames\mbox{]} \\
+\hline
+{\em ppf\+Output\+Buffer} & output buffer \mbox{[}num\+Channels\mbox{]}\mbox{[}i\+Number\+Of\+Frames\mbox{]} \\
+\hline
+{\em i\+Number\+Of\+Frames} & buffer length (per channel) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_audio_effect_distortion_ad08d1317b15076ac02525989af6e3159}\label{class_c_audio_effect_distortion_ad08d1317b15076ac02525989af6e3159}} 
+\index{CAudioEffectDistortion@{CAudioEffectDistortion}!reset@{reset}}
+\index{reset@{reset}!CAudioEffectDistortion@{CAudioEffectDistortion}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily Error\+\_\+t C\+Audio\+Effect\+Distortion\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+resets the internal variables (requires new call of init) \begin{DoxyReturn}{Returns}
+Error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_audio_effect_distortion_a4e8d259eb494ddb925ab41970013196b}\label{class_c_audio_effect_distortion_a4e8d259eb494ddb925ab41970013196b}} 
+\index{CAudioEffectDistortion@{CAudioEffectDistortion}!setParam@{setParam}}
+\index{setParam@{setParam}!CAudioEffectDistortion@{CAudioEffectDistortion}}
+\doxysubsubsection{\texorpdfstring{setParam()}{setParam()}}
+{\footnotesize\ttfamily Error\+\_\+t C\+Audio\+Effect\+Distortion\+::set\+Param (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}}}]{e\+Param,  }\item[{float}]{f\+Value }\end{DoxyParamCaption})}
+
+sets a distortion parameter 
+\begin{DoxyParams}{Parameters}
+{\em e\+Param} & what parameter \\
+\hline
+{\em f\+Value} & value of the parameter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error\+\_\+t 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_c_audio_effect_distortion_af8fd1e68dc0fd648e434bf7f037a0fef}\label{class_c_audio_effect_distortion_af8fd1e68dc0fd648e434bf7f037a0fef}} 
+\index{CAudioEffectDistortion@{CAudioEffectDistortion}!m\_fDryWetMix@{m\_fDryWetMix}}
+\index{m\_fDryWetMix@{m\_fDryWetMix}!CAudioEffectDistortion@{CAudioEffectDistortion}}
+\doxysubsubsection{\texorpdfstring{m\_fDryWetMix}{m\_fDryWetMix}}
+{\footnotesize\ttfamily float C\+Audio\+Effect\+Distortion\+::m\+\_\+f\+Dry\+Wet\+Mix\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+mix of original and distorted sound, 1=only distorted, 0=only dry 
+
+\mbox{\Hypertarget{class_c_audio_effect_distortion_a3a051ac4d55b1ff03cc0d598d072c54a}\label{class_c_audio_effect_distortion_a3a051ac4d55b1ff03cc0d598d072c54a}} 
+\index{CAudioEffectDistortion@{CAudioEffectDistortion}!m\_fGain@{m\_fGain}}
+\index{m\_fGain@{m\_fGain}!CAudioEffectDistortion@{CAudioEffectDistortion}}
+\doxysubsubsection{\texorpdfstring{m\_fGain}{m\_fGain}}
+{\footnotesize\ttfamily float C\+Audio\+Effect\+Distortion\+::m\+\_\+f\+Gain\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+amount of distortion, $>$0 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/inc/\mbox{\hyperlink{_audio_effect_distortion_8h}{Audio\+Effect\+Distortion.\+h}}\item 
+src/\+Audio\+Effect/\mbox{\hyperlink{_audio_effect_distortion_8cpp}{Audio\+Effect\+Distortion.\+cpp}}\end{DoxyCompactItemize}

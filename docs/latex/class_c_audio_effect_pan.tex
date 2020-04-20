@@ -1,0 +1,181 @@
+\hypertarget{class_c_audio_effect_pan}{}\doxysection{C\+Audio\+Effect\+Pan Class Reference}
+\label{class_c_audio_effect_pan}\index{CAudioEffectPan@{CAudioEffectPan}}
+
+
+audio effect class for pan  
+
+
+
+
+{\ttfamily \#include $<$Audio\+Effect\+Pan.\+h$>$}
+
+
+
+Inheritance diagram for C\+Audio\+Effect\+Pan\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{class_c_audio_effect_pan__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for C\+Audio\+Effect\+Pan\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{class_c_audio_effect_pan__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_audio_effect_pan_a61068555b83d4d9a5718dbd9b4761f9d}{C\+Audio\+Effect\+Pan}} ()
+\item 
+\mbox{\hyperlink{class_c_audio_effect_pan_a29ef5d865a3a7d18c03c022be04d0f28}{C\+Audio\+Effect\+Pan}} (float f\+Sample\+Rate\+In\+Hz, int i\+Num\+Channels, \mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}} params\mbox{[}$\,$\mbox{]}, float values\mbox{[}$\,$\mbox{]}, int i\+Num\+Params)
+\item 
+\mbox{\hyperlink{class_c_audio_effect_pan_a664b79089ad20d63acd1618dfd15262c}{$\sim$\+C\+Audio\+Effect\+Pan}} ()
+\item 
+Error\+\_\+t \mbox{\hyperlink{class_c_audio_effect_pan_a0fd80d3f3431413156800a040f0bb78c}{init}} (float f\+Sample\+Rate\+In\+Hz, int i\+Num\+Channels, \mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}} params\mbox{[}$\,$\mbox{]}, float values\mbox{[}$\,$\mbox{]}, int i\+Num\+Params)
+\item 
+Error\+\_\+t \mbox{\hyperlink{class_c_audio_effect_pan_ad488dbf4297543f54ce34754191b255a}{reset}} ()
+\item 
+Error\+\_\+t \mbox{\hyperlink{class_c_audio_effect_pan_add07e249665d350388d44cc9e1155ac8}{set\+Param}} (\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}} e\+Param, float f\+Value)
+\item 
+float \mbox{\hyperlink{class_c_audio_effect_pan_acbf793af254ab52df5dfb98ec2b51197}{get\+Param}} (\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}} e\+Param)
+\item 
+Error\+\_\+t \mbox{\hyperlink{class_c_audio_effect_pan_a7eb55bf7c2ce37aa10893d07ea204755}{process}} (float $\ast$$\ast$ppf\+Input\+Buffer, float $\ast$$\ast$ppf\+Output\+Buffer, int i\+Number\+Of\+Frames)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_c_audio_effect_pan_aef17c141d5059454cb424d7379f9e188}{m\+\_\+f\+Pan}}
+\begin{DoxyCompactList}\small\item\em amount of pan, left=-\/1, right=1, center=0 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+audio effect class for pan 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_c_audio_effect_pan_a61068555b83d4d9a5718dbd9b4761f9d}\label{class_c_audio_effect_pan_a61068555b83d4d9a5718dbd9b4761f9d}} 
+\index{CAudioEffectPan@{CAudioEffectPan}!CAudioEffectPan@{CAudioEffectPan}}
+\index{CAudioEffectPan@{CAudioEffectPan}!CAudioEffectPan@{CAudioEffectPan}}
+\doxysubsubsection{\texorpdfstring{CAudioEffectPan()}{CAudioEffectPan()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily C\+Audio\+Effect\+Pan\+::\+C\+Audio\+Effect\+Pan (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_c_audio_effect_pan_a29ef5d865a3a7d18c03c022be04d0f28}\label{class_c_audio_effect_pan_a29ef5d865a3a7d18c03c022be04d0f28}} 
+\index{CAudioEffectPan@{CAudioEffectPan}!CAudioEffectPan@{CAudioEffectPan}}
+\index{CAudioEffectPan@{CAudioEffectPan}!CAudioEffectPan@{CAudioEffectPan}}
+\doxysubsubsection{\texorpdfstring{CAudioEffectPan()}{CAudioEffectPan()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+Audio\+Effect\+Pan\+::\+C\+Audio\+Effect\+Pan (\begin{DoxyParamCaption}\item[{float}]{f\+Sample\+Rate\+In\+Hz,  }\item[{int}]{i\+Num\+Channels,  }\item[{\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}}}]{params\mbox{[}$\,$\mbox{]} = {\ttfamily NULL},  }\item[{float}]{values\mbox{[}$\,$\mbox{]} = {\ttfamily NULL},  }\item[{int}]{i\+Num\+Params = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_c_audio_effect_pan_a664b79089ad20d63acd1618dfd15262c}\label{class_c_audio_effect_pan_a664b79089ad20d63acd1618dfd15262c}} 
+\index{CAudioEffectPan@{CAudioEffectPan}!````~CAudioEffectPan@{$\sim$CAudioEffectPan}}
+\index{````~CAudioEffectPan@{$\sim$CAudioEffectPan}!CAudioEffectPan@{CAudioEffectPan}}
+\doxysubsubsection{\texorpdfstring{$\sim$CAudioEffectPan()}{~CAudioEffectPan()}}
+{\footnotesize\ttfamily C\+Audio\+Effect\+Pan\+::$\sim$\+C\+Audio\+Effect\+Pan (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_c_audio_effect_pan_acbf793af254ab52df5dfb98ec2b51197}\label{class_c_audio_effect_pan_acbf793af254ab52df5dfb98ec2b51197}} 
+\index{CAudioEffectPan@{CAudioEffectPan}!getParam@{getParam}}
+\index{getParam@{getParam}!CAudioEffectPan@{CAudioEffectPan}}
+\doxysubsubsection{\texorpdfstring{getParam()}{getParam()}}
+{\footnotesize\ttfamily float C\+Audio\+Effect\+Pan\+::get\+Param (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}}}]{e\+Param }\end{DoxyParamCaption})}
+
+return the value of the specified parameter 
+\begin{DoxyParams}{Parameters}
+{\em e\+Param} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_audio_effect_pan_a0fd80d3f3431413156800a040f0bb78c}\label{class_c_audio_effect_pan_a0fd80d3f3431413156800a040f0bb78c}} 
+\index{CAudioEffectPan@{CAudioEffectPan}!init@{init}}
+\index{init@{init}!CAudioEffectPan@{CAudioEffectPan}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily Error\+\_\+t C\+Audio\+Effect\+Pan\+::init (\begin{DoxyParamCaption}\item[{float}]{f\+Sample\+Rate\+In\+Hz,  }\item[{int}]{i\+Num\+Channels,  }\item[{\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}}}]{params\mbox{[}$\,$\mbox{]} = {\ttfamily NULL},  }\item[{float}]{values\mbox{[}$\,$\mbox{]} = {\ttfamily NULL},  }\item[{int}]{i\+Num\+Params = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+initializes a pan instance 
+\begin{DoxyParams}{Parameters}
+{\em f\+Sample\+Rate\+In\+Hz} & sample rate in Hz \\
+\hline
+{\em i\+Num\+Channels} & number of audio channels \\
+\hline
+{\em params\mbox{[}$\,$\mbox{]}} & list of parameter types \\
+\hline
+{\em values\mbox{[}$\,$\mbox{]}} & list of parameter values \\
+\hline
+{\em i\+Num\+Params} & number of parameters \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_audio_effect_pan_a7eb55bf7c2ce37aa10893d07ea204755}\label{class_c_audio_effect_pan_a7eb55bf7c2ce37aa10893d07ea204755}} 
+\index{CAudioEffectPan@{CAudioEffectPan}!process@{process}}
+\index{process@{process}!CAudioEffectPan@{CAudioEffectPan}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily Error\+\_\+t C\+Audio\+Effect\+Pan\+::process (\begin{DoxyParamCaption}\item[{float $\ast$$\ast$}]{ppf\+Input\+Buffer,  }\item[{float $\ast$$\ast$}]{ppf\+Output\+Buffer,  }\item[{int}]{i\+Number\+Of\+Frames }\end{DoxyParamCaption})}
+
+processes one block of audio 
+\begin{DoxyParams}{Parameters}
+{\em ppf\+Input\+Buffer} & input buffer \mbox{[}num\+Channels\mbox{]}\mbox{[}i\+Number\+Of\+Frames\mbox{]} \\
+\hline
+{\em ppf\+Output\+Buffer} & output buffer \mbox{[}num\+Channels\mbox{]}\mbox{[}i\+Number\+Of\+Frames\mbox{]} \\
+\hline
+{\em i\+Number\+Of\+Frames} & buffer length (per channel) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_audio_effect_pan_ad488dbf4297543f54ce34754191b255a}\label{class_c_audio_effect_pan_ad488dbf4297543f54ce34754191b255a}} 
+\index{CAudioEffectPan@{CAudioEffectPan}!reset@{reset}}
+\index{reset@{reset}!CAudioEffectPan@{CAudioEffectPan}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily Error\+\_\+t C\+Audio\+Effect\+Pan\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+resets the internal variables (requires new call of init) \begin{DoxyReturn}{Returns}
+Error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_audio_effect_pan_add07e249665d350388d44cc9e1155ac8}\label{class_c_audio_effect_pan_add07e249665d350388d44cc9e1155ac8}} 
+\index{CAudioEffectPan@{CAudioEffectPan}!setParam@{setParam}}
+\index{setParam@{setParam}!CAudioEffectPan@{CAudioEffectPan}}
+\doxysubsubsection{\texorpdfstring{setParam()}{setParam()}}
+{\footnotesize\ttfamily Error\+\_\+t C\+Audio\+Effect\+Pan\+::set\+Param (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}}}]{e\+Param,  }\item[{float}]{f\+Value }\end{DoxyParamCaption})}
+
+sets a gain parameter 
+\begin{DoxyParams}{Parameters}
+{\em e\+Param} & what parameter \\
+\hline
+{\em f\+Value} & value of the parameter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error\+\_\+t 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_c_audio_effect_pan_aef17c141d5059454cb424d7379f9e188}\label{class_c_audio_effect_pan_aef17c141d5059454cb424d7379f9e188}} 
+\index{CAudioEffectPan@{CAudioEffectPan}!m\_fPan@{m\_fPan}}
+\index{m\_fPan@{m\_fPan}!CAudioEffectPan@{CAudioEffectPan}}
+\doxysubsubsection{\texorpdfstring{m\_fPan}{m\_fPan}}
+{\footnotesize\ttfamily float C\+Audio\+Effect\+Pan\+::m\+\_\+f\+Pan\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+amount of pan, left=-\/1, right=1, center=0 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/inc/\mbox{\hyperlink{_audio_effect_pan_8h}{Audio\+Effect\+Pan.\+h}}\item 
+src/\+Audio\+Effect/\mbox{\hyperlink{_audio_effect_pan_8cpp}{Audio\+Effect\+Pan.\+cpp}}\end{DoxyCompactItemize}
