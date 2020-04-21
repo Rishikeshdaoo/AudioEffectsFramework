@@ -33,32 +33,33 @@ This projects aims to provide an easy to use API for creating audio effects proc
 
 ### Usage
 
-- Create the Effect instance
-⋅⋅⋅```CAudioEffectDelay       *phAudioEffectDelay = nullptr
-	   phAudioEffectDelay = new CAudioEffectDelay(sampleRate,numChannels,maxDelayInSecs,param,value,iNumParams)
-	   ```
+- <span style="font-family:Lato; font-size:1.5em;">Create the Effect instance </span>
 
-⋅⋅⋅⋅`sampleRate, numChannels` are arguments that should be taken from the host application.
-⋅⋅⋅⋅`maxDelayInSecs` is an argument the user sets according to their requirement for parameter value range (Only delay based effects have this argument).
-⋅⋅⋅⋅`param, value, iNumParams` are arguments that need to be initialized as below.
-⋅⋅⋅⋅⋅⋅```int iNumParams = 4;
-    	CAudioEffect::EffectParam_t param[iNumParams];
-        float value[iNumParams]; 
-        ```
+    CAudioEffectDelay       *phAudioEffectDelay = nullptr <br />
+    phAudioEffectDelay = new CAudioEffectDelay(sampleRate,numChannels,maxDelayInSecs,param,value,iNumParams)
 
-⋅⋅⋅⋅⋅⋅```param[0] = CAudioEffect::kParamDelayInSecs;
-		    value[0] = 0.002f;
-		    param[1] = CAudioEffect::kParamModRateInHz;
-		    value[1] = 0.5f;
-		    param[2] = CAudioEffect::kParamModWidthInSecs;
-		    value[2] = 0.002f;
-		    param[3] = CAudioEffect::kParamGain;
-		    value[3] = 0.7f; 
-		```
+    `sampleRate, numChannels` are arguments that should be taken from the host application. <br />
+    `maxDelayInSecs` is an argument the user sets according to their requirement for parameter value range (Only delay based effects have this argument). <br />
+    `param, value, iNumParams` are arguments that need to be initialized as below.
 
-- Call the effect's process function
-⋅⋅⋅`Error_t error = phAudioEffectDelay->process(ppfAudioInput, ppfAudioOutput, iNumFrames);`
-⋅⋅⋅⋅`ppfAudioInput, ppfAudioOutput` are the input/output buffers used by the library. The user should take of creating and destroying these buffers.
-⋅⋅⋅⋅`iNumFrames` is an argument that tells the process function the number of samples in a block of buffered audio.
+    int iNumParams = 4; <br />
+    CAudioEffect::EffectParam_t param[iNumParams]; <br />
+    float value[iNumParams]; 
+
+    param[0] = CAudioEffect::kParamDelayInSecs; <br />
+    value[0] = 0.002f; <br />
+    param[1] = CAudioEffect::kParamModRateInHz; <br />
+    value[1] = 0.5f; <br />
+    param[2] = CAudioEffect::kParamModWidthInSecs; <br />
+    value[2] = 0.002f; <br />
+    param[3] = CAudioEffect::kParamGain; <br />
+    value[3] = 0.7f; 
+
+
+- <span style="font-family:Lato; font-size:1.5em;"> Call the effect's process function </span>
+    
+    Error_t error = phAudioEffectDelay -> process(ppfAudioInput, ppfAudioOutput, iNumFrames); <br /> <br />
+        `ppfAudioInput, ppfAudioOutput` are the input/output buffers used by the library. The user should take care of creating and destroying these buffers. <br />
+        `iNumFrames` is an argument that tells the process function the number of samples in a block of buffered audio.
 
 
