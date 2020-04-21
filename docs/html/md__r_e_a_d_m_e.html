@@ -114,22 +114,19 @@ Getting Started</h1>
 <h2><a class="anchor" id="autotoc_md5"></a>
 Instructions</h2>
 <ul>
-<li>Clone the repository with the command : 'git clone <a href="https://github.com/Rishikeshdaoo/AudioEffectsFramework.git'">https://github.com/Rishikeshdaoo/AudioEffectsFramework.git'</a></li>
+<li>Clone the repository with the command : <code>git clone <a href="https://github.com/Rishikeshdaoo/AudioEffectsFramework.git">https://github.com/Rishikeshdaoo/AudioEffectsFramework.git</a></code></li>
 </ul>
 <h2><a class="anchor" id="autotoc_md6"></a>
 Usage</h2>
 <ul>
-<li>Create the Effect instance ... '''<a class="el" href="class_c_audio_effect_delay.html">CAudioEffectDelay</a> *phAudioEffectDelay = nullptr phAudioEffectDelay = new <a class="el" href="class_c_audio_effect_delay.html">CAudioEffectDelay(sampleRate,numChannels,maxDelayInSecs,param,value,iNumParams)</a>'''</li>
+<li>Create the Effect instance ... <code><a class="el" href="class_c_audio_effect_delay.html">CAudioEffectDelay</a> *phAudioEffectDelay = nullptr phAudioEffectDelay = new <a class="el" href="class_c_audio_effect_delay.html">CAudioEffectDelay(sampleRate,numChannels,maxDelayInSecs,param,value,iNumParams)</a></code></li>
 </ul>
-<p>.... 'sampleRate, numChannels' are arguments that you should get from your host application. .... 'param, value, iNumParams' are arguments that need to be initialized as below ...... ''' int iNumParams = 4; <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659e">CAudioEffect::EffectParam_t</a> param[iNumParams]; float value[iNumParams]; </p><pre class="fragment">param[0] = CAudioEffect::kParamDelayInSecs;
-value[0] = 0.002f;
-param[1] = CAudioEffect::kParamModRateInHz;
-value[1] = 0.5f;
-param[2] = CAudioEffect::kParamModWidthInSecs;
-value[2] = 0.002f;
-param[3] = CAudioEffect::kParamGain;
-value[3] = 0.7f; '''
-</pre> </div></div><!-- contents -->
+<p>.... <code>sampleRate, numChannels</code> are arguments that should be taken from the host application. .... <code>maxDelayInSecs</code> is an argument the user sets according to their requirement for parameter value range (Only delay based effects have this argument). .... <code>param, value, iNumParams</code> are arguments that need to be initialized as below. ...... ``` int iNumParams = 4; <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659e">CAudioEffect::EffectParam_t</a> param[iNumParams]; float value[iNumParams]; ```</p>
+<p>``` param[0] = <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659eab721847e4b20bf69f9f05d516e02df2c">CAudioEffect::kParamDelayInSecs</a>; value[0] = 0.002f; param[1] = <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659eada631f5d036dec3dda2386b6f00f0f8f">CAudioEffect::kParamModRateInHz</a>; value[1] = 0.5f; param[2] = <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659ea05e953e3f70678b944785d62ca5473bd">CAudioEffect::kParamModWidthInSecs</a>; value[2] = 0.002f; param[3] = <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659ea560e1b20c61513df8c5e2409609d61c3">CAudioEffect::kParamGain</a>; value[3] = 0.7f; ```</p>
+<ul>
+<li>Call the effect's process function ... <code>Error_t error = phAudioEffectDelay-&gt;process(ppfAudioInput, ppfAudioOutput, iNumFrames);</code> .... <code>ppfAudioInput, ppfAudioOutput</code> are the input/output buffers used by the library. The user should take of creating and destroying these buffers. .... <code>iNumFrames</code> is an argument that tells the process function the number of samples in a block of buffered audio. </li>
+</ul>
+</div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->
