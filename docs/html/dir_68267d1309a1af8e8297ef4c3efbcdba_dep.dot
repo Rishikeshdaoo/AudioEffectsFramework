@@ -1,0 +1,18 @@
+digraph "src" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_68267d1309a1af8e8297ef4c3efbcdba {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_68267d1309a1af8e8297ef4c3efbcdba.html"];
+    dir_68267d1309a1af8e8297ef4c3efbcdba [shape=plaintext label="src"];
+    dir_e0961cdc7d9f617fab8f1026e141d904 [shape=box label="AudioEffect" color="black" fillcolor="white" style="filled" URL="dir_e0961cdc7d9f617fab8f1026e141d904.html"];
+    dir_d4f6e779a3ef91b95519a6aced733fc8 [shape=box label="AudioFileIO" color="black" fillcolor="white" style="filled" URL="dir_d4f6e779a3ef91b95519a6aced733fc8.html"];
+    dir_57ab6e82477bcccbbca63abcd91893c9 [shape=box label="AudioFxFrameworkExec" color="black" fillcolor="white" style="filled" URL="dir_57ab6e82477bcccbbca63abcd91893c9.html"];
+    dir_6bc6ad22483805bbbda55258ad2a62ea [shape=box label="inc" color="black" fillcolor="white" style="filled" URL="dir_6bc6ad22483805bbbda55258ad2a62ea.html"];
+    dir_a0d713cea12394a4c028036c439896df [shape=box label="Tests" color="red" fillcolor="white" style="filled" URL="dir_a0d713cea12394a4c028036c439896df.html"];
+  }
+  dir_d4f6e779a3ef91b95519a6aced733fc8->dir_6bc6ad22483805bbbda55258ad2a62ea [headlabel="5", labeldistance=1.5 headhref="dir_000002_000006.html"];
+  dir_57ab6e82477bcccbbca63abcd91893c9->dir_6bc6ad22483805bbbda55258ad2a62ea [headlabel="5", labeldistance=1.5 headhref="dir_000003_000006.html"];
+  dir_e0961cdc7d9f617fab8f1026e141d904->dir_6bc6ad22483805bbbda55258ad2a62ea [headlabel="9", labeldistance=1.5 headhref="dir_000001_000006.html"];
+  dir_a0d713cea12394a4c028036c439896df->dir_6bc6ad22483805bbbda55258ad2a62ea [headlabel="1", labeldistance=1.5 headhref="dir_000004_000006.html"];
+}

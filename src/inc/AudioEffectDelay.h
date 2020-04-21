@@ -21,9 +21,11 @@ public:
     enum DelayType_t
     {
 //        kNone = 0,
-        kDelay = 0,
-        kChorus = 2,
-        kFlanger = 5,
+        kDelay = 16,
+        kChorus = 18,
+        kFlanger = 21,
+        kTremolo = 8,
+        kVibrato = 2
     };
     
     CAudioEffectDelay();
@@ -46,9 +48,11 @@ private:
     CRingBuffer<float>  **m_ppCRingBuffer;
     DelayType_t m_eDelayType;
     
-    float m_fGain;
+    float m_fDryWetMix;
     float m_fDelayInSamples;
     float m_fMaxDelayInSamples;
+    float m_fModWidthInSamples;
+    float m_fFeedback;
     
     CLfo *m_pCLfo;
 };

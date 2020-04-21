@@ -1,0 +1,4 @@
+<map id="CAudioFileRaw" name="CAudioFileRaw">
+<area shape="rect" id="node1" title="open, read, and write raw audio files in 16 bit integer little endian format." alt="" coords="5,79,119,104"/>
+<area shape="rect" id="node2" href="$class_c_audio_file_if.html" title="open, read, and write audio files" alt="" coords="15,5,109,31"/>
+</map>

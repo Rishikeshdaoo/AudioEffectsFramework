@@ -30,22 +30,6 @@ SUITE(Pan)
             m_fSampleRate(8000)
         {
             m_phPan = new CAudioEffectPan();
-
-//            m_ppfInputData  = new float*[m_iNumChannelsInput];
-//            m_ppfInputTmp   = new float*[m_iNumChannelsInput];
-//            for (int i = 0; i < m_iNumChannelsInput; i++)
-//            {
-//                m_ppfInputData[i]   = new float [m_iDataLength];
-//                CVectorFloat::setZero(m_ppfInputData[i], m_iDataLength);
-//            }
-            
-//            m_ppfOutputData = new float*[m_iNumChannelsOutput];
-//            m_ppfOutputTmp  = new float*[m_iNumChannelsOutput];
-//            for (int i = 0; i < m_iNumChannelsOutput; i++)
-//            {
-//                m_ppfOutputData[i]  = new float [m_iDataLength];
-//                CVectorFloat::setZero(m_ppfOutputData[i], m_iDataLength);
-//            }
         }
         
         ~PanData()
@@ -63,7 +47,6 @@ SUITE(Pan)
             delete [] m_ppfOutputData;
             delete [] m_ppfInputData;
 
-            //destroy?
             m_phPan->reset();
             delete m_phPan;
             m_phPan = 0;

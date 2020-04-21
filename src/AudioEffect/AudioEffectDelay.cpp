@@ -13,7 +13,8 @@
 CAudioEffectDelay::CAudioEffectDelay()
 {
     m_eEffectType = Effect_t::kDelay;
-    m_fGain = 0.f;
+    m_fDryWetMix = 0.f;
+    m_fFeedback = 0.f;
     m_fDelayInSamples = 0.f;
     m_iNumChannels = 0;
     m_fSampleRateInHz = 0;
@@ -47,16 +48,19 @@ Error_t CAudioEffectDelay::init(float fSampleRateInHz, int iNumChannels, float f
     
     for (int c= 0; c < m_iNumChannels; c++)
     {
-        m_ppCRingBuffer[c]= new CRingBuffer<float>(CUtil::float2int<int>(fMaxDelayInSec*m_fSampleRateInHz*2+1));
-        m_ppCRingBuffer[c]->setWriteIdx(CUtil::float2int<int>(fMaxDelayInSec*m_fSampleRateInHz+1));
-        m_ppCRingBuffer[c]->setReadIdx(CUtil::float2int<int>(fMaxDelayInSec*m_fSampleRateInHz+1));
+//        m_ppCRingBuffer[c]= new CRingBuffer<float>(CUtil::float2int<int>(fMaxDelayInSec*m_fSampleRateInHz*2+1));
+//        m_ppCRingBuffer[c]->setWriteIdx(CUtil::float2int<int>(fMaxDelayInSec*m_fSampleRateInHz+1));
+//        m_ppCRingBuffer[c]->setReadIdx(CUtil::float2int<int>(fMaxDelayInSec*m_fSampleRateInHz+1));
+        m_ppCRingBuffer[c]= new CRingBuffer<float>(CUtil::float2int<int>(fMaxDelayInSec*m_fSampleRateInHz+1));
+        m_ppCRingBuffer[c]->setWriteIdx(CUtil::float2int<int>(fMaxDelayInSec*m_fSampleRateInHz/2.0+1));
+        m_ppCRingBuffer[c]->setReadIdx(CUtil::float2int<int>(fMaxDelayInSec*m_fSampleRateInHz/2.0+1));
     }
     
     for (int i = 0; i < iNumParams; i++)
     {
         switch (params[i]) {
-            case kParamGain:
-                m_fGain = values[i];
+            case CAudioEffect::kParamDryWetMix:
+                m_fDryWetMix = values[i];
                 break;
             case kParamDelayInSecs:
                 m_fDelayInSamples = values[i] * m_fSampleRateInHz;
@@ -70,6 +74,9 @@ Error_t CAudioEffectDelay::init(float fSampleRateInHz, int iNumChannels, float f
                     }
                 }
                 break;
+            case kParamFeedback :
+                m_fFeedback = values[i];
+                break;
             case kParamModRateInHz :
                 m_pCLfo->setParam(CLfo::kLfoParamFrequency, values[i]);
                 break;
@@ -77,6 +84,7 @@ Error_t CAudioEffectDelay::init(float fSampleRateInHz, int iNumChannels, float f
                 if(m_eDelayType == kFlanger && kParamModWidthInSecs * m_fSampleRateInHz > m_fDelayInSamples)
                     return kFunctionInvalidArgsError;
                 m_pCLfo->setParam(CLfo::kLfoParamAmplitude, values[i] * m_fSampleRateInHz);
+                m_fModWidthInSamples = values[i] * m_fSampleRateInHz;
                 break;
                 
             default:
@@ -110,8 +118,8 @@ Error_t CAudioEffectDelay::setParam(EffectParam_t eParam, float fValue)
         return kNotInitializedError;
     
     switch (eParam) {
-        case kParamGain:
-            m_fGain = fValue;
+        case CAudioEffect::kParamDryWetMix :
+            m_fDryWetMix = fValue;
             break;
         case kParamDelayInSecs:
             m_fDelayInSamples = fValue * m_fSampleRateInHz;
@@ -125,7 +133,9 @@ Error_t CAudioEffectDelay::setParam(EffectParam_t eParam, float fValue)
                 }
             }
             break;
-            
+        case kParamFeedback :
+            m_fFeedback = fValue;
+            break;
         case kParamModRateInHz:
             m_pCLfo->setParam(CLfo::kLfoParamFrequency, fValue);
             break;
@@ -150,10 +160,15 @@ float CAudioEffectDelay::getParam(EffectParam_t eParam)
         return kNotInitializedError;
     
     switch (eParam) {
-        case kParamGain:
-            return m_fGain;
+        case CAudioEffect::kParamDryWetMix:
+            return m_fDryWetMix;
+            break;
         case kParamDelayInSecs:
             return m_fDelayInSamples / m_fSampleRateInHz;
+            break;
+        case kParamFeedback:
+            return m_fFeedback;
+            break;
         case kParamModRateInHz:
             return m_pCLfo->getParam(CLfo::kLfoParamFrequency);
             break;
@@ -193,20 +208,20 @@ Error_t CAudioEffectDelay::process(float **ppfInputBuffer, float **ppfOutputBuff
         
         for (int c = 0; c < m_iNumChannels; c++)
         {
+
             
-            m_ppCRingBuffer[c]->putPostInc(ppfInputBuffer[c][i]);
+            m_ppCRingBuffer[c]->putPostInc(ppfInputBuffer[c][i] + (m_fFeedback * ppfOutputBuffer[c][i]));
             
             
-            ppfOutputBuffer[c][i]   = ppfInputBuffer[c][i] + m_fGain * m_ppCRingBuffer[c]->get((((m_eDelayType >> 0) & 1) * m_fDelayInSamples) + (((m_eDelayType >> 1) & 1) * fOffset) - (((m_eDelayType >> 2) & 1) * abs(fOffset)));
+            ppfOutputBuffer[c][i] = (1 - m_fDryWetMix) * (((m_eDelayType >> 4) & 1) * ppfInputBuffer[c][i] + (((m_eDelayType >> 3) & 1) * fOffset/m_fModWidthInSamples) * ppfInputBuffer[c][i]) + m_fDryWetMix * m_ppCRingBuffer[c]->get((((m_eDelayType >> 2) & 1) * m_fDelayInSamples) + (((m_eDelayType >> 1) & 1) * fOffset) - (((m_eDelayType >> 0) & 1) * abs(fOffset)));
             
             
             m_ppCRingBuffer[c]->getPostInc();
-           
-        }
-        
-    }
-   
 
+            
+        }
+    }
+    
     
     return kNoError;
 };

@@ -1,0 +1,4 @@
+<map id="CAudioFileSndLib" name="CAudioFileSndLib">
+<area shape="rect" id="node1" title="open, read, and write audio files with sndlib (CMake option WITH_SNDLIB has to be ON)" alt="" coords="5,79,133,104"/>
+<area shape="rect" id="node2" href="$class_c_audio_file_if.html" title="open, read, and write audio files" alt="" coords="22,5,116,31"/>
+</map>

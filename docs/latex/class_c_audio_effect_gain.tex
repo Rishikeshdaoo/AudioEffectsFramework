@@ -1,0 +1,179 @@
+\hypertarget{class_c_audio_effect_gain}{}\doxysection{C\+Audio\+Effect\+Gain Class Reference}
+\label{class_c_audio_effect_gain}\index{CAudioEffectGain@{CAudioEffectGain}}
+
+
+audio effect class for gain  
+
+
+
+
+{\ttfamily \#include $<$Audio\+Effect\+Gain.\+h$>$}
+
+
+
+Inheritance diagram for C\+Audio\+Effect\+Gain\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{class_c_audio_effect_gain__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for C\+Audio\+Effect\+Gain\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{class_c_audio_effect_gain__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_audio_effect_gain_a8519f6d35d31518ab04f0df847a1d23b}{C\+Audio\+Effect\+Gain}} ()
+\item 
+\mbox{\hyperlink{class_c_audio_effect_gain_a2999d94984d0c67e16fc0a933cc5c57e}{C\+Audio\+Effect\+Gain}} (float f\+Sample\+Rate\+In\+Hz, int i\+Num\+Channels, \mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}} params\mbox{[}$\,$\mbox{]}, float values\mbox{[}$\,$\mbox{]}, int i\+Num\+Params)
+\item 
+\mbox{\hyperlink{class_c_audio_effect_gain_a4f5053975768b1f5b655da8663207b54}{$\sim$\+C\+Audio\+Effect\+Gain}} ()
+\item 
+Error\+\_\+t \mbox{\hyperlink{class_c_audio_effect_gain_aac04142f37e751222a99f950e94f2664}{init}} (float f\+Sample\+Rate\+In\+Hz, int i\+Num\+Channels, \mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}} params\mbox{[}$\,$\mbox{]}, float values\mbox{[}$\,$\mbox{]}, int i\+Num\+Params)
+\item 
+Error\+\_\+t \mbox{\hyperlink{class_c_audio_effect_gain_a089699758dcd5511c9410c4fc1e6409a}{reset}} ()
+\item 
+Error\+\_\+t \mbox{\hyperlink{class_c_audio_effect_gain_a336fb5efba95ed7cffaec3d6cd87682a}{set\+Param}} (\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}} e\+Param, float f\+Value)
+\item 
+float \mbox{\hyperlink{class_c_audio_effect_gain_afe18ec678f91eea93e0f266830a606b7}{get\+Param}} (\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}} e\+Param)
+\item 
+Error\+\_\+t \mbox{\hyperlink{class_c_audio_effect_gain_a82e103fce9645ed7d8694f35e4a27383}{process}} (float $\ast$$\ast$ppf\+Input\+Buffer, float $\ast$$\ast$ppf\+Output\+Buffer, int i\+Number\+Of\+Frames)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_c_audio_effect_gain_aca2ef730dda1cb7b661a13bd5ef427f0}{m\+\_\+f\+Gain}}
+\begin{DoxyCompactList}\small\item\em amount of gain, 0$<$gain$<$1 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+audio effect class for gain 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_c_audio_effect_gain_a8519f6d35d31518ab04f0df847a1d23b}\label{class_c_audio_effect_gain_a8519f6d35d31518ab04f0df847a1d23b}} 
+\index{CAudioEffectGain@{CAudioEffectGain}!CAudioEffectGain@{CAudioEffectGain}}
+\index{CAudioEffectGain@{CAudioEffectGain}!CAudioEffectGain@{CAudioEffectGain}}
+\doxysubsubsection{\texorpdfstring{CAudioEffectGain()}{CAudioEffectGain()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily C\+Audio\+Effect\+Gain\+::\+C\+Audio\+Effect\+Gain (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_c_audio_effect_gain_a2999d94984d0c67e16fc0a933cc5c57e}\label{class_c_audio_effect_gain_a2999d94984d0c67e16fc0a933cc5c57e}} 
+\index{CAudioEffectGain@{CAudioEffectGain}!CAudioEffectGain@{CAudioEffectGain}}
+\index{CAudioEffectGain@{CAudioEffectGain}!CAudioEffectGain@{CAudioEffectGain}}
+\doxysubsubsection{\texorpdfstring{CAudioEffectGain()}{CAudioEffectGain()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+Audio\+Effect\+Gain\+::\+C\+Audio\+Effect\+Gain (\begin{DoxyParamCaption}\item[{float}]{f\+Sample\+Rate\+In\+Hz,  }\item[{int}]{i\+Num\+Channels,  }\item[{\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}}}]{params\mbox{[}$\,$\mbox{]} = {\ttfamily NULL},  }\item[{float}]{values\mbox{[}$\,$\mbox{]} = {\ttfamily NULL},  }\item[{int}]{i\+Num\+Params = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_c_audio_effect_gain_a4f5053975768b1f5b655da8663207b54}\label{class_c_audio_effect_gain_a4f5053975768b1f5b655da8663207b54}} 
+\index{CAudioEffectGain@{CAudioEffectGain}!````~CAudioEffectGain@{$\sim$CAudioEffectGain}}
+\index{````~CAudioEffectGain@{$\sim$CAudioEffectGain}!CAudioEffectGain@{CAudioEffectGain}}
+\doxysubsubsection{\texorpdfstring{$\sim$CAudioEffectGain()}{~CAudioEffectGain()}}
+{\footnotesize\ttfamily C\+Audio\+Effect\+Gain\+::$\sim$\+C\+Audio\+Effect\+Gain (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_c_audio_effect_gain_afe18ec678f91eea93e0f266830a606b7}\label{class_c_audio_effect_gain_afe18ec678f91eea93e0f266830a606b7}} 
+\index{CAudioEffectGain@{CAudioEffectGain}!getParam@{getParam}}
+\index{getParam@{getParam}!CAudioEffectGain@{CAudioEffectGain}}
+\doxysubsubsection{\texorpdfstring{getParam()}{getParam()}}
+{\footnotesize\ttfamily float C\+Audio\+Effect\+Gain\+::get\+Param (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}}}]{e\+Param }\end{DoxyParamCaption})}
+
+return the value of the specified parameter 
+\begin{DoxyParams}{Parameters}
+{\em e\+Param} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_audio_effect_gain_aac04142f37e751222a99f950e94f2664}\label{class_c_audio_effect_gain_aac04142f37e751222a99f950e94f2664}} 
+\index{CAudioEffectGain@{CAudioEffectGain}!init@{init}}
+\index{init@{init}!CAudioEffectGain@{CAudioEffectGain}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily Error\+\_\+t C\+Audio\+Effect\+Gain\+::init (\begin{DoxyParamCaption}\item[{float}]{f\+Sample\+Rate\+In\+Hz,  }\item[{int}]{i\+Num\+Channels,  }\item[{\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}}}]{params\mbox{[}$\,$\mbox{]} = {\ttfamily NULL},  }\item[{float}]{values\mbox{[}$\,$\mbox{]} = {\ttfamily NULL},  }\item[{int}]{i\+Num\+Params = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+initializes a gain instance 
+\begin{DoxyParams}{Parameters}
+{\em f\+Sample\+Rate\+In\+Hz} & sample rate in Hz \\
+\hline
+{\em i\+Num\+Channels} & number of audio channels \\
+\hline
+{\em params\mbox{[}$\,$\mbox{]}} & list of parameter types \\
+\hline
+{\em values\mbox{[}$\,$\mbox{]}} & list of parameter values \\
+\hline
+{\em i\+Num\+Params} & number of parameters \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_audio_effect_gain_a82e103fce9645ed7d8694f35e4a27383}\label{class_c_audio_effect_gain_a82e103fce9645ed7d8694f35e4a27383}} 
+\index{CAudioEffectGain@{CAudioEffectGain}!process@{process}}
+\index{process@{process}!CAudioEffectGain@{CAudioEffectGain}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily Error\+\_\+t C\+Audio\+Effect\+Gain\+::process (\begin{DoxyParamCaption}\item[{float $\ast$$\ast$}]{ppf\+Input\+Buffer,  }\item[{float $\ast$$\ast$}]{ppf\+Output\+Buffer,  }\item[{int}]{i\+Number\+Of\+Frames }\end{DoxyParamCaption})}
+
+processes one block of audio 
+\begin{DoxyParams}{Parameters}
+{\em ppf\+Input\+Buffer} & input buffer \mbox{[}num\+Channels\mbox{]}\mbox{[}i\+Number\+Of\+Frames\mbox{]} \\
+\hline
+{\em ppf\+Output\+Buffer} & output buffer \mbox{[}num\+Channels\mbox{]}\mbox{[}i\+Number\+Of\+Frames\mbox{]} \\
+\hline
+{\em i\+Number\+Of\+Frames} & buffer length (per channel) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_audio_effect_gain_a089699758dcd5511c9410c4fc1e6409a}\label{class_c_audio_effect_gain_a089699758dcd5511c9410c4fc1e6409a}} 
+\index{CAudioEffectGain@{CAudioEffectGain}!reset@{reset}}
+\index{reset@{reset}!CAudioEffectGain@{CAudioEffectGain}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily Error\+\_\+t C\+Audio\+Effect\+Gain\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+resets the internal variables (requires new call of init) \begin{DoxyReturn}{Returns}
+Error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_audio_effect_gain_a336fb5efba95ed7cffaec3d6cd87682a}\label{class_c_audio_effect_gain_a336fb5efba95ed7cffaec3d6cd87682a}} 
+\index{CAudioEffectGain@{CAudioEffectGain}!setParam@{setParam}}
+\index{setParam@{setParam}!CAudioEffectGain@{CAudioEffectGain}}
+\doxysubsubsection{\texorpdfstring{setParam()}{setParam()}}
+{\footnotesize\ttfamily Error\+\_\+t C\+Audio\+Effect\+Gain\+::set\+Param (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}}}]{e\+Param,  }\item[{float}]{f\+Value }\end{DoxyParamCaption})}
+
+sets a gain parameter 
+\begin{DoxyParams}{Parameters}
+{\em e\+Param} & what parameter \\
+\hline
+{\em f\+Value} & value of the parameter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error\+\_\+t 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_c_audio_effect_gain_aca2ef730dda1cb7b661a13bd5ef427f0}\label{class_c_audio_effect_gain_aca2ef730dda1cb7b661a13bd5ef427f0}} 
+\index{CAudioEffectGain@{CAudioEffectGain}!m\_fGain@{m\_fGain}}
+\index{m\_fGain@{m\_fGain}!CAudioEffectGain@{CAudioEffectGain}}
+\doxysubsubsection{\texorpdfstring{m\_fGain}{m\_fGain}}
+{\footnotesize\ttfamily float C\+Audio\+Effect\+Gain\+::m\+\_\+f\+Gain\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+amount of gain, 0$<$gain$<$1 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/inc/\mbox{\hyperlink{_audio_effect_gain_8h}{Audio\+Effect\+Gain.\+h}}\item 
+src/\+Audio\+Effect/\mbox{\hyperlink{_audio_effect_gain_8cpp}{Audio\+Effect\+Gain.\+cpp}}\end{DoxyCompactItemize}

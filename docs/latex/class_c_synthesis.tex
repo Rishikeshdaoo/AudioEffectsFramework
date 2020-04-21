@@ -1,0 +1,65 @@
+\hypertarget{class_c_synthesis}{}\doxysection{C\+Synthesis Class Reference}
+\label{class_c_synthesis}\index{CSynthesis@{CSynthesis}}
+
+
+class with static functions for signal generation  
+
+
+
+
+{\ttfamily \#include $<$Synthesis.\+h$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Error\+\_\+t \mbox{\hyperlink{class_c_synthesis_a0e2ffeec467f2d6f38e2480952ed413b}{generate\+Sine}} (float $\ast$pf\+Out\+Buf, float f\+Freq\+In\+Hz, float f\+Sample\+Freq\+In\+Hz, int i\+Length, float f\+Amplitude=1.F, float f\+Start\+Phase\+In\+Rad=0.F)
+\item 
+static Error\+\_\+t \mbox{\hyperlink{class_c_synthesis_aeb2de52584c7ce9bd3c3e7a4585675b2}{generate\+Rect}} (float $\ast$pf\+Out\+Buf, float f\+Freq\+In\+Hz, float f\+Sample\+Freq\+In\+Hz, int i\+Length, float f\+Amplitude=1.F)
+\item 
+static Error\+\_\+t \mbox{\hyperlink{class_c_synthesis_adab1f03b5f6e51b9184557146d412a6f}{generate\+Saw}} (float $\ast$pf\+Out\+Buf, float f\+Freq\+In\+Hz, float f\+Sample\+Freq\+In\+Hz, int i\+Length, float f\+Amplitude=1.F)
+\item 
+static Error\+\_\+t \mbox{\hyperlink{class_c_synthesis_ae8dbe5ec211f3ea83735d85a714e425c}{generate\+Dc}} (float $\ast$pf\+Out\+Buf, int i\+Length, float f\+Amplitude=1.F)
+\item 
+static Error\+\_\+t \mbox{\hyperlink{class_c_synthesis_a2b46248b13797e6a41e2543cd39bb89f}{generate\+Noise}} (float $\ast$pf\+Out\+Buf, int i\+Length, float f\+Amplitude=1.F)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+class with static functions for signal generation 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_c_synthesis_ae8dbe5ec211f3ea83735d85a714e425c}\label{class_c_synthesis_ae8dbe5ec211f3ea83735d85a714e425c}} 
+\index{CSynthesis@{CSynthesis}!generateDc@{generateDc}}
+\index{generateDc@{generateDc}!CSynthesis@{CSynthesis}}
+\doxysubsubsection{\texorpdfstring{generateDc()}{generateDc()}}
+{\footnotesize\ttfamily static Error\+\_\+t C\+Synthesis\+::generate\+Dc (\begin{DoxyParamCaption}\item[{float $\ast$}]{pf\+Out\+Buf,  }\item[{int}]{i\+Length,  }\item[{float}]{f\+Amplitude = {\ttfamily 1.F} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_c_synthesis_a2b46248b13797e6a41e2543cd39bb89f}\label{class_c_synthesis_a2b46248b13797e6a41e2543cd39bb89f}} 
+\index{CSynthesis@{CSynthesis}!generateNoise@{generateNoise}}
+\index{generateNoise@{generateNoise}!CSynthesis@{CSynthesis}}
+\doxysubsubsection{\texorpdfstring{generateNoise()}{generateNoise()}}
+{\footnotesize\ttfamily static Error\+\_\+t C\+Synthesis\+::generate\+Noise (\begin{DoxyParamCaption}\item[{float $\ast$}]{pf\+Out\+Buf,  }\item[{int}]{i\+Length,  }\item[{float}]{f\+Amplitude = {\ttfamily 1.F} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_c_synthesis_aeb2de52584c7ce9bd3c3e7a4585675b2}\label{class_c_synthesis_aeb2de52584c7ce9bd3c3e7a4585675b2}} 
+\index{CSynthesis@{CSynthesis}!generateRect@{generateRect}}
+\index{generateRect@{generateRect}!CSynthesis@{CSynthesis}}
+\doxysubsubsection{\texorpdfstring{generateRect()}{generateRect()}}
+{\footnotesize\ttfamily static Error\+\_\+t C\+Synthesis\+::generate\+Rect (\begin{DoxyParamCaption}\item[{float $\ast$}]{pf\+Out\+Buf,  }\item[{float}]{f\+Freq\+In\+Hz,  }\item[{float}]{f\+Sample\+Freq\+In\+Hz,  }\item[{int}]{i\+Length,  }\item[{float}]{f\+Amplitude = {\ttfamily 1.F} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_c_synthesis_adab1f03b5f6e51b9184557146d412a6f}\label{class_c_synthesis_adab1f03b5f6e51b9184557146d412a6f}} 
+\index{CSynthesis@{CSynthesis}!generateSaw@{generateSaw}}
+\index{generateSaw@{generateSaw}!CSynthesis@{CSynthesis}}
+\doxysubsubsection{\texorpdfstring{generateSaw()}{generateSaw()}}
+{\footnotesize\ttfamily static Error\+\_\+t C\+Synthesis\+::generate\+Saw (\begin{DoxyParamCaption}\item[{float $\ast$}]{pf\+Out\+Buf,  }\item[{float}]{f\+Freq\+In\+Hz,  }\item[{float}]{f\+Sample\+Freq\+In\+Hz,  }\item[{int}]{i\+Length,  }\item[{float}]{f\+Amplitude = {\ttfamily 1.F} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_c_synthesis_a0e2ffeec467f2d6f38e2480952ed413b}\label{class_c_synthesis_a0e2ffeec467f2d6f38e2480952ed413b}} 
+\index{CSynthesis@{CSynthesis}!generateSine@{generateSine}}
+\index{generateSine@{generateSine}!CSynthesis@{CSynthesis}}
+\doxysubsubsection{\texorpdfstring{generateSine()}{generateSine()}}
+{\footnotesize\ttfamily static Error\+\_\+t C\+Synthesis\+::generate\+Sine (\begin{DoxyParamCaption}\item[{float $\ast$}]{pf\+Out\+Buf,  }\item[{float}]{f\+Freq\+In\+Hz,  }\item[{float}]{f\+Sample\+Freq\+In\+Hz,  }\item[{int}]{i\+Length,  }\item[{float}]{f\+Amplitude = {\ttfamily 1.F},  }\item[{float}]{f\+Start\+Phase\+In\+Rad = {\ttfamily 0.F} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/inc/\mbox{\hyperlink{_synthesis_8h}{Synthesis.\+h}}\end{DoxyCompactItemize}

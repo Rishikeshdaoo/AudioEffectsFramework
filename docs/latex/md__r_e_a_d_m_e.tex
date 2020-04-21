@@ -1,0 +1,55 @@
+Cross platform C++ library with low-\/latency audio effects processing algorithms designed for real-\/time audio processing.\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{Motivation}\label{md__r_e_a_d_m_e_autotoc_md1}
+This projects aims to provide an easy to use A\+PI for creating audio effects processing applications. With well documented, low-\/level implementation of audio effects in C++, the library is designed to be simple and efficient.\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysection{Effects included in the library}\label{md__r_e_a_d_m_e_autotoc_md2}
+
+\begin{DoxyItemize}
+\item Gain
+\item Pan
+\item Delay
+\item Biquad
+\item Distortion
+\item Compressor
+\item Expander
+\item Flanger
+\item Chorus
+\item Reverb
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysection{Use Cases}\label{md__r_e_a_d_m_e_autotoc_md3}
+
+\begin{DoxyItemize}
+\item Creating plugins for Digital Audio Workstations.
+\item For use in applications that require real-\/time audio effects.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysection{Getting Started}\label{md__r_e_a_d_m_e_autotoc_md4}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md5}{}\doxysubsection{Instructions}\label{md__r_e_a_d_m_e_autotoc_md5}
+
+\begin{DoxyItemize}
+\item Clone the repository with the command \+: {\ttfamily git clone \href{https://github.com/Rishikeshdaoo/AudioEffectsFramework.git}{\texttt{ https\+://github.\+com/\+Rishikeshdaoo/\+Audio\+Effects\+Framework.\+git}}}
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md6}{}\doxysubsection{Usage}\label{md__r_e_a_d_m_e_autotoc_md6}
+
+\begin{DoxyItemize}
+\item Create the Effect instance 
+
+\mbox{\hyperlink{class_c_audio_effect_delay}{C\+Audio\+Effect\+Delay}} $\ast$ph\+Audio\+Effect\+Delay = nullptr ~\newline
+ ph\+Audio\+Effect\+Delay = new \mbox{\hyperlink{class_c_audio_effect_delay}{C\+Audio\+Effect\+Delay(sample\+Rate,num\+Channels,max\+Delay\+In\+Secs,param,value,i\+Num\+Params)}}
+
+{\ttfamily sample\+Rate, num\+Channels} are arguments that should be taken from the host application. ~\newline
+ {\ttfamily max\+Delay\+In\+Secs} is an argument the user sets according to their requirement for parameter value range (Only delay based effects have this argument). ~\newline
+ {\ttfamily param, value, i\+Num\+Params} are arguments that need to be initialized as below.
+
+int i\+Num\+Params = 4; ~\newline
+ \mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{C\+Audio\+Effect\+::\+Effect\+Param\+\_\+t}} param\mbox{[}i\+Num\+Params\mbox{]}; ~\newline
+ float value\mbox{[}i\+Num\+Params\mbox{]};
+
+param\mbox{[}0\mbox{]} = \mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659eab721847e4b20bf69f9f05d516e02df2c}{C\+Audio\+Effect\+::k\+Param\+Delay\+In\+Secs}}; ~\newline
+ value\mbox{[}0\mbox{]} = 0.\+002f; ~\newline
+ param\mbox{[}1\mbox{]} = \mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659eada631f5d036dec3dda2386b6f00f0f8f}{C\+Audio\+Effect\+::k\+Param\+Mod\+Rate\+In\+Hz}}; ~\newline
+ value\mbox{[}1\mbox{]} = 0.\+5f; ~\newline
+ param\mbox{[}2\mbox{]} = \mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659ea05e953e3f70678b944785d62ca5473bd}{C\+Audio\+Effect\+::k\+Param\+Mod\+Width\+In\+Secs}}; ~\newline
+ value\mbox{[}2\mbox{]} = 0.\+002f; ~\newline
+ param\mbox{[}3\mbox{]} = \mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659ea560e1b20c61513df8c5e2409609d61c3}{C\+Audio\+Effect\+::k\+Param\+Gain}}; ~\newline
+ value\mbox{[}3\mbox{]} = 0.\+7f;
+\item  Call the effect\textquotesingle{}s process function 
+
+Error\+\_\+t error = ph\+Audio\+Effect\+Delay -\/$>$ process(ppf\+Audio\+Input, ppf\+Audio\+Output, i\+Num\+Frames); ~\newline
+ ~\newline
+ {\ttfamily ppf\+Audio\+Input, ppf\+Audio\+Output} are the input/output buffers used by the library. The user should take care of creating and destroying these buffers. ~\newline
+ {\ttfamily i\+Num\+Frames} is an argument that tells the process function the number of samples in a block of buffered audio. 
+\end{DoxyItemize}

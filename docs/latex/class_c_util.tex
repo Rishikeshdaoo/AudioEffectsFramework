@@ -1,0 +1,100 @@
+\hypertarget{class_c_util}{}\doxysection{C\+Util Class Reference}
+\label{class_c_util}\index{CUtil@{CUtil}}
+
+
+class with static utility functions  
+
+
+
+
+{\ttfamily \#include $<$Util.\+h$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\static T \mbox{\hyperlink{class_c_util_a9032a8fbdc28520ed0c1703fc7151126}{float2int}} (float f\+Input)
+\item 
+{\footnotesize template$<$typename T $>$ }\\static T \mbox{\hyperlink{class_c_util_a8ea222b9c4ed128640db68568696dfbd}{double2int}} (double f\+Input)
+\item 
+static bool \mbox{\hyperlink{class_c_util_a6d0e75b0bcbbb243b7141cfc0126e443}{is\+Pow\+Of2}} (int n)
+\item 
+static int \mbox{\hyperlink{class_c_util_a0fd55429d52515a9efb2fe602ce8f9ed}{next\+Pow\+Of2}} (int n)
+\item 
+{\footnotesize template$<$typename T $>$ }\\static void \mbox{\hyperlink{class_c_util_a4518cf65aacb5732281b35ee427d0fc2}{swap}} (T \&t\+Value1, T \&t\+Value2)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+class with static utility functions 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_c_util_a8ea222b9c4ed128640db68568696dfbd}\label{class_c_util_a8ea222b9c4ed128640db68568696dfbd}} 
+\index{CUtil@{CUtil}!double2int@{double2int}}
+\index{double2int@{double2int}!CUtil@{CUtil}}
+\doxysubsubsection{\texorpdfstring{double2int()}{double2int()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static T C\+Util\+::double2int (\begin{DoxyParamCaption}\item[{double}]{f\+Input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+converts a double to an int 
+\begin{DoxyParams}{Parameters}
+{\em f\+Input} & double value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_util_a9032a8fbdc28520ed0c1703fc7151126}\label{class_c_util_a9032a8fbdc28520ed0c1703fc7151126}} 
+\index{CUtil@{CUtil}!float2int@{float2int}}
+\index{float2int@{float2int}!CUtil@{CUtil}}
+\doxysubsubsection{\texorpdfstring{float2int()}{float2int()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static T C\+Util\+::float2int (\begin{DoxyParamCaption}\item[{float}]{f\+Input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+converts a float to an int 
+\begin{DoxyParams}{Parameters}
+{\em f\+Input} & float value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_util_a6d0e75b0bcbbb243b7141cfc0126e443}\label{class_c_util_a6d0e75b0bcbbb243b7141cfc0126e443}} 
+\index{CUtil@{CUtil}!isPowOf2@{isPowOf2}}
+\index{isPowOf2@{isPowOf2}!CUtil@{CUtil}}
+\doxysubsubsection{\texorpdfstring{isPowOf2()}{isPowOf2()}}
+{\footnotesize\ttfamily static bool C\+Util\+::is\+Pow\+Of2 (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+checks if the input is a power of 2 
+\begin{DoxyParams}{Parameters}
+{\em n} & integer value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_util_a0fd55429d52515a9efb2fe602ce8f9ed}\label{class_c_util_a0fd55429d52515a9efb2fe602ce8f9ed}} 
+\index{CUtil@{CUtil}!nextPowOf2@{nextPowOf2}}
+\index{nextPowOf2@{nextPowOf2}!CUtil@{CUtil}}
+\doxysubsubsection{\texorpdfstring{nextPowOf2()}{nextPowOf2()}}
+{\footnotesize\ttfamily static int C\+Util\+::next\+Pow\+Of2 (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+converts an arbitrary integer (positive) to the next larger power of two 
+\begin{DoxyParams}{Parameters}
+{\em n} & integer value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_util_a4518cf65aacb5732281b35ee427d0fc2}\label{class_c_util_a4518cf65aacb5732281b35ee427d0fc2}} 
+\index{CUtil@{CUtil}!swap@{swap}}
+\index{swap@{swap}!CUtil@{CUtil}}
+\doxysubsubsection{\texorpdfstring{swap()}{swap()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static void C\+Util\+::swap (\begin{DoxyParamCaption}\item[{T \&}]{t\+Value1,  }\item[{T \&}]{t\+Value2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/inc/\mbox{\hyperlink{_util_8h}{Util.\+h}}\end{DoxyCompactItemize}

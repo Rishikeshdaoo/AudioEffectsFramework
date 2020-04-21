@@ -1,0 +1,467 @@
+\hypertarget{class_c_vector_float}{}\doxysection{C\+Vector\+Float Class Reference}
+\label{class_c_vector_float}\index{CVectorFloat@{CVectorFloat}}
+
+
+class with static functions for buffer operations with type float  
+
+
+
+
+{\ttfamily \#include $<$Vector.\+h$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_c_vector_float_a9c3272767418a4d64453c2bb9feb26a0}{set\+Zero}} (float $\ast$pf\+Src\+Dest, int i\+Length)
+\item 
+static void \mbox{\hyperlink{class_c_vector_float_a07004096b4eba26c9f11d2c145d28485}{set\+Zero\+Below\+Thresh}} (float $\ast$pf\+Src\+Dest, int i\+Length, float f\+Thresh)
+\item 
+static void \mbox{\hyperlink{class_c_vector_float_a17b4c0a974fc23444030d7e5087b90bc}{copy}} (float $\ast$pf\+Dest, const float $\ast$pf\+Source, int i\+Length)
+\item 
+static void \mbox{\hyperlink{class_c_vector_float_a085ede03a8981265c383f0920717a8ed}{flip\+\_\+I}} (float $\ast$pf\+Src\+Dest, int i\+Length)
+\item 
+static void \mbox{\hyperlink{class_c_vector_float_aca1eea2ba677a57cad815b01cc632298}{move\+In\+Mem}} (float $\ast$pf\+Src\+Dest, int i\+Dest\+Idx, int i\+Src\+Idx, int i\+Length)
+\item 
+static void \mbox{\hyperlink{class_c_vector_float_af30ad1511ce033cf17d91137a7aabc3c}{set\+Value}} (float $\ast$pf\+Dest, float f\+Value, int i\+Length)
+\item 
+static void \mbox{\hyperlink{class_c_vector_float_adb5653acec1ae5aa74ada7b2e32e1ff9}{mul\+C\+\_\+I}} (float $\ast$pf\+Src\+Dest, float f\+Scale, int i\+Length)
+\item 
+static void \mbox{\hyperlink{class_c_vector_float_aa6501a0fed3db13f170235e3887d04a4}{mul\+\_\+I}} (float $\ast$pf\+Src\+Dest, const float $\ast$pf\+Src, int i\+Length)
+\item 
+static float \mbox{\hyperlink{class_c_vector_float_a0657c1a2c9cd74bd7108b35a08b4e752}{mul\+Scalar}} (const float $\ast$pf\+Src1, const float $\ast$pf\+Src2, int i\+Length)
+\item 
+static void \mbox{\hyperlink{class_c_vector_float_a451e4a5b745565e3ac7f036d39233d22}{div\+\_\+I}} (float $\ast$pf\+Src\+Dest, const float $\ast$pf\+Src, int i\+Length)
+\item 
+static void \mbox{\hyperlink{class_c_vector_float_afed49c59c666a6612c834524027cbd75}{add\+\_\+I}} (float $\ast$pf\+Src\+Dest, const float $\ast$pf\+Src, int i\+Length)
+\item 
+static void \mbox{\hyperlink{class_c_vector_float_a85ba71d6b738ebf36b57ea3cb3bd3910}{add\+C\+\_\+I}} (float $\ast$pf\+Src\+Dest, float f\+Scale, int i\+Length)
+\item 
+static void \mbox{\hyperlink{class_c_vector_float_a0e0827ea33a334d3c1afa81e5b50362b}{sub\+\_\+I}} (float $\ast$pf\+Src\+Dest, const float $\ast$pf\+Src, int i\+Length)
+\item 
+static float \mbox{\hyperlink{class_c_vector_float_a4468d88b1d12b89e2dbd14e757060773}{sum}} (const float $\ast$pf\+Src, int i\+Length, bool b\+Abs=false)
+\item 
+static bool \mbox{\hyperlink{class_c_vector_float_a05fa45ca3a711cb63d1dcf76a4ffd0ce}{is\+Equal}} (const float $\ast$pf\+Src1, const float $\ast$pf\+Src2, int i\+Length)
+\item 
+static float \mbox{\hyperlink{class_c_vector_float_a0ebcfe60eb5cda1ab45ae8157be0e64e}{get\+Mean}} (const float $\ast$pf\+Src, long long int i\+Length)
+\item 
+static float \mbox{\hyperlink{class_c_vector_float_acb8403fcec4943418492c547a7c59153}{get\+Std}} (const float $\ast$pf\+Src, long long int i\+Length, float f\+Mean=std\+::numeric\+\_\+limits$<$ float $>$\+::max())
+\item 
+static float \mbox{\hyperlink{class_c_vector_float_a8ebae2ebfad47fcf1b11f432153c1fc8}{get\+Rms}} (const float $\ast$pf\+Src, long long int i\+Length)
+\item 
+static float \mbox{\hyperlink{class_c_vector_float_a8279b309edcfcac51d94b1e8f206a330}{get\+Max}} (const float $\ast$pf\+Src, long long int i\+Length, bool b\+Abs=false)
+\item 
+static float \mbox{\hyperlink{class_c_vector_float_a5c336e4bb302b1140096f2f1f1aa2ad3}{get\+Min}} (const float $\ast$pf\+Src, long long int i\+Length, bool b\+Abs=false)
+\item 
+static void \mbox{\hyperlink{class_c_vector_float_a66a451d1a0992e33a73c01b09566eea0}{find\+Max}} (const float $\ast$pf\+Src, float \&f\+Max, long long \&i\+Max, long long int i\+Length, bool b\+Abs=false)
+\item 
+static void \mbox{\hyperlink{class_c_vector_float_a0908e3346b074958aeb2be9b466ec998}{find\+Min}} (const float $\ast$pf\+Src, float \&f\+Min, long long \&i\+Min, long long int i\+Length, bool b\+Abs=false)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+class with static functions for buffer operations with type float 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_c_vector_float_afed49c59c666a6612c834524027cbd75}\label{class_c_vector_float_afed49c59c666a6612c834524027cbd75}} 
+\index{CVectorFloat@{CVectorFloat}!add\_I@{add\_I}}
+\index{add\_I@{add\_I}!CVectorFloat@{CVectorFloat}}
+\doxysubsubsection{\texorpdfstring{add\_I()}{add\_I()}}
+{\footnotesize\ttfamily static void C\+Vector\+Float\+::add\+\_\+I (\begin{DoxyParamCaption}\item[{float $\ast$}]{pf\+Src\+Dest,  }\item[{const float $\ast$}]{pf\+Src,  }\item[{int}]{i\+Length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+element-\/wise vector addition 
+\begin{DoxyParams}{Parameters}
+{\em pf\+Src\+Dest} & one input and output buffer \\
+\hline
+{\em pf\+Src} & second input buffer \\
+\hline
+{\em i\+Length} & number of element to be added \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_vector_float_a85ba71d6b738ebf36b57ea3cb3bd3910}\label{class_c_vector_float_a85ba71d6b738ebf36b57ea3cb3bd3910}} 
+\index{CVectorFloat@{CVectorFloat}!addC\_I@{addC\_I}}
+\index{addC\_I@{addC\_I}!CVectorFloat@{CVectorFloat}}
+\doxysubsubsection{\texorpdfstring{addC\_I()}{addC\_I()}}
+{\footnotesize\ttfamily static void C\+Vector\+Float\+::add\+C\+\_\+I (\begin{DoxyParamCaption}\item[{float $\ast$}]{pf\+Src\+Dest,  }\item[{float}]{f\+Scale,  }\item[{int}]{i\+Length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+adds a buffer to a scalar 
+\begin{DoxyParams}{Parameters}
+{\em pf\+Src\+Dest} & buffer to be added \\
+\hline
+{\em f\+Scale} & scalar \\
+\hline
+{\em i\+Length} & number of element to be added \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_vector_float_a17b4c0a974fc23444030d7e5087b90bc}\label{class_c_vector_float_a17b4c0a974fc23444030d7e5087b90bc}} 
+\index{CVectorFloat@{CVectorFloat}!copy@{copy}}
+\index{copy@{copy}!CVectorFloat@{CVectorFloat}}
+\doxysubsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily static void C\+Vector\+Float\+::copy (\begin{DoxyParamCaption}\item[{float $\ast$}]{pf\+Dest,  }\item[{const float $\ast$}]{pf\+Source,  }\item[{int}]{i\+Length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+copies buffer of type float 
+\begin{DoxyParams}{Parameters}
+{\em pf\+Dest} & pointer to destination memory \\
+\hline
+{\em pf\+Source} & pointer to source memory \\
+\hline
+{\em i\+Length} & length of buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_vector_float_a451e4a5b745565e3ac7f036d39233d22}\label{class_c_vector_float_a451e4a5b745565e3ac7f036d39233d22}} 
+\index{CVectorFloat@{CVectorFloat}!div\_I@{div\_I}}
+\index{div\_I@{div\_I}!CVectorFloat@{CVectorFloat}}
+\doxysubsubsection{\texorpdfstring{div\_I()}{div\_I()}}
+{\footnotesize\ttfamily static void C\+Vector\+Float\+::div\+\_\+I (\begin{DoxyParamCaption}\item[{float $\ast$}]{pf\+Src\+Dest,  }\item[{const float $\ast$}]{pf\+Src,  }\item[{int}]{i\+Length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+element-\/wise vector division 
+\begin{DoxyParams}{Parameters}
+{\em pf\+Src\+Dest} & one input and output buffer \\
+\hline
+{\em pf\+Src} & second input buffer \\
+\hline
+{\em i\+Length} & number of element to be divided \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_vector_float_a66a451d1a0992e33a73c01b09566eea0}\label{class_c_vector_float_a66a451d1a0992e33a73c01b09566eea0}} 
+\index{CVectorFloat@{CVectorFloat}!findMax@{findMax}}
+\index{findMax@{findMax}!CVectorFloat@{CVectorFloat}}
+\doxysubsubsection{\texorpdfstring{findMax()}{findMax()}}
+{\footnotesize\ttfamily static void C\+Vector\+Float\+::find\+Max (\begin{DoxyParamCaption}\item[{const float $\ast$}]{pf\+Src,  }\item[{float \&}]{f\+Max,  }\item[{long long \&}]{i\+Max,  }\item[{long long int}]{i\+Length,  }\item[{bool}]{b\+Abs = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+finds the maximum (absolute) value in the buffer 
+\begin{DoxyParams}{Parameters}
+{\em pf\+Src} & input buffer \\
+\hline
+{\em f\+Max} & resulting output value \\
+\hline
+{\em i\+Max} & index of the resulting output value \\
+\hline
+{\em i\+Length} & number of elements in buffer \\
+\hline
+{\em b\+Abs} & bool to specify whether we search absolute values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_vector_float_a0908e3346b074958aeb2be9b466ec998}\label{class_c_vector_float_a0908e3346b074958aeb2be9b466ec998}} 
+\index{CVectorFloat@{CVectorFloat}!findMin@{findMin}}
+\index{findMin@{findMin}!CVectorFloat@{CVectorFloat}}
+\doxysubsubsection{\texorpdfstring{findMin()}{findMin()}}
+{\footnotesize\ttfamily static void C\+Vector\+Float\+::find\+Min (\begin{DoxyParamCaption}\item[{const float $\ast$}]{pf\+Src,  }\item[{float \&}]{f\+Min,  }\item[{long long \&}]{i\+Min,  }\item[{long long int}]{i\+Length,  }\item[{bool}]{b\+Abs = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+finds the minimum (absolute) value in the buffer 
+\begin{DoxyParams}{Parameters}
+{\em pf\+Src} & input buffer \\
+\hline
+{\em f\+Min} & resulting output value \\
+\hline
+{\em i\+Min} & index of the resulting output value \\
+\hline
+{\em i\+Length} & number of elements in buffer \\
+\hline
+{\em b\+Abs} & bool to specify whether we search absolute values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_vector_float_a085ede03a8981265c383f0920717a8ed}\label{class_c_vector_float_a085ede03a8981265c383f0920717a8ed}} 
+\index{CVectorFloat@{CVectorFloat}!flip\_I@{flip\_I}}
+\index{flip\_I@{flip\_I}!CVectorFloat@{CVectorFloat}}
+\doxysubsubsection{\texorpdfstring{flip\_I()}{flip\_I()}}
+{\footnotesize\ttfamily static void C\+Vector\+Float\+::flip\+\_\+I (\begin{DoxyParamCaption}\item[{float $\ast$}]{pf\+Src\+Dest,  }\item[{int}]{i\+Length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+reverses buffer (last to first element) 
+\begin{DoxyParams}{Parameters}
+{\em pf\+Src\+Dest} & pointer to memory to be flipped \\
+\hline
+{\em i\+Length} & number of elements \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_vector_float_a8279b309edcfcac51d94b1e8f206a330}\label{class_c_vector_float_a8279b309edcfcac51d94b1e8f206a330}} 
+\index{CVectorFloat@{CVectorFloat}!getMax@{getMax}}
+\index{getMax@{getMax}!CVectorFloat@{CVectorFloat}}
+\doxysubsubsection{\texorpdfstring{getMax()}{getMax()}}
+{\footnotesize\ttfamily static float C\+Vector\+Float\+::get\+Max (\begin{DoxyParamCaption}\item[{const float $\ast$}]{pf\+Src,  }\item[{long long int}]{i\+Length,  }\item[{bool}]{b\+Abs = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+finds the maximum (absolute) value in the buffer 
+\begin{DoxyParams}{Parameters}
+{\em pf\+Src} & input buffer \\
+\hline
+{\em i\+Length} & number of elements in buffer \\
+\hline
+{\em b\+Abs} & bool to specify whether we search absolute values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_vector_float_a0ebcfe60eb5cda1ab45ae8157be0e64e}\label{class_c_vector_float_a0ebcfe60eb5cda1ab45ae8157be0e64e}} 
+\index{CVectorFloat@{CVectorFloat}!getMean@{getMean}}
+\index{getMean@{getMean}!CVectorFloat@{CVectorFloat}}
+\doxysubsubsection{\texorpdfstring{getMean()}{getMean()}}
+{\footnotesize\ttfamily static float C\+Vector\+Float\+::get\+Mean (\begin{DoxyParamCaption}\item[{const float $\ast$}]{pf\+Src,  }\item[{long long int}]{i\+Length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+extracts the mean value 
+\begin{DoxyParams}{Parameters}
+{\em pf\+Src} & input buffer \\
+\hline
+{\em i\+Length} & number of elements in buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_vector_float_a5c336e4bb302b1140096f2f1f1aa2ad3}\label{class_c_vector_float_a5c336e4bb302b1140096f2f1f1aa2ad3}} 
+\index{CVectorFloat@{CVectorFloat}!getMin@{getMin}}
+\index{getMin@{getMin}!CVectorFloat@{CVectorFloat}}
+\doxysubsubsection{\texorpdfstring{getMin()}{getMin()}}
+{\footnotesize\ttfamily static float C\+Vector\+Float\+::get\+Min (\begin{DoxyParamCaption}\item[{const float $\ast$}]{pf\+Src,  }\item[{long long int}]{i\+Length,  }\item[{bool}]{b\+Abs = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+finds the minimum (absolute) value in the buffer 
+\begin{DoxyParams}{Parameters}
+{\em pf\+Src} & input buffer \\
+\hline
+{\em i\+Length} & number of elements in buffer \\
+\hline
+{\em b\+Abs} & bool to specify whether we search absolute values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_vector_float_a8ebae2ebfad47fcf1b11f432153c1fc8}\label{class_c_vector_float_a8ebae2ebfad47fcf1b11f432153c1fc8}} 
+\index{CVectorFloat@{CVectorFloat}!getRms@{getRms}}
+\index{getRms@{getRms}!CVectorFloat@{CVectorFloat}}
+\doxysubsubsection{\texorpdfstring{getRms()}{getRms()}}
+{\footnotesize\ttfamily static float C\+Vector\+Float\+::get\+Rms (\begin{DoxyParamCaption}\item[{const float $\ast$}]{pf\+Src,  }\item[{long long int}]{i\+Length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+extracts the root mean square from a buffer 
+\begin{DoxyParams}{Parameters}
+{\em pf\+Src} & input buffer \\
+\hline
+{\em i\+Length} & number of elements in buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_vector_float_acb8403fcec4943418492c547a7c59153}\label{class_c_vector_float_acb8403fcec4943418492c547a7c59153}} 
+\index{CVectorFloat@{CVectorFloat}!getStd@{getStd}}
+\index{getStd@{getStd}!CVectorFloat@{CVectorFloat}}
+\doxysubsubsection{\texorpdfstring{getStd()}{getStd()}}
+{\footnotesize\ttfamily static float C\+Vector\+Float\+::get\+Std (\begin{DoxyParamCaption}\item[{const float $\ast$}]{pf\+Src,  }\item[{long long int}]{i\+Length,  }\item[{float}]{f\+Mean = {\ttfamily std\+:\+:numeric\+\_\+limits$<$float$>$\+:\+:max()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+extracts the standard deviation (biased) from a buffer 
+\begin{DoxyParams}{Parameters}
+{\em pf\+Src} & input buffer \\
+\hline
+{\em i\+Length} & number of elements in buffer \\
+\hline
+{\em f\+Mean} & mean value if it has already been computed, otherwise it will be extracted in function \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_vector_float_a05fa45ca3a711cb63d1dcf76a4ffd0ce}\label{class_c_vector_float_a05fa45ca3a711cb63d1dcf76a4ffd0ce}} 
+\index{CVectorFloat@{CVectorFloat}!isEqual@{isEqual}}
+\index{isEqual@{isEqual}!CVectorFloat@{CVectorFloat}}
+\doxysubsubsection{\texorpdfstring{isEqual()}{isEqual()}}
+{\footnotesize\ttfamily static bool C\+Vector\+Float\+::is\+Equal (\begin{DoxyParamCaption}\item[{const float $\ast$}]{pf\+Src1,  }\item[{const float $\ast$}]{pf\+Src2,  }\item[{int}]{i\+Length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+checks to buffer for equality (no floating point tolerance) 
+\begin{DoxyParams}{Parameters}
+{\em pf\+Src1} & buffer 1 \\
+\hline
+{\em pf\+Src2} & buffer 2 \\
+\hline
+{\em i\+Length} & number of dimensions \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_vector_float_aca1eea2ba677a57cad815b01cc632298}\label{class_c_vector_float_aca1eea2ba677a57cad815b01cc632298}} 
+\index{CVectorFloat@{CVectorFloat}!moveInMem@{moveInMem}}
+\index{moveInMem@{moveInMem}!CVectorFloat@{CVectorFloat}}
+\doxysubsubsection{\texorpdfstring{moveInMem()}{moveInMem()}}
+{\footnotesize\ttfamily static void C\+Vector\+Float\+::move\+In\+Mem (\begin{DoxyParamCaption}\item[{float $\ast$}]{pf\+Src\+Dest,  }\item[{int}]{i\+Dest\+Idx,  }\item[{int}]{i\+Src\+Idx,  }\item[{int}]{i\+Length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+moves a subset of the current buffer 
+\begin{DoxyParams}{Parameters}
+{\em pf\+Src\+Dest} & source and destination \\
+\hline
+{\em i\+Dest\+Idx} & destination index \\
+\hline
+{\em i\+Src\+Idx} & source index \\
+\hline
+{\em i\+Length} & number of elements to be moved \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_vector_float_aa6501a0fed3db13f170235e3887d04a4}\label{class_c_vector_float_aa6501a0fed3db13f170235e3887d04a4}} 
+\index{CVectorFloat@{CVectorFloat}!mul\_I@{mul\_I}}
+\index{mul\_I@{mul\_I}!CVectorFloat@{CVectorFloat}}
+\doxysubsubsection{\texorpdfstring{mul\_I()}{mul\_I()}}
+{\footnotesize\ttfamily static void C\+Vector\+Float\+::mul\+\_\+I (\begin{DoxyParamCaption}\item[{float $\ast$}]{pf\+Src\+Dest,  }\item[{const float $\ast$}]{pf\+Src,  }\item[{int}]{i\+Length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+element-\/wise vector multiplication 
+\begin{DoxyParams}{Parameters}
+{\em pf\+Src\+Dest} & one input and output buffer \\
+\hline
+{\em pf\+Src} & second input buffer \\
+\hline
+{\em i\+Length} & number of element to be multiplied \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_vector_float_adb5653acec1ae5aa74ada7b2e32e1ff9}\label{class_c_vector_float_adb5653acec1ae5aa74ada7b2e32e1ff9}} 
+\index{CVectorFloat@{CVectorFloat}!mulC\_I@{mulC\_I}}
+\index{mulC\_I@{mulC\_I}!CVectorFloat@{CVectorFloat}}
+\doxysubsubsection{\texorpdfstring{mulC\_I()}{mulC\_I()}}
+{\footnotesize\ttfamily static void C\+Vector\+Float\+::mul\+C\+\_\+I (\begin{DoxyParamCaption}\item[{float $\ast$}]{pf\+Src\+Dest,  }\item[{float}]{f\+Scale,  }\item[{int}]{i\+Length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+multiplies a buffer with a scalar 
+\begin{DoxyParams}{Parameters}
+{\em pf\+Src\+Dest} & buffer to be multiplied \\
+\hline
+{\em f\+Scale} & scalar \\
+\hline
+{\em i\+Length} & number of element to be multiplied \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_vector_float_a0657c1a2c9cd74bd7108b35a08b4e752}\label{class_c_vector_float_a0657c1a2c9cd74bd7108b35a08b4e752}} 
+\index{CVectorFloat@{CVectorFloat}!mulScalar@{mulScalar}}
+\index{mulScalar@{mulScalar}!CVectorFloat@{CVectorFloat}}
+\doxysubsubsection{\texorpdfstring{mulScalar()}{mulScalar()}}
+{\footnotesize\ttfamily static float C\+Vector\+Float\+::mul\+Scalar (\begin{DoxyParamCaption}\item[{const float $\ast$}]{pf\+Src1,  }\item[{const float $\ast$}]{pf\+Src2,  }\item[{int}]{i\+Length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+computes the scalar product between two vectors 
+\begin{DoxyParams}{Parameters}
+{\em pf\+Src1} & vector one \\
+\hline
+{\em pf\+Src2} & vector two \\
+\hline
+{\em i\+Length} & number of dimenions \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_vector_float_af30ad1511ce033cf17d91137a7aabc3c}\label{class_c_vector_float_af30ad1511ce033cf17d91137a7aabc3c}} 
+\index{CVectorFloat@{CVectorFloat}!setValue@{setValue}}
+\index{setValue@{setValue}!CVectorFloat@{CVectorFloat}}
+\doxysubsubsection{\texorpdfstring{setValue()}{setValue()}}
+{\footnotesize\ttfamily static void C\+Vector\+Float\+::set\+Value (\begin{DoxyParamCaption}\item[{float $\ast$}]{pf\+Dest,  }\item[{float}]{f\+Value,  }\item[{int}]{i\+Length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+initializes the buffer to a specific value 
+\begin{DoxyParams}{Parameters}
+{\em pf\+Dest} & pointer to memory to be initialized \\
+\hline
+{\em f\+Value} & value to use \\
+\hline
+{\em i\+Length} & number of elements to be set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_vector_float_a9c3272767418a4d64453c2bb9feb26a0}\label{class_c_vector_float_a9c3272767418a4d64453c2bb9feb26a0}} 
+\index{CVectorFloat@{CVectorFloat}!setZero@{setZero}}
+\index{setZero@{setZero}!CVectorFloat@{CVectorFloat}}
+\doxysubsubsection{\texorpdfstring{setZero()}{setZero()}}
+{\footnotesize\ttfamily static void C\+Vector\+Float\+::set\+Zero (\begin{DoxyParamCaption}\item[{float $\ast$}]{pf\+Src\+Dest,  }\item[{int}]{i\+Length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+sets a buffer to zero 
+\begin{DoxyParams}{Parameters}
+{\em pf\+Src\+Dest} & pointer to memory to be modified \\
+\hline
+{\em i\+Length} & buffer length \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_vector_float_a07004096b4eba26c9f11d2c145d28485}\label{class_c_vector_float_a07004096b4eba26c9f11d2c145d28485}} 
+\index{CVectorFloat@{CVectorFloat}!setZeroBelowThresh@{setZeroBelowThresh}}
+\index{setZeroBelowThresh@{setZeroBelowThresh}!CVectorFloat@{CVectorFloat}}
+\doxysubsubsection{\texorpdfstring{setZeroBelowThresh()}{setZeroBelowThresh()}}
+{\footnotesize\ttfamily static void C\+Vector\+Float\+::set\+Zero\+Below\+Thresh (\begin{DoxyParamCaption}\item[{float $\ast$}]{pf\+Src\+Dest,  }\item[{int}]{i\+Length,  }\item[{float}]{f\+Thresh }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+sets all values smaller than a threshold to 0 
+\begin{DoxyParams}{Parameters}
+{\em pf\+Src\+Dest} & pointer to memory to be modified \\
+\hline
+{\em i\+Length} & buffer length \\
+\hline
+{\em f\+Thresh} & threshold value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_vector_float_a0e0827ea33a334d3c1afa81e5b50362b}\label{class_c_vector_float_a0e0827ea33a334d3c1afa81e5b50362b}} 
+\index{CVectorFloat@{CVectorFloat}!sub\_I@{sub\_I}}
+\index{sub\_I@{sub\_I}!CVectorFloat@{CVectorFloat}}
+\doxysubsubsection{\texorpdfstring{sub\_I()}{sub\_I()}}
+{\footnotesize\ttfamily static void C\+Vector\+Float\+::sub\+\_\+I (\begin{DoxyParamCaption}\item[{float $\ast$}]{pf\+Src\+Dest,  }\item[{const float $\ast$}]{pf\+Src,  }\item[{int}]{i\+Length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+element-\/wise vector subtraction 
+\begin{DoxyParams}{Parameters}
+{\em pf\+Src\+Dest} & one input and output buffer \\
+\hline
+{\em pf\+Src} & second input buffer \\
+\hline
+{\em i\+Length} & number of element to be subtracted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_vector_float_a4468d88b1d12b89e2dbd14e757060773}\label{class_c_vector_float_a4468d88b1d12b89e2dbd14e757060773}} 
+\index{CVectorFloat@{CVectorFloat}!sum@{sum}}
+\index{sum@{sum}!CVectorFloat@{CVectorFloat}}
+\doxysubsubsection{\texorpdfstring{sum()}{sum()}}
+{\footnotesize\ttfamily static float C\+Vector\+Float\+::sum (\begin{DoxyParamCaption}\item[{const float $\ast$}]{pf\+Src,  }\item[{int}]{i\+Length,  }\item[{bool}]{b\+Abs = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+computes the sum of a vector 
+\begin{DoxyParams}{Parameters}
+{\em pf\+Src} & vector \\
+\hline
+{\em i\+Length} & length of vector \\
+\hline
+{\em b\+Abs} & specifies whether it is the sum of absolute values or not \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/inc/\mbox{\hyperlink{_vector_8h}{Vector.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,282 @@
+\hypertarget{class_c_ring_buffer}{}\doxysection{C\+Ring\+Buffer$<$ T $>$ Class Template Reference}
+\label{class_c_ring_buffer}\index{CRingBuffer$<$ T $>$@{CRingBuffer$<$ T $>$}}
+
+
+implement a circular buffer of type T  
+
+
+
+
+{\ttfamily \#include $<$Ring\+Buffer.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_ring_buffer_a0e007e130e9190892274dde988e40a59}{C\+Ring\+Buffer}} (int i\+Buffer\+Length\+In\+Samples)
+\item 
+virtual \mbox{\hyperlink{class_c_ring_buffer_a97c8bb4689fcef14d595e897ea72cba9}{$\sim$\+C\+Ring\+Buffer}} ()
+\item 
+void \mbox{\hyperlink{class_c_ring_buffer_a2bd848181a662312600bc590b9040d2a}{put\+Post\+Inc}} (T t\+New\+Value)
+\item 
+void \mbox{\hyperlink{class_c_ring_buffer_a21568ce259aa8e97ea3f3d7aec4828b7}{put\+Post\+Inc}} (const T $\ast$pt\+New\+Buff, int i\+Length)
+\item 
+void \mbox{\hyperlink{class_c_ring_buffer_a702eb6314380082795f735df74a816c9}{put}} (T t\+New\+Value)
+\item 
+void \mbox{\hyperlink{class_c_ring_buffer_a15f6463cfcafd855157d33d253011dc7}{put}} (const T $\ast$pt\+New\+Buff, int i\+Length)
+\item 
+T \mbox{\hyperlink{class_c_ring_buffer_a0f25eadaafa6a2e7bfe2f9ef6af1104b}{get\+Post\+Inc}} ()
+\item 
+void \mbox{\hyperlink{class_c_ring_buffer_aeb86fd660cbaadd93a9d89dc529d5b76}{get\+Post\+Inc}} (T $\ast$pt\+Buff, int i\+Length)
+\item 
+T \mbox{\hyperlink{class_c_ring_buffer_a23d9877584d712c17811a9833835605e}{get}} (float f\+Offset=0) const
+\item 
+void \mbox{\hyperlink{class_c_ring_buffer_a047d589f30b02374de2aabdbc6892912}{get}} (T $\ast$pt\+Buff, int i\+Length) const
+\item 
+void \mbox{\hyperlink{class_c_ring_buffer_a716fb4acc03355a73cc7d96f3ceb2995}{reset}} ()
+\item 
+int \mbox{\hyperlink{class_c_ring_buffer_a8173fd5abe5c4ff4e78ffad4b14ea88b}{get\+Write\+Idx}} () const
+\item 
+void \mbox{\hyperlink{class_c_ring_buffer_a408e0ec5855fca27bd2dc5862fa913ab}{set\+Write\+Idx}} (int i\+New\+Write\+Idx)
+\item 
+int \mbox{\hyperlink{class_c_ring_buffer_ab18fac37cac4e8bde0419fe04845ac9d}{get\+Read\+Idx}} () const
+\item 
+void \mbox{\hyperlink{class_c_ring_buffer_af265a6322c4b1584c880def00d31e663}{set\+Read\+Idx}} (int i\+New\+Read\+Idx)
+\item 
+int \mbox{\hyperlink{class_c_ring_buffer_aa04a6cb30d486a6ddd5f7929db1eef9d}{get\+Num\+Values\+In\+Buffer}} () const
+\item 
+int \mbox{\hyperlink{class_c_ring_buffer_a0ec2bd62a49e5078d3ca0a03fa123c9e}{get\+Length}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class C\+Ring\+Buffer$<$ T $>$}
+
+implement a circular buffer of type T 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_c_ring_buffer_a0e007e130e9190892274dde988e40a59}\label{class_c_ring_buffer_a0e007e130e9190892274dde988e40a59}} 
+\index{CRingBuffer$<$ T $>$@{CRingBuffer$<$ T $>$}!CRingBuffer@{CRingBuffer}}
+\index{CRingBuffer@{CRingBuffer}!CRingBuffer$<$ T $>$@{CRingBuffer$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{CRingBuffer()}{CRingBuffer()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{class_c_ring_buffer}{C\+Ring\+Buffer}}$<$ T $>$\+::\mbox{\hyperlink{class_c_ring_buffer}{C\+Ring\+Buffer}} (\begin{DoxyParamCaption}\item[{int}]{i\+Buffer\+Length\+In\+Samples }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{class_c_ring_buffer_a97c8bb4689fcef14d595e897ea72cba9}\label{class_c_ring_buffer_a97c8bb4689fcef14d595e897ea72cba9}} 
+\index{CRingBuffer$<$ T $>$@{CRingBuffer$<$ T $>$}!````~CRingBuffer@{$\sim$CRingBuffer}}
+\index{````~CRingBuffer@{$\sim$CRingBuffer}!CRingBuffer$<$ T $>$@{CRingBuffer$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$CRingBuffer()}{~CRingBuffer()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+virtual \mbox{\hyperlink{class_c_ring_buffer}{C\+Ring\+Buffer}}$<$ T $>$\+::$\sim$\mbox{\hyperlink{class_c_ring_buffer}{C\+Ring\+Buffer}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_c_ring_buffer_a23d9877584d712c17811a9833835605e}\label{class_c_ring_buffer_a23d9877584d712c17811a9833835605e}} 
+\index{CRingBuffer$<$ T $>$@{CRingBuffer$<$ T $>$}!get@{get}}
+\index{get@{get}!CRingBuffer$<$ T $>$@{CRingBuffer$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T \mbox{\hyperlink{class_c_ring_buffer}{C\+Ring\+Buffer}}$<$ T $>$\+::get (\begin{DoxyParamCaption}\item[{float}]{f\+Offset = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+return the value at the current read index 
+\begin{DoxyParams}{Parameters}
+{\em f\+Offset} & read at offset from read index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float the value from the read index 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_ring_buffer_a047d589f30b02374de2aabdbc6892912}\label{class_c_ring_buffer_a047d589f30b02374de2aabdbc6892912}} 
+\index{CRingBuffer$<$ T $>$@{CRingBuffer$<$ T $>$}!get@{get}}
+\index{get@{get}!CRingBuffer$<$ T $>$@{CRingBuffer$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_c_ring_buffer}{C\+Ring\+Buffer}}$<$ T $>$\+::get (\begin{DoxyParamCaption}\item[{T $\ast$}]{pt\+Buff,  }\item[{int}]{i\+Length }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+return the values starting at the current read index 
+\begin{DoxyParams}{Parameters}
+{\em pt\+Buff} & to where the values will be written \\
+\hline
+{\em i\+Length} & number of values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_ring_buffer_a0ec2bd62a49e5078d3ca0a03fa123c9e}\label{class_c_ring_buffer_a0ec2bd62a49e5078d3ca0a03fa123c9e}} 
+\index{CRingBuffer$<$ T $>$@{CRingBuffer$<$ T $>$}!getLength@{getLength}}
+\index{getLength@{getLength}!CRingBuffer$<$ T $>$@{CRingBuffer$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getLength()}{getLength()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \mbox{\hyperlink{class_c_ring_buffer}{C\+Ring\+Buffer}}$<$ T $>$\+::get\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns the length of the internal buffer \begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_ring_buffer_aa04a6cb30d486a6ddd5f7929db1eef9d}\label{class_c_ring_buffer_aa04a6cb30d486a6ddd5f7929db1eef9d}} 
+\index{CRingBuffer$<$ T $>$@{CRingBuffer$<$ T $>$}!getNumValuesInBuffer@{getNumValuesInBuffer}}
+\index{getNumValuesInBuffer@{getNumValuesInBuffer}!CRingBuffer$<$ T $>$@{CRingBuffer$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getNumValuesInBuffer()}{getNumValuesInBuffer()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \mbox{\hyperlink{class_c_ring_buffer}{C\+Ring\+Buffer}}$<$ T $>$\+::get\+Num\+Values\+In\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns the number of values currently buffered (note\+: 0 could also mean the buffer is full!) \begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_ring_buffer_a0f25eadaafa6a2e7bfe2f9ef6af1104b}\label{class_c_ring_buffer_a0f25eadaafa6a2e7bfe2f9ef6af1104b}} 
+\index{CRingBuffer$<$ T $>$@{CRingBuffer$<$ T $>$}!getPostInc@{getPostInc}}
+\index{getPostInc@{getPostInc}!CRingBuffer$<$ T $>$@{CRingBuffer$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getPostInc()}{getPostInc()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T \mbox{\hyperlink{class_c_ring_buffer}{C\+Ring\+Buffer}}$<$ T $>$\+::get\+Post\+Inc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+return the value at the current read index and increment the read pointer \begin{DoxyReturn}{Returns}
+float the value from the read index 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_ring_buffer_aeb86fd660cbaadd93a9d89dc529d5b76}\label{class_c_ring_buffer_aeb86fd660cbaadd93a9d89dc529d5b76}} 
+\index{CRingBuffer$<$ T $>$@{CRingBuffer$<$ T $>$}!getPostInc@{getPostInc}}
+\index{getPostInc@{getPostInc}!CRingBuffer$<$ T $>$@{CRingBuffer$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getPostInc()}{getPostInc()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_c_ring_buffer}{C\+Ring\+Buffer}}$<$ T $>$\+::get\+Post\+Inc (\begin{DoxyParamCaption}\item[{T $\ast$}]{pt\+Buff,  }\item[{int}]{i\+Length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+return the values starting at the current read index and increment the read pointer 
+\begin{DoxyParams}{Parameters}
+{\em pt\+Buff} & pointer to where the values will be written \\
+\hline
+{\em i\+Length} & number of values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_ring_buffer_ab18fac37cac4e8bde0419fe04845ac9d}\label{class_c_ring_buffer_ab18fac37cac4e8bde0419fe04845ac9d}} 
+\index{CRingBuffer$<$ T $>$@{CRingBuffer$<$ T $>$}!getReadIdx@{getReadIdx}}
+\index{getReadIdx@{getReadIdx}!CRingBuffer$<$ T $>$@{CRingBuffer$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getReadIdx()}{getReadIdx()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \mbox{\hyperlink{class_c_ring_buffer}{C\+Ring\+Buffer}}$<$ T $>$\+::get\+Read\+Idx (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+return the current index for reading/get \begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_ring_buffer_a8173fd5abe5c4ff4e78ffad4b14ea88b}\label{class_c_ring_buffer_a8173fd5abe5c4ff4e78ffad4b14ea88b}} 
+\index{CRingBuffer$<$ T $>$@{CRingBuffer$<$ T $>$}!getWriteIdx@{getWriteIdx}}
+\index{getWriteIdx@{getWriteIdx}!CRingBuffer$<$ T $>$@{CRingBuffer$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getWriteIdx()}{getWriteIdx()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \mbox{\hyperlink{class_c_ring_buffer}{C\+Ring\+Buffer}}$<$ T $>$\+::get\+Write\+Idx (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+return the current index for writing/put \begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_ring_buffer_a15f6463cfcafd855157d33d253011dc7}\label{class_c_ring_buffer_a15f6463cfcafd855157d33d253011dc7}} 
+\index{CRingBuffer$<$ T $>$@{CRingBuffer$<$ T $>$}!put@{put}}
+\index{put@{put}!CRingBuffer$<$ T $>$@{CRingBuffer$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{put()}{put()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_c_ring_buffer}{C\+Ring\+Buffer}}$<$ T $>$\+::put (\begin{DoxyParamCaption}\item[{const T $\ast$}]{pt\+New\+Buff,  }\item[{int}]{i\+Length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+add new values of type T to write index 
+\begin{DoxyParams}{Parameters}
+{\em pt\+New\+Buff} & new values \\
+\hline
+{\em i\+Length} & number of values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_ring_buffer_a702eb6314380082795f735df74a816c9}\label{class_c_ring_buffer_a702eb6314380082795f735df74a816c9}} 
+\index{CRingBuffer$<$ T $>$@{CRingBuffer$<$ T $>$}!put@{put}}
+\index{put@{put}!CRingBuffer$<$ T $>$@{CRingBuffer$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{put()}{put()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_c_ring_buffer}{C\+Ring\+Buffer}}$<$ T $>$\+::put (\begin{DoxyParamCaption}\item[{T}]{t\+New\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+add a new value of type T to write index 
+\begin{DoxyParams}{Parameters}
+{\em t\+New\+Value} & the new value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_ring_buffer_a21568ce259aa8e97ea3f3d7aec4828b7}\label{class_c_ring_buffer_a21568ce259aa8e97ea3f3d7aec4828b7}} 
+\index{CRingBuffer$<$ T $>$@{CRingBuffer$<$ T $>$}!putPostInc@{putPostInc}}
+\index{putPostInc@{putPostInc}!CRingBuffer$<$ T $>$@{CRingBuffer$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{putPostInc()}{putPostInc()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_c_ring_buffer}{C\+Ring\+Buffer}}$<$ T $>$\+::put\+Post\+Inc (\begin{DoxyParamCaption}\item[{const T $\ast$}]{pt\+New\+Buff,  }\item[{int}]{i\+Length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+add new values of type T to write index and increment write index 
+\begin{DoxyParams}{Parameters}
+{\em pt\+New\+Buff} & new values \\
+\hline
+{\em i\+Length} & number of values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_ring_buffer_a2bd848181a662312600bc590b9040d2a}\label{class_c_ring_buffer_a2bd848181a662312600bc590b9040d2a}} 
+\index{CRingBuffer$<$ T $>$@{CRingBuffer$<$ T $>$}!putPostInc@{putPostInc}}
+\index{putPostInc@{putPostInc}!CRingBuffer$<$ T $>$@{CRingBuffer$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{putPostInc()}{putPostInc()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_c_ring_buffer}{C\+Ring\+Buffer}}$<$ T $>$\+::put\+Post\+Inc (\begin{DoxyParamCaption}\item[{T}]{t\+New\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+add a new value of type T to write index and increment write index 
+\begin{DoxyParams}{Parameters}
+{\em t\+New\+Value} & the new value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_ring_buffer_a716fb4acc03355a73cc7d96f3ceb2995}\label{class_c_ring_buffer_a716fb4acc03355a73cc7d96f3ceb2995}} 
+\index{CRingBuffer$<$ T $>$@{CRingBuffer$<$ T $>$}!reset@{reset}}
+\index{reset@{reset}!CRingBuffer$<$ T $>$@{CRingBuffer$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_c_ring_buffer}{C\+Ring\+Buffer}}$<$ T $>$\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+set buffer content and indices to 0 \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_ring_buffer_af265a6322c4b1584c880def00d31e663}\label{class_c_ring_buffer_af265a6322c4b1584c880def00d31e663}} 
+\index{CRingBuffer$<$ T $>$@{CRingBuffer$<$ T $>$}!setReadIdx@{setReadIdx}}
+\index{setReadIdx@{setReadIdx}!CRingBuffer$<$ T $>$@{CRingBuffer$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setReadIdx()}{setReadIdx()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_c_ring_buffer}{C\+Ring\+Buffer}}$<$ T $>$\+::set\+Read\+Idx (\begin{DoxyParamCaption}\item[{int}]{i\+New\+Read\+Idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+move the read index to a new position 
+\begin{DoxyParams}{Parameters}
+{\em i\+New\+Read\+Idx} & new position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_ring_buffer_a408e0ec5855fca27bd2dc5862fa913ab}\label{class_c_ring_buffer_a408e0ec5855fca27bd2dc5862fa913ab}} 
+\index{CRingBuffer$<$ T $>$@{CRingBuffer$<$ T $>$}!setWriteIdx@{setWriteIdx}}
+\index{setWriteIdx@{setWriteIdx}!CRingBuffer$<$ T $>$@{CRingBuffer$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setWriteIdx()}{setWriteIdx()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_c_ring_buffer}{C\+Ring\+Buffer}}$<$ T $>$\+::set\+Write\+Idx (\begin{DoxyParamCaption}\item[{int}]{i\+New\+Write\+Idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+move the write index to a new position 
+\begin{DoxyParams}{Parameters}
+{\em i\+New\+Write\+Idx} & new position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/inc/\mbox{\hyperlink{_ring_buffer_8h}{Ring\+Buffer.\+h}}\end{DoxyCompactItemize}

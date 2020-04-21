@@ -1,0 +1,128 @@
+\hypertarget{class_c_vector}{}\doxysection{C\+Vector Class Reference}
+\label{class_c_vector}\index{CVector@{CVector}}
+
+
+class with static functions for buffer operations with type T  
+
+
+
+
+{\ttfamily \#include $<$Vector.\+h$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\static void \mbox{\hyperlink{class_c_vector_a56439cdc747534e955517de223845256}{set\+Zero}} (T $\ast$pf\+Src\+Dest, int i\+Length)
+\item 
+{\footnotesize template$<$typename T $>$ }\\static void \mbox{\hyperlink{class_c_vector_af122acbe2357183785f164592e64866c}{set\+Zero\+Below\+Thresh}} (T $\ast$pf\+Src\+Dest, int i\+Length, T Thresh)
+\item 
+{\footnotesize template$<$typename T $>$ }\\static void \mbox{\hyperlink{class_c_vector_a23f97e982ce5d0e919cd748fbfd246a9}{copy}} (T $\ast$p\+Dest, const T $\ast$p\+Source, int i\+Length)
+\item 
+{\footnotesize template$<$typename T $>$ }\\static void \mbox{\hyperlink{class_c_vector_aadc35ba1b468fc9645e477671917ba92}{flip\+\_\+I}} (T $\ast$pf\+Src\+Dest, int i\+Length)
+\item 
+{\footnotesize template$<$typename T $>$ }\\static void \mbox{\hyperlink{class_c_vector_a0c17a764d7c2881e9c30b2747ab00a9c}{move\+In\+Mem}} (T $\ast$pf\+Src\+Dest, int i\+Dest\+Idx, int i\+Src\+Idx, int i\+Length)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+class with static functions for buffer operations with type T 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_c_vector_a23f97e982ce5d0e919cd748fbfd246a9}\label{class_c_vector_a23f97e982ce5d0e919cd748fbfd246a9}} 
+\index{CVector@{CVector}!copy@{copy}}
+\index{copy@{copy}!CVector@{CVector}}
+\doxysubsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static void C\+Vector\+::copy (\begin{DoxyParamCaption}\item[{T $\ast$}]{p\+Dest,  }\item[{const T $\ast$}]{p\+Source,  }\item[{int}]{i\+Length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+copies buffer of type T 
+\begin{DoxyParams}{Parameters}
+{\em p\+Dest} & pointer to destination memory \\
+\hline
+{\em p\+Source} & pointer to source memory \\
+\hline
+{\em i\+Length} & length of buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_vector_aadc35ba1b468fc9645e477671917ba92}\label{class_c_vector_aadc35ba1b468fc9645e477671917ba92}} 
+\index{CVector@{CVector}!flip\_I@{flip\_I}}
+\index{flip\_I@{flip\_I}!CVector@{CVector}}
+\doxysubsubsection{\texorpdfstring{flip\_I()}{flip\_I()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static void C\+Vector\+::flip\+\_\+I (\begin{DoxyParamCaption}\item[{T $\ast$}]{pf\+Src\+Dest,  }\item[{int}]{i\+Length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+reverses buffer (last to first element) 
+\begin{DoxyParams}{Parameters}
+{\em pf\+Src\+Dest} & pointer to memory to be flipped \\
+\hline
+{\em i\+Length} & number of elements \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_vector_a0c17a764d7c2881e9c30b2747ab00a9c}\label{class_c_vector_a0c17a764d7c2881e9c30b2747ab00a9c}} 
+\index{CVector@{CVector}!moveInMem@{moveInMem}}
+\index{moveInMem@{moveInMem}!CVector@{CVector}}
+\doxysubsubsection{\texorpdfstring{moveInMem()}{moveInMem()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static void C\+Vector\+::move\+In\+Mem (\begin{DoxyParamCaption}\item[{T $\ast$}]{pf\+Src\+Dest,  }\item[{int}]{i\+Dest\+Idx,  }\item[{int}]{i\+Src\+Idx,  }\item[{int}]{i\+Length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+moves a subset of the current buffer 
+\begin{DoxyParams}{Parameters}
+{\em pf\+Src\+Dest} & source and destination \\
+\hline
+{\em i\+Dest\+Idx} & destination index \\
+\hline
+{\em i\+Src\+Idx} & source index \\
+\hline
+{\em i\+Length} & number of elements to be moved \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_vector_a56439cdc747534e955517de223845256}\label{class_c_vector_a56439cdc747534e955517de223845256}} 
+\index{CVector@{CVector}!setZero@{setZero}}
+\index{setZero@{setZero}!CVector@{CVector}}
+\doxysubsubsection{\texorpdfstring{setZero()}{setZero()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static void C\+Vector\+::set\+Zero (\begin{DoxyParamCaption}\item[{T $\ast$}]{pf\+Src\+Dest,  }\item[{int}]{i\+Length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+sets a buffer to zero 
+\begin{DoxyParams}{Parameters}
+{\em pf\+Src\+Dest} & pointer to memory to be modified \\
+\hline
+{\em i\+Length} & buffer length \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_vector_af122acbe2357183785f164592e64866c}\label{class_c_vector_af122acbe2357183785f164592e64866c}} 
+\index{CVector@{CVector}!setZeroBelowThresh@{setZeroBelowThresh}}
+\index{setZeroBelowThresh@{setZeroBelowThresh}!CVector@{CVector}}
+\doxysubsubsection{\texorpdfstring{setZeroBelowThresh()}{setZeroBelowThresh()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static void C\+Vector\+::set\+Zero\+Below\+Thresh (\begin{DoxyParamCaption}\item[{T $\ast$}]{pf\+Src\+Dest,  }\item[{int}]{i\+Length,  }\item[{T}]{Thresh }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+sets all values smaller than a threshold to 0 
+\begin{DoxyParams}{Parameters}
+{\em pf\+Src\+Dest} & pointer to memory to be modified \\
+\hline
+{\em i\+Length} & buffer length \\
+\hline
+{\em Thresh} & threshold value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/inc/\mbox{\hyperlink{_vector_8h}{Vector.\+h}}\end{DoxyCompactItemize}

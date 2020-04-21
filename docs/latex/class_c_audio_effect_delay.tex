@@ -1,0 +1,163 @@
+\hypertarget{class_c_audio_effect_delay}{}\doxysection{C\+Audio\+Effect\+Delay Class Reference}
+\label{class_c_audio_effect_delay}\index{CAudioEffectDelay@{CAudioEffectDelay}}
+
+
+{\ttfamily \#include $<$Audio\+Effect\+Delay.\+h$>$}
+
+
+
+Inheritance diagram for C\+Audio\+Effect\+Delay\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{class_c_audio_effect_delay__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for C\+Audio\+Effect\+Delay\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{class_c_audio_effect_delay__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85}{Delay\+Type\+\_\+t}} \{ \newline
+\mbox{\hyperlink{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85a3e87d5551ebd2676ba0ff2f2a651a2f0}{k\+Delay}} = 16, 
+\mbox{\hyperlink{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85a295bf703cc34463e212132821a819ebc}{k\+Chorus}} = 18, 
+\mbox{\hyperlink{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85a3d021f539c1cc09a1b0a4053f33a8520}{k\+Flanger}} = 21, 
+\mbox{\hyperlink{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85a9d3d67916de2615ac8dcb30f179a7eda}{k\+Tremolo}} = 8, 
+\newline
+\mbox{\hyperlink{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85abd05ae8a42fa35c7f3e3d3d0ef44c4a1}{k\+Vibrato}} = 2
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_audio_effect_delay_a17b3fe6a7f6ecd9b7b9f7b0612bcfe32}{C\+Audio\+Effect\+Delay}} ()
+\item 
+\mbox{\hyperlink{class_c_audio_effect_delay_ab95e5e6de2583e1ffdb3105eca84b7d8}{C\+Audio\+Effect\+Delay}} (float f\+Sample\+Rate\+In\+Hz, int i\+Num\+Channels, float i\+Max\+Delay\+In\+Sec, \mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}} params\mbox{[}$\,$\mbox{]}, float values\mbox{[}$\,$\mbox{]}, int i\+Num\+Params)
+\item 
+\mbox{\hyperlink{class_c_audio_effect_delay_a0c7a16603632bf35f510a820007cf1a9}{$\sim$\+C\+Audio\+Effect\+Delay}} ()
+\item 
+Error\+\_\+t \mbox{\hyperlink{class_c_audio_effect_delay_ac2ac39077594cb5918abf3e903c1b8d1}{init}} (float f\+Sample\+Rate\+In\+Hz, int i\+Num\+Channels, float i\+Max\+Delay\+In\+Sec, \mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}} params\mbox{[}$\,$\mbox{]}, float values\mbox{[}$\,$\mbox{]}, int i\+Num\+Params)
+\item 
+Error\+\_\+t \mbox{\hyperlink{class_c_audio_effect_delay_a9a4f4adf9d70e30fd733c4065c016968}{reset}} ()
+\item 
+Error\+\_\+t \mbox{\hyperlink{class_c_audio_effect_delay_aa3aec7ac69be0084db2cb109d2aa0fd2}{set\+Param}} (\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}} e\+Param, float f\+Value)
+\item 
+float \mbox{\hyperlink{class_c_audio_effect_delay_aa59ed95a3e6bc01b730df8ffd310b060}{get\+Param}} (\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}} e\+Param)
+\item 
+Error\+\_\+t \mbox{\hyperlink{class_c_audio_effect_delay_a5709c4dade1abe85cbc006bd1bc5324c}{set\+Delay\+Type}} (\mbox{\hyperlink{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85}{Delay\+Type\+\_\+t}} e\+Value)
+\item 
+\mbox{\hyperlink{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85}{Delay\+Type\+\_\+t}} \mbox{\hyperlink{class_c_audio_effect_delay_a1916cda7aefee278afae5ce21f55eae1}{get\+Delay\+Type}} ()
+\item 
+Error\+\_\+t \mbox{\hyperlink{class_c_audio_effect_delay_ad8085f91e6d55a721fa6b7c21677c5ff}{process}} (float $\ast$$\ast$ppf\+Input\+Buffer, float $\ast$$\ast$ppf\+Output\+Buffer, int i\+Number\+Of\+Frames)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85}\label{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85}} 
+\index{CAudioEffectDelay@{CAudioEffectDelay}!DelayType\_t@{DelayType\_t}}
+\index{DelayType\_t@{DelayType\_t}!CAudioEffectDelay@{CAudioEffectDelay}}
+\doxysubsubsection{\texorpdfstring{DelayType\_t}{DelayType\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85}{C\+Audio\+Effect\+Delay\+::\+Delay\+Type\+\_\+t}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kDelay@{kDelay}!CAudioEffectDelay@{CAudioEffectDelay}}\index{CAudioEffectDelay@{CAudioEffectDelay}!kDelay@{kDelay}}}\mbox{\Hypertarget{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85a3e87d5551ebd2676ba0ff2f2a651a2f0}\label{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85a3e87d5551ebd2676ba0ff2f2a651a2f0}} 
+k\+Delay&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kChorus@{kChorus}!CAudioEffectDelay@{CAudioEffectDelay}}\index{CAudioEffectDelay@{CAudioEffectDelay}!kChorus@{kChorus}}}\mbox{\Hypertarget{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85a295bf703cc34463e212132821a819ebc}\label{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85a295bf703cc34463e212132821a819ebc}} 
+k\+Chorus&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kFlanger@{kFlanger}!CAudioEffectDelay@{CAudioEffectDelay}}\index{CAudioEffectDelay@{CAudioEffectDelay}!kFlanger@{kFlanger}}}\mbox{\Hypertarget{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85a3d021f539c1cc09a1b0a4053f33a8520}\label{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85a3d021f539c1cc09a1b0a4053f33a8520}} 
+k\+Flanger&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kTremolo@{kTremolo}!CAudioEffectDelay@{CAudioEffectDelay}}\index{CAudioEffectDelay@{CAudioEffectDelay}!kTremolo@{kTremolo}}}\mbox{\Hypertarget{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85a9d3d67916de2615ac8dcb30f179a7eda}\label{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85a9d3d67916de2615ac8dcb30f179a7eda}} 
+k\+Tremolo&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kVibrato@{kVibrato}!CAudioEffectDelay@{CAudioEffectDelay}}\index{CAudioEffectDelay@{CAudioEffectDelay}!kVibrato@{kVibrato}}}\mbox{\Hypertarget{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85abd05ae8a42fa35c7f3e3d3d0ef44c4a1}\label{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85abd05ae8a42fa35c7f3e3d3d0ef44c4a1}} 
+k\+Vibrato&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_c_audio_effect_delay_a17b3fe6a7f6ecd9b7b9f7b0612bcfe32}\label{class_c_audio_effect_delay_a17b3fe6a7f6ecd9b7b9f7b0612bcfe32}} 
+\index{CAudioEffectDelay@{CAudioEffectDelay}!CAudioEffectDelay@{CAudioEffectDelay}}
+\index{CAudioEffectDelay@{CAudioEffectDelay}!CAudioEffectDelay@{CAudioEffectDelay}}
+\doxysubsubsection{\texorpdfstring{CAudioEffectDelay()}{CAudioEffectDelay()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily C\+Audio\+Effect\+Delay\+::\+C\+Audio\+Effect\+Delay (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_c_audio_effect_delay_ab95e5e6de2583e1ffdb3105eca84b7d8}\label{class_c_audio_effect_delay_ab95e5e6de2583e1ffdb3105eca84b7d8}} 
+\index{CAudioEffectDelay@{CAudioEffectDelay}!CAudioEffectDelay@{CAudioEffectDelay}}
+\index{CAudioEffectDelay@{CAudioEffectDelay}!CAudioEffectDelay@{CAudioEffectDelay}}
+\doxysubsubsection{\texorpdfstring{CAudioEffectDelay()}{CAudioEffectDelay()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+Audio\+Effect\+Delay\+::\+C\+Audio\+Effect\+Delay (\begin{DoxyParamCaption}\item[{float}]{f\+Sample\+Rate\+In\+Hz,  }\item[{int}]{i\+Num\+Channels,  }\item[{float}]{i\+Max\+Delay\+In\+Sec,  }\item[{\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}}}]{params\mbox{[}$\,$\mbox{]} = {\ttfamily NULL},  }\item[{float}]{values\mbox{[}$\,$\mbox{]} = {\ttfamily NULL},  }\item[{int}]{i\+Num\+Params = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_c_audio_effect_delay_a0c7a16603632bf35f510a820007cf1a9}\label{class_c_audio_effect_delay_a0c7a16603632bf35f510a820007cf1a9}} 
+\index{CAudioEffectDelay@{CAudioEffectDelay}!````~CAudioEffectDelay@{$\sim$CAudioEffectDelay}}
+\index{````~CAudioEffectDelay@{$\sim$CAudioEffectDelay}!CAudioEffectDelay@{CAudioEffectDelay}}
+\doxysubsubsection{\texorpdfstring{$\sim$CAudioEffectDelay()}{~CAudioEffectDelay()}}
+{\footnotesize\ttfamily C\+Audio\+Effect\+Delay\+::$\sim$\+C\+Audio\+Effect\+Delay (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_c_audio_effect_delay_a1916cda7aefee278afae5ce21f55eae1}\label{class_c_audio_effect_delay_a1916cda7aefee278afae5ce21f55eae1}} 
+\index{CAudioEffectDelay@{CAudioEffectDelay}!getDelayType@{getDelayType}}
+\index{getDelayType@{getDelayType}!CAudioEffectDelay@{CAudioEffectDelay}}
+\doxysubsubsection{\texorpdfstring{getDelayType()}{getDelayType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85}{C\+Audio\+Effect\+Delay\+::\+Delay\+Type\+\_\+t}} C\+Audio\+Effect\+Delay\+::get\+Delay\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_c_audio_effect_delay_aa59ed95a3e6bc01b730df8ffd310b060}\label{class_c_audio_effect_delay_aa59ed95a3e6bc01b730df8ffd310b060}} 
+\index{CAudioEffectDelay@{CAudioEffectDelay}!getParam@{getParam}}
+\index{getParam@{getParam}!CAudioEffectDelay@{CAudioEffectDelay}}
+\doxysubsubsection{\texorpdfstring{getParam()}{getParam()}}
+{\footnotesize\ttfamily float C\+Audio\+Effect\+Delay\+::get\+Param (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}}}]{e\+Param }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_c_audio_effect_delay_ac2ac39077594cb5918abf3e903c1b8d1}\label{class_c_audio_effect_delay_ac2ac39077594cb5918abf3e903c1b8d1}} 
+\index{CAudioEffectDelay@{CAudioEffectDelay}!init@{init}}
+\index{init@{init}!CAudioEffectDelay@{CAudioEffectDelay}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily Error\+\_\+t C\+Audio\+Effect\+Delay\+::init (\begin{DoxyParamCaption}\item[{float}]{f\+Sample\+Rate\+In\+Hz,  }\item[{int}]{i\+Num\+Channels,  }\item[{float}]{i\+Max\+Delay\+In\+Sec,  }\item[{\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}}}]{params\mbox{[}$\,$\mbox{]},  }\item[{float}]{values\mbox{[}$\,$\mbox{]},  }\item[{int}]{i\+Num\+Params }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_c_audio_effect_delay_ad8085f91e6d55a721fa6b7c21677c5ff}\label{class_c_audio_effect_delay_ad8085f91e6d55a721fa6b7c21677c5ff}} 
+\index{CAudioEffectDelay@{CAudioEffectDelay}!process@{process}}
+\index{process@{process}!CAudioEffectDelay@{CAudioEffectDelay}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily Error\+\_\+t C\+Audio\+Effect\+Delay\+::process (\begin{DoxyParamCaption}\item[{float $\ast$$\ast$}]{ppf\+Input\+Buffer,  }\item[{float $\ast$$\ast$}]{ppf\+Output\+Buffer,  }\item[{int}]{i\+Number\+Of\+Frames }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_c_audio_effect_delay_a9a4f4adf9d70e30fd733c4065c016968}\label{class_c_audio_effect_delay_a9a4f4adf9d70e30fd733c4065c016968}} 
+\index{CAudioEffectDelay@{CAudioEffectDelay}!reset@{reset}}
+\index{reset@{reset}!CAudioEffectDelay@{CAudioEffectDelay}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily Error\+\_\+t C\+Audio\+Effect\+Delay\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_c_audio_effect_delay_a5709c4dade1abe85cbc006bd1bc5324c}\label{class_c_audio_effect_delay_a5709c4dade1abe85cbc006bd1bc5324c}} 
+\index{CAudioEffectDelay@{CAudioEffectDelay}!setDelayType@{setDelayType}}
+\index{setDelayType@{setDelayType}!CAudioEffectDelay@{CAudioEffectDelay}}
+\doxysubsubsection{\texorpdfstring{setDelayType()}{setDelayType()}}
+{\footnotesize\ttfamily Error\+\_\+t C\+Audio\+Effect\+Delay\+::set\+Delay\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85}{Delay\+Type\+\_\+t}}}]{e\+Value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_c_audio_effect_delay_aa3aec7ac69be0084db2cb109d2aa0fd2}\label{class_c_audio_effect_delay_aa3aec7ac69be0084db2cb109d2aa0fd2}} 
+\index{CAudioEffectDelay@{CAudioEffectDelay}!setParam@{setParam}}
+\index{setParam@{setParam}!CAudioEffectDelay@{CAudioEffectDelay}}
+\doxysubsubsection{\texorpdfstring{setParam()}{setParam()}}
+{\footnotesize\ttfamily Error\+\_\+t C\+Audio\+Effect\+Delay\+::set\+Param (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}}}]{e\+Param,  }\item[{float}]{f\+Value }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/inc/\mbox{\hyperlink{_audio_effect_delay_8h}{Audio\+Effect\+Delay.\+h}}\item 
+src/\+Audio\+Effect/\mbox{\hyperlink{_audio_effect_delay_8cpp}{Audio\+Effect\+Delay.\+cpp}}\end{DoxyCompactItemize}
