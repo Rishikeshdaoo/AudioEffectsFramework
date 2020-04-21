@@ -22,5 +22,5 @@ var searchData=
   ['audiofileif_2ecpp_21',['AudioFileIf.cpp',['../_audio_file_if_8cpp.html',1,'']]],
   ['audiofileif_2eh_22',['AudioFileIf.h',['../_audio_file_if_8h.html',1,'']]],
   ['audiofxframeworkexec_2ecpp_23',['AudioFxFrameworkExec.cpp',['../_audio_fx_framework_exec_8cpp.html',1,'']]],
-  ['audioeffectsframework_24',['AudioEffectsFramework',['../md__r_e_a_d_m_e.html',1,'']]]
+  ['audio_20effects_20framework_24',['Audio Effects Framework',['../md__r_e_a_d_m_e.html',1,'']]]
 ];

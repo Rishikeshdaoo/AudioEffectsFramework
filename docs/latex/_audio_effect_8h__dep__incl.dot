@@ -1,0 +1,38 @@
+digraph "src/inc/AudioEffect.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="src/inc/AudioEffect.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="src/AudioEffect/AudioEffect.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_audio_effect_8cpp.html",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="src/inc/AudioEffectBiquad.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_audio_effect_biquad_8h.html",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="src/AudioEffect/AudioEffect\lBiquad.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_audio_effect_biquad_8cpp.html",tooltip=" "];
+  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="src/AudioFxFrameworkExec\l/AudioFxFrameworkExec.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_audio_fx_framework_exec_8cpp.html",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="src/inc/AudioEffectCompressor.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_audio_effect_compressor_8h.html",tooltip=" "];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="src/AudioEffect/AudioEffect\lCompressor.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_audio_effect_compressor_8cpp.html",tooltip=" "];
+  Node6 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="src/inc/AudioEffectDelay.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_audio_effect_delay_8h.html",tooltip=" "];
+  Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="src/AudioEffect/AudioEffect\lDelay.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_audio_effect_delay_8cpp.html",tooltip=" "];
+  Node8 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="src/inc/AudioEffectDistortion.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_audio_effect_distortion_8h.html",tooltip=" "];
+  Node10 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="src/AudioEffect/AudioEffect\lDistortion.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_audio_effect_distortion_8cpp.html",tooltip=" "];
+  Node1 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="src/inc/AudioEffectGain.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_audio_effect_gain_8h.html",tooltip=" "];
+  Node12 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node13 [label="src/AudioEffect/AudioEffect\lGain.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_audio_effect_gain_8cpp.html",tooltip=" "];
+  Node12 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node14 [label="src/inc/AudioEffectPan.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_audio_effect_pan_8h.html",tooltip=" "];
+  Node14 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node15 [label="src/AudioEffect/AudioEffect\lPan.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_audio_effect_pan_8cpp.html",tooltip=" "];
+}

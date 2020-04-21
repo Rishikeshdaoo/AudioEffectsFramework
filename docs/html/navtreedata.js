@@ -25,7 +25,15 @@
 var NAVTREE =
 [
   [ "Audio Effects Framework", "index.html", [
-    [ "AudioEffectsFramework", "md__r_e_a_d_m_e.html", null ],
+    [ "Audio Effects Framework", "md__r_e_a_d_m_e.html", [
+      [ "Motivation", "md__r_e_a_d_m_e.html#autotoc_md1", null ],
+      [ "Effects included in the library", "md__r_e_a_d_m_e.html#autotoc_md2", null ],
+      [ "Use Cases", "md__r_e_a_d_m_e.html#autotoc_md3", null ],
+      [ "Getting Started", "md__r_e_a_d_m_e.html#autotoc_md4", [
+        [ "Installation", "md__r_e_a_d_m_e.html#autotoc_md5", null ],
+        [ "Examples", "md__r_e_a_d_m_e.html#autotoc_md6", null ]
+      ] ]
+    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
