@@ -1,5 +1,5 @@
 
-## Audio Effects Framework
+# Audio Effects Framework
 
 Cross platform C++ library with low-latency audio effects processing algorithms designed for real-time audio processing.
 
