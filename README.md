@@ -35,7 +35,7 @@ This projects aims to provide an easy to use API for creating audio effects proc
 
 ## Software Architecture
 
-<!-- ![useful image]({{ site.url }}/assets/SoftwareArchitecture.png) -->
+![useful image]({{ site.url }}/assets/SoftwareArchitecture.png)
 
 
 
