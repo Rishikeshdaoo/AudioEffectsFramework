@@ -3,7 +3,7 @@
 
 Cross platform C++ library with low-latency audio effects processing algorithms designed for real-time audio processing.
 
-<!-- ## Motivation
+## Motivation
 
 This projects aims to provide an easy to use API for creating audio effects processing applications. With well documented, low-level implementation of audio effects in C++, the library is designed to be simple and efficient.
 
@@ -33,7 +33,7 @@ This projects aims to provide an easy to use API for creating audio effects proc
 ### Examples
 
 
-## Software Architecture -->
+## Software Architecture
 
 <!-- ![useful image]({{ site.url }}/assets/SoftwareArchitecture.png) -->
 
