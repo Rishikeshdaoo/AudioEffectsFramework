@@ -30,8 +30,8 @@ var NAVTREE =
       [ "Effects included in the library", "md__r_e_a_d_m_e.html#autotoc_md2", null ],
       [ "Use Cases", "md__r_e_a_d_m_e.html#autotoc_md3", null ],
       [ "Getting Started", "md__r_e_a_d_m_e.html#autotoc_md4", [
-        [ "Installation", "md__r_e_a_d_m_e.html#autotoc_md5", null ],
-        [ "Examples", "md__r_e_a_d_m_e.html#autotoc_md6", null ]
+        [ "Instructions", "md__r_e_a_d_m_e.html#autotoc_md5", null ],
+        [ "Usage", "md__r_e_a_d_m_e.html#autotoc_md6", null ]
       ] ]
     ] ],
     [ "Classes", "annotated.html", [

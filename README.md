@@ -27,6 +27,27 @@ This projects aims to provide an easy to use API for creating audio effects proc
 
 ## Getting Started
 
-### Installation
+### Instructions
 
-### Examples
+- Clone the repository with the command : 'git clone https://github.com/Rishikeshdaoo/AudioEffectsFramework.git'
+
+### Usage
+
+- Create the Effect instance
+... '''CAudioEffectDelay       *phAudioEffectDelay = nullptr
+	phAudioEffectDelay = new CAudioEffectDelay(sampleRate,numChannels,maxDelayInSecs,param,value,iNumParams)'''
+
+.... 'sampleRate, numChannels' are arguments that you should get from your host application.
+.... 'param, value, iNumParams' are arguments that need to be initialized as below
+...... '''  int iNumParams = 4;
+    		CAudioEffect::EffectParam_t param[iNumParams];
+        	float value[iNumParams];
+
+        	    param[0] = CAudioEffect::kParamDelayInSecs;
+			    value[0] = 0.002f;
+			    param[1] = CAudioEffect::kParamModRateInHz;
+			    value[1] = 0.5f;
+			    param[2] = CAudioEffect::kParamModWidthInSecs;
+			    value[2] = 0.002f;
+			    param[3] = CAudioEffect::kParamGain;
+			    value[3] = 0.7f; '''

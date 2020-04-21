@@ -112,10 +112,24 @@ Use Cases</h1>
 <h1><a class="anchor" id="autotoc_md4"></a>
 Getting Started</h1>
 <h2><a class="anchor" id="autotoc_md5"></a>
-Installation</h2>
+Instructions</h2>
+<ul>
+<li>Clone the repository with the command : 'git clone <a href="https://github.com/Rishikeshdaoo/AudioEffectsFramework.git'">https://github.com/Rishikeshdaoo/AudioEffectsFramework.git'</a></li>
+</ul>
 <h2><a class="anchor" id="autotoc_md6"></a>
-Examples</h2>
-</div></div><!-- contents -->
+Usage</h2>
+<ul>
+<li>Create the Effect instance ... '''<a class="el" href="class_c_audio_effect_delay.html">CAudioEffectDelay</a> *phAudioEffectDelay = nullptr phAudioEffectDelay = new <a class="el" href="class_c_audio_effect_delay.html">CAudioEffectDelay(sampleRate,numChannels,maxDelayInSecs,param,value,iNumParams)</a>'''</li>
+</ul>
+<p>.... 'sampleRate, numChannels' are arguments that you should get from your host application. .... 'param, value, iNumParams' are arguments that need to be initialized as below ...... ''' int iNumParams = 4; <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659e">CAudioEffect::EffectParam_t</a> param[iNumParams]; float value[iNumParams]; </p><pre class="fragment">param[0] = CAudioEffect::kParamDelayInSecs;
+value[0] = 0.002f;
+param[1] = CAudioEffect::kParamModRateInHz;
+value[1] = 0.5f;
+param[2] = CAudioEffect::kParamModWidthInSecs;
+value[2] = 0.002f;
+param[3] = CAudioEffect::kParamGain;
+value[3] = 0.7f; '''
+</pre> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->
