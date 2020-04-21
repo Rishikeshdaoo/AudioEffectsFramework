@@ -38,6 +38,7 @@ public:
         
         kParamNumFilters,
         kParamFilterGains,
+        kParamFilterDelays,
         
     };
     

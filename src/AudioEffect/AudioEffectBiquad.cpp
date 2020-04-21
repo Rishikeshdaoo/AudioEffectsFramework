@@ -18,9 +18,12 @@ CAudioEffectBiquad::CAudioEffectBiquad()
     
     m_fCenterFrequencyInHz = 0.f;
     m_fQ = 0.f;
+    
+    m_ppCRingBuffer = 0;
+    m_fMaxDelayInSamples = 0.f;
 };
 
-CAudioEffectBiquad::CAudioEffectBiquad(float fSampleRateInHz, int iNumChannels, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0)
+CAudioEffectBiquad::CAudioEffectBiquad(float fSampleRateInHz, int iNumChannels, EffectParam_t params[], float values[], int iNumParams, float fMaxDelayInSec)
 {
     m_eEffectType = kBiquad;
     m_fGain = 0.f;
@@ -28,8 +31,11 @@ CAudioEffectBiquad::CAudioEffectBiquad(float fSampleRateInHz, int iNumChannels, 
     m_fSampleRateInHz = 0;
     m_bIsInitialized = false;
     
+    m_ppCRingBuffer = 0;
+    m_fMaxDelayInSamples = 0.f;
+    
     m_eFilterType = kLowpass;
-    init(fSampleRateInHz, iNumChannels, params, values, iNumParams);
+    init(fSampleRateInHz, iNumChannels, params, values, iNumParams, fMaxDelayInSec);
 }
 
 
@@ -38,7 +44,7 @@ CAudioEffectBiquad::~CAudioEffectBiquad()
     this->reset();
 };
 
-Error_t CAudioEffectBiquad::init(float fSampleRateInHz, int iNumChannels, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0)
+Error_t CAudioEffectBiquad::init(float fSampleRateInHz, int iNumChannels, EffectParam_t params[], float values[], int iNumParams, float fMaxDelayInSec)
 {
 
     m_fSampleRateInHz = fSampleRateInHz;
@@ -57,6 +63,8 @@ Error_t CAudioEffectBiquad::init(float fSampleRateInHz, int iNumChannels, Effect
             case kParamQ:
                 m_fQ = values[i];
                 break;
+            case kParamDelayInSecs:
+                m_fDelayInSamples = values[i] * m_fSampleRateInHz;
             default:
                 return kFunctionInvalidArgsError;
         }
@@ -73,6 +81,15 @@ Error_t CAudioEffectBiquad::init(float fSampleRateInHz, int iNumChannels, Effect
         m_fxn2[i] = 0.f;
         m_fyn1[i] = 0.f;
         m_fyn2[i] = 0.f;
+    }
+    
+    m_ppCRingBuffer = new CRingBuffer<float>*[m_iNumChannels];
+    
+    for (int c= 0; c < m_iNumChannels; c++)
+    {
+        m_ppCRingBuffer[c]= new CRingBuffer<float>(int(fMaxDelayInSec*m_fSampleRateInHz*2+1));
+        m_ppCRingBuffer[c]->setWriteIdx(int(fMaxDelayInSec*m_fSampleRateInHz+1));
+        m_ppCRingBuffer[c]->setReadIdx(int(fMaxDelayInSec*m_fSampleRateInHz+1));
     }
 
     return kNoError;
@@ -103,6 +120,18 @@ Error_t CAudioEffectBiquad::setParam(EffectParam_t eParam, float fValue)
         case kParamQ:
             m_fQ = fValue;
             break;
+        case kParamDelayInSecs:
+            m_fDelayInSamples = fValue * m_fSampleRateInHz;
+            
+            if(m_fDelayInSamples > m_fMaxDelayInSamples)
+                return kFunctionInvalidArgsError;
+            
+            for (int c = 0; c < m_iNumChannels; c++) {
+                for (int i = 0; i < m_fDelayInSamples; i++) {
+                    m_ppCRingBuffer[c]->putPostInc(0.F);
+                }
+            }
+            break;
         default:
             return kFunctionInvalidArgsError;
             break;
@@ -125,6 +154,9 @@ float CAudioEffectBiquad::getParam(EffectParam_t eParam)
             break;
         case kParamQ:
             return m_fQ;
+            break;
+        case kParamDelayInSecs:
+            return m_fDelayInSamples / m_fSampleRateInHz;
             break;
         default:
             return 0.f;
@@ -153,12 +185,17 @@ Error_t CAudioEffectBiquad::process(float **ppfInputBuffer, float **ppfOutputBuf
     {
         for (int i = 0; i < iNumberOfFrames; i++)
         {
+            
+            m_ppCRingBuffer[c]->putPostInc(ppfInputBuffer[c][i]);
+            
             ppfOutputBuffer[c][i] = m_fb0/m_fa0*ppfInputBuffer[c][i] + m_fb1/m_fa0*m_fxn1[c] + m_fb2/m_fa0*m_fxn2[c] - m_fa1/m_fa0*m_fyn1[c] - m_fa2/m_fa0*m_fyn2[c];
             
             m_fxn2[c] = m_fxn1[c];
             m_fxn1[c] = ppfInputBuffer[c][i];
             m_fyn2[c] = m_fyn1[c];
             m_fyn1[c] = ppfOutputBuffer[c][i];
+            
+            m_ppCRingBuffer[c]->getPostInc();
         }
     }
     return kNoError;

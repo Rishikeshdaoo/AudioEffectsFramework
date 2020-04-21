@@ -8,9 +8,8 @@
 
 
 #include "AudioEffect.h"
+#include "RingBuffer.h"
 
-#include <stdio.h>
-#include <iostream>
 
 class CAudioEffectBiquad: public CAudioEffect
 {
@@ -29,10 +28,10 @@ public:
     };
     
     CAudioEffectBiquad();
-    CAudioEffectBiquad(float fSampleRateInHz, int iNumChannels, EffectParam_t params[], float values[], int iNumParams);
+    CAudioEffectBiquad(float fSampleRateInHz, int iNumChannels, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0, float fMaxDelayInSec = 1.0);
     ~CAudioEffectBiquad();
 
-    Error_t init(float fSampleRateInHz, int iNumChannels, EffectParam_t params[], float values[], int iNumParams);
+    Error_t init(float fSampleRateInHz, int iNumChannels, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0, float fMaxDelayInSec = 1.0);
     Error_t reset();
 
     Error_t setParam(EffectParam_t eParam, float fValue);
@@ -63,6 +62,10 @@ private:
     float * m_fxn2;
     float * m_fyn1;
     float * m_fyn2;
+    
+    CRingBuffer<float>  **m_ppCRingBuffer;
+    float m_fMaxDelayInSamples;
+    float m_fDelayInSamples;
     
 };
 
