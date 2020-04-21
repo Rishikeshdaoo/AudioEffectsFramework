@@ -112,9 +112,14 @@ Collaboration diagram for CAudioEffectDelay:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:ac32a9e095a16cc2964bab7a575c9fc85"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_audio_effect_delay.html#ac32a9e095a16cc2964bab7a575c9fc85">DelayType_t</a> { <a class="el" href="class_c_audio_effect_delay.html#ac32a9e095a16cc2964bab7a575c9fc85a3e87d5551ebd2676ba0ff2f2a651a2f0">kDelay</a> = 0, 
-<a class="el" href="class_c_audio_effect_delay.html#ac32a9e095a16cc2964bab7a575c9fc85a295bf703cc34463e212132821a819ebc">kChorus</a> = 2, 
-<a class="el" href="class_c_audio_effect_delay.html#ac32a9e095a16cc2964bab7a575c9fc85a3d021f539c1cc09a1b0a4053f33a8520">kFlanger</a> = 5
+<tr class="memitem:ac32a9e095a16cc2964bab7a575c9fc85"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_audio_effect_delay.html#ac32a9e095a16cc2964bab7a575c9fc85">DelayType_t</a> { <br />
+&#160;&#160;<a class="el" href="class_c_audio_effect_delay.html#ac32a9e095a16cc2964bab7a575c9fc85a3e87d5551ebd2676ba0ff2f2a651a2f0">kDelay</a> = 16, 
+<a class="el" href="class_c_audio_effect_delay.html#ac32a9e095a16cc2964bab7a575c9fc85a295bf703cc34463e212132821a819ebc">kChorus</a> = 18, 
+<a class="el" href="class_c_audio_effect_delay.html#ac32a9e095a16cc2964bab7a575c9fc85a3d021f539c1cc09a1b0a4053f33a8520">kFlanger</a> = 21, 
+<a class="el" href="class_c_audio_effect_delay.html#ac32a9e095a16cc2964bab7a575c9fc85a9d3d67916de2615ac8dcb30f179a7eda">kTremolo</a> = 8, 
+<br />
+&#160;&#160;<a class="el" href="class_c_audio_effect_delay.html#ac32a9e095a16cc2964bab7a575c9fc85abd05ae8a42fa35c7f3e3d3d0ef44c4a1">kVibrato</a> = 2
+<br />
  }</td></tr>
 <tr class="separator:ac32a9e095a16cc2964bab7a575c9fc85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_class_c_audio_effect"><td colspan="2" onclick="javascript:toggleInherit('pub_types_class_c_audio_effect')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="class_c_audio_effect.html">CAudioEffect</a></td></tr>
@@ -122,17 +127,19 @@ Public Types</h2></td></tr>
 &#160;&#160;<a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659ea560e1b20c61513df8c5e2409609d61c3">kParamGain</a>, 
 <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659eab3954dad8e2cb3c8edcf9aef516a03f8">kParamPan</a>, 
 <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659eab721847e4b20bf69f9f05d516e02df2c">kParamDelayInSecs</a>, 
-<a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659eada631f5d036dec3dda2386b6f00f0f8f">kParamModRateInHz</a>, 
+<a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659eaabaa74757b5c6c22f65a60b098781370">kParamFeedback</a>, 
 <br />
-&#160;&#160;<a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659ea05e953e3f70678b944785d62ca5473bd">kParamModWidthInSecs</a>, 
+&#160;&#160;<a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659eada631f5d036dec3dda2386b6f00f0f8f">kParamModRateInHz</a>, 
+<a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659ea05e953e3f70678b944785d62ca5473bd">kParamModWidthInSecs</a>, 
 <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659ea9318cd6b7a59a95c3ca445d021e38fd6">kParamCenterFrequency</a>, 
 <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659ea3938e87ca92657368d510f672c13226d">kParamQ</a>, 
-<a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659ea1aa9db030d81fe7035af3e99e91fb207">kParamThreshold</a>, 
 <br />
-&#160;&#160;<a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659eaf013e0c5d5c6dc572a1323150378ba45">kParamSlope</a>, 
+&#160;&#160;<a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659ea1aa9db030d81fe7035af3e99e91fb207">kParamThreshold</a>, 
+<a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659eaf013e0c5d5c6dc572a1323150378ba45">kParamSlope</a>, 
 <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659ea57623dd94f3676447daa02b305f8b8ab">kParamDryWetMix</a>, 
 <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659eabe24aef363365ff79a05791ed67cfdc3">kParamNumFilters</a>, 
-<a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659ea9ed1f4300967713df3f119fdff185b9c">kParamFilterGains</a>
+<br />
+&#160;&#160;<a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659ea9ed1f4300967713df3f119fdff185b9c">kParamFilterGains</a>
 <br />
  }</td></tr>
 <tr class="separator:a3ab96031f3a38c3d6b2e78f10b1e659e inherit pub_types_class_c_audio_effect"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -195,6 +202,8 @@ Additional Inherited Members</h2></td></tr>
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac32a9e095a16cc2964bab7a575c9fc85a3e87d5551ebd2676ba0ff2f2a651a2f0"></a>kDelay&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="ac32a9e095a16cc2964bab7a575c9fc85a295bf703cc34463e212132821a819ebc"></a>kChorus&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="ac32a9e095a16cc2964bab7a575c9fc85a3d021f539c1cc09a1b0a4053f33a8520"></a>kFlanger&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac32a9e095a16cc2964bab7a575c9fc85a9d3d67916de2615ac8dcb30f179a7eda"></a>kTremolo&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac32a9e095a16cc2964bab7a575c9fc85abd05ae8a42fa35c7f3e3d3d0ef44c4a1"></a>kVibrato&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>

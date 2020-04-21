@@ -25,6 +25,7 @@
 var NAVTREE =
 [
   [ "Audio Effects Framework", "index.html", [
+    [ "AudioEffectsFramework", "md__r_e_a_d_m_e.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -52,7 +53,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_audio_effect_8cpp.html",
-"class_c_ring_buffer.html#a702eb6314380082795f735df74a816c9"
+"class_c_ring_buffer.html#a23d9877584d712c17811a9833835605e"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -4,6 +4,7 @@ var class_c_audio_effect =
       [ "kParamGain", "class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659ea560e1b20c61513df8c5e2409609d61c3", null ],
       [ "kParamPan", "class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659eab3954dad8e2cb3c8edcf9aef516a03f8", null ],
       [ "kParamDelayInSecs", "class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659eab721847e4b20bf69f9f05d516e02df2c", null ],
+      [ "kParamFeedback", "class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659eaabaa74757b5c6c22f65a60b098781370", null ],
       [ "kParamModRateInHz", "class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659eada631f5d036dec3dda2386b6f00f0f8f", null ],
       [ "kParamModWidthInSecs", "class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659ea05e953e3f70678b944785d62ca5473bd", null ],
       [ "kParamCenterFrequency", "class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659ea9318cd6b7a59a95c3ca445d021e38fd6", null ],

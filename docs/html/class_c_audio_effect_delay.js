@@ -3,7 +3,9 @@ var class_c_audio_effect_delay =
     [ "DelayType_t", "class_c_audio_effect_delay.html#ac32a9e095a16cc2964bab7a575c9fc85", [
       [ "kDelay", "class_c_audio_effect_delay.html#ac32a9e095a16cc2964bab7a575c9fc85a3e87d5551ebd2676ba0ff2f2a651a2f0", null ],
       [ "kChorus", "class_c_audio_effect_delay.html#ac32a9e095a16cc2964bab7a575c9fc85a295bf703cc34463e212132821a819ebc", null ],
-      [ "kFlanger", "class_c_audio_effect_delay.html#ac32a9e095a16cc2964bab7a575c9fc85a3d021f539c1cc09a1b0a4053f33a8520", null ]
+      [ "kFlanger", "class_c_audio_effect_delay.html#ac32a9e095a16cc2964bab7a575c9fc85a3d021f539c1cc09a1b0a4053f33a8520", null ],
+      [ "kTremolo", "class_c_audio_effect_delay.html#ac32a9e095a16cc2964bab7a575c9fc85a9d3d67916de2615ac8dcb30f179a7eda", null ],
+      [ "kVibrato", "class_c_audio_effect_delay.html#ac32a9e095a16cc2964bab7a575c9fc85abd05ae8a42fa35c7f3e3d3d0ef44c4a1", null ]
     ] ],
     [ "CAudioEffectDelay", "class_c_audio_effect_delay.html#a17b3fe6a7f6ecd9b7b9f7b0612bcfe32", null ],
     [ "CAudioEffectDelay", "class_c_audio_effect_delay.html#ab95e5e6de2583e1ffdb3105eca84b7d8", null ],
