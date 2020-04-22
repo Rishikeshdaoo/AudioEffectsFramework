@@ -2,11 +2,17 @@
 \label{class_c_audio_effect}\index{CAudioEffect@{CAudioEffect}}
 
 
+audio effect base class  
+
+
+
+
 {\ttfamily \#include $<$Audio\+Effect.\+h$>$}
 
 
 
-Inheritance diagram for C\+Audio\+Effect\+:\nopagebreak
+Inheritance diagram for C\+Audio\+Effect\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -32,7 +38,8 @@ enum \mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Ef
 \mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659ea57623dd94f3676447daa02b305f8b8ab}{k\+Param\+Dry\+Wet\+Mix}}, 
 \mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659eabe24aef363365ff79a05791ed67cfdc3}{k\+Param\+Num\+Filters}}, 
 \newline
-\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659ea9ed1f4300967713df3f119fdff185b9c}{k\+Param\+Filter\+Gains}}
+\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659ea9ed1f4300967713df3f119fdff185b9c}{k\+Param\+Filter\+Gains}}, 
+\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659eab54727d9c8d5f5eeb3065b5c9566b7e6}{k\+Param\+Filter\+Delays}}
  \}
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
@@ -48,14 +55,17 @@ Effect\+\_\+t \mbox{\hyperlink{class_c_audio_effect_aac8ef1d0c6f0aa6b6eabfb00440
 \begin{DoxyCompactItemize}
 \item 
 bool \mbox{\hyperlink{class_c_audio_effect_af52460b342f8c04b6a8c3eec7495c9aa}{m\+\_\+b\+Is\+Initialized}}
-\item 
+\begin{DoxyCompactList}\small\item\em true if initialized \end{DoxyCompactList}\item 
 Effect\+\_\+t \mbox{\hyperlink{class_c_audio_effect_a284bea2d4ccec96b7f3e6ed22817abae}{m\+\_\+e\+Effect\+Type}}
-\item 
+\begin{DoxyCompactList}\small\item\em audio effect type \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{class_c_audio_effect_a255debd1a84e32f585d04e56db64e78e}{m\+\_\+f\+Sample\+Rate\+In\+Hz}}
-\item 
+\begin{DoxyCompactList}\small\item\em sample rate in Hz \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_c_audio_effect_a9ab909b8d6f35a7834711286c105c4b7}{m\+\_\+i\+Num\+Channels}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em number of channels \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+audio effect base class 
 
 \doxysubsection{Member Enumeration Documentation}
 \mbox{\Hypertarget{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}\label{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}} 
@@ -64,7 +74,7 @@ int \mbox{\hyperlink{class_c_audio_effect_a9ab909b8d6f35a7834711286c105c4b7}{m\+
 \doxysubsubsection{\texorpdfstring{EffectParam\_t}{EffectParam\_t}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{C\+Audio\+Effect\+::\+Effect\+Param\+\_\+t}}}
 
-\begin{DoxyEnumFields}{Enumerator}
+list of parameters used in audio effects \begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{kParamGain@{kParamGain}!CAudioEffect@{CAudioEffect}}\index{CAudioEffect@{CAudioEffect}!kParamGain@{kParamGain}}}\mbox{\Hypertarget{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659ea560e1b20c61513df8c5e2409609d61c3}\label{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659ea560e1b20c61513df8c5e2409609d61c3}} 
 k\+Param\+Gain&\\
 \hline
@@ -117,6 +127,10 @@ k\+Param\+Num\+Filters&\\
 k\+Param\+Filter\+Gains&\\
 \hline
 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kParamFilterDelays@{kParamFilterDelays}!CAudioEffect@{CAudioEffect}}\index{CAudioEffect@{CAudioEffect}!kParamFilterDelays@{kParamFilterDelays}}}\mbox{\Hypertarget{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659eab54727d9c8d5f5eeb3065b5c9566b7e6}\label{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659eab54727d9c8d5f5eeb3065b5c9566b7e6}} 
+k\+Param\+Filter\+Delays&\\
+\hline
+
 \end{DoxyEnumFields}
 
 
@@ -142,6 +156,9 @@ k\+Param\+Filter\+Gains&\\
 \doxysubsubsection{\texorpdfstring{getEffectType()}{getEffectType()}}
 {\footnotesize\ttfamily Effect\+\_\+t C\+Audio\+Effect\+::get\+Effect\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+return the value of audio effect type \begin{DoxyReturn}{Returns}
+Effect\+\_\+t 
+\end{DoxyReturn}
 
 
 \doxysubsection{Member Data Documentation}
@@ -151,11 +168,19 @@ k\+Param\+Filter\+Gains&\\
 \doxysubsubsection{\texorpdfstring{m\_bIsInitialized}{m\_bIsInitialized}}
 {\footnotesize\ttfamily bool C\+Audio\+Effect\+::m\+\_\+b\+Is\+Initialized\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+true if initialized 
+
 \mbox{\Hypertarget{class_c_audio_effect_a284bea2d4ccec96b7f3e6ed22817abae}\label{class_c_audio_effect_a284bea2d4ccec96b7f3e6ed22817abae}} 
 \index{CAudioEffect@{CAudioEffect}!m\_eEffectType@{m\_eEffectType}}
 \index{m\_eEffectType@{m\_eEffectType}!CAudioEffect@{CAudioEffect}}
 \doxysubsubsection{\texorpdfstring{m\_eEffectType}{m\_eEffectType}}
 {\footnotesize\ttfamily Effect\+\_\+t C\+Audio\+Effect\+::m\+\_\+e\+Effect\+Type\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+audio effect type 
 
 \mbox{\Hypertarget{class_c_audio_effect_a255debd1a84e32f585d04e56db64e78e}\label{class_c_audio_effect_a255debd1a84e32f585d04e56db64e78e}} 
 \index{CAudioEffect@{CAudioEffect}!m\_fSampleRateInHz@{m\_fSampleRateInHz}}
@@ -163,11 +188,19 @@ k\+Param\+Filter\+Gains&\\
 \doxysubsubsection{\texorpdfstring{m\_fSampleRateInHz}{m\_fSampleRateInHz}}
 {\footnotesize\ttfamily float C\+Audio\+Effect\+::m\+\_\+f\+Sample\+Rate\+In\+Hz\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+sample rate in Hz 
+
 \mbox{\Hypertarget{class_c_audio_effect_a9ab909b8d6f35a7834711286c105c4b7}\label{class_c_audio_effect_a9ab909b8d6f35a7834711286c105c4b7}} 
 \index{CAudioEffect@{CAudioEffect}!m\_iNumChannels@{m\_iNumChannels}}
 \index{m\_iNumChannels@{m\_iNumChannels}!CAudioEffect@{CAudioEffect}}
 \doxysubsubsection{\texorpdfstring{m\_iNumChannels}{m\_iNumChannels}}
 {\footnotesize\ttfamily int C\+Audio\+Effect\+::m\+\_\+i\+Num\+Channels\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+number of channels 
 
 
 

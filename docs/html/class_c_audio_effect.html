@@ -91,6 +91,9 @@ $(document).ready(function(){initNavTree('class_c_audio_effect.html',''); initRe
 </div><!--header-->
 <div class="contents">
 
+<p>audio effect base class  
+ <a href="class_c_audio_effect.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_audio_effect_8h_source.html">AudioEffect.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for CAudioEffect:</div>
@@ -125,7 +128,8 @@ Public Types</h2></td></tr>
 <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659ea57623dd94f3676447daa02b305f8b8ab">kParamDryWetMix</a>, 
 <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659eabe24aef363365ff79a05791ed67cfdc3">kParamNumFilters</a>, 
 <br />
-&#160;&#160;<a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659ea9ed1f4300967713df3f119fdff185b9c">kParamFilterGains</a>
+&#160;&#160;<a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659ea9ed1f4300967713df3f119fdff185b9c">kParamFilterGains</a>, 
+<a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659eab54727d9c8d5f5eeb3065b5c9566b7e6">kParamFilterDelays</a>
 <br />
  }</td></tr>
 <tr class="separator:a3ab96031f3a38c3d6b2e78f10b1e659e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -142,15 +146,21 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:af52460b342f8c04b6a8c3eec7495c9aa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_audio_effect.html#af52460b342f8c04b6a8c3eec7495c9aa">m_bIsInitialized</a></td></tr>
+<tr class="memdesc:af52460b342f8c04b6a8c3eec7495c9aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">true if initialized  <a href="class_c_audio_effect.html#af52460b342f8c04b6a8c3eec7495c9aa">More...</a><br /></td></tr>
 <tr class="separator:af52460b342f8c04b6a8c3eec7495c9aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a284bea2d4ccec96b7f3e6ed22817abae"><td class="memItemLeft" align="right" valign="top">Effect_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_audio_effect.html#a284bea2d4ccec96b7f3e6ed22817abae">m_eEffectType</a></td></tr>
+<tr class="memdesc:a284bea2d4ccec96b7f3e6ed22817abae"><td class="mdescLeft">&#160;</td><td class="mdescRight">audio effect type  <a href="class_c_audio_effect.html#a284bea2d4ccec96b7f3e6ed22817abae">More...</a><br /></td></tr>
 <tr class="separator:a284bea2d4ccec96b7f3e6ed22817abae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a255debd1a84e32f585d04e56db64e78e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_audio_effect.html#a255debd1a84e32f585d04e56db64e78e">m_fSampleRateInHz</a></td></tr>
+<tr class="memdesc:a255debd1a84e32f585d04e56db64e78e"><td class="mdescLeft">&#160;</td><td class="mdescRight">sample rate in Hz  <a href="class_c_audio_effect.html#a255debd1a84e32f585d04e56db64e78e">More...</a><br /></td></tr>
 <tr class="separator:a255debd1a84e32f585d04e56db64e78e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ab909b8d6f35a7834711286c105c4b7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_audio_effect.html#a9ab909b8d6f35a7834711286c105c4b7">m_iNumChannels</a></td></tr>
+<tr class="memdesc:a9ab909b8d6f35a7834711286c105c4b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of channels  <a href="class_c_audio_effect.html#a9ab909b8d6f35a7834711286c105c4b7">More...</a><br /></td></tr>
 <tr class="separator:a9ab909b8d6f35a7834711286c105c4b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>audio effect base class </p>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a3ab96031f3a38c3d6b2e78f10b1e659e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3ab96031f3a38c3d6b2e78f10b1e659e">&#9670;&nbsp;</a></span>EffectParam_t</h2>
 
@@ -162,6 +172,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>list of parameters used in audio effects </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a3ab96031f3a38c3d6b2e78f10b1e659ea560e1b20c61513df8c5e2409609d61c3"></a>kParamGain&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a3ab96031f3a38c3d6b2e78f10b1e659eab3954dad8e2cb3c8edcf9aef516a03f8"></a>kParamPan&#160;</td><td class="fielddoc"></td></tr>
@@ -176,6 +187,7 @@ Protected Attributes</h2></td></tr>
 <tr><td class="fieldname"><a id="a3ab96031f3a38c3d6b2e78f10b1e659ea57623dd94f3676447daa02b305f8b8ab"></a>kParamDryWetMix&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a3ab96031f3a38c3d6b2e78f10b1e659eabe24aef363365ff79a05791ed67cfdc3"></a>kParamNumFilters&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a3ab96031f3a38c3d6b2e78f10b1e659ea9ed1f4300967713df3f119fdff185b9c"></a>kParamFilterGains&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3ab96031f3a38c3d6b2e78f10b1e659eab54727d9c8d5f5eeb3065b5c9566b7e6"></a>kParamFilterDelays&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>
@@ -230,6 +242,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>return the value of audio effect type </p><dl class="section return"><dt>Returns</dt><dd>Effect_t </dd></dl>
 
 </div>
 </div>
@@ -254,6 +267,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>true if initialized </p>
+
 </div>
 </div>
 <a id="a284bea2d4ccec96b7f3e6ed22817abae"></a>
@@ -275,6 +290,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>audio effect type </p>
 
 </div>
 </div>
@@ -298,6 +315,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>sample rate in Hz </p>
+
 </div>
 </div>
 <a id="a9ab909b8d6f35a7834711286c105c4b7"></a>
@@ -319,6 +338,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>number of channels </p>
 
 </div>
 </div>

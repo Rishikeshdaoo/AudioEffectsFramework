@@ -62,8 +62,7 @@ digraph "src/AudioFxFrameworkExec/AudioFxFrameworkExec.cpp"
   Node1 -> Node24 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node24 [label="AudioEffectBiquad.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_audio_effect_biquad_8h.html",tooltip=" "];
   Node24 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node24 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node24 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node24 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node1 -> Node25 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node25 [label="AudioEffectGain.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_audio_effect_gain_8h.html",tooltip=" "];
   Node25 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

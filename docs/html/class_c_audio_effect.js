@@ -13,7 +13,8 @@ var class_c_audio_effect =
       [ "kParamSlope", "class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659eaf013e0c5d5c6dc572a1323150378ba45", null ],
       [ "kParamDryWetMix", "class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659ea57623dd94f3676447daa02b305f8b8ab", null ],
       [ "kParamNumFilters", "class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659eabe24aef363365ff79a05791ed67cfdc3", null ],
-      [ "kParamFilterGains", "class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659ea9ed1f4300967713df3f119fdff185b9c", null ]
+      [ "kParamFilterGains", "class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659ea9ed1f4300967713df3f119fdff185b9c", null ],
+      [ "kParamFilterDelays", "class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659eab54727d9c8d5f5eeb3065b5c9566b7e6", null ]
     ] ],
     [ "CAudioEffect", "class_c_audio_effect.html#a14f9404fce00feb5531ab625eb631c0f", null ],
     [ "~CAudioEffect", "class_c_audio_effect.html#a2e1dec4b934cbb0ec8e8078d8ed8f387", null ],

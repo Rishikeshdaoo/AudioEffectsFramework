@@ -2,11 +2,17 @@
 \label{class_c_audio_effect_delay}\index{CAudioEffectDelay@{CAudioEffectDelay}}
 
 
+audio effect class for delay related effects  
+
+
+
+
 {\ttfamily \#include $<$Audio\+Effect\+Delay.\+h$>$}
 
 
 
-Inheritance diagram for C\+Audio\+Effect\+Delay\+:\nopagebreak
+Inheritance diagram for C\+Audio\+Effect\+Delay\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -15,7 +21,8 @@ Inheritance diagram for C\+Audio\+Effect\+Delay\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for C\+Audio\+Effect\+Delay\+:\nopagebreak
+Collaboration diagram for C\+Audio\+Effect\+Delay\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -60,6 +67,9 @@ Error\+\_\+t \mbox{\hyperlink{class_c_audio_effect_delay_ad8085f91e6d55a721fa6b7
 \doxysubsection*{Additional Inherited Members}
 
 
+\doxysubsection{Detailed Description}
+audio effect class for delay related effects 
+
 \doxysubsection{Member Enumeration Documentation}
 \mbox{\Hypertarget{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85}\label{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85}} 
 \index{CAudioEffectDelay@{CAudioEffectDelay}!DelayType\_t@{DelayType\_t}}
@@ -67,7 +77,7 @@ Error\+\_\+t \mbox{\hyperlink{class_c_audio_effect_delay_ad8085f91e6d55a721fa6b7
 \doxysubsubsection{\texorpdfstring{DelayType\_t}{DelayType\_t}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85}{C\+Audio\+Effect\+Delay\+::\+Delay\+Type\+\_\+t}}}
 
-\begin{DoxyEnumFields}{Enumerator}
+list of delay related effect sub types \begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{kDelay@{kDelay}!CAudioEffectDelay@{CAudioEffectDelay}}\index{CAudioEffectDelay@{CAudioEffectDelay}!kDelay@{kDelay}}}\mbox{\Hypertarget{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85a3e87d5551ebd2676ba0ff2f2a651a2f0}\label{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85a3e87d5551ebd2676ba0ff2f2a651a2f0}} 
 k\+Delay&\\
 \hline
@@ -119,42 +129,104 @@ k\+Vibrato&\\
 \doxysubsubsection{\texorpdfstring{getDelayType()}{getDelayType()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85}{C\+Audio\+Effect\+Delay\+::\+Delay\+Type\+\_\+t}} C\+Audio\+Effect\+Delay\+::get\+Delay\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+return the value of the specified sub type \begin{DoxyReturn}{Returns}
+Delay\+Type\+\_\+t 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_c_audio_effect_delay_aa59ed95a3e6bc01b730df8ffd310b060}\label{class_c_audio_effect_delay_aa59ed95a3e6bc01b730df8ffd310b060}} 
 \index{CAudioEffectDelay@{CAudioEffectDelay}!getParam@{getParam}}
 \index{getParam@{getParam}!CAudioEffectDelay@{CAudioEffectDelay}}
 \doxysubsubsection{\texorpdfstring{getParam()}{getParam()}}
 {\footnotesize\ttfamily float C\+Audio\+Effect\+Delay\+::get\+Param (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}}}]{e\+Param }\end{DoxyParamCaption})}
 
+return the value of the specified parameter 
+\begin{DoxyParams}{Parameters}
+{\em e\+Param} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_c_audio_effect_delay_ac2ac39077594cb5918abf3e903c1b8d1}\label{class_c_audio_effect_delay_ac2ac39077594cb5918abf3e903c1b8d1}} 
 \index{CAudioEffectDelay@{CAudioEffectDelay}!init@{init}}
 \index{init@{init}!CAudioEffectDelay@{CAudioEffectDelay}}
 \doxysubsubsection{\texorpdfstring{init()}{init()}}
 {\footnotesize\ttfamily Error\+\_\+t C\+Audio\+Effect\+Delay\+::init (\begin{DoxyParamCaption}\item[{float}]{f\+Sample\+Rate\+In\+Hz,  }\item[{int}]{i\+Num\+Channels,  }\item[{float}]{i\+Max\+Delay\+In\+Sec,  }\item[{\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}}}]{params\mbox{[}$\,$\mbox{]},  }\item[{float}]{values\mbox{[}$\,$\mbox{]},  }\item[{int}]{i\+Num\+Params }\end{DoxyParamCaption})}
 
+initializes a delay related effect instance 
+\begin{DoxyParams}{Parameters}
+{\em f\+Sample\+Rate\+In\+Hz} & sample rate in Hz \\
+\hline
+{\em i\+Num\+Channels} & number of audio channels \\
+\hline
+{\em i\+Max\+Delay\+In\+Sec} & max delay length in seconds \\
+\hline
+{\em params\mbox{[}$\,$\mbox{]}} & list of parameter types \\
+\hline
+{\em values\mbox{[}$\,$\mbox{]}} & list of parameter values \\
+\hline
+{\em i\+Num\+Params} & number of parameters \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error\+\_\+t 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_c_audio_effect_delay_ad8085f91e6d55a721fa6b7c21677c5ff}\label{class_c_audio_effect_delay_ad8085f91e6d55a721fa6b7c21677c5ff}} 
 \index{CAudioEffectDelay@{CAudioEffectDelay}!process@{process}}
 \index{process@{process}!CAudioEffectDelay@{CAudioEffectDelay}}
 \doxysubsubsection{\texorpdfstring{process()}{process()}}
 {\footnotesize\ttfamily Error\+\_\+t C\+Audio\+Effect\+Delay\+::process (\begin{DoxyParamCaption}\item[{float $\ast$$\ast$}]{ppf\+Input\+Buffer,  }\item[{float $\ast$$\ast$}]{ppf\+Output\+Buffer,  }\item[{int}]{i\+Number\+Of\+Frames }\end{DoxyParamCaption})}
 
+processes one block of audio 
+\begin{DoxyParams}{Parameters}
+{\em ppf\+Input\+Buffer} & input buffer \mbox{[}num\+Channels\mbox{]}\mbox{[}i\+Number\+Of\+Frames\mbox{]} \\
+\hline
+{\em ppf\+Output\+Buffer} & output buffer \mbox{[}num\+Channels\mbox{]}\mbox{[}i\+Number\+Of\+Frames\mbox{]} \\
+\hline
+{\em i\+Number\+Of\+Frames} & buffer length (per channel) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error\+\_\+t 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_c_audio_effect_delay_a9a4f4adf9d70e30fd733c4065c016968}\label{class_c_audio_effect_delay_a9a4f4adf9d70e30fd733c4065c016968}} 
 \index{CAudioEffectDelay@{CAudioEffectDelay}!reset@{reset}}
 \index{reset@{reset}!CAudioEffectDelay@{CAudioEffectDelay}}
 \doxysubsubsection{\texorpdfstring{reset()}{reset()}}
 {\footnotesize\ttfamily Error\+\_\+t C\+Audio\+Effect\+Delay\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+resets the internal variables (requires new call of init) \begin{DoxyReturn}{Returns}
+Error\+\_\+t 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_c_audio_effect_delay_a5709c4dade1abe85cbc006bd1bc5324c}\label{class_c_audio_effect_delay_a5709c4dade1abe85cbc006bd1bc5324c}} 
 \index{CAudioEffectDelay@{CAudioEffectDelay}!setDelayType@{setDelayType}}
 \index{setDelayType@{setDelayType}!CAudioEffectDelay@{CAudioEffectDelay}}
 \doxysubsubsection{\texorpdfstring{setDelayType()}{setDelayType()}}
 {\footnotesize\ttfamily Error\+\_\+t C\+Audio\+Effect\+Delay\+::set\+Delay\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85}{Delay\+Type\+\_\+t}}}]{e\+Value }\end{DoxyParamCaption})}
 
+sets a delay related effect sub type 
+\begin{DoxyParams}{Parameters}
+{\em e\+Value} & value of the sub type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error\+\_\+t 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_c_audio_effect_delay_aa3aec7ac69be0084db2cb109d2aa0fd2}\label{class_c_audio_effect_delay_aa3aec7ac69be0084db2cb109d2aa0fd2}} 
 \index{CAudioEffectDelay@{CAudioEffectDelay}!setParam@{setParam}}
 \index{setParam@{setParam}!CAudioEffectDelay@{CAudioEffectDelay}}
 \doxysubsubsection{\texorpdfstring{setParam()}{setParam()}}
 {\footnotesize\ttfamily Error\+\_\+t C\+Audio\+Effect\+Delay\+::set\+Param (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}}}]{e\+Param,  }\item[{float}]{f\+Value }\end{DoxyParamCaption})}
 
+sets a delay related effect parameter 
+\begin{DoxyParams}{Parameters}
+{\em e\+Param} & what parameter \\
+\hline
+{\em f\+Value} & value of the parameter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error\+\_\+t 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
