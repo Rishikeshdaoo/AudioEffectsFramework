@@ -93,6 +93,7 @@ private:
     float m_fMaxDelayInSamples;  //!< max delay length in samples
     float m_fModWidthInSamples;  //!< modulation wdith in samples
     float m_fFeedback;  //!< feedback amount
+    float m_fTremoloAmount;  //!< tremolo amount
     
     CLfo *m_pCLfo;  //!< instance of Lfo
 };
