@@ -31,6 +31,7 @@ public:
         kParamFeedback,
         kParamModRateInHz,
         kParamModWidthInSecs,
+        kParamTremoloAmount,
         
         kParamCenterFrequency,
         kParamQ,
