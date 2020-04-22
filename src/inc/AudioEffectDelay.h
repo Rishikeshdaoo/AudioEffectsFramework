@@ -11,9 +11,6 @@
 #include "RingBuffer.h"
 #include "Lfo.h"
 
-#include <stdio.h>
-#include <iostream>
-
 class CAudioEffectDelay: public CAudioEffect
 {
 public:

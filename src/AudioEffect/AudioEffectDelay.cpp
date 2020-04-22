@@ -48,12 +48,9 @@ Error_t CAudioEffectDelay::init(float fSampleRateInHz, int iNumChannels, float f
     
     for (int c= 0; c < m_iNumChannels; c++)
     {
-//        m_ppCRingBuffer[c]= new CRingBuffer<float>(CUtil::float2int<int>(fMaxDelayInSec*m_fSampleRateInHz*2+1));
-//        m_ppCRingBuffer[c]->setWriteIdx(CUtil::float2int<int>(fMaxDelayInSec*m_fSampleRateInHz+1));
-//        m_ppCRingBuffer[c]->setReadIdx(CUtil::float2int<int>(fMaxDelayInSec*m_fSampleRateInHz+1));
-        m_ppCRingBuffer[c]= new CRingBuffer<float>(CUtil::float2int<int>(fMaxDelayInSec*m_fSampleRateInHz+1));
-        m_ppCRingBuffer[c]->setWriteIdx(CUtil::float2int<int>(fMaxDelayInSec*m_fSampleRateInHz/2.0+1));
-        m_ppCRingBuffer[c]->setReadIdx(CUtil::float2int<int>(fMaxDelayInSec*m_fSampleRateInHz/2.0+1));
+        m_ppCRingBuffer[c]= new CRingBuffer<float>(CUtil::float2int<int>(m_fMaxDelayInSamples+1));
+        m_ppCRingBuffer[c]->setWriteIdx(CUtil::float2int<int>(m_fMaxDelayInSamples/2.0+1));
+        m_ppCRingBuffer[c]->setReadIdx(CUtil::float2int<int>(m_fMaxDelayInSamples/2.0+1));
     }
     
     for (int i = 0; i < iNumParams; i++)

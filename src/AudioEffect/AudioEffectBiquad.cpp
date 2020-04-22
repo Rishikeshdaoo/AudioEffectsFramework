@@ -51,6 +51,8 @@ Error_t CAudioEffectBiquad::init(float fSampleRateInHz, int iNumChannels, Effect
     m_iNumChannels = iNumChannels;
     m_bIsInitialized = true;
     
+    m_fMaxDelayInSamples = fMaxDelayInSec * m_fSampleRateInHz;
+    
     for (int i = 0; i < iNumParams; i++)
     {
         switch (params[i]) {
@@ -65,6 +67,7 @@ Error_t CAudioEffectBiquad::init(float fSampleRateInHz, int iNumChannels, Effect
                 break;
             case kParamDelayInSecs:
                 m_fDelayInSamples = values[i] * m_fSampleRateInHz;
+                break;
             default:
                 return kFunctionInvalidArgsError;
         }
@@ -87,9 +90,9 @@ Error_t CAudioEffectBiquad::init(float fSampleRateInHz, int iNumChannels, Effect
     
     for (int c= 0; c < m_iNumChannels; c++)
     {
-        m_ppCRingBuffer[c]= new CRingBuffer<float>(int(fMaxDelayInSec*m_fSampleRateInHz*2+1));
-        m_ppCRingBuffer[c]->setWriteIdx(int(fMaxDelayInSec*m_fSampleRateInHz+1));
-        m_ppCRingBuffer[c]->setReadIdx(int(fMaxDelayInSec*m_fSampleRateInHz+1));
+        m_ppCRingBuffer[c]= new CRingBuffer<float>(int(m_fMaxDelayInSamples*2+1));
+        m_ppCRingBuffer[c]->setWriteIdx(int(m_fMaxDelayInSamples+1));
+        m_ppCRingBuffer[c]->setReadIdx(int(m_fMaxDelayInSamples+1));
     }
 
     return kNoError;
@@ -185,15 +188,14 @@ Error_t CAudioEffectBiquad::process(float **ppfInputBuffer, float **ppfOutputBuf
     {
         for (int i = 0; i < iNumberOfFrames; i++)
         {
-            
-            m_ppCRingBuffer[c]->putPostInc(ppfInputBuffer[c][i]);
-            
-            ppfOutputBuffer[c][i] = m_fb0/m_fa0*ppfInputBuffer[c][i] + m_fb1/m_fa0*m_fxn1[c] + m_fb2/m_fa0*m_fxn2[c] - m_fa1/m_fa0*m_fyn1[c] - m_fa2/m_fa0*m_fyn2[c];
+            m_ppCRingBuffer[c]->putPostInc(m_fb0/m_fa0*ppfInputBuffer[c][i] + m_fb1/m_fa0*m_fxn1[c] + m_fb2/m_fa0*m_fxn2[c] - m_fa1/m_fa0*m_fyn1[c] - m_fa2/m_fa0*m_fyn2[c]);
             
             m_fxn2[c] = m_fxn1[c];
             m_fxn1[c] = ppfInputBuffer[c][i];
             m_fyn2[c] = m_fyn1[c];
-            m_fyn1[c] = ppfOutputBuffer[c][i];
+            m_fyn1[c] = m_ppCRingBuffer[c]->get();
+            
+            ppfOutputBuffer[c][i] = m_ppCRingBuffer[c]->get(m_fDelayInSamples);
             
             m_ppCRingBuffer[c]->getPostInc();
         }
