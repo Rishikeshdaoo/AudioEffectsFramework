@@ -21,6 +21,7 @@ CAudioEffectDelay::CAudioEffectDelay()
     m_bIsInitialized = false;
     m_ppCRingBuffer = 0;
     m_fMaxDelayInSamples = 0;
+    m_fTremoloAmount = 0.5;
 };
 
 CAudioEffectDelay::CAudioEffectDelay(float fSampleRateInHz, int iNumChannels, float fMaxDelayInSec, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0)
@@ -48,12 +49,12 @@ Error_t CAudioEffectDelay::init(float fSampleRateInHz, int iNumChannels, float f
     
     for (int c= 0; c < m_iNumChannels; c++)
     {
-//        m_ppCRingBuffer[c]= new CRingBuffer<float>(CUtil::float2int<int>(fMaxDelayInSec*m_fSampleRateInHz*2+1));
-//        m_ppCRingBuffer[c]->setWriteIdx(CUtil::float2int<int>(fMaxDelayInSec*m_fSampleRateInHz+1));
-//        m_ppCRingBuffer[c]->setReadIdx(CUtil::float2int<int>(fMaxDelayInSec*m_fSampleRateInHz+1));
-        m_ppCRingBuffer[c]= new CRingBuffer<float>(CUtil::float2int<int>(fMaxDelayInSec*m_fSampleRateInHz+1));
-        m_ppCRingBuffer[c]->setWriteIdx(CUtil::float2int<int>(fMaxDelayInSec*m_fSampleRateInHz/2.0+1));
-        m_ppCRingBuffer[c]->setReadIdx(CUtil::float2int<int>(fMaxDelayInSec*m_fSampleRateInHz/2.0+1));
+        m_ppCRingBuffer[c]= new CRingBuffer<float>(CUtil::float2int<int>(fMaxDelayInSec*m_fSampleRateInHz*2+1));
+        m_ppCRingBuffer[c]->setWriteIdx(CUtil::float2int<int>(fMaxDelayInSec*m_fSampleRateInHz+1));
+        m_ppCRingBuffer[c]->setReadIdx(CUtil::float2int<int>(fMaxDelayInSec*m_fSampleRateInHz+1));
+//        m_ppCRingBuffer[c]= new CRingBuffer<float>(CUtil::float2int<int>(fMaxDelayInSec*m_fSampleRateInHz+1));
+//        m_ppCRingBuffer[c]->setWriteIdx(CUtil::float2int<int>(fMaxDelayInSec*m_fSampleRateInHz/2.0+1));
+//        m_ppCRingBuffer[c]->setReadIdx(CUtil::float2int<int>(fMaxDelayInSec*m_fSampleRateInHz/2.0+1));
     }
     
     for (int i = 0; i < iNumParams; i++)
@@ -85,6 +86,9 @@ Error_t CAudioEffectDelay::init(float fSampleRateInHz, int iNumChannels, float f
                     return kFunctionInvalidArgsError;
                 m_pCLfo->setParam(CLfo::kLfoParamAmplitude, values[i] * m_fSampleRateInHz);
                 m_fModWidthInSamples = values[i] * m_fSampleRateInHz;
+                break;
+            case kParamTremoloAmount :
+                m_fTremoloAmount = values[i];
                 break;
                 
             default:
@@ -144,6 +148,9 @@ Error_t CAudioEffectDelay::setParam(EffectParam_t eParam, float fValue)
                 return kFunctionInvalidArgsError;
             m_pCLfo->setParam(CLfo::kLfoParamAmplitude, fValue * m_fSampleRateInHz);
             break;
+        case kParamTremoloAmount :
+            m_fTremoloAmount = fValue;
+            break;
             
             
             
@@ -174,6 +181,9 @@ float CAudioEffectDelay::getParam(EffectParam_t eParam)
             break;
         case kParamModWidthInSecs:
             return m_pCLfo->getParam(CLfo::kLfoParamAmplitude) / m_fSampleRateInHz;
+            break;
+        case kParamTremoloAmount :
+            return m_fTremoloAmount;
             break;
         default:
             return 0.f;
@@ -213,7 +223,7 @@ Error_t CAudioEffectDelay::process(float **ppfInputBuffer, float **ppfOutputBuff
             m_ppCRingBuffer[c]->putPostInc(ppfInputBuffer[c][i] + (m_fFeedback * ppfOutputBuffer[c][i]));
             
             
-            ppfOutputBuffer[c][i] = (1 - m_fDryWetMix) * (((m_eDelayType >> 4) & 1) * ppfInputBuffer[c][i] + (((m_eDelayType >> 3) & 1) * fOffset/m_fModWidthInSamples) * ppfInputBuffer[c][i]) + m_fDryWetMix * m_ppCRingBuffer[c]->get((((m_eDelayType >> 2) & 1) * m_fDelayInSamples) + (((m_eDelayType >> 1) & 1) * fOffset) - (((m_eDelayType >> 0) & 1) * abs(fOffset)));
+            ppfOutputBuffer[c][i] = (1 - m_fDryWetMix) * (((m_eDelayType >> 4) & 1) * ppfInputBuffer[c][i] + (((m_eDelayType >> 3) & 1) * (1 + m_fTremoloAmount * fOffset/m_fModWidthInSamples)) * ppfInputBuffer[c][i]) + m_fDryWetMix * m_ppCRingBuffer[c]->get((((m_eDelayType >> 2) & 1) * m_fDelayInSamples) + (((m_eDelayType >> 1) & 1) * fOffset) - (((m_eDelayType >> 0) & 1) * abs(fOffset)));
             
             
             m_ppCRingBuffer[c]->getPostInc();
