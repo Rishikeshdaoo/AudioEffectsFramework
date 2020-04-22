@@ -1,4 +1,6 @@
-Cross platform C++ library with low-\/latency audio effects processing algorithms designed for real-\/time audio processing.\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{Motivation}\label{md__r_e_a_d_m_e_autotoc_md1}
+Cross platform C++ library with low-\/latency audio effects processing algorithms designed for real-\/time audio processing.
+
+The Doxygen documentation can be accessed here\+: \href{http://rishikeshdaoo.github.io/AudioEffectsFramework}{\texttt{ http\+://rishikeshdaoo.\+github.\+io/\+Audio\+Effects\+Framework}}\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{Motivation}\label{md__r_e_a_d_m_e_autotoc_md1}
 This projects aims to provide an easy to use A\+PI for creating audio effects processing applications. With well documented, low-\/level implementation of audio effects in C++, the library is designed to be simple and efficient.\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysection{Effects included in the library}\label{md__r_e_a_d_m_e_autotoc_md2}
 
 \begin{DoxyItemize}
@@ -27,8 +29,8 @@ This projects aims to provide an easy to use A\+PI for creating audio effects pr
 \begin{DoxyItemize}
 \item Create the Effect instance 
 
-\mbox{\hyperlink{class_c_audio_effect_delay}{C\+Audio\+Effect\+Delay}} $\ast$ph\+Audio\+Effect\+Delay = nullptr ~\newline
- ph\+Audio\+Effect\+Delay = new \mbox{\hyperlink{class_c_audio_effect_delay}{C\+Audio\+Effect\+Delay(sample\+Rate,num\+Channels,max\+Delay\+In\+Secs,param,value,i\+Num\+Params)}}
+\mbox{\hyperlink{class_c_audio_effect_delay}{C\+Audio\+Effect\+Delay}} $\ast$ph\+Audio\+Effect\+Delay = nullptr; ~\newline
+ ph\+Audio\+Effect\+Delay = new \mbox{\hyperlink{class_c_audio_effect_delay}{C\+Audio\+Effect\+Delay(sample\+Rate,num\+Channels,max\+Delay\+In\+Secs,param,value,i\+Num\+Params)}};
 
 {\ttfamily sample\+Rate, num\+Channels} are arguments that should be taken from the host application. ~\newline
  {\ttfamily max\+Delay\+In\+Secs} is an argument the user sets according to their requirement for parameter value range (Only delay based effects have this argument). ~\newline

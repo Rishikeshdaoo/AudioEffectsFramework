@@ -90,6 +90,9 @@ $(document).ready(function(){initNavTree('class_c_audio_effect_biquad.html','');
 </div><!--header-->
 <div class="contents">
 
+<p>audio effect class for biquad filter  
+ <a href="class_c_audio_effect_biquad.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_audio_effect_biquad_8h_source.html">AudioEffectBiquad.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for CAudioEffectBiquad:</div>
@@ -142,7 +145,8 @@ Public Types</h2></td></tr>
 <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659ea57623dd94f3676447daa02b305f8b8ab">kParamDryWetMix</a>, 
 <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659eabe24aef363365ff79a05791ed67cfdc3">kParamNumFilters</a>, 
 <br />
-&#160;&#160;<a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659ea9ed1f4300967713df3f119fdff185b9c">kParamFilterGains</a>
+&#160;&#160;<a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659ea9ed1f4300967713df3f119fdff185b9c">kParamFilterGains</a>, 
+<a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659eab54727d9c8d5f5eeb3065b5c9566b7e6">kParamFilterDelays</a>
 <br />
  }</td></tr>
 <tr class="separator:a3ab96031f3a38c3d6b2e78f10b1e659e inherit pub_types_class_c_audio_effect"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -151,12 +155,12 @@ Public Types</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab8420b0bfc937c72bce4ff28ac38b7d1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_audio_effect_biquad.html#ab8420b0bfc937c72bce4ff28ac38b7d1">CAudioEffectBiquad</a> ()</td></tr>
 <tr class="separator:ab8420b0bfc937c72bce4ff28ac38b7d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c694214ea1673e66ea7de3b5ea745e9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_audio_effect_biquad.html#a5c694214ea1673e66ea7de3b5ea745e9">CAudioEffectBiquad</a> (float fSampleRateInHz, int iNumChannels, <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659e">EffectParam_t</a> params[], float values[], int iNumParams)</td></tr>
-<tr class="separator:a5c694214ea1673e66ea7de3b5ea745e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad62201c996b85cdbb6c57a2dfd0fdca4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_audio_effect_biquad.html#ad62201c996b85cdbb6c57a2dfd0fdca4">CAudioEffectBiquad</a> (float fSampleRateInHz, int iNumChannels, <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659e">EffectParam_t</a> params[]=NULL, float values[]=NULL, int iNumParams=0, float fMaxDelayInSec=1.0)</td></tr>
+<tr class="separator:ad62201c996b85cdbb6c57a2dfd0fdca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1dda829417642e8f6d61317121378974"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_audio_effect_biquad.html#a1dda829417642e8f6d61317121378974">~CAudioEffectBiquad</a> ()</td></tr>
 <tr class="separator:a1dda829417642e8f6d61317121378974"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1db3b87ffb2ee10952c5a466bba4536"><td class="memItemLeft" align="right" valign="top">Error_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_audio_effect_biquad.html#aa1db3b87ffb2ee10952c5a466bba4536">init</a> (float fSampleRateInHz, int iNumChannels, <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659e">EffectParam_t</a> params[], float values[], int iNumParams)</td></tr>
-<tr class="separator:aa1db3b87ffb2ee10952c5a466bba4536"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae38ec1b4d2eee8f9c07139a4d4501ee4"><td class="memItemLeft" align="right" valign="top">Error_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_audio_effect_biquad.html#ae38ec1b4d2eee8f9c07139a4d4501ee4">init</a> (float fSampleRateInHz, int iNumChannels, <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659e">EffectParam_t</a> params[]=NULL, float values[]=NULL, int iNumParams=0, float fMaxDelayInSec=1.0)</td></tr>
+<tr class="separator:ae38ec1b4d2eee8f9c07139a4d4501ee4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b7a6155fcfb09ed9bea0dddd4afe913"><td class="memItemLeft" align="right" valign="top">Error_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_audio_effect_biquad.html#a0b7a6155fcfb09ed9bea0dddd4afe913">reset</a> ()</td></tr>
 <tr class="separator:a0b7a6155fcfb09ed9bea0dddd4afe913"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4be8604a1e80c9caad5d2fcbe31cb352"><td class="memItemLeft" align="right" valign="top">Error_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_audio_effect_biquad.html#a4be8604a1e80c9caad5d2fcbe31cb352">setParam</a> (<a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659e">EffectParam_t</a> eParam, float fValue)</td></tr>
@@ -181,15 +185,21 @@ Public Member Functions</h2></td></tr>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_class_c_audio_effect"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_c_audio_effect')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_c_audio_effect.html">CAudioEffect</a></td></tr>
 <tr class="memitem:af52460b342f8c04b6a8c3eec7495c9aa inherit pro_attribs_class_c_audio_effect"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_audio_effect.html#af52460b342f8c04b6a8c3eec7495c9aa">m_bIsInitialized</a></td></tr>
+<tr class="memdesc:af52460b342f8c04b6a8c3eec7495c9aa inherit pro_attribs_class_c_audio_effect"><td class="mdescLeft">&#160;</td><td class="mdescRight">true if initialized  <a href="class_c_audio_effect.html#af52460b342f8c04b6a8c3eec7495c9aa">More...</a><br /></td></tr>
 <tr class="separator:af52460b342f8c04b6a8c3eec7495c9aa inherit pro_attribs_class_c_audio_effect"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a284bea2d4ccec96b7f3e6ed22817abae inherit pro_attribs_class_c_audio_effect"><td class="memItemLeft" align="right" valign="top">Effect_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_audio_effect.html#a284bea2d4ccec96b7f3e6ed22817abae">m_eEffectType</a></td></tr>
+<tr class="memdesc:a284bea2d4ccec96b7f3e6ed22817abae inherit pro_attribs_class_c_audio_effect"><td class="mdescLeft">&#160;</td><td class="mdescRight">audio effect type  <a href="class_c_audio_effect.html#a284bea2d4ccec96b7f3e6ed22817abae">More...</a><br /></td></tr>
 <tr class="separator:a284bea2d4ccec96b7f3e6ed22817abae inherit pro_attribs_class_c_audio_effect"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a255debd1a84e32f585d04e56db64e78e inherit pro_attribs_class_c_audio_effect"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_audio_effect.html#a255debd1a84e32f585d04e56db64e78e">m_fSampleRateInHz</a></td></tr>
+<tr class="memdesc:a255debd1a84e32f585d04e56db64e78e inherit pro_attribs_class_c_audio_effect"><td class="mdescLeft">&#160;</td><td class="mdescRight">sample rate in Hz  <a href="class_c_audio_effect.html#a255debd1a84e32f585d04e56db64e78e">More...</a><br /></td></tr>
 <tr class="separator:a255debd1a84e32f585d04e56db64e78e inherit pro_attribs_class_c_audio_effect"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ab909b8d6f35a7834711286c105c4b7 inherit pro_attribs_class_c_audio_effect"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_audio_effect.html#a9ab909b8d6f35a7834711286c105c4b7">m_iNumChannels</a></td></tr>
+<tr class="memdesc:a9ab909b8d6f35a7834711286c105c4b7 inherit pro_attribs_class_c_audio_effect"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of channels  <a href="class_c_audio_effect.html#a9ab909b8d6f35a7834711286c105c4b7">More...</a><br /></td></tr>
 <tr class="separator:a9ab909b8d6f35a7834711286c105c4b7 inherit pro_attribs_class_c_audio_effect"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>audio effect class for biquad filter </p>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="aa75f8e70545c4b5301ac60d7ff7416d6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa75f8e70545c4b5301ac60d7ff7416d6">&#9670;&nbsp;</a></span>FilterType_t</h2>
 
@@ -201,6 +211,7 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>list of sub types for biquad filter </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aa75f8e70545c4b5301ac60d7ff7416d6a93d91123248d4a2631d123db6b3fc6de"></a>kLowpass&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="aa75f8e70545c4b5301ac60d7ff7416d6ab5eb3806dfd1ceb26e92d99d992dda46"></a>kHighpass&#160;</td><td class="fielddoc"></td></tr>
@@ -232,8 +243,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a5c694214ea1673e66ea7de3b5ea745e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c694214ea1673e66ea7de3b5ea745e9">&#9670;&nbsp;</a></span>CAudioEffectBiquad() <span class="overload">[2/2]</span></h2>
+<a id="ad62201c996b85cdbb6c57a2dfd0fdca4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad62201c996b85cdbb6c57a2dfd0fdca4">&#9670;&nbsp;</a></span>CAudioEffectBiquad() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -266,7 +277,13 @@ Additional Inherited Members</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>iNumParams</em> = <code>0</code>&#160;</td>
+          <td class="paramname"><em>iNumParams</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>fMaxDelayInSec</em> = <code>1.0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -310,6 +327,7 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>return the value of the specified sub type </p><dl class="section return"><dt>Returns</dt><dd>Filtertype_t </dd></dl>
 
 </div>
 </div>
@@ -328,11 +346,18 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>return the value of the specified parameter </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">eParam</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>float </dd></dl>
 
 </div>
 </div>
-<a id="aa1db3b87ffb2ee10952c5a466bba4536"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1db3b87ffb2ee10952c5a466bba4536">&#9670;&nbsp;</a></span>init()</h2>
+<a id="ae38ec1b4d2eee8f9c07139a4d4501ee4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae38ec1b4d2eee8f9c07139a4d4501ee4">&#9670;&nbsp;</a></span>init()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -365,7 +390,13 @@ Additional Inherited Members</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>iNumParams</em> = <code>0</code>&#160;</td>
+          <td class="paramname"><em>iNumParams</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>fMaxDelayInSec</em> = <code>1.0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -374,6 +405,18 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>initializes a distortion instance </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fSampleRateInHz</td><td>sample rate in Hz </td></tr>
+    <tr><td class="paramname">iNumChannels</td><td>number of audio channels </td></tr>
+    <tr><td class="paramname">params[]</td><td>list of parameter types </td></tr>
+    <tr><td class="paramname">values[]</td><td>list of parameter values </td></tr>
+    <tr><td class="paramname">iNumParams</td><td>number of parameters </td></tr>
+    <tr><td class="paramname">fMaxDelayInSec</td><td>max delay lenghth in seconds </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Error_t </dd></dl>
 
 </div>
 </div>
@@ -408,6 +451,15 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>processes one block of audio </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ppfInputBuffer</td><td>input buffer [numChannels][iNumberOfFrames] </td></tr>
+    <tr><td class="paramname">ppfOutputBuffer</td><td>output buffer [numChannels][iNumberOfFrames] </td></tr>
+    <tr><td class="paramname">iNumberOfFrames</td><td>buffer length (per channel) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Error_t </dd></dl>
 
 </div>
 </div>
@@ -425,6 +477,7 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>resets the internal variables (requires new call of init) </p><dl class="section return"><dt>Returns</dt><dd>Error_t </dd></dl>
 
 </div>
 </div>
@@ -443,6 +496,13 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>sets a biquad filter sub type </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">eValue</td><td>value of the sub type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Error_t </dd></dl>
 
 </div>
 </div>
@@ -471,6 +531,14 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>sets a biquad filter parameter </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">eParam</td><td>what parameter </td></tr>
+    <tr><td class="paramname">fValue</td><td>value of the parameter </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Error_t </dd></dl>
 
 </div>
 </div>

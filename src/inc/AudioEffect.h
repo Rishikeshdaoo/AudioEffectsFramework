@@ -13,13 +13,15 @@
 #include <ErrorDef.h>
 #include <EffectDef.h>
 
-
+/*! \brief audio effect base class
+*/
 class CAudioEffect
 {
 public:
     CAudioEffect();
     ~CAudioEffect();
-            
+          
+    /*! list of parameters used in audio effects */
     enum EffectParam_t
     {
         kParamGain,
@@ -29,6 +31,7 @@ public:
         kParamFeedback,
         kParamModRateInHz,
         kParamModWidthInSecs,
+        kParamTremoloAmount,
         
         kParamCenterFrequency,
         kParamQ,
@@ -43,16 +46,19 @@ public:
         
     };
     
+    /*! return the value of audio effect type
+    \return Effect_t
+    */
     Effect_t getEffectType();
 
 private:
     
 protected:
     
-    bool m_bIsInitialized;
-    Effect_t m_eEffectType;
-    float m_fSampleRateInHz;
-    int m_iNumChannels;
+    bool m_bIsInitialized;  //!<  true if initialized
+    Effect_t m_eEffectType;  //!<  audio effect type
+    float m_fSampleRateInHz;  //!<  sample rate in Hz
+    int m_iNumChannels;  //!<  number of channels
     
 };
 

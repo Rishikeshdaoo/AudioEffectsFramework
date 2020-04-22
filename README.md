@@ -2,6 +2,8 @@
 
 Cross platform C++ library with low-latency audio effects processing algorithms designed for real-time audio processing.
 
+The Doxygen documentation can be accessed here: http://rishikeshdaoo.github.io/AudioEffectsFramework
+
 ## Motivation
 
 This projects aims to provide an easy to use API for creating audio effects processing applications. With well documented, low-level implementation of audio effects in C++, the library is designed to be simple and efficient.
@@ -33,10 +35,10 @@ This projects aims to provide an easy to use API for creating audio effects proc
 
 ### Usage
 
-- <span style="font-family:Lato; font-size:1.5em;">Create the Effect instance </span>
+- <span style="font-family:Arial; font-size:1.5em;">Create the Effect instance </span>
 
-    CAudioEffectDelay       *phAudioEffectDelay = nullptr <br />
-    phAudioEffectDelay = new CAudioEffectDelay(sampleRate,numChannels,maxDelayInSecs,param,value,iNumParams)
+    CAudioEffectDelay       *phAudioEffectDelay = nullptr; <br />
+    phAudioEffectDelay = new CAudioEffectDelay(sampleRate,numChannels,maxDelayInSecs,param,value,iNumParams);
 
     `sampleRate, numChannels` are arguments that should be taken from the host application. <br />
     `maxDelayInSecs` is an argument the user sets according to their requirement for parameter value range (Only delay based effects have this argument). <br />
@@ -56,7 +58,7 @@ This projects aims to provide an easy to use API for creating audio effects proc
     value[3] = 0.7f; 
 
 
-- <span style="font-family:Lato; font-size:1.5em;"> Call the effect's process function </span>
+- <span style="font-family:Arial; font-size:1.5em;"> Call the effect's process function </span>
     
     Error_t error = phAudioEffectDelay -> process(ppfAudioInput, ppfAudioOutput, iNumFrames); <br /> <br />
         `ppfAudioInput, ppfAudioOutput` are the input/output buffers used by the library. The user should take care of creating and destroying these buffers. <br />

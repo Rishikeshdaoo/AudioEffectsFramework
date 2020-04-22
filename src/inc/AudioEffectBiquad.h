@@ -10,11 +10,13 @@
 #include "AudioEffect.h"
 #include "RingBuffer.h"
 
-
+/*! \brief audio effect class for biquad filter
+*/
 class CAudioEffectBiquad: public CAudioEffect
 {
 public:
     
+    /*! list of sub types for biquad filter */
     enum FilterType_t
     {
       kLowpass,
@@ -31,26 +33,63 @@ public:
     CAudioEffectBiquad(float fSampleRateInHz, int iNumChannels, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0, float fMaxDelayInSec = 1.0);
     ~CAudioEffectBiquad();
 
+    /*! initializes a distortion instance
+    \param fSampleRateInHz sample rate in Hz
+    \param iNumChannels number of audio channels
+    \param params[] list of parameter types
+    \param values[] list of parameter values
+    \param iNumParams number of parameters
+    \param fMaxDelayInSec max delay lenghth in seconds
+    \return Error_t
+    */
     Error_t init(float fSampleRateInHz, int iNumChannels, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0, float fMaxDelayInSec = 1.0);
+    
+    /*! resets the internal variables (requires new call of init)
+    \return Error_t
+    */
     Error_t reset();
 
+    /*! sets a biquad filter parameter
+    \param eParam what parameter
+    \param fValue value of the parameter
+    \return Error_t
+    */
     Error_t setParam(EffectParam_t eParam, float fValue);
+    
+    /*! return the value of the specified parameter
+    \param eParam
+    \return float
+    */
     float getParam(EffectParam_t eParam);
     
+    /*! sets a biquad filter sub type
+    \param eValue value of the sub type
+    \return Error_t
+    */
     Error_t setFilterType(FilterType_t eValue);
+    
+    /*! return the value of the specified sub type
+    \return Filtertype_t
+    */
     FilterType_t getFilterType();
 
+    /*! processes one block of audio
+    \param ppfInputBuffer input buffer [numChannels][iNumberOfFrames]
+    \param ppfOutputBuffer output buffer [numChannels][iNumberOfFrames]
+    \param iNumberOfFrames buffer length (per channel)
+    \return Error_t
+    */
     Error_t process(float **ppfInputBuffer, float **ppfOutputBuffer, int iNumberOfFrames);
 
 private:
     
-    Error_t setFilterConstants();
+    Error_t setFilterConstants();  
     
-    float m_fCenterFrequencyInHz;
-    float m_fQ;
-    float m_fGain;
+    float m_fCenterFrequencyInHz;  //!<  center frequency in Hz
+    float m_fQ;  //!<  Q factor
+    float m_fGain;  //!<  gain
     
-    FilterType_t m_eFilterType;
+    FilterType_t m_eFilterType;  //!<  biquad filter sub type
     float m_fa0;
     float m_fa1;
     float m_fa2;
@@ -63,9 +102,9 @@ private:
     float * m_fyn1;
     float * m_fyn2;
     
-    CRingBuffer<float>  **m_ppCRingBuffer;
-    float m_fMaxDelayInSamples;
-    float m_fDelayInSamples;
+    CRingBuffer<float>  **m_ppCRingBuffer;  //!<  audio ring buffer
+    float m_fMaxDelayInSamples;  //!<  max delay length in samples
+    float m_fDelayInSamples;  //!<  delay length in samples
     
 };
 

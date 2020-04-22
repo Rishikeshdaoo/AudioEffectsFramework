@@ -86,6 +86,7 @@ $(document).ready(function(){initNavTree('md__r_e_a_d_m_e.html',''); initResizab
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>Cross platform C++ library with low-latency audio effects processing algorithms designed for real-time audio processing.</p>
+<p>The Doxygen documentation can be accessed here: <a href="http://rishikeshdaoo.github.io/AudioEffectsFramework">http://rishikeshdaoo.github.io/AudioEffectsFramework</a></p>
 <h1><a class="anchor" id="autotoc_md1"></a>
 Motivation</h1>
 <p>This projects aims to provide an easy to use API for creating audio effects processing applications. With well documented, low-level implementation of audio effects in C++, the library is designed to be simple and efficient.</p>
@@ -119,9 +120,9 @@ Instructions</h2>
 <h2><a class="anchor" id="autotoc_md6"></a>
 Usage</h2>
 <ul>
-<li><p class="startli"><span style="font-family:Lato; font-size:1.5em;">Create the Effect instance </span></p>
-<p class="startli"><a class="el" href="class_c_audio_effect_delay.html">CAudioEffectDelay</a> *phAudioEffectDelay = nullptr <br  />
- phAudioEffectDelay = new <a class="el" href="class_c_audio_effect_delay.html">CAudioEffectDelay(sampleRate,numChannels,maxDelayInSecs,param,value,iNumParams)</a></p>
+<li><p class="startli"><span style="font-family:Arial; font-size:1.5em;">Create the Effect instance </span></p>
+<p class="startli"><a class="el" href="class_c_audio_effect_delay.html" title="audio effect class for delay related effects">CAudioEffectDelay</a> *phAudioEffectDelay = nullptr; <br  />
+ phAudioEffectDelay = new <a class="el" href="class_c_audio_effect_delay.html" title="audio effect class for delay related effects">CAudioEffectDelay(sampleRate,numChannels,maxDelayInSecs,param,value,iNumParams)</a>;</p>
 <p class="startli"><code>sampleRate, numChannels</code> are arguments that should be taken from the host application. <br  />
  <code>maxDelayInSecs</code> is an argument the user sets according to their requirement for parameter value range (Only delay based effects have this argument). <br  />
  <code>param, value, iNumParams</code> are arguments that need to be initialized as below.</p>
@@ -137,7 +138,7 @@ Usage</h2>
  param[3] = <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659ea560e1b20c61513df8c5e2409609d61c3">CAudioEffect::kParamGain</a>; <br  />
  value[3] = 0.7f;</p>
 </li>
-<li><p class="startli"><span style="font-family:Lato; font-size:1.5em;"> Call the effect's process function </span></p>
+<li><p class="startli"><span style="font-family:Arial; font-size:1.5em;"> Call the effect's process function </span></p>
 <p class="startli">Error_t error = phAudioEffectDelay -&gt; process(ppfAudioInput, ppfAudioOutput, iNumFrames); <br  />
  <br  />
  <code>ppfAudioInput, ppfAudioOutput</code> are the input/output buffers used by the library. The user should take care of creating and destroying these buffers. <br  />
