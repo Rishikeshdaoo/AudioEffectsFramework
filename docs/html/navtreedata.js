@@ -61,7 +61,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_audio_effect_8cpp.html",
-"class_c_ring_buffer.html#a21568ce259aa8e97ea3f3d7aec4828b7"
+"class_c_ring_buffer.html#a15f6463cfcafd855157d33d253011dc7"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
