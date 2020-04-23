@@ -24,40 +24,25 @@ public:
     /*! list of parameters used in audio effects */
     enum EffectParam_t
     {
-        /*! Parameter for gain of output audio */
-        kParamGain,
-        /*! Parameter for pan value of output audio */
-        kParamPan,
-        /*! Parameter for delay used in delay-based effects */
-        kParamDelayInSecs,
+        kParamGain, //!< Parameter for gain of output audio
+        kParamPan, //!< Parameter for pan value of output audio
+        kParamDelayInSecs, //!< Parameter for delay used in delay-based effects
 
-        /*! Parameter for feedback of output audio */
-        kParamFeedback,
-        /*! Parameter for Modulation Frequency used in modulated effects  */
-        kParamModRateInHz,
-        /*! Parameter Modulation Amplitude used in modulated effects */
-        kParamModWidthInSecs,
-        /*! Parameter for amount of Tremolo */
-        kParamTremoloAmount,
+        kParamFeedback, //!< Parameter for feedback of output audio
+        kParamModRateInHz, //!< Parameter for Modulation Frequency used in modulated effects
+        kParamModWidthInSecs, //!< Parameter Modulation Amplitude used in modulated effects
+        kParamTremoloAmount, //!< Parameter for amount of Tremolo
 
-        /*! Parameter for Center Frequency of a filter */
-        kParamCenterFrequency,
-        /*! Parameter for Q value of a filter */
-        kParamQ,
+        kParamCenterFrequency, //!< Parameter for Center Frequency of a filter
+        kParamQ, //!< Parameter for Q value of a filter
 
-        /*! Parameter for threshold of a Compressor/Expander */
-        kParamThreshold,
-        /*! Parameter for slope of a Compressor/Expander */
-        kParamSlope,
-        /*! Parameter for amount of dry/wet mix in output audio */
-        kParamDryWetMix,
+        kParamThreshold, //!< Parameter for threshold of a Compressor/Expander
+        kParamSlope, //!< Parameter for slope of a Compressor/Expander
+        kParamDryWetMix, //!< Parameter for amount of dry/wet mix in output audio
 
-        /*! Parameter for number of filters */
-        kParamNumFilters,
-        /*! Parameter for number of gains */
-        kParamFilterGains,
-        /*! Parameter for number of delay lines */
-        kParamFilterDelays,
+        kParamNumFilters, //!< Parameter for number of filters
+        kParamFilterGains, //!< Parameter for number of gains
+        kParamFilterDelays, //!< Parameter for number of delay lines
         
     };
     
