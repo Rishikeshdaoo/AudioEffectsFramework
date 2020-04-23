@@ -24,9 +24,9 @@ public:
     /*! list of parameters used in audio effects */
     enum EffectParam_t
     {
-        kParamGain, //!< Parameter for gain of output audio
-        kParamPan, //!< Parameter for pan value of output audio
-        kParamDelayInSecs, //!< Parameter for delay used in delay-based effects
+        kParamGain, ///< Parameter for gain of output audio
+        kParamPan, ///< Parameter for pan value of output audio
+        kParamDelayInSecs, ///< Parameter for delay used in delay-based effects
 
         kParamFeedback, //!< Parameter for feedback of output audio
         kParamModRateInHz, //!< Parameter for Modulation Frequency used in modulated effects
