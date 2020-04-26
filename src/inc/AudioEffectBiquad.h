@@ -30,7 +30,7 @@ public:
     };
     
     CAudioEffectBiquad();
-    CAudioEffectBiquad(float fSampleRateInHz, int iNumChannels, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0, float fMaxDelayInSec = 1.0);
+    CAudioEffectBiquad(float fSampleRateInHz, int iNumChannels, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0, float fMaxDelayInSec = 5.f);
     ~CAudioEffectBiquad();
 
     /*! initializes a distortion instance
@@ -42,7 +42,7 @@ public:
     \param fMaxDelayInSec max delay lenghth in seconds
     \return Error_t
     */
-    Error_t init(float fSampleRateInHz, int iNumChannels, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0, float fMaxDelayInSec = 1.0);
+    Error_t init(float fSampleRateInHz, int iNumChannels, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0, float fMaxDelayInSec = 5.f);
     
     /*! resets the internal variables (requires new call of init)
     \return Error_t

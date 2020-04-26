@@ -16,8 +16,8 @@ CAudioEffectBiquad::CAudioEffectBiquad()
     
     m_eFilterType = kLowpass;
     
-    m_fCenterFrequencyInHz = 0.f;
-    m_fQ = 0.f;
+    m_fCenterFrequencyInHz = 1000.f;
+    m_fQ = 1.f;
     
     m_ppCRingBuffer = 0;
     m_fMaxDelayInSamples = 0.f;
@@ -31,10 +31,14 @@ CAudioEffectBiquad::CAudioEffectBiquad(float fSampleRateInHz, int iNumChannels, 
     m_fSampleRateInHz = 0;
     m_bIsInitialized = false;
     
+    m_eFilterType = kLowpass;
+    
+    m_fCenterFrequencyInHz = 1000.f;
+    m_fQ = 1.f;
+    
     m_ppCRingBuffer = 0;
     m_fMaxDelayInSamples = 0.f;
     
-    m_eFilterType = kLowpass;
     init(fSampleRateInHz, iNumChannels, params, values, iNumParams, fMaxDelayInSec);
 }
 
@@ -92,7 +96,6 @@ Error_t CAudioEffectBiquad::init(float fSampleRateInHz, int iNumChannels, Effect
     {
         m_ppCRingBuffer[c]= new CRingBuffer<float>(int(m_fMaxDelayInSamples*2+1));
         m_ppCRingBuffer[c]->setWriteIdx(int(m_fMaxDelayInSamples+1));
-        m_ppCRingBuffer[c]->setReadIdx(int(m_fMaxDelayInSamples+1));
     }
 
     return kNoError;
@@ -100,6 +103,11 @@ Error_t CAudioEffectBiquad::init(float fSampleRateInHz, int iNumChannels, Effect
 
 Error_t CAudioEffectBiquad::reset()
 {
+    
+    for (int c= 0; c < m_iNumChannels; c++)
+        delete m_ppCRingBuffer[c];
+    delete [] m_ppCRingBuffer;
+    m_ppCRingBuffer       = 0;
 
     m_iNumChannels = 0;
     m_fSampleRateInHz = 0;
@@ -124,16 +132,9 @@ Error_t CAudioEffectBiquad::setParam(EffectParam_t eParam, float fValue)
             m_fQ = fValue;
             break;
         case kParamDelayInSecs:
-            m_fDelayInSamples = fValue * m_fSampleRateInHz;
-            
-            if(m_fDelayInSamples > m_fMaxDelayInSamples)
+            if(fValue * m_fSampleRateInHz > m_fMaxDelayInSamples)
                 return kFunctionInvalidArgsError;
-            
-            for (int c = 0; c < m_iNumChannels; c++) {
-                for (int i = 0; i < m_fDelayInSamples; i++) {
-                    m_ppCRingBuffer[c]->putPostInc(0.F);
-                }
-            }
+            m_fDelayInSamples = fValue * m_fSampleRateInHz;
             break;
         default:
             return kFunctionInvalidArgsError;
@@ -184,19 +185,19 @@ CAudioEffectBiquad::FilterType_t CAudioEffectBiquad::getFilterType()
 
 Error_t CAudioEffectBiquad::process(float **ppfInputBuffer, float **ppfOutputBuffer, int iNumberOfFrames)
 {
-    for(int c = 0; c < m_iNumChannels; c++)
+    for (int i = 0; i < iNumberOfFrames; i++)
     {
-        for (int i = 0; i < iNumberOfFrames; i++)
+        for(int c = 0; c < m_iNumChannels; c++)
         {
-            m_ppCRingBuffer[c]->putPostInc(m_fb0/m_fa0*ppfInputBuffer[c][i] + m_fb1/m_fa0*m_fxn1[c] + m_fb2/m_fa0*m_fxn2[c] - m_fa1/m_fa0*m_fyn1[c] - m_fa2/m_fa0*m_fyn2[c]);
+            float y = m_fb0/m_fa0*ppfInputBuffer[c][i] + m_fb1/m_fa0*m_fxn1[c] + m_fb2/m_fa0*m_fxn2[c] - m_fa1/m_fa0*m_fyn1[c] - m_fa2/m_fa0*m_fyn2[c];
             
             m_fxn2[c] = m_fxn1[c];
             m_fxn1[c] = ppfInputBuffer[c][i];
             m_fyn2[c] = m_fyn1[c];
-            m_fyn1[c] = m_ppCRingBuffer[c]->get();
+            m_fyn1[c] = y;
             
-            ppfOutputBuffer[c][i] = m_ppCRingBuffer[c]->get(m_fDelayInSamples);
-            
+            m_ppCRingBuffer[c]->putPostInc(y);
+            ppfOutputBuffer[c][i] = m_fGain * m_ppCRingBuffer[c]->get(m_fMaxDelayInSamples-m_fDelayInSamples);
             m_ppCRingBuffer[c]->getPostInc();
         }
     }
