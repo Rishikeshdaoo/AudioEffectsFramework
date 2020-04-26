@@ -24,7 +24,7 @@ public:
     };
 
     CAudioEffectCompressorExpander();
-    CAudioEffectCompressorExpander(Effect_t effectType, EffectSubtype_t subType, float fSampleRateInHz, int iNumChannels, int iLookaheadBufferSize, EffectParam_t params[], float values[], int iNumParams);
+    CAudioEffectCompressorExpander(Effect_t effectType, EffectSubtype_t subType, float fSampleRateInHz, int iNumChannels, int iLookaheadBufferSize = 150, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0);
     ~CAudioEffectCompressorExpander();
 
     /*! initializes a distortion instance
@@ -38,8 +38,8 @@ public:
     \param iNumParams number of parameters
     \return Error_t
     */
-    Error_t init(Effect_t effectType, EffectSubtype_t subType, float fSampleRateInHz, int iNumChannels, int iLookaheadBufferSize, EffectParam_t params[], float values[], int iNumParams);
-    
+    Error_t init(Effect_t effectType, EffectSubtype_t subType, float fSampleRateInHz, int iNumChannels, int iLookaheadBufferSize = 150, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = NULL);
+
     /*! resets the internal variables (requires new call of init)
     \return Error_t
     */
