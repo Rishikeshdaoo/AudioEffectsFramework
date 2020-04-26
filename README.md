@@ -1,6 +1,6 @@
 ## Audio Effects Framework
 
-Cross platform C++ library with low-latency audio effects processing algorithms designed for real-time audio processing.
+Cross platform C++ library with low-latency audio effects processing algorithms designed for real-time audio processing. 
 
 The Doxygen documentation can be accessed here: http://rishikeshdaoo.github.io/AudioEffectsFramework
 
@@ -20,6 +20,7 @@ This projects aims to provide an easy to use API for creating audio effects proc
 - Flanger
 - Chorus
 - Reverb
+- Vibrato
 
 ## Use Cases
 
@@ -31,7 +32,8 @@ This projects aims to provide an easy to use API for creating audio effects proc
 
 ### Instructions
 
-- Clone the repository with the command : `git clone https://github.com/Rishikeshdaoo/AudioEffectsFramework.git`
+- Clone the repository with the command : `git clone https://github.com/Rishikeshdaoo/AudioEffectsFramework.git` or download a zip project folder from the Download button.
+- Install <a href="https://cmake.org/">CMake</a> and compile the project.
 
 ### Usage
 

@@ -15,15 +15,15 @@ CAudioEffectCompressorExpander::CAudioEffectCompressorExpander():   m_fAveraging
     m_eCompressorType = kNone;
     m_iNumChannels = 0;
     m_fSampleRateInHz = 0;
-    m_bIsInitialized = false;
 
     m_fThreshold = 0.f;
     m_fSlope = 0.f;
     m_iLookaheadBufferSize = 0;
 
+    m_bIsInitialized = false;
 }
 
-CAudioEffectCompressorExpander::CAudioEffectCompressorExpander(Effect_t effectType, EffectSubtype_t subType, float fSampleRateInHz, int iNumChannels, int iLookaheadBufferSize, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0):
+CAudioEffectCompressorExpander::CAudioEffectCompressorExpander(Effect_t effectType, EffectSubtype_t subType, float fSampleRateInHz, int iNumChannels, int iLookaheadBufferSize, EffectParam_t params[], float values[], int iNumParams):
         m_fAveragingTime(0.01),
         m_fAttackTime(0.03),
         m_fReleaseTime(0.003)
@@ -35,7 +35,7 @@ CAudioEffectCompressorExpander::~CAudioEffectCompressorExpander(){
     this->reset();
 }
 
-Error_t CAudioEffectCompressorExpander::init(Effect_t effectType, EffectSubtype_t subType, float fSampleRateInHz, int iNumChannels, int iLookaheadBufferSize, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0)
+Error_t CAudioEffectCompressorExpander::init(Effect_t effectType, EffectSubtype_t subType, float fSampleRateInHz, int iNumChannels, int iLookaheadBufferSize, EffectParam_t params[], float values[], int iNumParams)
 {
     m_eEffectType = effectType;
     m_eCompressorType = subType;
@@ -46,9 +46,26 @@ Error_t CAudioEffectCompressorExpander::init(Effect_t effectType, EffectSubtype_
 
     assert(iNumChannels > 0);
 
+    if(params == NULL || values == NULL) {
+        iNumParams = 2;
+        params = (EffectParam_t*) new int(iNumParams);
+        values = new float[iNumParams];
 
-    for (int i = 0; i < iNumParams; i++)
-    {
+        if(subType == kCompressor) {
+            params[0] = CAudioEffect::kParamThreshold;
+            values[0] = -50.f;
+            params[1] = CAudioEffect::kParamSlope;
+            values[1] = 0.5f;
+        }
+        else if(subType == kExpander){
+            params[0] = CAudioEffect::kParamThreshold;
+            values[0] = -60.f;
+            params[1] = CAudioEffect::kParamSlope;
+            values[1] = 0.5f;
+        }
+    }
+
+    for (int i = 0; i < iNumParams; i++) {
         switch (params[i]) {
             case kParamThreshold:
                 m_fThreshold = values[i];
@@ -56,14 +73,13 @@ Error_t CAudioEffectCompressorExpander::init(Effect_t effectType, EffectSubtype_
             case kParamSlope:
                 // Compressor: 0 < CS < 1
                 // Expander: ES < 0
-                if(m_eCompressorType==kCompressor){
-                    if(values[i]>=0 && values[i]<=1)
+                if (m_eCompressorType == kCompressor) {
+                    if (values[i] >= 0 && values[i] <= 1)
                         m_fSlope = values[i];
                     else
                         return kFunctionInvalidArgsError;
-                }
-                else if (m_eCompressorType==kExpander){
-                    if(values[i]<=0)
+                } else if (m_eCompressorType == kExpander) {
+                    if (values[i] <= 0)
                         m_fSlope = values[i];
                     else
                         return kFunctionInvalidArgsError;

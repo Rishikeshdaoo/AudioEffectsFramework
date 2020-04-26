@@ -49,19 +49,19 @@ int main(int argc, char* argv[])
 
 //    if (argc < 5)
 //    {
-//        sInputFilePath = "/Users/marketinggramusic/Documents/Sem2/AudioSoftwareEngg/sweep.wav";
-//        sOutputFilePath = "/Users/marketinggramusic/Documents/Sem2/AudioSoftwareEngg/sweep_post.wav";
+        sInputFilePath = "/Users/marketinggramusic/Documents/Sem2/AudioSoftwareEngg/sweep.wav";
+        sOutputFilePath = "/Users/marketinggramusic/Documents/Sem2/AudioSoftwareEngg/sweep_post.wav";
 //    }
 
-    if (argc < 5)
-    {
+//    if (argc < 5)
+//    {
 //        sInputFilePath = "sweep.wav";
 //        sOutputFilePath = "sweep_post.wav";
         sInputFilePath = "Guitar_sample.wav";
         sOutputFilePath = "Guitar_Sample_post.wav";
 //        sInputFilePath = argv[1];
 //        sOutputFilePath = "/Users/sneheshnag/Guitar_sample_flange.wav";
-    }
+//    }
 
 
     //////////////////////////////////////////////////////////////////////////////
@@ -99,7 +99,7 @@ int main(int argc, char* argv[])
     //////////////////////////////////////////////////////////////////////////////
     // Initializing the  effect
     
-
+    // Compressor params
 //    int iNumParams = 2;
 //    CAudioEffect::EffectParam_t param[iNumParams];
 //    float value[iNumParams];
@@ -179,12 +179,13 @@ int main(int argc, char* argv[])
 //    phAudioEffectDelay->init(stFileSpec.fSampleRateInHz, stFileSpec.iNumChannels, 2.f, param, value, iNumParams);
 
 //    phAudioEffectCompressorExpander = new CAudioEffectCompressorExpander();
-//    phAudioEffectCompressorExpander -> init(kCompressor, stFileSpec.fSampleRateInHz, stFileSpec.iNumChannels, param, value, iNumParams);
+//    phAudioEffectCompressorExpander -> init(kCompressorExpander, CAudioEffectCompressorExpander::kCompressor, stFileSpec.fSampleRateInHz, stFileSpec.iNumChannels);
 
     
 //    phAudioEffectDelay = new CAudioEffectDelay(stFileSpec.fSampleRateInHz,stFileSpec.iNumChannels,0.05,param,value,iNumParams);
+
 ////    phAudioEffectDelay -> setDelayType(DelayType_t kFlanger);
-//    phAudioEffectDelay -> setDelayType(CAudioEffectDelay::kFlanger);
+//    phAudioEffectDelay -> setDelayType(DelayType_t kFlanger);
 
 
     
@@ -200,8 +201,6 @@ int main(int argc, char* argv[])
 
         // Call to the process function; the effect implementation function
         Error_t error = phAudioEffect->process(ppfAudioInput, ppfAudioOutput, iNumFrames);
-        
-        cout << iNumFrames << endl;
 
         if(error != kNoError){
             return -1;

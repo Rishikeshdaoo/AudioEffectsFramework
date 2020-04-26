@@ -43,10 +43,11 @@ var searchData=
   ['kparamq_147',['kParamQ',['../class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659ea3938e87ca92657368d510f672c13226d',1,'CAudioEffect']]],
   ['kparamslope_148',['kParamSlope',['../class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659eaf013e0c5d5c6dc572a1323150378ba45',1,'CAudioEffect']]],
   ['kparamthreshold_149',['kParamThreshold',['../class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659ea1aa9db030d81fe7035af3e99e91fb207',1,'CAudioEffect']]],
-  ['kpeak_150',['kPeak',['../class_c_audio_effect_biquad.html#aa75f8e70545c4b5301ac60d7ff7416d6a82ab43795c6a8aad5875345502480b23',1,'CAudioEffectBiquad']]],
-  ['krect_151',['kRect',['../class_c_lfo.html#ab5e12634f435afa3fe99d9df1896cfc9a781f2b258ae4bd50242c0919c68a5009',1,'CLfo']]],
-  ['ksaw_152',['kSaw',['../class_c_lfo.html#ab5e12634f435afa3fe99d9df1896cfc9a559fe0bff8a39c758e3cc4920f30cee8',1,'CLfo']]],
-  ['ksine_153',['kSine',['../class_c_lfo.html#ab5e12634f435afa3fe99d9df1896cfc9a02f36ecb96557bfef46a014f37c4228d',1,'CLfo']]],
-  ['ktremolo_154',['kTremolo',['../class_c_audio_effect_delay.html#ac32a9e095a16cc2964bab7a575c9fc85a9d3d67916de2615ac8dcb30f179a7eda',1,'CAudioEffectDelay']]],
-  ['kvibrato_155',['kVibrato',['../class_c_audio_effect_delay.html#ac32a9e095a16cc2964bab7a575c9fc85abd05ae8a42fa35c7f3e3d3d0ef44c4a1',1,'CAudioEffectDelay']]]
+  ['kparamtremoloamount_150',['kParamTremoloAmount',['../class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659eacda9a4960fb11d9f3b4f90a4b072ef15',1,'CAudioEffect']]],
+  ['kpeak_151',['kPeak',['../class_c_audio_effect_biquad.html#aa75f8e70545c4b5301ac60d7ff7416d6a82ab43795c6a8aad5875345502480b23',1,'CAudioEffectBiquad']]],
+  ['krect_152',['kRect',['../class_c_lfo.html#ab5e12634f435afa3fe99d9df1896cfc9a781f2b258ae4bd50242c0919c68a5009',1,'CLfo']]],
+  ['ksaw_153',['kSaw',['../class_c_lfo.html#ab5e12634f435afa3fe99d9df1896cfc9a559fe0bff8a39c758e3cc4920f30cee8',1,'CLfo']]],
+  ['ksine_154',['kSine',['../class_c_lfo.html#ab5e12634f435afa3fe99d9df1896cfc9a02f36ecb96557bfef46a014f37c4228d',1,'CLfo']]],
+  ['ktremolo_155',['kTremolo',['../class_c_audio_effect_delay.html#ac32a9e095a16cc2964bab7a575c9fc85a9d3d67916de2615ac8dcb30f179a7eda',1,'CAudioEffectDelay']]],
+  ['kvibrato_156',['kVibrato',['../class_c_audio_effect_delay.html#ac32a9e095a16cc2964bab7a575c9fc85abd05ae8a42fa35c7f3e3d3d0ef44c4a1',1,'CAudioEffectDelay']]]
 ];

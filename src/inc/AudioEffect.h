@@ -24,25 +24,25 @@ public:
     /*! list of parameters used in audio effects */
     enum EffectParam_t
     {
-        kParamGain,
-        kParamPan,
-        kParamDelayInSecs,
+        kParamGain, ///< Parameter for gain of output audio
+        kParamPan, ///< Parameter for pan value of output audio
+        kParamDelayInSecs, ///< Parameter for delay used in delay-based effects
 
-        kParamFeedback,
-        kParamModRateInHz,
-        kParamModWidthInSecs,
-        kParamTremoloAmount,
-        
-        kParamCenterFrequency,
-        kParamQ,
-        
-        kParamThreshold,
-        kParamSlope,
-        kParamDryWetMix,
-        
-        kParamNumFilters,
-        kParamFilterGains,
-        kParamFilterDelays,
+        kParamFeedback, //!< Parameter for feedback of output audio
+        kParamModRateInHz, //!< Parameter for Modulation Frequency used in modulated effects
+        kParamModWidthInSecs, //!< Parameter Modulation Amplitude used in modulated effects
+        kParamTremoloAmount, //!< Parameter for amount of Tremolo
+
+        kParamCenterFrequency, //!< Parameter for Center Frequency of a filter
+        kParamQ, //!< Parameter for Q value of a filter
+
+        kParamThreshold, //!< Parameter for threshold of a Compressor/Expander
+        kParamSlope, //!< Parameter for slope of a Compressor/Expander
+        kParamDryWetMix, //!< Parameter for amount of dry/wet mix in output audio
+
+        kParamNumFilters, //!< Parameter for number of filters
+        kParamFilterGains, //!< Parameter for number of gains
+        kParamFilterDelays, //!< Parameter for number of delay lines
         
     };
     
