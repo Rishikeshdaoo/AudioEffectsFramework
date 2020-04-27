@@ -57,6 +57,13 @@ Error_t CAudioEffectBiquad::init(float fSampleRateInHz, int iNumChannels, Effect
     
     m_fMaxDelayInSamples = fMaxDelayInSec * m_fSampleRateInHz;
     
+    m_ppCRingBuffer = new CRingBuffer<float>*[m_iNumChannels];
+    
+    for (int c= 0; c < m_iNumChannels; c++)
+    {
+        m_ppCRingBuffer[c]= new CRingBuffer<float>(int(m_fMaxDelayInSamples));
+    }
+    
     for (int i = 0; i < iNumParams; i++)
     {
         switch (params[i]) {
@@ -71,6 +78,8 @@ Error_t CAudioEffectBiquad::init(float fSampleRateInHz, int iNumChannels, Effect
                 break;
             case kParamDelayInSecs:
                 m_fDelayInSamples = values[i] * m_fSampleRateInHz;
+                for (int c = 0; c < m_iNumChannels; c++)
+                m_ppCRingBuffer[c]->setReadIdx(-1.f*m_fDelayInSamples);
                 break;
             default:
                 return kFunctionInvalidArgsError;
@@ -88,14 +97,6 @@ Error_t CAudioEffectBiquad::init(float fSampleRateInHz, int iNumChannels, Effect
         m_fxn2[i] = 0.f;
         m_fyn1[i] = 0.f;
         m_fyn2[i] = 0.f;
-    }
-    
-    m_ppCRingBuffer = new CRingBuffer<float>*[m_iNumChannels];
-    
-    for (int c= 0; c < m_iNumChannels; c++)
-    {
-        m_ppCRingBuffer[c]= new CRingBuffer<float>(int(m_fMaxDelayInSamples*2+1));
-        m_ppCRingBuffer[c]->setWriteIdx(int(m_fMaxDelayInSamples+1));
     }
 
     return kNoError;
@@ -135,6 +136,8 @@ Error_t CAudioEffectBiquad::setParam(EffectParam_t eParam, float fValue)
             if(fValue * m_fSampleRateInHz > m_fMaxDelayInSamples)
                 return kFunctionInvalidArgsError;
             m_fDelayInSamples = fValue * m_fSampleRateInHz;
+            for (int c = 0; c < m_iNumChannels; c++)
+                m_ppCRingBuffer[c]->setReadIdx(-1.f*m_fDelayInSamples);
             break;
         default:
             return kFunctionInvalidArgsError;
@@ -197,7 +200,7 @@ Error_t CAudioEffectBiquad::process(float **ppfInputBuffer, float **ppfOutputBuf
             m_fyn1[c] = y;
             
             m_ppCRingBuffer[c]->putPostInc(y);
-            ppfOutputBuffer[c][i] = m_fGain * m_ppCRingBuffer[c]->get(m_fMaxDelayInSamples-m_fDelayInSamples);
+            ppfOutputBuffer[c][i] = m_fGain * m_ppCRingBuffer[c]->get();
             m_ppCRingBuffer[c]->getPostInc();
         }
     }
