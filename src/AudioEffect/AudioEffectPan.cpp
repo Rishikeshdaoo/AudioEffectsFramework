@@ -11,7 +11,7 @@ CAudioEffectPan::CAudioEffectPan()
     m_bIsInitialized = false;
 };
 
-CAudioEffectPan::CAudioEffectPan(float fSampleRateInHz, int iNumChannels, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0)
+CAudioEffectPan::CAudioEffectPan(float fSampleRateInHz, int iNumChannels, EffectParam_t params[], float values[], int iNumParams)
 {
     m_eEffectType = kPan;
     init(fSampleRateInHz, iNumChannels, params, values, iNumParams);
@@ -22,7 +22,7 @@ CAudioEffectPan::~CAudioEffectPan()
     this->reset();
 };
 
-Error_t CAudioEffectPan::init(float fSampleRateInHz, int iNumChannels, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0)
+Error_t CAudioEffectPan::init(float fSampleRateInHz, int iNumChannels, EffectParam_t params[], float values[], int iNumParams)
 {
     
     m_fSampleRateInHz = fSampleRateInHz;

@@ -35,9 +35,9 @@ switch effect
     case "chorus"
         audio_mat = chorus(audio_raw, param(1), param(2), param(3),  param(4), param(5));
         MSE = compare(effect, audio_cpp, audio_mat);
-%     case "reverb"
-%         audio_mat = schroeder(audio_raw, param(1), param(2), param(3));
-%         MSE = compare(audio_cpp, audio_mat);
+    case "reverb"
+        audio_mat = schroeder(audio_raw, param{1}, param{2}, param{3}, param{4});
+        MSE = compare(effect, audio_cpp, audio_mat);
 %     case "pan"
 %         audio_mat = panorama(audio_raw, param(1), param(2), param(3));
 %         MSE = compare(audio_cpp, audio_mat);

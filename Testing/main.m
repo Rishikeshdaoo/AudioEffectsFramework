@@ -100,7 +100,18 @@ plot(audio_cpp);
 hold on;
 plot(audio_mat_chorus);
 
+%% Reverb
+audio_path_raw = 'Guitar_sample.wav';
+audio_path_cpp = 'Guitar_sample_reverb.wav';
 
+[audio_raw,~] = audioread(audio_path_raw);
+[audio_cpp,Fs] = audioread(audio_path_cpp);
+audio_cpp = audio_cpp/max(audio_cpp);
+
+% params for reverb: [Number of filters, gain of filters, vector of delay lengths, gain factor of the direct signal]
+% [y,b,a] = schroeder(audio_raw,3,0.707,[0.5*Fs 0.3*Fs 0.2*Fs],1);
+param_reverb = {3,0.707,[0.5*Fs 0.3*Fs 0.2*Fs],1}; 
+[audio_mat_reverb, MSE_reverb] = test(audio_raw, audio_cpp, "reverb", param_reverb);
 %% other test
 
 % param_chorus = [Fs, 0.013, 0.003, 1, 0.8] % params for chorus effect: [Fs, max_time_delay, modulation_depth, modulation_rate, feedback]

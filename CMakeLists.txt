@@ -68,6 +68,7 @@ if (WITH_TESTS)
     add_test(AudioEffectCompressor ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/TestExec AudioEffectCompressor)
     add_test(AudioEffectBiquad ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/TestExec AudioEffectBiquad)
     add_test(AudioEffectDistortion ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/TestExec AudioEffectDistortion)
+    add_test(AudioEffectReverb ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/TestExec AudioEffectReverb)
 
     
     add_cppcheck_test ()

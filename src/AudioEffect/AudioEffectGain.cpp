@@ -17,7 +17,7 @@ CAudioEffectGain::CAudioEffectGain()
     m_bIsInitialized = false;
 };
 
-CAudioEffectGain::CAudioEffectGain(float fSampleRateInHz, int iNumChannels, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0)
+CAudioEffectGain::CAudioEffectGain(float fSampleRateInHz, int iNumChannels, EffectParam_t params[], float values[], int iNumParams)
 {
     m_eEffectType = kGain;
     init(fSampleRateInHz, iNumChannels, params, values, iNumParams);
@@ -28,7 +28,7 @@ CAudioEffectGain::~CAudioEffectGain()
     this->reset();
 };
 
-Error_t CAudioEffectGain::init(float fSampleRateInHz, int iNumChannels, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0)
+Error_t CAudioEffectGain::init(float fSampleRateInHz, int iNumChannels, EffectParam_t params[], float values[], int iNumParams)
 {
     
     m_fSampleRateInHz = fSampleRateInHz;
