@@ -12,7 +12,7 @@ class CAudioEffectPan: public CAudioEffect
 {
 public:
     CAudioEffectPan();
-    CAudioEffectPan(float fSampleRateInHz, int iNumChannels, EffectParam_t params[], float values[], int iNumParams);
+    CAudioEffectPan(float fSampleRateInHz, int iNumChannels, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0);
     ~CAudioEffectPan();
     
     /*! initializes a pan instance
@@ -23,7 +23,7 @@ public:
     \param iNumParams number of parameters
     \return Error_t
     */
-    Error_t init(float fSampleRateInHz, int iNumChannels, EffectParam_t params[], float values[], int iNumParams);
+    Error_t init(float fSampleRateInHz, int iNumChannels, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0);
     
     /*! resets the internal variables (requires new call of init)
     \return Error_t

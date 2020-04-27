@@ -20,7 +20,7 @@ class CAudioEffectDistortion: public CAudioEffect
 {
 public:
     CAudioEffectDistortion();
-    CAudioEffectDistortion(float fSampleRateInHz, int iNumChannels, EffectParam_t params[], float values[], int iNumParams);
+    CAudioEffectDistortion(float fSampleRateInHz, int iNumChannels, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0);
     ~CAudioEffectDistortion();
     
     /*! initializes a distortion instance
@@ -31,7 +31,7 @@ public:
     \param iNumParams number of parameters
     \return Error_t
     */
-    Error_t init(float fSampleRateInHz, int iNumChannels, EffectParam_t params[], float values[], int iNumParams);
+    Error_t init(float fSampleRateInHz, int iNumChannels, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0);
     
     /*! resets the internal variables (requires new call of init)
     \return Error_t

@@ -19,7 +19,7 @@ CAudioEffectDistortion::CAudioEffectDistortion()
     m_bIsInitialized = false;
 };
 
-CAudioEffectDistortion::CAudioEffectDistortion(float fSampleRateInHz, int iNumChannels, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0)
+CAudioEffectDistortion::CAudioEffectDistortion(float fSampleRateInHz, int iNumChannels, EffectParam_t params[], float values[], int iNumParams)
 {
     m_eEffectType = kDistortion;
     init(fSampleRateInHz, iNumChannels, params, values, iNumParams);
@@ -30,11 +30,24 @@ CAudioEffectDistortion::~CAudioEffectDistortion()
     this->reset();
 };
 
-Error_t CAudioEffectDistortion::init(float fSampleRateInHz, int iNumChannels, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0)
+Error_t CAudioEffectDistortion::init(float fSampleRateInHz, int iNumChannels, EffectParam_t params[], float values[], int iNumParams)
 {
     
     m_fSampleRateInHz = fSampleRateInHz;
     m_iNumChannels = iNumChannels;
+    
+    assert(iNumChannels > 0);
+
+    if(params == NULL || values == NULL) {
+        iNumParams = 2;
+        params = (EffectParam_t*) new int(iNumParams);
+        values = new float[iNumParams];
+        
+        params[0] = CAudioEffect::kParamGain;
+        values[0] = 5.f;
+        params[1] = CAudioEffect::kParamDryWetMix;
+        values[1] = 0.5f;
+        }
     
     for (int i = 0; i < iNumParams; i++)
     {

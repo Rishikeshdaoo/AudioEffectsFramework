@@ -59,9 +59,9 @@ Error_t CAudioEffectCompressorExpander::init(Effect_t effectType, EffectSubtype_
         }
         else if(subType == kExpander){
             params[0] = CAudioEffect::kParamThreshold;
-            values[0] = -60.f;
+            values[0] = -20.f;
             params[1] = CAudioEffect::kParamSlope;
-            values[1] = 0.5f;
+            values[1] = -2.f;
         }
     }
 

@@ -34,6 +34,17 @@ Error_t CAudioEffectGain::init(float fSampleRateInHz, int iNumChannels, EffectPa
     m_fSampleRateInHz = fSampleRateInHz;
     m_iNumChannels = iNumChannels;
     
+    assert(iNumChannels > 0);
+
+    if(params == NULL || values == NULL) {
+        iNumParams = 1;
+        params = (EffectParam_t*) new int(iNumParams);
+        values = new float[iNumParams];
+        
+        params[0] = CAudioEffect::kParamGain;
+        values[0] = 1.f;
+        }
+    
     for (int i = 0; i < iNumParams; i++)
     {
         switch (params[i]) {
