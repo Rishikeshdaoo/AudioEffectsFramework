@@ -170,6 +170,10 @@ include:
 - _test_8cpp__incl.map
 - _test_8cpp__incl.md5
 - _test_8cpp__incl.png
+- _test___audio_effect_reverb_8cpp.html
+- _test___audio_effect_reverb_8cpp__incl.map
+- _test___audio_effect_reverb_8cpp__incl.md5
+- _test___audio_effect_reverb_8cpp__incl.png
 - _test___audio_effect_biquad_8cpp.html
 - _test___audio_effect_biquad_8cpp__incl.map
 - _test___audio_effect_biquad_8cpp__incl.md5
