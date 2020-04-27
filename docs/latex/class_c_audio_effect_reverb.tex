@@ -1,0 +1,181 @@
+\hypertarget{class_c_audio_effect_reverb}{}\doxysection{C\+Audio\+Effect\+Reverb Class Reference}
+\label{class_c_audio_effect_reverb}\index{CAudioEffectReverb@{CAudioEffectReverb}}
+
+
+audio effect class for reverb  
+
+
+
+
+{\ttfamily \#include $<$Audio\+Effect\+Reverb.\+h$>$}
+
+
+
+Inheritance diagram for C\+Audio\+Effect\+Reverb\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{class_c_audio_effect_reverb__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for C\+Audio\+Effect\+Reverb\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{class_c_audio_effect_reverb__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_audio_effect_reverb_a70ec51c0da3a6a19c54a7083da1f0734}{C\+Audio\+Effect\+Reverb}} ()
+\item 
+\mbox{\hyperlink{class_c_audio_effect_reverb_a138cda6fddca770ddb3dbd78ae5cbe70}{C\+Audio\+Effect\+Reverb}} (float f\+Sample\+Rate\+In\+Hz, int i\+Num\+Channels, float f\+Max\+Delay\+In\+Sec, \mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}} params\mbox{[}$\,$\mbox{]}, float values\mbox{[}$\,$\mbox{]}, int i\+Num\+Params)
+\item 
+\mbox{\hyperlink{class_c_audio_effect_reverb_a81a5254addc99095d170341347639246}{$\sim$\+C\+Audio\+Effect\+Reverb}} ()
+\item 
+Error\+\_\+t \mbox{\hyperlink{class_c_audio_effect_reverb_a6258bea097454bb01a4804bc2a29e658}{init}} (float f\+Sample\+Rate\+In\+Hz, int i\+Num\+Channels, float f\+Max\+Delay\+In\+Sec, \mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}} params\mbox{[}$\,$\mbox{]}, float values\mbox{[}$\,$\mbox{]}, int i\+Num\+Params)
+\item 
+Error\+\_\+t \mbox{\hyperlink{class_c_audio_effect_reverb_ae446ae491b3ae6844aeb5daa78305f9e}{reset}} ()
+\item 
+Error\+\_\+t \mbox{\hyperlink{class_c_audio_effect_reverb_a2df7c8082d79c346793c50b468c989e3}{set\+Param}} (\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}} e\+Param, float f\+Value)
+\item 
+float \mbox{\hyperlink{class_c_audio_effect_reverb_a0cf3ca407241cabf58d4257a51ce9d1b}{get\+Param}} (\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}} e\+Param)
+\item 
+Error\+\_\+t \mbox{\hyperlink{class_c_audio_effect_reverb_a51658e4290ef83e205a1d84f8880fc68}{set\+Filter\+Delays}} (float f\+Values\mbox{[}$\,$\mbox{]}, int i\+Num\+Filters)
+\item 
+Error\+\_\+t \mbox{\hyperlink{class_c_audio_effect_reverb_aae750724957d00aaed3f90e324b14603}{process}} (float $\ast$$\ast$ppf\+Input\+Buffer, float $\ast$$\ast$ppf\+Output\+Buffer, int i\+Number\+Of\+Frames)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+audio effect class for reverb 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_c_audio_effect_reverb_a70ec51c0da3a6a19c54a7083da1f0734}\label{class_c_audio_effect_reverb_a70ec51c0da3a6a19c54a7083da1f0734}} 
+\index{CAudioEffectReverb@{CAudioEffectReverb}!CAudioEffectReverb@{CAudioEffectReverb}}
+\index{CAudioEffectReverb@{CAudioEffectReverb}!CAudioEffectReverb@{CAudioEffectReverb}}
+\doxysubsubsection{\texorpdfstring{CAudioEffectReverb()}{CAudioEffectReverb()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily C\+Audio\+Effect\+Reverb\+::\+C\+Audio\+Effect\+Reverb (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_c_audio_effect_reverb_a138cda6fddca770ddb3dbd78ae5cbe70}\label{class_c_audio_effect_reverb_a138cda6fddca770ddb3dbd78ae5cbe70}} 
+\index{CAudioEffectReverb@{CAudioEffectReverb}!CAudioEffectReverb@{CAudioEffectReverb}}
+\index{CAudioEffectReverb@{CAudioEffectReverb}!CAudioEffectReverb@{CAudioEffectReverb}}
+\doxysubsubsection{\texorpdfstring{CAudioEffectReverb()}{CAudioEffectReverb()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily C\+Audio\+Effect\+Reverb\+::\+C\+Audio\+Effect\+Reverb (\begin{DoxyParamCaption}\item[{float}]{f\+Sample\+Rate\+In\+Hz,  }\item[{int}]{i\+Num\+Channels,  }\item[{float}]{f\+Max\+Delay\+In\+Sec,  }\item[{\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}}}]{params\mbox{[}$\,$\mbox{]} = {\ttfamily NULL},  }\item[{float}]{values\mbox{[}$\,$\mbox{]} = {\ttfamily NULL},  }\item[{int}]{i\+Num\+Params = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_c_audio_effect_reverb_a81a5254addc99095d170341347639246}\label{class_c_audio_effect_reverb_a81a5254addc99095d170341347639246}} 
+\index{CAudioEffectReverb@{CAudioEffectReverb}!````~CAudioEffectReverb@{$\sim$CAudioEffectReverb}}
+\index{````~CAudioEffectReverb@{$\sim$CAudioEffectReverb}!CAudioEffectReverb@{CAudioEffectReverb}}
+\doxysubsubsection{\texorpdfstring{$\sim$CAudioEffectReverb()}{~CAudioEffectReverb()}}
+{\footnotesize\ttfamily C\+Audio\+Effect\+Reverb\+::$\sim$\+C\+Audio\+Effect\+Reverb (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_c_audio_effect_reverb_a0cf3ca407241cabf58d4257a51ce9d1b}\label{class_c_audio_effect_reverb_a0cf3ca407241cabf58d4257a51ce9d1b}} 
+\index{CAudioEffectReverb@{CAudioEffectReverb}!getParam@{getParam}}
+\index{getParam@{getParam}!CAudioEffectReverb@{CAudioEffectReverb}}
+\doxysubsubsection{\texorpdfstring{getParam()}{getParam()}}
+{\footnotesize\ttfamily float C\+Audio\+Effect\+Reverb\+::get\+Param (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}}}]{e\+Param }\end{DoxyParamCaption})}
+
+return the value of the specified parameter 
+\begin{DoxyParams}{Parameters}
+{\em e\+Param} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_audio_effect_reverb_a6258bea097454bb01a4804bc2a29e658}\label{class_c_audio_effect_reverb_a6258bea097454bb01a4804bc2a29e658}} 
+\index{CAudioEffectReverb@{CAudioEffectReverb}!init@{init}}
+\index{init@{init}!CAudioEffectReverb@{CAudioEffectReverb}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily Error\+\_\+t C\+Audio\+Effect\+Reverb\+::init (\begin{DoxyParamCaption}\item[{float}]{f\+Sample\+Rate\+In\+Hz,  }\item[{int}]{i\+Num\+Channels,  }\item[{float}]{f\+Max\+Delay\+In\+Sec,  }\item[{\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}}}]{params\mbox{[}$\,$\mbox{]},  }\item[{float}]{values\mbox{[}$\,$\mbox{]},  }\item[{int}]{i\+Num\+Params }\end{DoxyParamCaption})}
+
+initializes a reverb instance 
+\begin{DoxyParams}{Parameters}
+{\em f\+Sample\+Rate\+In\+Hz} & sample rate in Hz \\
+\hline
+{\em i\+Num\+Channels} & number of audio channels \\
+\hline
+{\em f\+Max\+Delay\+In\+Sec} & max delay length in seconds \\
+\hline
+{\em params\mbox{[}$\,$\mbox{]}} & list of parameter types \\
+\hline
+{\em values\mbox{[}$\,$\mbox{]}} & list of parameter values \\
+\hline
+{\em i\+Num\+Params} & number of parameters \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_audio_effect_reverb_aae750724957d00aaed3f90e324b14603}\label{class_c_audio_effect_reverb_aae750724957d00aaed3f90e324b14603}} 
+\index{CAudioEffectReverb@{CAudioEffectReverb}!process@{process}}
+\index{process@{process}!CAudioEffectReverb@{CAudioEffectReverb}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily Error\+\_\+t C\+Audio\+Effect\+Reverb\+::process (\begin{DoxyParamCaption}\item[{float $\ast$$\ast$}]{ppf\+Input\+Buffer,  }\item[{float $\ast$$\ast$}]{ppf\+Output\+Buffer,  }\item[{int}]{i\+Number\+Of\+Frames }\end{DoxyParamCaption})}
+
+processes one block of audio 
+\begin{DoxyParams}{Parameters}
+{\em ppf\+Input\+Buffer} & input buffer \mbox{[}num\+Channels\mbox{]}\mbox{[}i\+Number\+Of\+Frames\mbox{]} \\
+\hline
+{\em ppf\+Output\+Buffer} & output buffer \mbox{[}num\+Channels\mbox{]}\mbox{[}i\+Number\+Of\+Frames\mbox{]} \\
+\hline
+{\em i\+Number\+Of\+Frames} & buffer length (per channel) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_audio_effect_reverb_ae446ae491b3ae6844aeb5daa78305f9e}\label{class_c_audio_effect_reverb_ae446ae491b3ae6844aeb5daa78305f9e}} 
+\index{CAudioEffectReverb@{CAudioEffectReverb}!reset@{reset}}
+\index{reset@{reset}!CAudioEffectReverb@{CAudioEffectReverb}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily Error\+\_\+t C\+Audio\+Effect\+Reverb\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+resets the internal variables (requires new call of init) \begin{DoxyReturn}{Returns}
+Error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_audio_effect_reverb_a51658e4290ef83e205a1d84f8880fc68}\label{class_c_audio_effect_reverb_a51658e4290ef83e205a1d84f8880fc68}} 
+\index{CAudioEffectReverb@{CAudioEffectReverb}!setFilterDelays@{setFilterDelays}}
+\index{setFilterDelays@{setFilterDelays}!CAudioEffectReverb@{CAudioEffectReverb}}
+\doxysubsubsection{\texorpdfstring{setFilterDelays()}{setFilterDelays()}}
+{\footnotesize\ttfamily Error\+\_\+t C\+Audio\+Effect\+Reverb\+::set\+Filter\+Delays (\begin{DoxyParamCaption}\item[{float}]{f\+Values\mbox{[}$\,$\mbox{]},  }\item[{int}]{i\+Num\+Filters }\end{DoxyParamCaption})}
+
+sets delay lengths for filters of reverb 
+\begin{DoxyParams}{Parameters}
+{\em e\+Value} & value of delay lengths for each filter in reverb \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_audio_effect_reverb_a2df7c8082d79c346793c50b468c989e3}\label{class_c_audio_effect_reverb_a2df7c8082d79c346793c50b468c989e3}} 
+\index{CAudioEffectReverb@{CAudioEffectReverb}!setParam@{setParam}}
+\index{setParam@{setParam}!CAudioEffectReverb@{CAudioEffectReverb}}
+\doxysubsubsection{\texorpdfstring{setParam()}{setParam()}}
+{\footnotesize\ttfamily Error\+\_\+t C\+Audio\+Effect\+Reverb\+::set\+Param (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}}}]{e\+Param,  }\item[{float}]{f\+Value }\end{DoxyParamCaption})}
+
+sets a reverb parameter 
+\begin{DoxyParams}{Parameters}
+{\em e\+Param} & what parameter \\
+\hline
+{\em f\+Value} & value of the parameter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error\+\_\+t 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/inc/\mbox{\hyperlink{_audio_effect_reverb_8h}{Audio\+Effect\+Reverb.\+h}}\item 
+src/\+Audio\+Effect/\mbox{\hyperlink{_audio_effect_reverb_8cpp}{Audio\+Effect\+Reverb.\+cpp}}\end{DoxyCompactItemize}

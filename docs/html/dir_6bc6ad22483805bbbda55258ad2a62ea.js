@@ -21,6 +21,9 @@ var dir_6bc6ad22483805bbbda55258ad2a62ea =
     [ "AudioEffectPan.h", "_audio_effect_pan_8h.html", [
       [ "CAudioEffectPan", "class_c_audio_effect_pan.html", "class_c_audio_effect_pan" ]
     ] ],
+    [ "AudioEffectReverb.h", "_audio_effect_reverb_8h.html", [
+      [ "CAudioEffectReverb", "class_c_audio_effect_reverb.html", "class_c_audio_effect_reverb" ]
+    ] ],
     [ "AudioFileIf.h", "_audio_file_if_8h.html", [
       [ "CAudioFileIf", "class_c_audio_file_if.html", "class_c_audio_file_if" ],
       [ "FileSpec_t", "struct_c_audio_file_if_1_1_file_spec__t.html", "struct_c_audio_file_if_1_1_file_spec__t" ]

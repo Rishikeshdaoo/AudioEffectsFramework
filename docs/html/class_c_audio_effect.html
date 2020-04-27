@@ -100,13 +100,14 @@ Inheritance diagram for CAudioEffect:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_c_audio_effect__inherit__graph.png" border="0" usemap="#_c_audio_effect_inherit__map" alt="Inheritance graph"/></div>
 <map name="_c_audio_effect_inherit__map" id="_c_audio_effect_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,129,104,155"/>
-<area shape="rect" href="class_c_audio_effect_biquad.html" title=" " alt="" coords="196,5,337,31"/>
+<area shape="rect" title="audio effect base class" alt="" coords="5,153,104,179"/>
+<area shape="rect" href="class_c_audio_effect_biquad.html" title="audio effect class for biquad filter" alt="" coords="196,5,337,31"/>
 <area shape="rect" href="class_c_audio_effect_compressor_expander.html" title="audio effect class for compression and expander" alt="" coords="152,55,381,80"/>
-<area shape="rect" href="class_c_audio_effect_delay.html" title=" " alt="" coords="200,104,333,129"/>
+<area shape="rect" href="class_c_audio_effect_delay.html" title="audio effect class for delay related effects" alt="" coords="200,104,333,129"/>
 <area shape="rect" href="class_c_audio_effect_distortion.html" title="audio effect class for distortion" alt="" coords="189,153,344,179"/>
 <area shape="rect" href="class_c_audio_effect_gain.html" title="audio effect class for gain" alt="" coords="203,203,330,228"/>
 <area shape="rect" href="class_c_audio_effect_pan.html" title="audio effect class for pan" alt="" coords="205,252,328,277"/>
+<area shape="rect" href="class_c_audio_effect_reverb.html" title="audio effect class for reverb" alt="" coords="196,301,338,327"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -175,21 +176,36 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>list of parameters used in audio effects </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a3ab96031f3a38c3d6b2e78f10b1e659ea560e1b20c61513df8c5e2409609d61c3"></a>kParamGain&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a3ab96031f3a38c3d6b2e78f10b1e659eab3954dad8e2cb3c8edcf9aef516a03f8"></a>kParamPan&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a3ab96031f3a38c3d6b2e78f10b1e659eab721847e4b20bf69f9f05d516e02df2c"></a>kParamDelayInSecs&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a3ab96031f3a38c3d6b2e78f10b1e659eaabaa74757b5c6c22f65a60b098781370"></a>kParamFeedback&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a3ab96031f3a38c3d6b2e78f10b1e659eada631f5d036dec3dda2386b6f00f0f8f"></a>kParamModRateInHz&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a3ab96031f3a38c3d6b2e78f10b1e659ea05e953e3f70678b944785d62ca5473bd"></a>kParamModWidthInSecs&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a3ab96031f3a38c3d6b2e78f10b1e659eacda9a4960fb11d9f3b4f90a4b072ef15"></a>kParamTremoloAmount&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a3ab96031f3a38c3d6b2e78f10b1e659ea9318cd6b7a59a95c3ca445d021e38fd6"></a>kParamCenterFrequency&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a3ab96031f3a38c3d6b2e78f10b1e659ea3938e87ca92657368d510f672c13226d"></a>kParamQ&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a3ab96031f3a38c3d6b2e78f10b1e659ea1aa9db030d81fe7035af3e99e91fb207"></a>kParamThreshold&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a3ab96031f3a38c3d6b2e78f10b1e659eaf013e0c5d5c6dc572a1323150378ba45"></a>kParamSlope&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a3ab96031f3a38c3d6b2e78f10b1e659ea57623dd94f3676447daa02b305f8b8ab"></a>kParamDryWetMix&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a3ab96031f3a38c3d6b2e78f10b1e659eabe24aef363365ff79a05791ed67cfdc3"></a>kParamNumFilters&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a3ab96031f3a38c3d6b2e78f10b1e659ea9ed1f4300967713df3f119fdff185b9c"></a>kParamFilterGains&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a3ab96031f3a38c3d6b2e78f10b1e659eab54727d9c8d5f5eeb3065b5c9566b7e6"></a>kParamFilterDelays&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a3ab96031f3a38c3d6b2e78f10b1e659ea560e1b20c61513df8c5e2409609d61c3"></a>kParamGain&#160;</td><td class="fielddoc"><p>Parameter for gain of output audio. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a3ab96031f3a38c3d6b2e78f10b1e659eab3954dad8e2cb3c8edcf9aef516a03f8"></a>kParamPan&#160;</td><td class="fielddoc"><p>Parameter for pan value of output audio. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a3ab96031f3a38c3d6b2e78f10b1e659eab721847e4b20bf69f9f05d516e02df2c"></a>kParamDelayInSecs&#160;</td><td class="fielddoc"><p>Parameter for delay used in delay-based effects. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a3ab96031f3a38c3d6b2e78f10b1e659eaabaa74757b5c6c22f65a60b098781370"></a>kParamFeedback&#160;</td><td class="fielddoc"><p>Parameter for feedback of output audio. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a3ab96031f3a38c3d6b2e78f10b1e659eada631f5d036dec3dda2386b6f00f0f8f"></a>kParamModRateInHz&#160;</td><td class="fielddoc"><p>Parameter for Modulation Frequency used in modulated effects. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a3ab96031f3a38c3d6b2e78f10b1e659ea05e953e3f70678b944785d62ca5473bd"></a>kParamModWidthInSecs&#160;</td><td class="fielddoc"><p>Parameter Modulation Amplitude used in modulated effects. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a3ab96031f3a38c3d6b2e78f10b1e659eacda9a4960fb11d9f3b4f90a4b072ef15"></a>kParamTremoloAmount&#160;</td><td class="fielddoc"><p>Parameter for amount of Tremolo. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a3ab96031f3a38c3d6b2e78f10b1e659ea9318cd6b7a59a95c3ca445d021e38fd6"></a>kParamCenterFrequency&#160;</td><td class="fielddoc"><p>Parameter for Center Frequency of a filter. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a3ab96031f3a38c3d6b2e78f10b1e659ea3938e87ca92657368d510f672c13226d"></a>kParamQ&#160;</td><td class="fielddoc"><p>Parameter for Q value of a filter. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a3ab96031f3a38c3d6b2e78f10b1e659ea1aa9db030d81fe7035af3e99e91fb207"></a>kParamThreshold&#160;</td><td class="fielddoc"><p>Parameter for threshold of a Compressor/Expander. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a3ab96031f3a38c3d6b2e78f10b1e659eaf013e0c5d5c6dc572a1323150378ba45"></a>kParamSlope&#160;</td><td class="fielddoc"><p>Parameter for slope of a Compressor/Expander. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a3ab96031f3a38c3d6b2e78f10b1e659ea57623dd94f3676447daa02b305f8b8ab"></a>kParamDryWetMix&#160;</td><td class="fielddoc"><p>Parameter for amount of dry/wet mix in output audio. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a3ab96031f3a38c3d6b2e78f10b1e659eabe24aef363365ff79a05791ed67cfdc3"></a>kParamNumFilters&#160;</td><td class="fielddoc"><p>Parameter for number of filters. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a3ab96031f3a38c3d6b2e78f10b1e659ea9ed1f4300967713df3f119fdff185b9c"></a>kParamFilterGains&#160;</td><td class="fielddoc"><p>Parameter for number of gains. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a3ab96031f3a38c3d6b2e78f10b1e659eab54727d9c8d5f5eeb3065b5c9566b7e6"></a>kParamFilterDelays&#160;</td><td class="fielddoc"><p>Parameter for number of delay lines. </p>
+</td></tr>
 </table>
 
 </div>

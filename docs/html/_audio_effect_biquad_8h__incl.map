@@ -1,8 +1,11 @@
 <map id="src/inc/AudioEffectBiquad.h" name="src/inc/AudioEffectBiquad.h">
-<area shape="rect" id="node1" title=" " alt="" coords="37,5,221,31"/>
-<area shape="rect" id="node2" href="$_audio_effect_8h.html" title=" " alt="" coords="79,79,179,104"/>
+<area shape="rect" id="node1" title=" " alt="" coords="176,5,360,31"/>
+<area shape="rect" id="node2" href="$_audio_effect_8h.html" title=" " alt="" coords="157,79,258,104"/>
+<area shape="rect" id="node6" href="$_ring_buffer_8h.html" title=" " alt="" coords="326,79,420,104"/>
 <area shape="rect" id="node3" title=" " alt="" coords="5,152,66,177"/>
-<area shape="rect" id="node6" title=" " alt="" coords="203,79,276,104"/>
 <area shape="rect" id="node4" title=" " alt="" coords="90,152,173,177"/>
 <area shape="rect" id="node5" title=" " alt="" coords="197,152,285,177"/>
+<area shape="rect" id="node7" title=" " alt="" coords="309,152,373,177"/>
+<area shape="rect" id="node8" title=" " alt="" coords="398,152,474,177"/>
+<area shape="rect" id="node9" title=" " alt="" coords="497,152,555,177"/>
 </map>

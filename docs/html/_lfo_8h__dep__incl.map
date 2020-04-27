@@ -1,6 +1,7 @@
 <map id="src/inc/Lfo.h" name="src/inc/Lfo.h">
-<area shape="rect" id="node1" title=" " alt="" coords="113,5,206,31"/>
-<area shape="rect" id="node2" href="$_audio_effect_delay_8cpp.html" title=" " alt="" coords="5,152,188,191"/>
-<area shape="rect" id="node3" href="$_audio_effect_delay_8h.html" title=" " alt="" coords="134,79,310,104"/>
-<area shape="rect" id="node4" href="$_audio_fx_framework_exec_8cpp.html" title=" " alt="" coords="212,152,408,191"/>
+<area shape="rect" id="node1" title=" " alt="" coords="119,5,212,31"/>
+<area shape="rect" id="node2" href="$_audio_effect_delay_8cpp.html" title=" " alt="" coords="5,165,188,204"/>
+<area shape="rect" id="node3" href="$_audio_effect_reverb_8cpp.html" title=" " alt="" coords="75,79,257,117"/>
+<area shape="rect" id="node4" href="$_audio_effect_delay_8h.html" title=" " alt="" coords="281,85,456,111"/>
+<area shape="rect" id="node5" href="$_audio_fx_framework_exec_8cpp.html" title=" " alt="" coords="271,165,466,204"/>
 </map>

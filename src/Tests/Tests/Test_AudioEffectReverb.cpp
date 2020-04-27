@@ -126,7 +126,7 @@ SUITE(Reverb)
         for (int c = 0; c < m_iNumChannels; c++)
             CHECK_ARRAY_CLOSE(m_ppfInputData[c], m_ppfOutputData[c], m_iDataLength, 1e-3);
 
-//        m_phReverb->reset();
+        m_phReverb->reset();
 
     }
     

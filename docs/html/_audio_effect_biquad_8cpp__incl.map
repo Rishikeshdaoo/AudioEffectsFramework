@@ -1,10 +1,13 @@
 <map id="src/AudioEffect/AudioEffectBiquad.cpp" name="src/AudioEffect/AudioEffectBiquad.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="100,5,283,44"/>
-<area shape="rect" id="node2" href="$_audio_effect_biquad_8h.html" title=" " alt="" coords="58,92,200,117"/>
-<area shape="rect" id="node8" title=" " alt="" coords="225,92,287,117"/>
-<area shape="rect" id="node3" href="$_audio_effect_8h.html" title=" " alt="" coords="79,165,179,191"/>
+<area shape="rect" id="node1" title=" " alt="" coords="239,5,422,44"/>
+<area shape="rect" id="node2" href="$_audio_effect_biquad_8h.html" title=" " alt="" coords="197,92,339,117"/>
+<area shape="rect" id="node11" title=" " alt="" coords="363,92,425,117"/>
+<area shape="rect" id="node3" href="$_audio_effect_8h.html" title=" " alt="" coords="157,165,258,191"/>
+<area shape="rect" id="node7" href="$_ring_buffer_8h.html" title=" " alt="" coords="326,165,420,191"/>
 <area shape="rect" id="node4" title=" " alt="" coords="5,239,66,264"/>
-<area shape="rect" id="node7" title=" " alt="" coords="203,165,276,191"/>
 <area shape="rect" id="node5" title=" " alt="" coords="90,239,173,264"/>
 <area shape="rect" id="node6" title=" " alt="" coords="197,239,285,264"/>
+<area shape="rect" id="node8" title=" " alt="" coords="309,239,373,264"/>
+<area shape="rect" id="node9" title=" " alt="" coords="398,239,474,264"/>
+<area shape="rect" id="node10" title=" " alt="" coords="497,239,555,264"/>
 </map>
