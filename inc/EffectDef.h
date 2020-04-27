@@ -8,15 +8,15 @@
 
 #endif //AUDIOFXFRAMEWORK_EFFECTTYPE_H
 
-
+/*! list of audio effects */
 enum Effect_t
 {
-    kNone,
-    kGain,
-    kPan,
-    kDistortion,
-    kCompressorExpander,
-    kDelay,
-    kReverb,
-    kBiquad,
+    kNone,  //!< none
+    kGain,  //!< gain
+    kPan,  //!< mono to stereo panning, steteo level adjustment
+    kDistortion,  //!< distortion effect
+    kCompressorExpander,  //!< compressor, expander
+    kDelay,  //!< basic delay, flanger, chorus, vibrato, tremolo
+    kReverb,  //!< schroeder reverb
+    kBiquad,  //!< biquad filters
 };

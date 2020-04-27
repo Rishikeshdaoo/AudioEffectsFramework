@@ -16,7 +16,7 @@ function [y,b,a]=schroeder(x,n,g,d,k)
 % Chapter 7: Digital Audio Effects by Prof David Marshall and Dr Kirill Sidorov, 
 % Cardiff School of Computer Science.
 
-addpath('./Schroeder/');
+% addpath('./Schroeder/');
 
 [y,b,a] = allpass(x,g,d(1));
 % send the output of each allpass filter to the input of the next allpass filter

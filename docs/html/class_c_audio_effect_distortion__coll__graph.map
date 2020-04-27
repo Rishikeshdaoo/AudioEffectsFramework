@@ -1,4 +1,4 @@
 <map id="CAudioEffectDistortion" name="CAudioEffectDistortion">
 <area shape="rect" id="node1" title="audio effect class for distortion" alt="" coords="5,79,161,104"/>
-<area shape="rect" id="node2" href="$class_c_audio_effect.html" title=" " alt="" coords="33,5,132,31"/>
+<area shape="rect" id="node2" href="$class_c_audio_effect.html" title="audio effect base class" alt="" coords="33,5,132,31"/>
 </map>

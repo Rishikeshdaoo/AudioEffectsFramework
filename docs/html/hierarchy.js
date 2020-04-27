@@ -6,7 +6,8 @@ var hierarchy =
       [ "CAudioEffectDelay", "class_c_audio_effect_delay.html", null ],
       [ "CAudioEffectDistortion", "class_c_audio_effect_distortion.html", null ],
       [ "CAudioEffectGain", "class_c_audio_effect_gain.html", null ],
-      [ "CAudioEffectPan", "class_c_audio_effect_pan.html", null ]
+      [ "CAudioEffectPan", "class_c_audio_effect_pan.html", null ],
+      [ "CAudioEffectReverb", "class_c_audio_effect_reverb.html", null ]
     ] ],
     [ "CAudioFileIf", "class_c_audio_file_if.html", [
       [ "CAudioFileRaw", "class_c_audio_file_raw.html", null ],

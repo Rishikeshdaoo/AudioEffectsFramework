@@ -7,6 +7,7 @@ var annotated_dup =
     [ "CAudioEffectDistortion", "class_c_audio_effect_distortion.html", "class_c_audio_effect_distortion" ],
     [ "CAudioEffectGain", "class_c_audio_effect_gain.html", "class_c_audio_effect_gain" ],
     [ "CAudioEffectPan", "class_c_audio_effect_pan.html", "class_c_audio_effect_pan" ],
+    [ "CAudioEffectReverb", "class_c_audio_effect_reverb.html", "class_c_audio_effect_reverb" ],
     [ "CAudioFileIf", "class_c_audio_file_if.html", "class_c_audio_file_if" ],
     [ "CAudioFileRaw", "class_c_audio_file_raw.html", "class_c_audio_file_raw" ],
     [ "CAudioFileSndLib", "class_c_audio_file_snd_lib.html", "class_c_audio_file_snd_lib" ],

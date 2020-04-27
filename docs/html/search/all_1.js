@@ -17,10 +17,12 @@ var searchData=
   ['audioeffectgain_2eh_16',['AudioEffectGain.h',['../_audio_effect_gain_8h.html',1,'']]],
   ['audioeffectpan_2ecpp_17',['AudioEffectPan.cpp',['../_audio_effect_pan_8cpp.html',1,'']]],
   ['audioeffectpan_2eh_18',['AudioEffectPan.h',['../_audio_effect_pan_8h.html',1,'']]],
-  ['audiofile_2ecpp_19',['AudioFile.cpp',['../_audio_file_8cpp.html',1,'']]],
-  ['audiofile_2eh_20',['AudioFile.h',['../_audio_file_8h.html',1,'']]],
-  ['audiofileif_2ecpp_21',['AudioFileIf.cpp',['../_audio_file_if_8cpp.html',1,'']]],
-  ['audiofileif_2eh_22',['AudioFileIf.h',['../_audio_file_if_8h.html',1,'']]],
-  ['audiofxframeworkexec_2ecpp_23',['AudioFxFrameworkExec.cpp',['../_audio_fx_framework_exec_8cpp.html',1,'']]],
-  ['audio_20effects_20framework_24',['Audio Effects Framework',['../md__r_e_a_d_m_e.html',1,'']]]
+  ['audioeffectreverb_2ecpp_19',['AudioEffectReverb.cpp',['../_audio_effect_reverb_8cpp.html',1,'']]],
+  ['audioeffectreverb_2eh_20',['AudioEffectReverb.h',['../_audio_effect_reverb_8h.html',1,'']]],
+  ['audiofile_2ecpp_21',['AudioFile.cpp',['../_audio_file_8cpp.html',1,'']]],
+  ['audiofile_2eh_22',['AudioFile.h',['../_audio_file_8h.html',1,'']]],
+  ['audiofileif_2ecpp_23',['AudioFileIf.cpp',['../_audio_file_if_8cpp.html',1,'']]],
+  ['audiofileif_2eh_24',['AudioFileIf.h',['../_audio_file_if_8h.html',1,'']]],
+  ['audiofxframeworkexec_2ecpp_25',['AudioFxFrameworkExec.cpp',['../_audio_fx_framework_exec_8cpp.html',1,'']]],
+  ['audio_20effects_20framework_26',['Audio Effects Framework',['../md__r_e_a_d_m_e.html',1,'']]]
 ];

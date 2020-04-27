@@ -1,0 +1,13 @@
+<map id="src/inc/AudioEffectReverb.h" name="src/inc/AudioEffectReverb.h">
+<area shape="rect" id="node1" title=" " alt="" coords="143,5,328,31"/>
+<area shape="rect" id="node2" href="$_audio_effect_8h.html" title=" " alt="" coords="81,152,182,177"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,225,66,251"/>
+<area shape="rect" id="node6" href="$_audio_effect_biquad_8h.html" title=" " alt="" coords="165,79,307,104"/>
+<area shape="rect" id="node7" href="$_ring_buffer_8h.html" title=" " alt="" coords="296,152,391,177"/>
+<area shape="rect" id="node11" title=" " alt="" coords="381,79,453,104"/>
+<area shape="rect" id="node4" title=" " alt="" coords="90,225,173,251"/>
+<area shape="rect" id="node5" title=" " alt="" coords="197,225,285,251"/>
+<area shape="rect" id="node8" title=" " alt="" coords="309,225,373,251"/>
+<area shape="rect" id="node9" title=" " alt="" coords="398,225,474,251"/>
+<area shape="rect" id="node10" title=" " alt="" coords="497,225,555,251"/>
+</map>
