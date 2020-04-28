@@ -26,7 +26,7 @@ CAudioEffectDelay::CAudioEffectDelay()
     
 };
 
-CAudioEffectDelay::CAudioEffectDelay(float fSampleRateInHz, int iNumChannels, float fMaxDelayInSec, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0)
+CAudioEffectDelay::CAudioEffectDelay(float fSampleRateInHz, int iNumChannels, float fMaxDelayInSec, DelayType_t subType, EffectParam_t params[] , float values[], int iNumParams)
 {
     m_eEffectType = Effect_t::kDelay;
     m_fDryWetMix = 0.f;
@@ -39,7 +39,7 @@ CAudioEffectDelay::CAudioEffectDelay(float fSampleRateInHz, int iNumChannels, fl
     m_fMaxDelayInSamples = 0.5;
     m_fTremoloAmount = 0.5;
     m_fModWidthInSamples = 0.f;
-    init(fSampleRateInHz, iNumChannels, fMaxDelayInSec, params, values, iNumParams);
+    init(fSampleRateInHz, iNumChannels, fMaxDelayInSec, subType, params, values, iNumParams);
 };
 
 
@@ -48,10 +48,11 @@ CAudioEffectDelay::~CAudioEffectDelay()
     
 };
 
-Error_t CAudioEffectDelay::init(float fSampleRateInHz, int iNumChannels, float fMaxDelayInSec, EffectParam_t params[], float values[], int iNumParams = 0)
+Error_t CAudioEffectDelay::init(float fSampleRateInHz, int iNumChannels, float fMaxDelayInSec, DelayType_t subType, EffectParam_t params[], float values[], int iNumParams)
 {
     m_fSampleRateInHz = fSampleRateInHz;
     m_iNumChannels = iNumChannels;
+    m_eDelayType = subType;
     
     m_fMaxDelayInSamples = fMaxDelayInSec * m_fSampleRateInHz;
     
@@ -64,11 +65,78 @@ Error_t CAudioEffectDelay::init(float fSampleRateInHz, int iNumChannels, float f
         m_ppCRingBuffer[c]= new CRingBuffer<float>(CUtil::float2int<int>(m_fMaxDelayInSamples+1));
 //        m_ppCRingBuffer[c]->setWriteIdx(CUtil::float2int<int>(m_fMaxDelayInSamples+1));
     }
-    
+
+    if(params == NULL || values == NULL) {
+        iNumParams = 5;
+        params = (EffectParam_t*) new int(iNumParams);
+        values = new float[iNumParams];
+
+        if(subType == kBasicDelay) {
+            params[0] = CAudioEffect::kParamDelayInSecs;
+            values[0] = 0.4f;
+            params[1] = CAudioEffect::kParamModRateInHz;
+            values[1] = 1.5f;
+            params[2] = CAudioEffect::kParamModWidthInSecs;
+            values[2] = 0.01f;
+            params[3] = CAudioEffect::kParamDryWetMix;
+            values[3] = 0.5f;
+            params[4] = CAudioEffect::kParamFeedback;
+            values[4] = 0.f;
+        }
+        else if(subType == kChorus){
+            params[0] = CAudioEffect::kParamDelayInSecs;
+            values[0] = 0.04f;
+            params[1] = CAudioEffect::kParamModRateInHz;
+            values[1] = 0.5f;
+            params[2] = CAudioEffect::kParamModWidthInSecs;
+            values[2] = 0.002f;
+            params[3] = CAudioEffect::kParamDryWetMix;
+            values[3] = 0.7f;
+            params[4] = CAudioEffect::kParamFeedback;
+            values[4] = 0.5f;
+        }
+        else if(subType == kFlanger){
+            params[0] = CAudioEffect::kParamDelayInSecs;
+            values[0] = 0.002f;
+            params[1] = CAudioEffect::kParamModRateInHz;
+            values[1] = 0.5f;
+            params[2] = CAudioEffect::kParamModWidthInSecs;
+            values[2] = 0.002f;
+            params[3] = CAudioEffect::kParamDryWetMix;
+            values[3] = 0.7f;
+            params[4] = CAudioEffect::kParamFeedback;
+            values[4] = 0.5f;
+        }
+        else if(subType == kTremolo){
+            params[0] = CAudioEffect::kParamDelayInSecs;
+            values[0] = 0.005f;
+            params[1] = CAudioEffect::kParamModRateInHz;
+            values[1] = 10.f;
+            params[2] = CAudioEffect::kParamModWidthInSecs;
+            values[2] = 0.001f;
+            params[3] = CAudioEffect::kParamTremoloAmount;
+            values[3] = 0.5f;
+            params[4] = CAudioEffect::kParamFeedback;
+            values[4] = 0.f;
+        }
+        else if(subType == kVibrato){
+            params[0] = CAudioEffect::kParamDelayInSecs;
+            values[0] = 0.005f;
+            params[1] = CAudioEffect::kParamModRateInHz;
+            values[1] = 5.f;
+            params[2] = CAudioEffect::kParamModWidthInSecs;
+            values[2] = 0.001f;
+            params[3] = CAudioEffect::kParamDryWetMix;
+            values[3] = 0.5f;
+            params[4] = CAudioEffect::kParamFeedback;
+            values[4] = 0.f;
+        }
+    }
+
     for (int i = 0; i < iNumParams; i++)
     {
         switch (params[i]) {
-            case CAudioEffect::kParamDryWetMix:
+            case kParamDryWetMix:
                 m_fDryWetMix = values[i];
                 break;
             case kParamDelayInSecs:
@@ -233,7 +301,11 @@ Error_t CAudioEffectDelay::process(float **ppfInputBuffer, float **ppfOutputBuff
 //            m_ppCRingBuffer[c]->putPostInc(ppfInputBuffer[c][i]);
             
             
-            ppfOutputBuffer[c][i] = (1 - m_fDryWetMix) * (((m_eDelayType >> 4) & 1) * ppfInputBuffer[c][i] + (((m_eDelayType >> 3) & 1) * (1 + m_fTremoloAmount * fOffset/m_fModWidthInSamples)) * ppfInputBuffer[c][i]) + m_fDryWetMix * m_ppCRingBuffer[c]->get((((m_eDelayType >> 2) & 1) * m_fDelayInSamples) + (((m_eDelayType >> 1) & 1) * fOffset) - (((m_eDelayType >> 0) & 1) * abs(fOffset)));
+            ppfOutputBuffer[c][i] = (1 - m_fDryWetMix) * (((m_eDelayType >> 4) & 1) * ppfInputBuffer[c][i] +
+                                    (((m_eDelayType >> 3) & 1) * (1 + m_fTremoloAmount * fOffset/m_fModWidthInSamples)) * ppfInputBuffer[c][i]) +
+                                    m_fDryWetMix * m_ppCRingBuffer[c]->get((((m_eDelayType >> 2) & 1) * m_fDelayInSamples) +
+                                    (((m_eDelayType >> 1) & 1) * fOffset) -
+                                    (((m_eDelayType >> 0) & 1) * abs(fOffset)));
             
             m_ppCRingBuffer[c]->getPostInc();
             

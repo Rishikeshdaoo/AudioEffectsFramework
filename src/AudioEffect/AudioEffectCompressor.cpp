@@ -23,19 +23,19 @@ CAudioEffectCompressorExpander::CAudioEffectCompressorExpander():   m_fAveraging
     m_bIsInitialized = false;
 }
 
-CAudioEffectCompressorExpander::CAudioEffectCompressorExpander(Effect_t effectType, EffectSubtype_t subType, float fSampleRateInHz, int iNumChannels, int iLookaheadBufferSize, EffectParam_t params[], float values[], int iNumParams):
+CAudioEffectCompressorExpander::CAudioEffectCompressorExpander(Effect_t effectType, float fSampleRateInHz, int iNumChannels, EffectSubtype_t subType, int iLookaheadBufferSize, EffectParam_t params[], float values[], int iNumParams):
         m_fAveragingTime(0.01),
         m_fAttackTime(0.03),
         m_fReleaseTime(0.003)
 {
-    init(effectType, subType, fSampleRateInHz, iNumChannels, iLookaheadBufferSize, params, values, iNumParams);
+    init(effectType, fSampleRateInHz, iNumChannels, subType, iLookaheadBufferSize, params, values, iNumParams);
 }
 
 CAudioEffectCompressorExpander::~CAudioEffectCompressorExpander(){
     this->reset();
 }
 
-Error_t CAudioEffectCompressorExpander::init(Effect_t effectType, EffectSubtype_t subType, float fSampleRateInHz, int iNumChannels, int iLookaheadBufferSize, EffectParam_t params[], float values[], int iNumParams)
+Error_t CAudioEffectCompressorExpander::init(Effect_t effectType, float fSampleRateInHz, int iNumChannels, EffectSubtype_t subType, int iLookaheadBufferSize, EffectParam_t params[], float values[], int iNumParams)
 {
     m_eEffectType = effectType;
     m_eCompressorType = subType;
