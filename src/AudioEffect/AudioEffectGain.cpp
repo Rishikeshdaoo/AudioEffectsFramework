@@ -65,6 +65,10 @@ Error_t CAudioEffectGain::init(float fSampleRateInHz, int iNumChannels, EffectPa
 
 Error_t CAudioEffectGain::reset()
 {
+    
+    if (!m_bIsInitialized)
+        return kNotInitializedError;
+    
     m_iNumChannels = 0;
     m_fSampleRateInHz = 0;
     m_bIsInitialized = false;

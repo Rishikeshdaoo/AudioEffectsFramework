@@ -23,7 +23,7 @@ CAudioEffectBiquad::CAudioEffectBiquad()
     m_fMaxDelayInSamples = 0.f;
 };
 
-CAudioEffectBiquad::CAudioEffectBiquad(float fSampleRateInHz, int iNumChannels, EffectParam_t params[], float values[], int iNumParams, float fMaxDelayInSec)
+CAudioEffectBiquad::CAudioEffectBiquad(float fSampleRateInHz, int iNumChannels, FilterType_t filterType, EffectParam_t params[], float values[], int iNumParams, float fMaxDelayInSec)
 {
     m_eEffectType = kBiquad;
     m_fGain = 0.f;
@@ -31,15 +31,13 @@ CAudioEffectBiquad::CAudioEffectBiquad(float fSampleRateInHz, int iNumChannels, 
     m_fSampleRateInHz = 0;
     m_bIsInitialized = false;
     
-    m_eFilterType = kLowpass;
-    
     m_fCenterFrequencyInHz = 1000.f;
     m_fQ = 1.f;
     
     m_ppCRingBuffer = 0;
     m_fMaxDelayInSamples = 0.f;
     
-    init(fSampleRateInHz, iNumChannels, params, values, iNumParams, fMaxDelayInSec);
+    init(fSampleRateInHz, iNumChannels, filterType, params, values, iNumParams, fMaxDelayInSec);
 }
 
 
@@ -48,12 +46,14 @@ CAudioEffectBiquad::~CAudioEffectBiquad()
     this->reset();
 };
 
-Error_t CAudioEffectBiquad::init(float fSampleRateInHz, int iNumChannels, EffectParam_t params[], float values[], int iNumParams, float fMaxDelayInSec)
+Error_t CAudioEffectBiquad::init(float fSampleRateInHz, int iNumChannels, FilterType_t filterType, EffectParam_t params[], float values[], int iNumParams, float fMaxDelayInSec)
 {
 
     m_fSampleRateInHz = fSampleRateInHz;
     m_iNumChannels = iNumChannels;
     m_bIsInitialized = true;
+    
+    m_eFilterType = filterType;
     
     m_fMaxDelayInSamples = fMaxDelayInSec * m_fSampleRateInHz;
     
@@ -104,6 +104,8 @@ Error_t CAudioEffectBiquad::init(float fSampleRateInHz, int iNumChannels, Effect
 
 Error_t CAudioEffectBiquad::reset()
 {
+    if (!m_bIsInitialized)
+        return kNotInitializedError;
     
     for (int c= 0; c < m_iNumChannels; c++)
         delete m_ppCRingBuffer[c];

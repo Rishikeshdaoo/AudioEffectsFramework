@@ -108,6 +108,9 @@ Error_t CAudioEffectCompressorExpander::init(Effect_t effectType, float fSampleR
 
 Error_t CAudioEffectCompressorExpander::reset(){
 
+    if (!m_bIsInitialized)
+        return kNotInitializedError;
+    
     for (int c= 0; c < m_iNumChannels; c++)
         delete m_ppfDelayBuffer[c];
     delete [] m_ppfDelayBuffer;

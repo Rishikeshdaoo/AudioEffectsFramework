@@ -174,6 +174,10 @@ Error_t CAudioEffectDelay::init(float fSampleRateInHz, int iNumChannels, float f
 
 Error_t CAudioEffectDelay::reset()
 {
+    
+    if (!m_bIsInitialized)
+        return kNotInitializedError;
+    
     for (int c= 0; c < m_iNumChannels; c++)
         delete m_ppCRingBuffer[c];
     delete [] m_ppCRingBuffer;
