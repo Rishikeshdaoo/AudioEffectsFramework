@@ -137,7 +137,7 @@ SUITE(Compressor)
         value[0] = std::numeric_limits<float>::min();
         param[1] = CAudioEffect::kParamSlope;
         value[1] = 0.f;
-        
+
         m_phCompressor->init(kCompressorExpander,m_fSampleRate,m_iNumChannels,CAudioEffectCompressorExpander::kCompressor,
                              m_iLookaheadBufferSize,param,value,iNumParams);
 
@@ -179,7 +179,7 @@ SUITE(Compressor)
 
     }
 
-    
+
     // Expander: low threshold -> same output
     TEST_FIXTURE(CompressorData, LowThreshold)
     {
@@ -191,7 +191,7 @@ SUITE(Compressor)
         param[1] = CAudioEffect::kParamSlope;
         value[1] = -0.5f;
 
-        m_phCompressor->init(kCompressorExpander,m_fSampleRate,m_iNumChannels,CAudioEffectCompressorExpander::kCompressor,
+        m_phCompressor->init(kCompressorExpander,m_fSampleRate,m_iNumChannels,CAudioEffectCompressorExpander::kExpander,
         m_iLookaheadBufferSize,param,value,iNumParams);
 
         for (int c = 0; c < m_iNumChannels; c++)
@@ -205,7 +205,7 @@ SUITE(Compressor)
         m_phCompressor->reset();
 
     }
-    
+
 
     // varying block length
     TEST_FIXTURE(CompressorData, VaryingBlocksize)
@@ -217,7 +217,7 @@ SUITE(Compressor)
         value[0] = std::numeric_limits<float>::max();
         param[1] = CAudioEffect::kParamSlope;
         value[1] = 0.5f;
-        
+
         m_phCompressor->init(kCompressorExpander,m_fSampleRate,m_iNumChannels,CAudioEffectCompressorExpander::kCompressor,
         m_iLookaheadBufferSize,param,value,iNumParams);
 
