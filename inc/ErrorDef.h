@@ -3,22 +3,22 @@
 
 enum Error_t
 {
-    kNoError,
+    kNoError,    //!< No error
 
-    kFileOpenError,
-    kFileAccessError,
+    kFileOpenError,    //!< Error in opening file
+    kFileAccessError,   //!< Error accessing file
 
-    kFunctionInvalidArgsError,
+    kFunctionInvalidArgsError,  //!< Invalid arguments passed to function
 
-    kNotInitializedError,
-    kFunctionIllegalCallError,
-    kInvalidString,
+    kNotInitializedError,   //!< Effect instance not initialized properly
+    kFunctionIllegalCallError,  //!< Illegal call to function
+    kInvalidString, //!< Invalid string passed
 
-    kMemError,
+    kMemError,  //!< Problem with memory allocation
 
-    kUnknownError,
+    kUnknownError,  //!< Unknown error occured
 
-    kNumErrors
+    kNumErrors //!< Number error
 };
 #endif // #if !defined(__ErrorDef_hdr__)
 

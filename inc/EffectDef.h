@@ -11,12 +11,12 @@
 /*! list of audio effects */
 enum Effect_t
 {
-    kNone,  //!< none
-    kGain,  //!< gain
-    kPan,  //!< mono to stereo panning, steteo level adjustment
-    kDistortion,  //!< distortion effect
-    kCompressorExpander,  //!< compressor, expander
-    kDelay,  //!< basic delay, flanger, chorus, vibrato, tremolo
-    kReverb,  //!< schroeder reverb
-    kBiquad,  //!< biquad filters
+    kNone,  //!< No effect
+    kGain,  //!< Gain
+    kPan,  //!< Mono to Stereo panning, steteo level adjustment
+    kDistortion,  //!< Distortion effect
+    kCompressorExpander,  //!< Compressor, Expander
+    kDelay,  //!< Basic delay, Flanger, Chorus, Vibrato, Tremolo
+    kReverb,  //!< Schroeder Reverb
+    kBiquad,  //!< Biquad filters
 };
