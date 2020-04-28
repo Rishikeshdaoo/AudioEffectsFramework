@@ -59,6 +59,9 @@ Error_t CAudioEffectPan::init(float fSampleRateInHz, int iNumChannels, EffectPar
 
 Error_t CAudioEffectPan::reset()
 {
+    if (!m_bIsInitialized)
+        return kNotInitializedError;
+    
     m_iNumChannels = 0;
     m_fSampleRateInHz = 0;
     m_bIsInitialized = false;

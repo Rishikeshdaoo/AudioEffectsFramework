@@ -74,6 +74,9 @@ Error_t CAudioEffectDistortion::init(float fSampleRateInHz, int iNumChannels, Ef
 
 Error_t CAudioEffectDistortion::reset()
 {
+    if (!m_bIsInitialized)
+        return kNotInitializedError;
+    
     m_iNumChannels = 0;
     m_fSampleRateInHz = 0;
     m_bIsInitialized = false;

@@ -73,8 +73,7 @@ Error_t CAudioEffectReverb::init(float fSampleRateInHz, int iNumChannels, float 
         param[1] = CAudioEffect::kParamDelayInSecs;
         value[1] = m_afFilterDelaysInSec[i];
         
-        m_ppCAudioEffectBiquad[i] = new CAudioEffectBiquad(m_fSampleRateInHz, m_iNumChannels, param, value, 2);
-        m_ppCAudioEffectBiquad[i]->setFilterType(CAudioEffectBiquad::kAllpass);
+        m_ppCAudioEffectBiquad[i] = new CAudioEffectBiquad(m_fSampleRateInHz, m_iNumChannels, CAudioEffectBiquad::kAllpass, param, value, 2);
 
     }
 
@@ -85,6 +84,8 @@ Error_t CAudioEffectReverb::init(float fSampleRateInHz, int iNumChannels, float 
 
 Error_t CAudioEffectReverb::reset()
 {
+    if (!m_bIsInitialized)
+        return kNotInitializedError;
     
     for (int i = 0; i < m_iNumFilters; i++)
     {
@@ -118,8 +119,7 @@ Error_t CAudioEffectReverb::setParam(EffectParam_t eParam, float fValue)
                 param[0] = CAudioEffect::kParamGain;
                 value[0] = m_fFilterGain;
                 
-                m_ppCAudioEffectBiquad[i]->init(m_fSampleRateInHz, m_iNumChannels, param, value, 3, m_afFilterDelaysInSec[i]);
-                m_ppCAudioEffectBiquad[i]->setFilterType(CAudioEffectBiquad::kAllpass);
+                m_ppCAudioEffectBiquad[i]->init(m_fSampleRateInHz, m_iNumChannels, CAudioEffectBiquad::kAllpass, param, value, 3, m_afFilterDelaysInSec[i]);
             }
             break;
         default:
