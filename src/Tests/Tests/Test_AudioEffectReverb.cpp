@@ -20,10 +20,10 @@ SUITE(Reverb)
             m_phReverb(0),
             m_ppfInputData(0),
             m_ppfOutputData(0),
-            m_iDataLength(35131),
+            m_iDataLength(351),
             m_iBlockLength(171),
             m_iNumChannels(3),
-            m_fSampleRate(8000)
+            m_fSampleRate(80)
         {
             m_phReverb = new CAudioEffectReverb();
 
@@ -115,7 +115,6 @@ SUITE(Reverb)
         value[0] = 3;
         param[1] = CAudioEffect::kParamFilterGains;
         value[1] = 0.707;
-        
         float a_fFilterDelays[3] = {0.5f, 0.3f, 0.2f};
 
         m_phReverb->init(m_fSampleRate,m_iNumChannels,1.F,param,value,iNumParams);
@@ -141,14 +140,17 @@ SUITE(Reverb)
         value[0] = 3;
         param[1] = CAudioEffect::kParamFilterGains;
         value[1] = 0.707;
+        float a_fFilterDelays[3] = {0.5f, 0.3f, 0.2f};
         
         m_phReverb->init(m_fSampleRate,m_iNumChannels,1.F,param,value,iNumParams);
+        m_phReverb->setFilterDelays(a_fFilterDelays, 3);
 
         TestProcess();
-
+        
         m_phReverb->reset();
         m_phReverb->init(m_fSampleRate,m_iNumChannels,1.F,param,value,iNumParams);
-        
+       
+
         {
             int iNumFramesRemaining = m_iDataLength;
             while (iNumFramesRemaining > 0)
@@ -170,7 +172,7 @@ SUITE(Reverb)
             CHECK_ARRAY_CLOSE(m_ppfInputData[c], m_ppfOutputData[c], m_iDataLength, 1e-3);
 
     }
-    
+
 }
 
 #endif //WITH_TESTS
