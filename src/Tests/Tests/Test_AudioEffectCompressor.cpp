@@ -116,7 +116,8 @@ SUITE(Compressor)
         param[1] = CAudioEffect::kParamSlope;
         value[1] = 0.5f;
 
-        m_phCompressor->init(kCompressorExpander, CAudioEffectCompressorExpander::kCompressor, m_fSampleRate,m_iNumChannels,m_iLookaheadBufferSize,param,value,iNumParams);
+        m_phCompressor->init(kCompressorExpander,m_fSampleRate,m_iNumChannels,CAudioEffectCompressorExpander::kCompressor,
+        m_iLookaheadBufferSize,param,value,iNumParams);
 
         TestProcess();
 
@@ -136,8 +137,9 @@ SUITE(Compressor)
         value[0] = std::numeric_limits<float>::min();
         param[1] = CAudioEffect::kParamSlope;
         value[1] = 0.f;
-
-        m_phCompressor->init(kCompressorExpander, CAudioEffectCompressorExpander::kCompressor, m_fSampleRate,m_iNumChannels,m_iLookaheadBufferSize,param,value,iNumParams);
+        
+        m_phCompressor->init(kCompressorExpander,m_fSampleRate,m_iNumChannels,CAudioEffectCompressorExpander::kCompressor,
+                             m_iLookaheadBufferSize,param,value,iNumParams);
 
         for (int c = 0; c < m_iNumChannels; c++)
         CSynthesis::generateSine (m_ppfInputData[c], 440, m_fSampleRate, m_iDataLength, .8F, static_cast<float>(c*M_PI_2));
@@ -162,7 +164,8 @@ SUITE(Compressor)
         param[1] = CAudioEffect::kParamSlope;
         value[1] = 0.5f;
 
-        m_phCompressor->init(kCompressorExpander, CAudioEffectCompressorExpander::kCompressor, m_fSampleRate,m_iNumChannels,m_iLookaheadBufferSize,param,value,iNumParams);
+        m_phCompressor->init(kCompressorExpander,m_fSampleRate,m_iNumChannels,CAudioEffectCompressorExpander::kCompressor,
+        m_iLookaheadBufferSize,param,value,iNumParams);
 
         for (int c = 0; c < m_iNumChannels; c++)
         CSynthesis::generateSine (m_ppfInputData[c], 440, m_fSampleRate, m_iDataLength, .8F, static_cast<float>(c*M_PI_2));
@@ -188,7 +191,8 @@ SUITE(Compressor)
         param[1] = CAudioEffect::kParamSlope;
         value[1] = -0.5f;
 
-        m_phCompressor->init(kCompressorExpander, CAudioEffectCompressorExpander::kExpander, m_fSampleRate,m_iNumChannels,m_iLookaheadBufferSize,param,value,iNumParams);
+        m_phCompressor->init(kCompressorExpander,m_fSampleRate,m_iNumChannels,CAudioEffectCompressorExpander::kCompressor,
+        m_iLookaheadBufferSize,param,value,iNumParams);
 
         for (int c = 0; c < m_iNumChannels; c++)
         CSynthesis::generateSine (m_ppfInputData[c], 440, m_fSampleRate, m_iDataLength, .8F, static_cast<float>(c*M_PI_2));
@@ -214,12 +218,14 @@ SUITE(Compressor)
         param[1] = CAudioEffect::kParamSlope;
         value[1] = 0.5f;
         
-        m_phCompressor->init(kCompressorExpander, CAudioEffectCompressorExpander::kCompressor, m_fSampleRate,m_iNumChannels,m_iLookaheadBufferSize,param,value,iNumParams);
+        m_phCompressor->init(kCompressorExpander,m_fSampleRate,m_iNumChannels,CAudioEffectCompressorExpander::kCompressor,
+        m_iLookaheadBufferSize,param,value,iNumParams);
 
         TestProcess();
 
         m_phCompressor->reset();
-        m_phCompressor->init(kCompressorExpander, CAudioEffectCompressorExpander::kCompressor, m_fSampleRate,m_iNumChannels,m_iLookaheadBufferSize,param,value,iNumParams);
+        m_phCompressor->init(kCompressorExpander,m_fSampleRate,m_iNumChannels,CAudioEffectCompressorExpander::kCompressor,
+        m_iLookaheadBufferSize,param,value,iNumParams);
 
         {
             int iNumFramesRemaining = m_iDataLength;
