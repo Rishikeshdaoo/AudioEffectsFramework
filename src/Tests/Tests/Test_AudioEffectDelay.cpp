@@ -167,9 +167,75 @@ SUITE(Delay)
         m_phDelay->reset();
     }
 
+    // delay: zero gain -> same output
+    TEST_FIXTURE(DelayData, ZeroBasicDelay)
+    {
+        m_phDelay = new CAudioEffectDelay(m_fSampleRate, m_iNumChannels,1.F,CAudioEffectDelay::kBasicDelay);
 
-    // delay: check array FIR
-    TEST_FIXTURE(DelayData, CheckArrayFIR)
+        TestProcess();
+
+        for (int c = 0; c < m_iNumChannels; c++)
+            CHECK_ARRAY_CLOSE(m_ppfInputData[c], m_ppfOutputData[c], m_iDataLength, 1e-3);
+
+        m_phDelay->reset();
+    }
+    
+    // flanger: zero gain -> same output
+    TEST_FIXTURE(DelayData, ZeroFlanger)
+    {
+        m_phDelay = new CAudioEffectDelay(m_fSampleRate, m_iNumChannels,1.F,CAudioEffectDelay::kFlanger);
+
+        TestProcess();
+
+        for (int c = 0; c < m_iNumChannels; c++)
+            CHECK_ARRAY_CLOSE(m_ppfInputData[c], m_ppfOutputData[c], m_iDataLength, 1e-3);
+
+        m_phDelay->reset();
+    }
+    
+    // chorus: zero gain -> same output
+    TEST_FIXTURE(DelayData, ZeroChorus)
+    {
+        m_phDelay = new CAudioEffectDelay(m_fSampleRate, m_iNumChannels,1.F,CAudioEffectDelay::kChorus);
+
+        TestProcess();
+
+        for (int c = 0; c < m_iNumChannels; c++)
+            CHECK_ARRAY_CLOSE(m_ppfInputData[c], m_ppfOutputData[c], m_iDataLength, 1e-3);
+
+        m_phDelay->reset();
+    }
+    
+    // vibrato: zero gain -> same output
+    TEST_FIXTURE(DelayData, ZeroVibrato)
+    {
+        m_phDelay = new CAudioEffectDelay(m_fSampleRate, m_iNumChannels,1.F,CAudioEffectDelay::kVibrato);
+
+        TestProcess();
+
+        for (int c = 0; c < m_iNumChannels; c++)
+            CHECK_ARRAY_CLOSE(m_ppfInputData[c], m_ppfOutputData[c], m_iDataLength, 1e-3);
+
+        m_phDelay->reset();
+    }
+    
+    // tremolo: zero gain -> same output
+    TEST_FIXTURE(DelayData, ZeroTremolo)
+    {
+        m_phDelay = new CAudioEffectDelay(m_fSampleRate, m_iNumChannels,1.F,CAudioEffectDelay::kTremolo);
+
+        TestProcess();
+
+        for (int c = 0; c < m_iNumChannels; c++)
+            CHECK_ARRAY_CLOSE(m_ppfInputData[c], m_ppfOutputData[c], m_iDataLength, 1e-3);
+
+        m_phDelay->reset();
+    }
+    
+    
+
+    // delay: check delay length
+    TEST_FIXTURE(DelayData, CheckDelayLength)
     {
         int iNumParams = 5;
         CAudioEffect::EffectParam_t param[iNumParams];
@@ -213,8 +279,8 @@ SUITE(Delay)
 
     }
     
-    // delay: check array IIR
-    TEST_FIXTURE(DelayData, CheckArrayIIR)
+    // delay: feedback check
+    TEST_FIXTURE(DelayData, CheckFeedback)
     {
         int iNumParams = 5;
         CAudioEffect::EffectParam_t param[iNumParams];
@@ -262,7 +328,6 @@ SUITE(Delay)
         m_phDelay->reset();
 
     }
-
 
     
 

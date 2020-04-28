@@ -159,7 +159,7 @@ Error_t CAudioEffectDelay::init(float fSampleRateInHz, int iNumChannels, float f
                 m_pCLfo->setParam(CLfo::kLfoParamFrequency, values[i]);
                 break;
             case kParamModWidthInSecs :
-                if(m_eDelayType == kFlanger && kParamModWidthInSecs * m_fSampleRateInHz > m_fDelayInSamples)
+                if(m_eDelayType == kFlanger && values[i] * m_fSampleRateInHz > m_fDelayInSamples)
                     return kFunctionInvalidArgsError;
                 m_pCLfo->setParam(CLfo::kLfoParamAmplitude, values[i] * m_fSampleRateInHz);
                 m_fModWidthInSamples = values[i] * m_fSampleRateInHz;
