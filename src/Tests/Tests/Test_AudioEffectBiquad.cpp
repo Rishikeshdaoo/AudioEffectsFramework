@@ -115,7 +115,9 @@ SUITE(Biquad)
         param[2] = CAudioEffect::kParamQ;
         value[2] = 0.707f;
         
-        m_phBiquad->init(m_fSampleRate,m_iNumChannels,param,value,iNumParams);
+        
+        
+        m_phBiquad->init(m_fSampleRate,m_iNumChannels,CAudioEffectBiquad::kBandpass,param,value,iNumParams);
         m_phBiquad->setFilterType(CAudioEffectBiquad::FilterType_t::kBandpass);
         
         TestProcess();
@@ -140,13 +142,13 @@ SUITE(Biquad)
         param[2] = CAudioEffect::kParamQ;
         value[2] = 0.707f;
         
-        m_phBiquad->init(m_fSampleRate,m_iNumChannels,param,value,iNumParams);
+        m_phBiquad->init(m_fSampleRate,m_iNumChannels,CAudioEffectBiquad::kBandpass,param,value,iNumParams);
         m_phBiquad->setFilterType(CAudioEffectBiquad::FilterType_t::kBandpass);
         
         TestProcess();
 
         m_phBiquad->reset();
-        m_phBiquad->init(m_fSampleRate,m_iNumChannels,param,value,iNumParams);
+        m_phBiquad->init(m_fSampleRate,m_iNumChannels,CAudioEffectBiquad::kBandpass,param,value,iNumParams);
         m_phBiquad->setFilterType(CAudioEffectBiquad::FilterType_t::kBandpass);
         
         {
