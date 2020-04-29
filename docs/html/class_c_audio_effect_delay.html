@@ -116,7 +116,7 @@ Collaboration diagram for CAudioEffectDelay:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:ac32a9e095a16cc2964bab7a575c9fc85"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_audio_effect_delay.html#ac32a9e095a16cc2964bab7a575c9fc85">DelayType_t</a> { <br />
-&#160;&#160;<a class="el" href="class_c_audio_effect_delay.html#ac32a9e095a16cc2964bab7a575c9fc85a3e87d5551ebd2676ba0ff2f2a651a2f0">kDelay</a> = 16, 
+&#160;&#160;<a class="el" href="class_c_audio_effect_delay.html#ac32a9e095a16cc2964bab7a575c9fc85acc0dc78173e5654b0c5ac3185fc9154f">kBasicDelay</a> = 16, 
 <a class="el" href="class_c_audio_effect_delay.html#ac32a9e095a16cc2964bab7a575c9fc85a295bf703cc34463e212132821a819ebc">kChorus</a> = 18, 
 <a class="el" href="class_c_audio_effect_delay.html#ac32a9e095a16cc2964bab7a575c9fc85a3d021f539c1cc09a1b0a4053f33a8520">kFlanger</a> = 21, 
 <a class="el" href="class_c_audio_effect_delay.html#ac32a9e095a16cc2964bab7a575c9fc85a9d3d67916de2615ac8dcb30f179a7eda">kTremolo</a> = 8, 
@@ -153,12 +153,12 @@ Public Types</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a17b3fe6a7f6ecd9b7b9f7b0612bcfe32"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_audio_effect_delay.html#a17b3fe6a7f6ecd9b7b9f7b0612bcfe32">CAudioEffectDelay</a> ()</td></tr>
 <tr class="separator:a17b3fe6a7f6ecd9b7b9f7b0612bcfe32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab95e5e6de2583e1ffdb3105eca84b7d8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_audio_effect_delay.html#ab95e5e6de2583e1ffdb3105eca84b7d8">CAudioEffectDelay</a> (float fSampleRateInHz, int iNumChannels, float iMaxDelayInSec, <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659e">EffectParam_t</a> params[], float values[], int iNumParams)</td></tr>
-<tr class="separator:ab95e5e6de2583e1ffdb3105eca84b7d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5b6f2f6918c60813b1a579e361e5913"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_audio_effect_delay.html#ab5b6f2f6918c60813b1a579e361e5913">CAudioEffectDelay</a> (float fSampleRateInHz, int iNumChannels, <a class="el" href="class_c_audio_effect_delay.html#ac32a9e095a16cc2964bab7a575c9fc85">DelayType_t</a> subType=<a class="el" href="class_c_audio_effect_delay.html#ac32a9e095a16cc2964bab7a575c9fc85acc0dc78173e5654b0c5ac3185fc9154f">kBasicDelay</a>, float iMaxDelayInSec=1.f, <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659e">EffectParam_t</a> params[]=NULL, float values[]=NULL, int iNumParams=0)</td></tr>
+<tr class="separator:ab5b6f2f6918c60813b1a579e361e5913"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c7a16603632bf35f510a820007cf1a9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_audio_effect_delay.html#a0c7a16603632bf35f510a820007cf1a9">~CAudioEffectDelay</a> ()</td></tr>
 <tr class="separator:a0c7a16603632bf35f510a820007cf1a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2ac39077594cb5918abf3e903c1b8d1"><td class="memItemLeft" align="right" valign="top">Error_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_audio_effect_delay.html#ac2ac39077594cb5918abf3e903c1b8d1">init</a> (float fSampleRateInHz, int iNumChannels, float iMaxDelayInSec, <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659e">EffectParam_t</a> params[], float values[], int iNumParams)</td></tr>
-<tr class="separator:ac2ac39077594cb5918abf3e903c1b8d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac012c496dd0977b97b4096092c41dd5e"><td class="memItemLeft" align="right" valign="top">Error_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_audio_effect_delay.html#ac012c496dd0977b97b4096092c41dd5e">init</a> (float fSampleRateInHz, int iNumChannels, <a class="el" href="class_c_audio_effect_delay.html#ac32a9e095a16cc2964bab7a575c9fc85">DelayType_t</a> subType=<a class="el" href="class_c_audio_effect_delay.html#ac32a9e095a16cc2964bab7a575c9fc85acc0dc78173e5654b0c5ac3185fc9154f">kBasicDelay</a>, float iMaxDelayInSec=1.f, <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659e">EffectParam_t</a> params[]=NULL, float values[]=NULL, int iNumParams=0)</td></tr>
+<tr class="separator:ac012c496dd0977b97b4096092c41dd5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a4f4adf9d70e30fd733c4065c016968"><td class="memItemLeft" align="right" valign="top">Error_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_audio_effect_delay.html#a9a4f4adf9d70e30fd733c4065c016968">reset</a> ()</td></tr>
 <tr class="separator:a9a4f4adf9d70e30fd733c4065c016968"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3aec7ac69be0084db2cb109d2aa0fd2"><td class="memItemLeft" align="right" valign="top">Error_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_audio_effect_delay.html#aa3aec7ac69be0084db2cb109d2aa0fd2">setParam</a> (<a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659e">EffectParam_t</a> eParam, float fValue)</td></tr>
@@ -211,7 +211,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>list of delay related effect sub types </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac32a9e095a16cc2964bab7a575c9fc85a3e87d5551ebd2676ba0ff2f2a651a2f0"></a>kDelay&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac32a9e095a16cc2964bab7a575c9fc85acc0dc78173e5654b0c5ac3185fc9154f"></a>kBasicDelay&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="ac32a9e095a16cc2964bab7a575c9fc85a295bf703cc34463e212132821a819ebc"></a>kChorus&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="ac32a9e095a16cc2964bab7a575c9fc85a3d021f539c1cc09a1b0a4053f33a8520"></a>kFlanger&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="ac32a9e095a16cc2964bab7a575c9fc85a9d3d67916de2615ac8dcb30f179a7eda"></a>kTremolo&#160;</td><td class="fielddoc"></td></tr>
@@ -238,8 +238,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="ab95e5e6de2583e1ffdb3105eca84b7d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab95e5e6de2583e1ffdb3105eca84b7d8">&#9670;&nbsp;</a></span>CAudioEffectDelay() <span class="overload">[2/2]</span></h2>
+<a id="ab5b6f2f6918c60813b1a579e361e5913"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5b6f2f6918c60813b1a579e361e5913">&#9670;&nbsp;</a></span>CAudioEffectDelay() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -259,8 +259,14 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="class_c_audio_effect_delay.html#ac32a9e095a16cc2964bab7a575c9fc85">DelayType_t</a>&#160;</td>
+          <td class="paramname"><em>subType</em> = <code><a class="el" href="class_c_audio_effect_delay.html#ac32a9e095a16cc2964bab7a575c9fc85acc0dc78173e5654b0c5ac3185fc9154f">kBasicDelay</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>iMaxDelayInSec</em>, </td>
+          <td class="paramname"><em>iMaxDelayInSec</em> = <code>1.f</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -351,8 +357,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="ac2ac39077594cb5918abf3e903c1b8d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac2ac39077594cb5918abf3e903c1b8d1">&#9670;&nbsp;</a></span>init()</h2>
+<a id="ac012c496dd0977b97b4096092c41dd5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac012c496dd0977b97b4096092c41dd5e">&#9670;&nbsp;</a></span>init()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -372,26 +378,32 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="class_c_audio_effect_delay.html#ac32a9e095a16cc2964bab7a575c9fc85">DelayType_t</a>&#160;</td>
+          <td class="paramname"><em>subType</em> = <code><a class="el" href="class_c_audio_effect_delay.html#ac32a9e095a16cc2964bab7a575c9fc85acc0dc78173e5654b0c5ac3185fc9154f">kBasicDelay</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>iMaxDelayInSec</em>, </td>
+          <td class="paramname"><em>iMaxDelayInSec</em> = <code>1.f</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659e">EffectParam_t</a>&#160;</td>
-          <td class="paramname"><em>params</em>[], </td>
+          <td class="paramname"><em>params</em>[] = <code>NULL</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>values</em>[], </td>
+          <td class="paramname"><em>values</em>[] = <code>NULL</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>iNumParams</em>&#160;</td>
+          <td class="paramname"><em>iNumParams</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>

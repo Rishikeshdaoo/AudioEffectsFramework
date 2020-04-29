@@ -2,9 +2,9 @@ var searchData=
 [
   ['kallpass_433',['kAllpass',['../class_c_audio_effect_biquad.html#aa75f8e70545c4b5301ac60d7ff7416d6ab0f79ededbb1d5972fd5c32a85192326',1,'CAudioEffectBiquad']]],
   ['kbandpass_434',['kBandpass',['../class_c_audio_effect_biquad.html#aa75f8e70545c4b5301ac60d7ff7416d6aad074bff87d8b1785d467c61ab3f0d7e',1,'CAudioEffectBiquad']]],
-  ['kchorus_435',['kChorus',['../class_c_audio_effect_delay.html#ac32a9e095a16cc2964bab7a575c9fc85a295bf703cc34463e212132821a819ebc',1,'CAudioEffectDelay']]],
-  ['kcompressor_436',['kCompressor',['../class_c_audio_effect_compressor_expander.html#a4a962f94692f984b06e13378c7cdb0e4ae15a8fd4dc283e9ff86a63a1db79bf39',1,'CAudioEffectCompressorExpander']]],
-  ['kdelay_437',['kDelay',['../class_c_audio_effect_delay.html#ac32a9e095a16cc2964bab7a575c9fc85a3e87d5551ebd2676ba0ff2f2a651a2f0',1,'CAudioEffectDelay']]],
+  ['kbasicdelay_435',['kBasicDelay',['../class_c_audio_effect_delay.html#ac32a9e095a16cc2964bab7a575c9fc85acc0dc78173e5654b0c5ac3185fc9154f',1,'CAudioEffectDelay']]],
+  ['kchorus_436',['kChorus',['../class_c_audio_effect_delay.html#ac32a9e095a16cc2964bab7a575c9fc85a295bf703cc34463e212132821a819ebc',1,'CAudioEffectDelay']]],
+  ['kcompressor_437',['kCompressor',['../class_c_audio_effect_compressor_expander.html#a4a962f94692f984b06e13378c7cdb0e4ae15a8fd4dc283e9ff86a63a1db79bf39',1,'CAudioEffectCompressorExpander']]],
   ['kexpander_438',['kExpander',['../class_c_audio_effect_compressor_expander.html#a4a962f94692f984b06e13378c7cdb0e4ab352127d0e5f992ecfcda6a22f82d226',1,'CAudioEffectCompressorExpander']]],
   ['kfilebitstreamfloat32_439',['kFileBitStreamFloat32',['../class_c_audio_file_if.html#ae5cbbfb5db8265f26b7116d38b6d3c59a21c5ccf69528daf9575711f272b935f3',1,'CAudioFileIf']]],
   ['kfilebitstreamint16_440',['kFileBitStreamInt16',['../class_c_audio_file_if.html#ae5cbbfb5db8265f26b7116d38b6d3c59a08da746e0484d5fc8de3ecf9f3f2e18b',1,'CAudioFileIf']]],

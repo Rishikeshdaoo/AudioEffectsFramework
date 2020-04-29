@@ -103,6 +103,7 @@ Effects included in the library</h1>
 <li>Flanger</li>
 <li>Chorus</li>
 <li>Reverb</li>
+<li>Tremolo</li>
 <li>Vibrato</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md3"></a>
@@ -111,27 +112,33 @@ Use Cases</h1>
 <li>Creating plugins for Digital Audio Workstations.</li>
 <li>For use in applications that require real-time audio effects.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md4"></a>
+<h2><a class="anchor" id="autotoc_md4"></a>
+Effect Subtype Categorization</h2>
+<ul>
+<li>Some of the effects have an hierarchical structure, where a class hold several effect subtypes. To use a specific effect subtype, the correct subtype enum should be passed to in the constructor/init function. The below diagram explains the categorization and the enum corresponding to the subtypes.</li>
+</ul>
+<p><img src="../assets/EffectSubtypes.png" alt="Effect Subtype Categories" class="inline"/></p>
+<h1><a class="anchor" id="autotoc_md5"></a>
 Getting Started</h1>
-<h2><a class="anchor" id="autotoc_md5"></a>
+<h2><a class="anchor" id="autotoc_md6"></a>
 Instructions</h2>
 <ul>
 <li>Clone the repository with the command : <code>git clone <a href="https://github.com/Rishikeshdaoo/AudioEffectsFramework.git">https://github.com/Rishikeshdaoo/AudioEffectsFramework.git</a></code> or download a zip project folder from the Download button.</li>
 <li>Install <a href="https://cmake.org/">CMake</a> and compile the project.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md6"></a>
+<h2><a class="anchor" id="autotoc_md7"></a>
 Usage</h2>
-<ul>
-<li><p class="startli"><span style="font-family:Arial; font-size:1.5em;">Create the Effect instance </span></p>
-<p class="startli"><a class="el" href="class_c_audio_effect_delay.html" title="audio effect class for delay related effects">CAudioEffectDelay</a> *phAudioEffectDelay = nullptr; <br  />
+<h3><a class="anchor" id="autotoc_md8"></a>
+Create the Effect Instance</h3>
+<p><a class="el" href="class_c_audio_effect_delay.html" title="audio effect class for delay related effects">CAudioEffectDelay</a> *phAudioEffectDelay = nullptr; <br  />
  phAudioEffectDelay = new <a class="el" href="class_c_audio_effect_delay.html" title="audio effect class for delay related effects">CAudioEffectDelay(sampleRate,numChannels,maxDelayInSecs,param,value,iNumParams)</a>;</p>
-<p class="startli"><code>sampleRate, numChannels</code> are arguments that should be taken from the host application. <br  />
- <code>maxDelayInSecs</code> is an argument the user sets according to their requirement for parameter value range (Only delay based effects have this argument). <br  />
- <code>param, value, iNumParams</code> are arguments that need to be initialized as below.</p>
-<p class="startli">int iNumParams = 4; <br  />
+<p><em>sampleRate, numChannels</em> are arguments that should be taken from the host application. <br  />
+ <em> maxDelayInSecs</em> is an argument the user sets according to their requirement for parameter value range (Only delay based effects have this argument). <br  />
+ <em>param, value, iNumParams</em> are arguments that need to be initialized as below. </p>
+<p>int iNumParams = 4; <br  />
  <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659e">CAudioEffect::EffectParam_t</a> param[iNumParams]; <br  />
  float value[iNumParams];</p>
-<p class="startli">param[0] = <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659eab721847e4b20bf69f9f05d516e02df2c" title="Parameter for delay used in delay-based effects.">CAudioEffect::kParamDelayInSecs</a>; <br  />
+<p>param[0] = <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659eab721847e4b20bf69f9f05d516e02df2c" title="Parameter for delay used in delay-based effects.">CAudioEffect::kParamDelayInSecs</a>; <br  />
  value[0] = 0.002f; <br  />
  param[1] = <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659eada631f5d036dec3dda2386b6f00f0f8f" title="Parameter for Modulation Frequency used in modulated effects.">CAudioEffect::kParamModRateInHz</a>; <br  />
  value[1] = 0.5f; <br  />
@@ -139,14 +146,12 @@ Usage</h2>
  value[2] = 0.002f; <br  />
  param[3] = <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659ea560e1b20c61513df8c5e2409609d61c3" title="Parameter for gain of output audio.">CAudioEffect::kParamGain</a>; <br  />
  value[3] = 0.7f;</p>
-</li>
-<li><p class="startli"><span style="font-family:Arial; font-size:1.5em;"> Call the effect's process function </span></p>
-<p class="startli">Error_t error = phAudioEffectDelay -&gt; process(ppfAudioInput, ppfAudioOutput, iNumFrames); <br  />
- <br  />
- <code>ppfAudioInput, ppfAudioOutput</code> are the input/output buffers used by the library. The user should take care of creating and destroying these buffers. <br  />
- <code>iNumFrames</code> is an argument that tells the process function the number of samples in a block of buffered audio. </p>
-</li>
-</ul>
+<h3><a class="anchor" id="autotoc_md9"></a>
+Call the effect's process function</h3>
+<p>Error_t error = phAudioEffectDelay -&gt; process(ppfAudioInput, ppfAudioOutput, iNumFrames); <br  />
+ </p>
+<p><em>ppfAudioInput, ppfAudioOutput</em> are the input/output buffers used by the library. The user should take care of creating and destroying these buffers. <br  />
+ <em>iNumFrames</em> is an argument that tells the process function the number of samples in a block of buffered audio. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

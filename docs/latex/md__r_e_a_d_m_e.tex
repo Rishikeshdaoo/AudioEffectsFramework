@@ -14,29 +14,33 @@ This projects aims to provide an easy to use A\+PI for creating audio effects pr
 \item Flanger
 \item Chorus
 \item Reverb
+\item Tremolo
 \item Vibrato
 \end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysection{Use Cases}\label{md__r_e_a_d_m_e_autotoc_md3}
 
 \begin{DoxyItemize}
 \item Creating plugins for Digital Audio Workstations.
 \item For use in applications that require real-\/time audio effects.
-\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysection{Getting Started}\label{md__r_e_a_d_m_e_autotoc_md4}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md5}{}\doxysubsection{Instructions}\label{md__r_e_a_d_m_e_autotoc_md5}
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysubsection{Effect Subtype Categorization}\label{md__r_e_a_d_m_e_autotoc_md4}
+
+\begin{DoxyItemize}
+\item Some of the effects have an hierarchical structure, where a class hold several effect subtypes. To use a specific effect subtype, the correct subtype enum should be passed to in the constructor/init function. The below diagram explains the categorization and the enum corresponding to the subtypes.
+\end{DoxyItemize}
+
+\hypertarget{md__r_e_a_d_m_e_autotoc_md5}{}\doxysection{Getting Started}\label{md__r_e_a_d_m_e_autotoc_md5}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md6}{}\doxysubsection{Instructions}\label{md__r_e_a_d_m_e_autotoc_md6}
 
 \begin{DoxyItemize}
 \item Clone the repository with the command \+: {\ttfamily git clone \href{https://github.com/Rishikeshdaoo/AudioEffectsFramework.git}{\texttt{ https\+://github.\+com/\+Rishikeshdaoo/\+Audio\+Effects\+Framework.\+git}}} or download a zip project folder from the Download button.
 \item Install \href{https://cmake.org/}{\texttt{ C\+Make}} and compile the project.
-\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md6}{}\doxysubsection{Usage}\label{md__r_e_a_d_m_e_autotoc_md6}
-
-\begin{DoxyItemize}
-\item Create the Effect instance 
-
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md7}{}\doxysubsection{Usage}\label{md__r_e_a_d_m_e_autotoc_md7}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md8}{}\doxysubsubsection{Create the Effect Instance}\label{md__r_e_a_d_m_e_autotoc_md8}
 \mbox{\hyperlink{class_c_audio_effect_delay}{C\+Audio\+Effect\+Delay}} $\ast$ph\+Audio\+Effect\+Delay = nullptr; ~\newline
  ph\+Audio\+Effect\+Delay = new \mbox{\hyperlink{class_c_audio_effect_delay}{C\+Audio\+Effect\+Delay(sample\+Rate,num\+Channels,max\+Delay\+In\+Secs,param,value,i\+Num\+Params)}};
 
-{\ttfamily sample\+Rate, num\+Channels} are arguments that should be taken from the host application. ~\newline
- {\ttfamily max\+Delay\+In\+Secs} is an argument the user sets according to their requirement for parameter value range (Only delay based effects have this argument). ~\newline
- {\ttfamily param, value, i\+Num\+Params} are arguments that need to be initialized as below.
+{\itshape sample\+Rate, num\+Channels} are arguments that should be taken from the host application. ~\newline
+ {\itshape  max\+Delay\+In\+Secs} is an argument the user sets according to their requirement for parameter value range (Only delay based effects have this argument). ~\newline
+ {\itshape param, value, i\+Num\+Params} are arguments that need to be initialized as below. 
 
 int i\+Num\+Params = 4; ~\newline
  \mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{C\+Audio\+Effect\+::\+Effect\+Param\+\_\+t}} param\mbox{[}i\+Num\+Params\mbox{]}; ~\newline
@@ -49,11 +53,9 @@ param\mbox{[}0\mbox{]} = \mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d
  param\mbox{[}2\mbox{]} = \mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659ea05e953e3f70678b944785d62ca5473bd}{C\+Audio\+Effect\+::k\+Param\+Mod\+Width\+In\+Secs}}; ~\newline
  value\mbox{[}2\mbox{]} = 0.\+002f; ~\newline
  param\mbox{[}3\mbox{]} = \mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659ea560e1b20c61513df8c5e2409609d61c3}{C\+Audio\+Effect\+::k\+Param\+Gain}}; ~\newline
- value\mbox{[}3\mbox{]} = 0.\+7f;
-\item  Call the effect\textquotesingle{}s process function 
-
+ value\mbox{[}3\mbox{]} = 0.\+7f;\hypertarget{md__r_e_a_d_m_e_autotoc_md9}{}\doxysubsubsection{Call the effect\textquotesingle{}s process function}\label{md__r_e_a_d_m_e_autotoc_md9}
 Error\+\_\+t error = ph\+Audio\+Effect\+Delay -\/$>$ process(ppf\+Audio\+Input, ppf\+Audio\+Output, i\+Num\+Frames); ~\newline
- ~\newline
- {\ttfamily ppf\+Audio\+Input, ppf\+Audio\+Output} are the input/output buffers used by the library. The user should take care of creating and destroying these buffers. ~\newline
- {\ttfamily i\+Num\+Frames} is an argument that tells the process function the number of samples in a block of buffered audio. 
-\end{DoxyItemize}
+ 
+
+{\itshape ppf\+Audio\+Input, ppf\+Audio\+Output} are the input/output buffers used by the library. The user should take care of creating and destroying these buffers. ~\newline
+ {\itshape i\+Num\+Frames} is an argument that tells the process function the number of samples in a block of buffered audio. 

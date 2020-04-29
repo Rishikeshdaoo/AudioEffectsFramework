@@ -11,8 +11,7 @@ audio effect class for delay related effects
 
 
 
-Inheritance diagram for C\+Audio\+Effect\+Delay\+:
-\nopagebreak
+Inheritance diagram for C\+Audio\+Effect\+Delay\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,8 +20,7 @@ Inheritance diagram for C\+Audio\+Effect\+Delay\+:
 \end{figure}
 
 
-Collaboration diagram for C\+Audio\+Effect\+Delay\+:
-\nopagebreak
+Collaboration diagram for C\+Audio\+Effect\+Delay\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -33,7 +31,7 @@ Collaboration diagram for C\+Audio\+Effect\+Delay\+:
 \begin{DoxyCompactItemize}
 \item 
 enum \mbox{\hyperlink{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85}{Delay\+Type\+\_\+t}} \{ \newline
-\mbox{\hyperlink{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85a3e87d5551ebd2676ba0ff2f2a651a2f0}{k\+Delay}} = 16, 
+\mbox{\hyperlink{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85acc0dc78173e5654b0c5ac3185fc9154f}{k\+Basic\+Delay}} = 16, 
 \mbox{\hyperlink{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85a295bf703cc34463e212132821a819ebc}{k\+Chorus}} = 18, 
 \mbox{\hyperlink{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85a3d021f539c1cc09a1b0a4053f33a8520}{k\+Flanger}} = 21, 
 \mbox{\hyperlink{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85a9d3d67916de2615ac8dcb30f179a7eda}{k\+Tremolo}} = 8, 
@@ -46,11 +44,11 @@ enum \mbox{\hyperlink{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc
 \item 
 \mbox{\hyperlink{class_c_audio_effect_delay_a17b3fe6a7f6ecd9b7b9f7b0612bcfe32}{C\+Audio\+Effect\+Delay}} ()
 \item 
-\mbox{\hyperlink{class_c_audio_effect_delay_ab95e5e6de2583e1ffdb3105eca84b7d8}{C\+Audio\+Effect\+Delay}} (float f\+Sample\+Rate\+In\+Hz, int i\+Num\+Channels, float i\+Max\+Delay\+In\+Sec, \mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}} params\mbox{[}$\,$\mbox{]}, float values\mbox{[}$\,$\mbox{]}, int i\+Num\+Params)
+\mbox{\hyperlink{class_c_audio_effect_delay_ab5b6f2f6918c60813b1a579e361e5913}{C\+Audio\+Effect\+Delay}} (float f\+Sample\+Rate\+In\+Hz, int i\+Num\+Channels, \mbox{\hyperlink{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85}{Delay\+Type\+\_\+t}} sub\+Type=\mbox{\hyperlink{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85acc0dc78173e5654b0c5ac3185fc9154f}{k\+Basic\+Delay}}, float i\+Max\+Delay\+In\+Sec=1.f, \mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}} params\mbox{[}$\,$\mbox{]}=N\+U\+LL, float values\mbox{[}$\,$\mbox{]}=N\+U\+LL, int i\+Num\+Params=0)
 \item 
 \mbox{\hyperlink{class_c_audio_effect_delay_a0c7a16603632bf35f510a820007cf1a9}{$\sim$\+C\+Audio\+Effect\+Delay}} ()
 \item 
-Error\+\_\+t \mbox{\hyperlink{class_c_audio_effect_delay_ac2ac39077594cb5918abf3e903c1b8d1}{init}} (float f\+Sample\+Rate\+In\+Hz, int i\+Num\+Channels, float i\+Max\+Delay\+In\+Sec, \mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}} params\mbox{[}$\,$\mbox{]}, float values\mbox{[}$\,$\mbox{]}, int i\+Num\+Params)
+Error\+\_\+t \mbox{\hyperlink{class_c_audio_effect_delay_ac012c496dd0977b97b4096092c41dd5e}{init}} (float f\+Sample\+Rate\+In\+Hz, int i\+Num\+Channels, \mbox{\hyperlink{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85}{Delay\+Type\+\_\+t}} sub\+Type=\mbox{\hyperlink{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85acc0dc78173e5654b0c5ac3185fc9154f}{k\+Basic\+Delay}}, float i\+Max\+Delay\+In\+Sec=1.f, \mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}} params\mbox{[}$\,$\mbox{]}=N\+U\+LL, float values\mbox{[}$\,$\mbox{]}=N\+U\+LL, int i\+Num\+Params=0)
 \item 
 Error\+\_\+t \mbox{\hyperlink{class_c_audio_effect_delay_a9a4f4adf9d70e30fd733c4065c016968}{reset}} ()
 \item 
@@ -78,8 +76,8 @@ audio effect class for delay related effects
 {\footnotesize\ttfamily enum \mbox{\hyperlink{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85}{C\+Audio\+Effect\+Delay\+::\+Delay\+Type\+\_\+t}}}
 
 list of delay related effect sub types \begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{kDelay@{kDelay}!CAudioEffectDelay@{CAudioEffectDelay}}\index{CAudioEffectDelay@{CAudioEffectDelay}!kDelay@{kDelay}}}\mbox{\Hypertarget{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85a3e87d5551ebd2676ba0ff2f2a651a2f0}\label{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85a3e87d5551ebd2676ba0ff2f2a651a2f0}} 
-k\+Delay&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kBasicDelay@{kBasicDelay}!CAudioEffectDelay@{CAudioEffectDelay}}\index{CAudioEffectDelay@{CAudioEffectDelay}!kBasicDelay@{kBasicDelay}}}\mbox{\Hypertarget{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85acc0dc78173e5654b0c5ac3185fc9154f}\label{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85acc0dc78173e5654b0c5ac3185fc9154f}} 
+k\+Basic\+Delay&\\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{kChorus@{kChorus}!CAudioEffectDelay@{CAudioEffectDelay}}\index{CAudioEffectDelay@{CAudioEffectDelay}!kChorus@{kChorus}}}\mbox{\Hypertarget{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85a295bf703cc34463e212132821a819ebc}\label{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85a295bf703cc34463e212132821a819ebc}} 
@@ -108,11 +106,11 @@ k\+Vibrato&\\
 \doxysubsubsection{\texorpdfstring{CAudioEffectDelay()}{CAudioEffectDelay()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily C\+Audio\+Effect\+Delay\+::\+C\+Audio\+Effect\+Delay (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_c_audio_effect_delay_ab95e5e6de2583e1ffdb3105eca84b7d8}\label{class_c_audio_effect_delay_ab95e5e6de2583e1ffdb3105eca84b7d8}} 
+\mbox{\Hypertarget{class_c_audio_effect_delay_ab5b6f2f6918c60813b1a579e361e5913}\label{class_c_audio_effect_delay_ab5b6f2f6918c60813b1a579e361e5913}} 
 \index{CAudioEffectDelay@{CAudioEffectDelay}!CAudioEffectDelay@{CAudioEffectDelay}}
 \index{CAudioEffectDelay@{CAudioEffectDelay}!CAudioEffectDelay@{CAudioEffectDelay}}
 \doxysubsubsection{\texorpdfstring{CAudioEffectDelay()}{CAudioEffectDelay()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily C\+Audio\+Effect\+Delay\+::\+C\+Audio\+Effect\+Delay (\begin{DoxyParamCaption}\item[{float}]{f\+Sample\+Rate\+In\+Hz,  }\item[{int}]{i\+Num\+Channels,  }\item[{float}]{i\+Max\+Delay\+In\+Sec,  }\item[{\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}}}]{params\mbox{[}$\,$\mbox{]} = {\ttfamily NULL},  }\item[{float}]{values\mbox{[}$\,$\mbox{]} = {\ttfamily NULL},  }\item[{int}]{i\+Num\+Params = {\ttfamily 0} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily C\+Audio\+Effect\+Delay\+::\+C\+Audio\+Effect\+Delay (\begin{DoxyParamCaption}\item[{float}]{f\+Sample\+Rate\+In\+Hz,  }\item[{int}]{i\+Num\+Channels,  }\item[{\mbox{\hyperlink{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85}{Delay\+Type\+\_\+t}}}]{sub\+Type = {\ttfamily \mbox{\hyperlink{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85acc0dc78173e5654b0c5ac3185fc9154f}{k\+Basic\+Delay}}},  }\item[{float}]{i\+Max\+Delay\+In\+Sec = {\ttfamily 1.f},  }\item[{\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}}}]{params\mbox{[}$\,$\mbox{]} = {\ttfamily NULL},  }\item[{float}]{values\mbox{[}$\,$\mbox{]} = {\ttfamily NULL},  }\item[{int}]{i\+Num\+Params = {\ttfamily 0} }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{class_c_audio_effect_delay_a0c7a16603632bf35f510a820007cf1a9}\label{class_c_audio_effect_delay_a0c7a16603632bf35f510a820007cf1a9}} 
 \index{CAudioEffectDelay@{CAudioEffectDelay}!````~CAudioEffectDelay@{$\sim$CAudioEffectDelay}}
@@ -146,11 +144,11 @@ return the value of the specified parameter
 \begin{DoxyReturn}{Returns}
 float 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_c_audio_effect_delay_ac2ac39077594cb5918abf3e903c1b8d1}\label{class_c_audio_effect_delay_ac2ac39077594cb5918abf3e903c1b8d1}} 
+\mbox{\Hypertarget{class_c_audio_effect_delay_ac012c496dd0977b97b4096092c41dd5e}\label{class_c_audio_effect_delay_ac012c496dd0977b97b4096092c41dd5e}} 
 \index{CAudioEffectDelay@{CAudioEffectDelay}!init@{init}}
 \index{init@{init}!CAudioEffectDelay@{CAudioEffectDelay}}
 \doxysubsubsection{\texorpdfstring{init()}{init()}}
-{\footnotesize\ttfamily Error\+\_\+t C\+Audio\+Effect\+Delay\+::init (\begin{DoxyParamCaption}\item[{float}]{f\+Sample\+Rate\+In\+Hz,  }\item[{int}]{i\+Num\+Channels,  }\item[{float}]{i\+Max\+Delay\+In\+Sec,  }\item[{\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}}}]{params\mbox{[}$\,$\mbox{]},  }\item[{float}]{values\mbox{[}$\,$\mbox{]},  }\item[{int}]{i\+Num\+Params }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Error\+\_\+t C\+Audio\+Effect\+Delay\+::init (\begin{DoxyParamCaption}\item[{float}]{f\+Sample\+Rate\+In\+Hz,  }\item[{int}]{i\+Num\+Channels,  }\item[{\mbox{\hyperlink{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85}{Delay\+Type\+\_\+t}}}]{sub\+Type = {\ttfamily \mbox{\hyperlink{class_c_audio_effect_delay_ac32a9e095a16cc2964bab7a575c9fc85acc0dc78173e5654b0c5ac3185fc9154f}{k\+Basic\+Delay}}},  }\item[{float}]{i\+Max\+Delay\+In\+Sec = {\ttfamily 1.f},  }\item[{\mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{Effect\+Param\+\_\+t}}}]{params\mbox{[}$\,$\mbox{]} = {\ttfamily NULL},  }\item[{float}]{values\mbox{[}$\,$\mbox{]} = {\ttfamily NULL},  }\item[{int}]{i\+Num\+Params = {\ttfamily 0} }\end{DoxyParamCaption})}
 
 initializes a delay related effect instance 
 \begin{DoxyParams}{Parameters}

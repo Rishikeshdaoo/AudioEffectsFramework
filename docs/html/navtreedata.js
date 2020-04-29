@@ -28,10 +28,15 @@ var NAVTREE =
     [ "Audio Effects Framework", "md__r_e_a_d_m_e.html", [
       [ "Motivation", "md__r_e_a_d_m_e.html#autotoc_md1", null ],
       [ "Effects included in the library", "md__r_e_a_d_m_e.html#autotoc_md2", null ],
-      [ "Use Cases", "md__r_e_a_d_m_e.html#autotoc_md3", null ],
-      [ "Getting Started", "md__r_e_a_d_m_e.html#autotoc_md4", [
-        [ "Instructions", "md__r_e_a_d_m_e.html#autotoc_md5", null ],
-        [ "Usage", "md__r_e_a_d_m_e.html#autotoc_md6", null ]
+      [ "Use Cases", "md__r_e_a_d_m_e.html#autotoc_md3", [
+        [ "Effect Subtype Categorization", "md__r_e_a_d_m_e.html#autotoc_md4", null ]
+      ] ],
+      [ "Getting Started", "md__r_e_a_d_m_e.html#autotoc_md5", [
+        [ "Instructions", "md__r_e_a_d_m_e.html#autotoc_md6", null ],
+        [ "Usage", "md__r_e_a_d_m_e.html#autotoc_md7", [
+          [ "Create the Effect Instance", "md__r_e_a_d_m_e.html#autotoc_md8", null ],
+          [ "Call the effect's process function", "md__r_e_a_d_m_e.html#autotoc_md9", null ]
+        ] ]
       ] ]
     ] ],
     [ "Classes", "annotated.html", [
