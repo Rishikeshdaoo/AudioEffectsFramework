@@ -54,7 +54,7 @@ phAudioEffectDelay = new CAudioEffectDelay(fSampleRateInHz, iNumChannels, subTyp
 - <i>fMaxDelayInSec</i> - Required argument the user sets according to their requirement for parameter value range (Only delay based effects have this argument). <br />
 - <i>params, values, iNumParams</i> - Optional arguments that need to be initialized as below. These are the values of the effect parameters. These are optional arguments, which will take default values if they are not passed by the user.
 
-<span style="font-family:Courier; text-align:center; font-size:1.0em; text-align:center">int iNumParams = 4; <br />
+<span style="font-family:Courier; text-align:center; font-size:1.0em; text-align:center">int iNumParams = 5; <br />
 CAudioEffect::EffectParam_t param[iNumParams]; <br />
 float value[iNumParams]; </span>
 
@@ -64,9 +64,10 @@ param[1] = CAudioEffect::kParamModRateInHz; <br />
 value[1] = 0.5f; <br />
 param[2] = CAudioEffect::kParamModWidthInSecs; <br />
 value[2] = 0.002f; <br />
-param[3] = CAudioEffect::kParamGain; <br />
-value[3] = 0.7f; 
-
+param[3] = CAudioEffect::kParamDryWetMix; <br />
+value[3] = 0.7f; <br /> 
+param[4] = CAudioEffect::kParamFeedback; <br />
+value[4] = 0.5f; <br />
 
 <!-- - <span style="font-family:Arial; font-size:1.5em;"> Call the effect's process function </span> -->
 #### Call the effect's process function
