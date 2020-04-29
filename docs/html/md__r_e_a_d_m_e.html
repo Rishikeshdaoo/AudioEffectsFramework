@@ -130,7 +130,7 @@ Instructions</h2>
 Usage</h2>
 <h3><a class="anchor" id="autotoc_md8"></a>
 Create the Effect Instance</h3>
-<p><a class="el" href="class_c_audio_effect_delay.html" title="audio effect class for delay related effects">CAudioEffectDelay</a> *phAudioEffectDelay = nullptr; <br  />
+<p><span style="font-family:Courier; text-align:center; font-size:1.0em"><a class="el" href="class_c_audio_effect_delay.html" title="audio effect class for delay related effects">CAudioEffectDelay</a> *phAudioEffectDelay = nullptr; <br  />
  phAudioEffectDelay = new <a class="el" href="class_c_audio_effect_delay.html" title="audio effect class for delay related effects">CAudioEffectDelay(sampleRate,numChannels,maxDelayInSecs,param,value,iNumParams)</a>; <br  />
 </p><ul>
 <li><em>sampleRate, numChannels</em> are arguments that should be taken from the host application. <br  />
@@ -139,25 +139,28 @@ Create the Effect Instance</h3>
 </li>
 <li><em>param, value, iNumParams</em> are arguments that need to be initialized as below.</li>
 </ul>
-<p>int iNumParams = 4; <br  />
+<p></span></p>
+<p><span style="font-family:Courier; text-align:center; font-size:1.0em"><span style="font-family:Courier; text-align:center; font-size:1.0em; text-align:center">int iNumParams = 4; <br  />
  <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659e">CAudioEffect::EffectParam_t</a> param[iNumParams]; <br  />
- float value[iNumParams];</p>
-<p>param[0] = <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659eab721847e4b20bf69f9f05d516e02df2c" title="Parameter for delay used in delay-based effects.">CAudioEffect::kParamDelayInSecs</a>; <br  />
+ float value[iNumParams]; </span></span></p>
+<p><span style="font-family:Courier; text-align:center; font-size:1.0em">param[0] = <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659eab721847e4b20bf69f9f05d516e02df2c" title="Parameter for delay used in delay-based effects.">CAudioEffect::kParamDelayInSecs</a>; <br  />
  value[0] = 0.002f; <br  />
  param[1] = <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659eada631f5d036dec3dda2386b6f00f0f8f" title="Parameter for Modulation Frequency used in modulated effects.">CAudioEffect::kParamModRateInHz</a>; <br  />
  value[1] = 0.5f; <br  />
  param[2] = <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659ea05e953e3f70678b944785d62ca5473bd" title="Parameter Modulation Amplitude used in modulated effects.">CAudioEffect::kParamModWidthInSecs</a>; <br  />
  value[2] = 0.002f; <br  />
  param[3] = <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659ea560e1b20c61513df8c5e2409609d61c3" title="Parameter for gain of output audio.">CAudioEffect::kParamGain</a>; <br  />
- value[3] = 0.7f;</p>
+ value[3] = 0.7f;</span></p>
+<p><span style="font-family:Courier; text-align:center; font-size:1.0em"></span></p>
 <h3><a class="anchor" id="autotoc_md9"></a>
 Call the effect's process function</h3>
-<p>Error_t error = phAudioEffectDelay -&gt; process(ppfAudioInput, ppfAudioOutput, iNumFrames); <br  />
-</p><ul>
+<p><span style="font-family:Courier; text-align:center; font-size:1.0em"> <span style="font-family:Courier; text-align:center; font-size:1.0em; text-align:center">Error_t error = phAudioEffectDelay -&gt; process(ppfAudioInput, ppfAudioOutput, iNumFrames); <br  />
+ </span></p><ul>
 <li><em>ppfAudioInput, ppfAudioOutput</em> are the input/output buffers used by the library. The user should take care of creating and destroying these buffers. <br  />
 </li>
 <li><em>iNumFrames</em> is an argument that tells the process function the number of samples in a block of buffered audio. </li>
 </ul>
+<p></span></p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

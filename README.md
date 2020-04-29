@@ -47,15 +47,16 @@ This projects aims to provide an easy to use API for creating audio effects proc
 <!-- - <span style="font-family:Arial; font-size:1.5em;">Create the Effect instance </span> -->
 #### Create the Effect Instance
 
-CAudioEffectDelay       *phAudioEffectDelay = nullptr; <br />
+<span style="font-family:Courier; text-align:center; font-size:1.0em">CAudioEffectDelay       *phAudioEffectDelay = nullptr; <br />
 phAudioEffectDelay = new CAudioEffectDelay(sampleRate,numChannels,maxDelayInSecs,param,value,iNumParams); <br />
-- <i>sampleRate, numChannels</i> are arguments that should be taken from the host application. <br />
+- <i>sampleRate, numChannels</i> are arguments that should be taken from the host application. <br /></span>
+
 - <i> maxDelayInSecs</i> is an argument the user sets according to their requirement for parameter value range (Only delay based effects have this argument). <br />
 - <i>param, value, iNumParams</i> are arguments that need to be initialized as below.
 
-int iNumParams = 4; <br />
+<span style="font-family:Courier; text-align:center; font-size:1.0em; text-align:center">int iNumParams = 4; <br />
 CAudioEffect::EffectParam_t param[iNumParams]; <br />
-float value[iNumParams]; 
+float value[iNumParams]; </span>
 
 param[0] = CAudioEffect::kParamDelayInSecs; <br />
 value[0] = 0.002f; <br />
@@ -70,7 +71,7 @@ value[3] = 0.7f;
 <!-- - <span style="font-family:Arial; font-size:1.5em;"> Call the effect's process function </span> -->
 #### Call the effect's process function
     
-Error_t error = phAudioEffectDelay -> process(ppfAudioInput, ppfAudioOutput, iNumFrames); <br />
+<span style="font-family:Courier; text-align:center; font-size:1.0em; text-align:center">Error_t error = phAudioEffectDelay -> process(ppfAudioInput, ppfAudioOutput, iNumFrames); <br /> </span>
 - <i>ppfAudioInput, ppfAudioOutput</i> are the input/output buffers used by the library. The user should take care of creating and destroying these buffers. <br />
 - <i>iNumFrames</i> is an argument that tells the process function the number of samples in a block of buffered audio.
 

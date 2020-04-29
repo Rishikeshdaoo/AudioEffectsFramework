@@ -48,7 +48,7 @@ This projects aims to provide an easy to use A\+PI for creating audio effects pr
 
 int i\+Num\+Params = 4; ~\newline
  \mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659e}{C\+Audio\+Effect\+::\+Effect\+Param\+\_\+t}} param\mbox{[}i\+Num\+Params\mbox{]}; ~\newline
- float value\mbox{[}i\+Num\+Params\mbox{]};
+ float value\mbox{[}i\+Num\+Params\mbox{]}; 
 
 param\mbox{[}0\mbox{]} = \mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659eab721847e4b20bf69f9f05d516e02df2c}{C\+Audio\+Effect\+::k\+Param\+Delay\+In\+Secs}}; ~\newline
  value\mbox{[}0\mbox{]} = 0.\+002f; ~\newline
@@ -57,9 +57,11 @@ param\mbox{[}0\mbox{]} = \mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d
  param\mbox{[}2\mbox{]} = \mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659ea05e953e3f70678b944785d62ca5473bd}{C\+Audio\+Effect\+::k\+Param\+Mod\+Width\+In\+Secs}}; ~\newline
  value\mbox{[}2\mbox{]} = 0.\+002f; ~\newline
  param\mbox{[}3\mbox{]} = \mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659ea560e1b20c61513df8c5e2409609d61c3}{C\+Audio\+Effect\+::k\+Param\+Gain}}; ~\newline
- value\mbox{[}3\mbox{]} = 0.\+7f;\hypertarget{md__r_e_a_d_m_e_autotoc_md9}{}\doxysubsubsection{Call the effect\textquotesingle{}s process function}\label{md__r_e_a_d_m_e_autotoc_md9}
-Error\+\_\+t error = ph\+Audio\+Effect\+Delay -\/$>$ process(ppf\+Audio\+Input, ppf\+Audio\+Output, i\+Num\+Frames); ~\newline
+ value\mbox{[}3\mbox{]} = 0.\+7f;
 
+\hypertarget{md__r_e_a_d_m_e_autotoc_md9}{}\doxysubsubsection{Call the effect\textquotesingle{}s process function}\label{md__r_e_a_d_m_e_autotoc_md9}
+ Error\+\_\+t error = ph\+Audio\+Effect\+Delay -\/$>$ process(ppf\+Audio\+Input, ppf\+Audio\+Output, i\+Num\+Frames); ~\newline
+ 
 \begin{DoxyItemize}
 \item {\itshape ppf\+Audio\+Input, ppf\+Audio\+Output} are the input/output buffers used by the library. The user should take care of creating and destroying these buffers. ~\newline
 
