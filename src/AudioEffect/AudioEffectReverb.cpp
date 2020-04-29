@@ -42,6 +42,9 @@ Error_t CAudioEffectReverb::init(float fSampleRateInHz, int iNumChannels, float 
 {
     m_fSampleRateInHz = fSampleRateInHz;
     m_iNumChannels = iNumChannels;
+
+    if(iNumChannels < 1)
+        return kChannelError;
     
     // Default Reverb Values
     int iDefaultNumFilters = 3;

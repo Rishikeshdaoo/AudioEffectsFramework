@@ -54,6 +54,9 @@ Error_t CAudioEffectBiquad::init(float fSampleRateInHz, int iNumChannels, Filter
     m_fSampleRateInHz = fSampleRateInHz;
     m_iNumChannels = iNumChannels;
     m_bIsInitialized = true;
+
+    if(iNumChannels < 1)
+        return kChannelError;
     
     m_eFilterType = filterType;
     

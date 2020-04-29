@@ -18,7 +18,10 @@ enum Error_t
 
     kUnknownError,  //!< Unknown error occured
 
+    kChannelError, //!< Number of audio channels is zero
+
     kNumErrors //!< Number error
+
 };
 #endif // #if !defined(__ErrorDef_hdr__)
 

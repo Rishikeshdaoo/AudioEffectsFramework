@@ -53,7 +53,10 @@ Error_t CAudioEffectDelay::init(float fSampleRateInHz, int iNumChannels, DelayTy
     m_fSampleRateInHz = fSampleRateInHz;
     m_iNumChannels = iNumChannels;
     m_eDelayType = subType;
-    
+
+    if(iNumChannels < 1)
+        return kChannelError;
+
     m_fMaxDelayInSamples = fMaxDelayInSec * m_fSampleRateInHz;
     
     m_pCLfo             = new CLfo(m_fSampleRateInHz);

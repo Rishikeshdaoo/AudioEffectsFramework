@@ -44,7 +44,8 @@ Error_t CAudioEffectCompressorExpander::init(Effect_t effectType, float fSampleR
     m_iLookaheadBufferSize = iLookaheadBufferSize;
     m_bIsInitialized = true;
 
-    assert(iNumChannels > 0);
+    if(iNumChannels < 1)
+        return kChannelError;
 
     if(params == NULL || values == NULL) {
         iNumParams = 2;

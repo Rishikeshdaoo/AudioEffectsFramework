@@ -33,8 +33,9 @@ Error_t CAudioEffectGain::init(float fSampleRateInHz, int iNumChannels, EffectPa
     
     m_fSampleRateInHz = fSampleRateInHz;
     m_iNumChannels = iNumChannels;
-    
-    assert(iNumChannels > 0);
+
+    if(iNumChannels < 1)
+        return kChannelError;
 
     if(params == NULL || values == NULL) {
         iNumParams = 1;
