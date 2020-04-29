@@ -162,16 +162,17 @@ int main(int argc, char* argv[])
         phAudioEffectCompressorExpander = new CAudioEffectCompressorExpander(kCompressorExpander, stFileSpec.fSampleRateInHz, stFileSpec.iNumChannels, CAudioEffectCompressorExpander::kExpander);
     }else if(argEffect=="biquad"){
         cout << "Effect type: biquad" << endl;
-        int iNumParams = 3;
-        CAudioEffect::EffectParam_t param[iNumParams];
-        float value[iNumParams];
-        param[0] = CAudioEffect::kParamGain;
-        value[0] = 0.5f;
-        param[1] = CAudioEffect::kParamCenterFrequency;
-        value[1] = 1000.0f;
-        param[2] = CAudioEffect::kParamQ;
-        value[2] = 0.707f;
-        phAudioEffectBiquad = new CAudioEffectBiquad(stFileSpec.fSampleRateInHz,stFileSpec.iNumChannels,CAudioEffectBiquad::FilterType_t::kBandpass,param,value,iNumParams,5.F);
+//        int iNumParams = 3;
+//        CAudioEffect::EffectParam_t param[iNumParams];
+//        float value[iNumParams];
+//        param[0] = CAudioEffect::kParamGain;
+//        value[0] = 0.5f;
+//        param[1] = CAudioEffect::kParamCenterFrequency;
+//        value[1] = 1000.0f;
+//        param[2] = CAudioEffect::kParamQ;
+//        value[2] = 0.707f;
+//        phAudioEffectBiquad = new CAudioEffectBiquad(stFileSpec.fSampleRateInHz,stFileSpec.iNumChannels,CAudioEffectBiquad::FilterType_t::kBandpass,param,value,iNumParams,5.F);
+        phAudioEffectBiquad = new CAudioEffectBiquad(stFileSpec.fSampleRateInHz,stFileSpec.iNumChannels);
     }else if(argEffect=="reverb"){
         cout << "Effect type: reverb" << endl;
             int iNumParams = 2;
@@ -311,6 +312,6 @@ static void show_usage(char *argv)
     << "\t-h,--help\tShow help message\n"
     << "\t-i,--input\tInput wave file\n"
     << "\t-o,--output\tOutput wave file\n"
-    << "\t-t,--effect\teffect types: gain/pan/distortion/compressor/biquad/reverb/delay\n"
+    << "\t-t,--effect\teffect types:\n\t\t\t gain/pan/distortion/\n\t\t\tcompressor/expander/\n\t\t\tbiquad/reverb/\n\t\t\tdelay/flanger/chorus/vibrato/tremolo\n"
     << endl;
 }
