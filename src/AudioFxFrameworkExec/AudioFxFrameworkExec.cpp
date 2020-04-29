@@ -149,7 +149,7 @@ int main(int argc, char* argv[])
     //////////////////////////////////////////////////////////////////////////////
     // Initializing the  effect
     
-    //setting parameters in exe
+    //Reference for setting parameters in executable
 //    argEffect = "gain";
 //    int iNumParams = 1;
 //    CAudioEffect::EffectParam_t param[iNumParams];
