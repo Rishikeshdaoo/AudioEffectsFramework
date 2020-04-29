@@ -50,9 +50,13 @@ int main(int argc, char* argv[])
 
     //////////////////////////////////////////////////////////////////////////////
     // parse command line arguments (not sure if needed)
-    std::string pname = argv[0];
     std::string argEffect;
-
+    
+    //setting file path within exe
+//    sInputFilePath = "/Users/yitingzhang/Desktop/Guitar_sample.wav";
+//    sOutputFilePath = "/Users/yitingzhang/Desktop/Guitar_sample_test.wav";
+    
+    //command line parser
     if (argc < 7)
     {
         std::string arg = argv[1];
@@ -129,6 +133,17 @@ int main(int argc, char* argv[])
 
     //////////////////////////////////////////////////////////////////////////////
     // Initializing the  effect
+    
+    //setting parameters in exe
+//    argEffect = "gain";
+//    int iNumParams = 1;
+//    CAudioEffect::EffectParam_t param[iNumParams];
+//    float value[iNumParams];
+//    param[0] = CAudioEffect::kParamGain;
+//    value[0] = 0.5f;
+//    phAudioEffectGain = new CAudioEffectGain(stFileSpec.fSampleRateInHz,stFileSpec.iNumChannels, param,value,iNumParams);
+    
+    //setting parameters in command line
     if(argEffect=="gain"){
         cout << "Effect type: gain" << endl;
         phAudioEffectGain = new CAudioEffectGain(stFileSpec.fSampleRateInHz,stFileSpec.iNumChannels);
