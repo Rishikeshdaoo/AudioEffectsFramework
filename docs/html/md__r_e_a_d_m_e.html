@@ -131,10 +131,14 @@ Usage</h2>
 <h3><a class="anchor" id="autotoc_md8"></a>
 Create the Effect Instance</h3>
 <p><a class="el" href="class_c_audio_effect_delay.html" title="audio effect class for delay related effects">CAudioEffectDelay</a> *phAudioEffectDelay = nullptr; <br  />
- phAudioEffectDelay = new <a class="el" href="class_c_audio_effect_delay.html" title="audio effect class for delay related effects">CAudioEffectDelay(sampleRate,numChannels,maxDelayInSecs,param,value,iNumParams)</a>;</p>
-<p><em>sampleRate, numChannels</em> are arguments that should be taken from the host application. <br  />
- <em> maxDelayInSecs</em> is an argument the user sets according to their requirement for parameter value range (Only delay based effects have this argument). <br  />
- <em>param, value, iNumParams</em> are arguments that need to be initialized as below. </p>
+ phAudioEffectDelay = new <a class="el" href="class_c_audio_effect_delay.html" title="audio effect class for delay related effects">CAudioEffectDelay(sampleRate,numChannels,maxDelayInSecs,param,value,iNumParams)</a>; <br  />
+</p><ul>
+<li><em>sampleRate, numChannels</em> are arguments that should be taken from the host application. <br  />
+</li>
+<li><em> maxDelayInSecs</em> is an argument the user sets according to their requirement for parameter value range (Only delay based effects have this argument). <br  />
+</li>
+<li><em>param, value, iNumParams</em> are arguments that need to be initialized as below.</li>
+</ul>
 <p>int iNumParams = 4; <br  />
  <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659e">CAudioEffect::EffectParam_t</a> param[iNumParams]; <br  />
  float value[iNumParams];</p>
@@ -149,9 +153,11 @@ Create the Effect Instance</h3>
 <h3><a class="anchor" id="autotoc_md9"></a>
 Call the effect's process function</h3>
 <p>Error_t error = phAudioEffectDelay -&gt; process(ppfAudioInput, ppfAudioOutput, iNumFrames); <br  />
- </p>
-<p><em>ppfAudioInput, ppfAudioOutput</em> are the input/output buffers used by the library. The user should take care of creating and destroying these buffers. <br  />
- <em>iNumFrames</em> is an argument that tells the process function the number of samples in a block of buffered audio. </p>
+</p><ul>
+<li><em>ppfAudioInput, ppfAudioOutput</em> are the input/output buffers used by the library. The user should take care of creating and destroying these buffers. <br  />
+</li>
+<li><em>iNumFrames</em> is an argument that tells the process function the number of samples in a block of buffered audio. </li>
+</ul>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

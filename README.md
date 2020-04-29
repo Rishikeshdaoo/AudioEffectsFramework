@@ -48,11 +48,10 @@ This projects aims to provide an easy to use API for creating audio effects proc
 #### Create the Effect Instance
 
 CAudioEffectDelay       *phAudioEffectDelay = nullptr; <br />
-phAudioEffectDelay = new CAudioEffectDelay(sampleRate,numChannels,maxDelayInSecs,param,value,iNumParams);
-
-<p> <i>sampleRate, numChannels</i> are arguments that should be taken from the host application. <br />
-<i> maxDelayInSecs</i> is an argument the user sets according to their requirement for parameter value range (Only delay based effects have this argument). <br />
-<i>param, value, iNumParams</i> are arguments that need to be initialized as below. <p/>
+phAudioEffectDelay = new CAudioEffectDelay(sampleRate,numChannels,maxDelayInSecs,param,value,iNumParams); <br />
+- <i>sampleRate, numChannels</i> are arguments that should be taken from the host application. <br />
+- <i> maxDelayInSecs</i> is an argument the user sets according to their requirement for parameter value range (Only delay based effects have this argument). <br />
+- <i>param, value, iNumParams</i> are arguments that need to be initialized as below.
 
 int iNumParams = 4; <br />
 CAudioEffect::EffectParam_t param[iNumParams]; <br />
@@ -72,7 +71,7 @@ value[3] = 0.7f;
 #### Call the effect's process function
     
 Error_t error = phAudioEffectDelay -> process(ppfAudioInput, ppfAudioOutput, iNumFrames); <br />
-<p> <i>ppfAudioInput, ppfAudioOutput</i> are the input/output buffers used by the library. The user should take care of creating and destroying these buffers. <br />
-<i>iNumFrames</i> is an argument that tells the process function the number of samples in a block of buffered audio. <p/>
+- <i>ppfAudioInput, ppfAudioOutput</i> are the input/output buffers used by the library. The user should take care of creating and destroying these buffers. <br />
+- <i>iNumFrames</i> is an argument that tells the process function the number of samples in a block of buffered audio.
 
 
