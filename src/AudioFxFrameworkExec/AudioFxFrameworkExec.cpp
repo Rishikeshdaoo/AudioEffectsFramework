@@ -293,6 +293,6 @@ static void show_usage(char *argv)
     << "\t-h,--help\tShow help message\n"
     << "\t-i,--input\tInput wave file\n"
     << "\t-o,--output\tOutput wave file\n"
-    << "\t-t,--effect\teffect types: gain/pan/distortion/compressor/biquad/reverb/delay\n"
+    << "\t-t,--effect\teffect types:\n\t\t\t gain/pan/distortion/\n\t\t\tcompressor/expander/\n\t\t\tbiquad/reverb/\n\t\t\tdelay/flanger/chorus/vibrato/tremolo\n"
     << endl;
 }

@@ -66,6 +66,7 @@ param_expander = [0, 0, -20, -5];
 [audio_mat_expander, MSE_expander] = test(audio_raw, audio_cpp, "expander", param_expander);
 
 %% flanger
+% interpolation method different
 
 audio_path_raw = 'Guitar_sample.wav';
 audio_path_cpp = 'Guitar_sample_flanger.wav';
@@ -77,45 +78,19 @@ audio_path_cpp = 'Guitar_sample_flanger.wav';
 param_flanger = [Fs, 0.002, 0.25]; 
 [audio_mat_flanger, MSE_flanger] = test(audio_raw, audio_cpp, "flanger", param_flanger);
 
-% figure;
-% plot(audio_cpp);
-% hold on;
-% plot(audio_mat_flanger);
-
-%% chorus
-
-audio_path_raw = 'Guitar_sample.wav';
-audio_path_cpp = 'Guitar_sample_chorus.wav';
-
-[audio_raw,~] = audioread(audio_path_raw);
-[audio_cpp,Fs] = audioread(audio_path_cpp);
-
-% params for chorus: [Fs, max_time_delay, modulation_depth, modulation_rate, feedback]
-% param_chorus = [Fs, 0.015, 0.01, 0.25, 0.7]; 
-param_chorus = [Fs, 0.015, 0.01, 0.5, 0.7]; 
-[audio_mat_chorus, MSE_chorus] = test(audio_raw, audio_cpp, "chorus", param_chorus);
-
-figure;
-plot(audio_cpp);
-hold on;
-plot(audio_mat_chorus);
-
 %% Reverb
 audio_path_raw = 'Guitar_sample.wav';
 audio_path_cpp = 'Guitar_sample_reverb.wav';
 
 [audio_raw,~] = audioread(audio_path_raw);
 [audio_cpp,Fs] = audioread(audio_path_cpp);
-audio_cpp = audio_cpp/max(audio_cpp);
+% audio_cpp = audio_cpp/max(audio_cpp);
 
-% params for reverb: [Number of filters, gain of filters, vector of delay lengths, gain factor of the direct signal]
+% params for reverb: [Number of filters, gain of filters, 
+%                     vector of delay lengths, gain factor of the direct signal]
 % [y,b,a] = schroeder(audio_raw,3,0.707,[0.5*Fs 0.3*Fs 0.2*Fs],1);
 param_reverb = {3,0.707,[0.5*Fs 0.3*Fs 0.2*Fs],1}; 
 [audio_mat_reverb, MSE_reverb] = test(audio_raw, audio_cpp, "reverb", param_reverb);
-%% other test
 
-% param_chorus = [Fs, 0.013, 0.003, 1, 0.8] % params for chorus effect: [Fs, max_time_delay, modulation_depth, modulation_rate, feedback]
-% [audio_mat_chorus, MSE_chorus] = test(audio_raw, audio_cpp, "chorus", param_chorus);
-%
-% param_reverb = [6, 0.9, floor(0.05*rand([1,n])*Fs), 0.2] % params for reverb effect: [no. of all pass filters,list of gains,list of delay times, gain]
-% [audio_mat_reverb, MSE_reverb] = test(audio_raw, audio_cpp, "chorus", param_reverb);
+audiowrite("reverb_matlab.wav", audio_mat_reverb, Fs);
+audiowrite("reverb_cpp.wav", audio_cpp, Fs);
