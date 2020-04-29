@@ -113,7 +113,11 @@ int main(int argc, char* argv[])
 
     //////////////////////////////////////////////////////////////////////////////
     // open the output audio file
-    phAudioOutputFile->openFile(sOutputFilePath, CAudioFileIf::kFileWrite, &stFileSpec);
+    CAudioFileIf::FileSpec_t stFileSpecOutput = stFileSpec;
+    
+    if(argEffect == "pan")
+        stFileSpecOutput.iNumChannels = 2;
+    phAudioOutputFile->openFile(sOutputFilePath, CAudioFileIf::kFileWrite, &stFileSpecOutput);
     if (!phAudioOutputFile->isOpen()) {
         cout << "Wave file open error!";
         return -1;
