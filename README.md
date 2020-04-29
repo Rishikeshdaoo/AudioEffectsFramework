@@ -85,6 +85,4 @@ value[4] = 0.5f; <br />
 
 #### Video demonstration of the framework
 
-<iframe width="420" height="315"
-src="https://youtu.be/NgGLyauAIhE">
-</iframe>
+[![AudioFxFramework_Demo](http://img.youtube.com/vi/NgGLyauAIhE/0.jpg)](http://www.youtube.com/watch?v=NgGLyauAIhE "Audio Effects Framework - Video demonstration")
