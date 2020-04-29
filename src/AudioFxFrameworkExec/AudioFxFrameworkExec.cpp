@@ -86,7 +86,8 @@ int main(int argc, char* argv[])
         } else if ((arg == "-t") || (arg == "--type")) {
             argEffect = argv[++i];
             if(argEffect != "gain" && argEffect != "pan" && argEffect != "distortion" && argEffect != "compressor" &&
-               argEffect != "biquad" && argEffect != "reverb" && argEffect != "delay"){
+               argEffect != "expander" && argEffect != "biquad" && argEffect != "reverb" && argEffect != "delay" &&
+               argEffect != "flanger" && argEffect != "chorus" && argEffect != "vibrato" && argEffect != "tremolo" ){
                 cout << "Invalid effect type!" << endl;
                 show_usage(argv[0]);
                 return -1;
@@ -156,6 +157,9 @@ int main(int argc, char* argv[])
     }else if(argEffect=="compressor"){
         cout << "Effect type: compressor" << endl;
         phAudioEffectCompressorExpander = new CAudioEffectCompressorExpander(kCompressorExpander, stFileSpec.fSampleRateInHz, stFileSpec.iNumChannels, CAudioEffectCompressorExpander::kCompressor);
+    }else if(argEffect=="expander"){
+        cout << "Effect type: expander" << endl;
+        phAudioEffectCompressorExpander = new CAudioEffectCompressorExpander(kCompressorExpander, stFileSpec.fSampleRateInHz, stFileSpec.iNumChannels, CAudioEffectCompressorExpander::kExpander);
     }else if(argEffect=="biquad"){
         cout << "Effect type: biquad" << endl;
         int iNumParams = 3;
@@ -184,6 +188,22 @@ int main(int argc, char* argv[])
         cout << "Effect type: delay" << endl;
         phAudioEffectDelay = new CAudioEffectDelay(stFileSpec.fSampleRateInHz,stFileSpec.iNumChannels,1.F,
                                                     CAudioEffectDelay::kBasicDelay);
+    }else if(argEffect=="flanger"){
+        cout << "Effect type: flanger" << endl;
+        phAudioEffectDelay = new CAudioEffectDelay(stFileSpec.fSampleRateInHz,stFileSpec.iNumChannels,1.F,
+                                                    CAudioEffectDelay::kFlanger);
+    }else if(argEffect=="chorus"){
+        cout << "Effect type: chorus" << endl;
+        phAudioEffectDelay = new CAudioEffectDelay(stFileSpec.fSampleRateInHz,stFileSpec.iNumChannels,1.F,
+                                                    CAudioEffectDelay::kChorus);
+    }else if(argEffect=="vibrato"){
+        cout << "Effect type: vibrato" << endl;
+        phAudioEffectDelay = new CAudioEffectDelay(stFileSpec.fSampleRateInHz,stFileSpec.iNumChannels,1.F,
+                                                    CAudioEffectDelay::kVibrato);
+    }else if(argEffect=="tremolo"){
+        cout << "Effect type: tremolo" << endl;
+        phAudioEffectDelay = new CAudioEffectDelay(stFileSpec.fSampleRateInHz,stFileSpec.iNumChannels,1.F,
+                                                    CAudioEffectDelay::kTremolo);
     }
 
     
@@ -213,7 +233,7 @@ int main(int argc, char* argv[])
             if(error != kNoError){
                 return -1;
             }
-        }else if(argEffect=="compressor"){
+        }else if(argEffect=="compressor" || argEffect=="expander"){
             Error_t error = phAudioEffectCompressorExpander->process(ppfAudioInput, ppfAudioOutput, iNumFrames);
             if(error != kNoError){
                 return -1;
@@ -228,7 +248,7 @@ int main(int argc, char* argv[])
             if(error != kNoError){
                 return -1;
             }
-        }else if(argEffect=="delay"){
+        }else if(argEffect=="delay"||argEffect=="flanger"||argEffect=="chorus"||argEffect=="vibrato"||argEffect=="tremolo"){
             Error_t error = phAudioEffectDelay->process(ppfAudioInput, ppfAudioOutput, iNumFrames);
             if(error != kNoError){
                 return -1;
