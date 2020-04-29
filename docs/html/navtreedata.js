@@ -34,7 +34,8 @@ var NAVTREE =
         [ "Effect Subtype Categorization", "md__r_e_a_d_m_e.html#autotoc_md6", null ],
         [ "Usage", "md__r_e_a_d_m_e.html#autotoc_md7", [
           [ "Create the Effect Instance", "md__r_e_a_d_m_e.html#autotoc_md8", null ],
-          [ "Call the effect's process function", "md__r_e_a_d_m_e.html#autotoc_md9", null ]
+          [ "Call the effect's process function", "md__r_e_a_d_m_e.html#autotoc_md9", null ],
+          [ "Video demonstration of the framework", "md__r_e_a_d_m_e.html#autotoc_md10", null ]
         ] ]
       ] ]
     ] ],

@@ -83,4 +83,8 @@ value[4] = 0.5f; <br />
 - <i>ppfAudioInput, ppfAudioOutput</i> - Input/output buffers used by the library. The user should take care of creating and destroying these buffers. <br />
 - <i>iNumFrames</i> - Argument that tells the process function the number of samples in a block of buffered audio.
 
+#### Video demonstration of the framework
 
+<iframe width="420" height="315"
+src="https://youtu.be/NgGLyauAIhE">
+</iframe>
