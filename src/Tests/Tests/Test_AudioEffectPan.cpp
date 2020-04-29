@@ -126,7 +126,7 @@ SUITE(Pan)
         for (int i = 0; i < m_iNumChannelsOutput; i++)
         {
             m_ppfOutputData[i]  = new float [m_iDataLength];
-            CVectorFloat::setZero(m_ppfOutputData[i], m_iDataLength);
+//            CVectorFloat::setZero(m_ppfOutputData[i], m_iDataLength);
         }
         
         int iNumParams = 1;
@@ -163,7 +163,7 @@ SUITE(Pan)
         for (int i = 0; i < m_iNumChannelsOutput; i++)
         {
             m_ppfOutputData[i]  = new float [m_iDataLength];
-            CVectorFloat::setZero(m_ppfOutputData[i], m_iDataLength);
+//            CVectorFloat::setZero(m_ppfOutputData[i], m_iDataLength);
         }
         
         int iNumParams = 1;
@@ -204,7 +204,7 @@ SUITE(Pan)
         for (int i = 0; i < m_iNumChannelsOutput; i++)
         {
             m_ppfOutputData[i]  = new float [m_iDataLength];
-            CVectorFloat::setZero(m_ppfOutputData[i], m_iDataLength);
+//            CVectorFloat::setZero(m_ppfOutputData[i], m_iDataLength);
         }
         
         int iNumParams = 1;
@@ -249,7 +249,7 @@ SUITE(Pan)
         for (int i = 0; i < m_iNumChannelsOutput; i++)
         {
             m_ppfOutputData[i]  = new float [m_iDataLength];
-            CVectorFloat::setZero(m_ppfOutputData[i], m_iDataLength);
+//            CVectorFloat::setZero(m_ppfOutputData[i], m_iDataLength);
         }
         
         int iNumParams = 1;
@@ -294,7 +294,7 @@ SUITE(Pan)
         for (int i = 0; i < m_iNumChannelsOutput; i++)
         {
             m_ppfOutputData[i]  = new float [m_iDataLength];
-            CVectorFloat::setZero(m_ppfOutputData[i], m_iDataLength);
+//            CVectorFloat::setZero(m_ppfOutputData[i], m_iDataLength);
         }
         
         int iNumParams = 1;
@@ -350,7 +350,7 @@ SUITE(Pan)
         for (int i = 0; i < m_iNumChannelsOutput; i++)
         {
             m_ppfOutputData[i]  = new float [m_iDataLength];
-            CVectorFloat::setZero(m_ppfOutputData[i], m_iDataLength);
+//            CVectorFloat::setZero(m_ppfOutputData[i], m_iDataLength);
         }
         
         int iNumParams = 1;
@@ -391,7 +391,7 @@ SUITE(Pan)
         for (int i = 0; i < m_iNumChannelsOutput; i++)
         {
             m_ppfOutputData[i]  = new float [m_iDataLength];
-            CVectorFloat::setZero(m_ppfOutputData[i], m_iDataLength);
+//            CVectorFloat::setZero(m_ppfOutputData[i], m_iDataLength);
         }
         
         int iNumParams = 1;
@@ -431,7 +431,7 @@ SUITE(Pan)
                for (int i = 0; i < m_iNumChannelsOutput; i++)
                {
                    m_ppfOutputData[i]  = new float [m_iDataLength];
-                   CVectorFloat::setZero(m_ppfOutputData[i], m_iDataLength);
+//                   CVectorFloat::setZero(m_ppfOutputData[i], m_iDataLength);
                }
         
         int iNumParams = 1;
@@ -476,7 +476,7 @@ SUITE(Pan)
                for (int i = 0; i < m_iNumChannelsOutput; i++)
                {
                    m_ppfOutputData[i]  = new float [m_iDataLength];
-                   CVectorFloat::setZero(m_ppfOutputData[i], m_iDataLength);
+//                   CVectorFloat::setZero(m_ppfOutputData[i], m_iDataLength);
                }
         
         int iNumParams = 1;

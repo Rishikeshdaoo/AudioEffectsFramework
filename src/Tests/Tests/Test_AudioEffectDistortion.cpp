@@ -37,7 +37,8 @@ SUITE(Distortion)
                 m_ppfInputData[i]   = new float [m_iDataLength];
                 CVectorFloat::setZero(m_ppfInputData[i], m_iDataLength);
                 m_ppfOutputData[i]  = new float [m_iDataLength];
-                CVectorFloat::setZero(m_ppfOutputData[i], m_iDataLength);            }
+//                CVectorFloat::setZero(m_ppfOutputData[i], m_iDataLength);
+            }
         }
         
         ~DistortionData()
