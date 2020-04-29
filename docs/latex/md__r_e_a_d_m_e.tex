@@ -36,14 +36,15 @@ This projects aims to provide an easy to use A\+PI for creating audio effects pr
 \hypertarget{md__r_e_a_d_m_e_autotoc_md7}{}\doxysubsection{Usage}\label{md__r_e_a_d_m_e_autotoc_md7}
 \hypertarget{md__r_e_a_d_m_e_autotoc_md8}{}\doxysubsubsection{Create the Effect Instance}\label{md__r_e_a_d_m_e_autotoc_md8}
 \mbox{\hyperlink{class_c_audio_effect_delay}{C\+Audio\+Effect\+Delay}} $\ast$ph\+Audio\+Effect\+Delay = nullptr; ~\newline
- ph\+Audio\+Effect\+Delay = new \mbox{\hyperlink{class_c_audio_effect_delay}{C\+Audio\+Effect\+Delay(sample\+Rate,num\+Channels,max\+Delay\+In\+Secs,param,value,i\+Num\+Params)}}; ~\newline
+ ph\+Audio\+Effect\+Delay = new \mbox{\hyperlink{class_c_audio_effect_delay}{C\+Audio\+Effect\+Delay(f\+Sample\+Rate\+In\+Hz, i\+Num\+Channels, sub\+Type, f\+Max\+Delay\+In\+Sec, params\mbox{[}$\,$\mbox{]} , values\mbox{[}$\,$\mbox{]}, i\+Num\+Params)}}; ~\newline
 
 \begin{DoxyItemize}
-\item {\itshape sample\+Rate, num\+Channels} are arguments that should be taken from the host application. ~\newline
+\item {\itshape f\+Sample\+Rate\+In\+Hz, i\+Num\+Channels} -\/ arguments that should be taken from the host application. Both are required arguments ~\newline
 
-\item {\itshape  max\+Delay\+In\+Secs} is an argument the user sets according to their requirement for parameter value range (Only delay based effects have this argument). ~\newline
+\item {\itshape  sub\+Type} -\/ required argument for the effect subtype the user wishes to use. Exists only for effects that have subtypes. Refer above section on effect subtype categorization.
+\item {\itshape f\+Max\+Delay\+In\+Sec} -\/ argument the user sets according to their requirement for parameter value range (Only delay based effects have this argument). This is a required argument~\newline
 
-\item {\itshape param, value, i\+Num\+Params} are arguments that need to be initialized as below.
+\item {\itshape params, values, i\+Num\+Params} -\/ arguments that need to be initialized as below. These are the values of the effect parameters. These are optional arguments, which will take default values if they are not passed by the user.
 \end{DoxyItemize}
 
 int i\+Num\+Params = 4; ~\newline
@@ -57,13 +58,11 @@ param\mbox{[}0\mbox{]} = \mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d
  param\mbox{[}2\mbox{]} = \mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659ea05e953e3f70678b944785d62ca5473bd}{C\+Audio\+Effect\+::k\+Param\+Mod\+Width\+In\+Secs}}; ~\newline
  value\mbox{[}2\mbox{]} = 0.\+002f; ~\newline
  param\mbox{[}3\mbox{]} = \mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d6b2e78f10b1e659ea560e1b20c61513df8c5e2409609d61c3}{C\+Audio\+Effect\+::k\+Param\+Gain}}; ~\newline
- value\mbox{[}3\mbox{]} = 0.\+7f;
-
-\hypertarget{md__r_e_a_d_m_e_autotoc_md9}{}\doxysubsubsection{Call the effect\textquotesingle{}s process function}\label{md__r_e_a_d_m_e_autotoc_md9}
- Error\+\_\+t error = ph\+Audio\+Effect\+Delay -\/$>$ process(ppf\+Audio\+Input, ppf\+Audio\+Output, i\+Num\+Frames); ~\newline
+ value\mbox{[}3\mbox{]} = 0.\+7f;\hypertarget{md__r_e_a_d_m_e_autotoc_md9}{}\doxysubsubsection{Call the effect\textquotesingle{}s process function}\label{md__r_e_a_d_m_e_autotoc_md9}
+Error\+\_\+t error = ph\+Audio\+Effect\+Delay -\/$>$ process(ppf\+Audio\+Input, ppf\+Audio\+Output, i\+Num\+Frames); ~\newline
  
 \begin{DoxyItemize}
-\item {\itshape ppf\+Audio\+Input, ppf\+Audio\+Output} are the input/output buffers used by the library. The user should take care of creating and destroying these buffers. ~\newline
+\item {\itshape ppf\+Audio\+Input, ppf\+Audio\+Output} -\/ input/output buffers used by the library. The user should take care of creating and destroying these buffers. ~\newline
 
-\item {\itshape i\+Num\+Frames} is an argument that tells the process function the number of samples in a block of buffered audio. 
+\item {\itshape i\+Num\+Frames} -\/ argument that tells the process function the number of samples in a block of buffered audio. 
 \end{DoxyItemize}

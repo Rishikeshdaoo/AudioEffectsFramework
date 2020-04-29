@@ -131,36 +131,34 @@ Usage</h2>
 <h3><a class="anchor" id="autotoc_md8"></a>
 Create the Effect Instance</h3>
 <p><span style="font-family:Courier; text-align:center; font-size:1.0em"><a class="el" href="class_c_audio_effect_delay.html" title="audio effect class for delay related effects">CAudioEffectDelay</a> *phAudioEffectDelay = nullptr; <br  />
- phAudioEffectDelay = new <a class="el" href="class_c_audio_effect_delay.html" title="audio effect class for delay related effects">CAudioEffectDelay(sampleRate,numChannels,maxDelayInSecs,param,value,iNumParams)</a>; <br  />
-</p><ul>
-<li><em>sampleRate, numChannels</em> are arguments that should be taken from the host application. <br  />
+ phAudioEffectDelay = new <a class="el" href="class_c_audio_effect_delay.html" title="audio effect class for delay related effects">CAudioEffectDelay(fSampleRateInHz, iNumChannels, subType, fMaxDelayInSec, params[] , values[], iNumParams)</a>; <br  />
+</span></p><ul>
+<li><em>fSampleRateInHz, iNumChannels</em> - arguments that should be taken from the host application. Both are required arguments <br  />
 </li>
-<li><em> maxDelayInSecs</em> is an argument the user sets according to their requirement for parameter value range (Only delay based effects have this argument). <br  />
+<li><em> subType</em> - required argument for the effect subtype the user wishes to use. Exists only for effects that have subtypes. Refer above section on effect subtype categorization.</li>
+<li><em>fMaxDelayInSec</em> - argument the user sets according to their requirement for parameter value range (Only delay based effects have this argument). This is a required argument<br  />
 </li>
-<li><em>param, value, iNumParams</em> are arguments that need to be initialized as below.</li>
+<li><em>params, values, iNumParams</em> - arguments that need to be initialized as below. These are the values of the effect parameters. These are optional arguments, which will take default values if they are not passed by the user.</li>
 </ul>
-<p></span></p>
-<p><span style="font-family:Courier; text-align:center; font-size:1.0em"><span style="font-family:Courier; text-align:center; font-size:1.0em; text-align:center">int iNumParams = 4; <br  />
+<p><span style="font-family:Courier; text-align:center; font-size:1.0em; text-align:center">int iNumParams = 4; <br  />
  <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659e">CAudioEffect::EffectParam_t</a> param[iNumParams]; <br  />
- float value[iNumParams]; </span></span></p>
-<p><span style="font-family:Courier; text-align:center; font-size:1.0em">param[0] = <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659eab721847e4b20bf69f9f05d516e02df2c" title="Parameter for delay used in delay-based effects.">CAudioEffect::kParamDelayInSecs</a>; <br  />
+ float value[iNumParams]; </span></p>
+<p>param[0] = <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659eab721847e4b20bf69f9f05d516e02df2c" title="Parameter for delay used in delay-based effects.">CAudioEffect::kParamDelayInSecs</a>; <br  />
  value[0] = 0.002f; <br  />
  param[1] = <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659eada631f5d036dec3dda2386b6f00f0f8f" title="Parameter for Modulation Frequency used in modulated effects.">CAudioEffect::kParamModRateInHz</a>; <br  />
  value[1] = 0.5f; <br  />
  param[2] = <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659ea05e953e3f70678b944785d62ca5473bd" title="Parameter Modulation Amplitude used in modulated effects.">CAudioEffect::kParamModWidthInSecs</a>; <br  />
  value[2] = 0.002f; <br  />
  param[3] = <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659ea560e1b20c61513df8c5e2409609d61c3" title="Parameter for gain of output audio.">CAudioEffect::kParamGain</a>; <br  />
- value[3] = 0.7f;</span></p>
-<p><span style="font-family:Courier; text-align:center; font-size:1.0em"></span></p>
+ value[3] = 0.7f;</p>
 <h3><a class="anchor" id="autotoc_md9"></a>
 Call the effect's process function</h3>
-<p><span style="font-family:Courier; text-align:center; font-size:1.0em"> <span style="font-family:Courier; text-align:center; font-size:1.0em; text-align:center">Error_t error = phAudioEffectDelay -&gt; process(ppfAudioInput, ppfAudioOutput, iNumFrames); <br  />
+<p><span style="font-family:Courier; text-align:center; font-size:1.0em; text-align:center">Error_t error = phAudioEffectDelay -&gt; process(ppfAudioInput, ppfAudioOutput, iNumFrames); <br  />
  </span></p><ul>
-<li><em>ppfAudioInput, ppfAudioOutput</em> are the input/output buffers used by the library. The user should take care of creating and destroying these buffers. <br  />
+<li><em>ppfAudioInput, ppfAudioOutput</em> - input/output buffers used by the library. The user should take care of creating and destroying these buffers. <br  />
 </li>
-<li><em>iNumFrames</em> is an argument that tells the process function the number of samples in a block of buffered audio. </li>
+<li><em>iNumFrames</em> - argument that tells the process function the number of samples in a block of buffered audio. </li>
 </ul>
-<p></span></p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
