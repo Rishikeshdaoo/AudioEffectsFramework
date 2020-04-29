@@ -153,7 +153,6 @@ int main(int argc, char* argv[])
         param[2] = CAudioEffect::kParamQ;
         value[2] = 0.707f;
         phAudioEffectBiquad = new CAudioEffectBiquad(stFileSpec.fSampleRateInHz,stFileSpec.iNumChannels,CAudioEffectBiquad::FilterType_t::kBandpass,param,value,iNumParams,5.F);
-        phAudioEffectBiquad->setFilterType(CAudioEffectBiquad::FilterType_t::kBandpass);
     }else if(argEffect=="reverb"){
         cout << "Effect type: reverb" << endl;
             int iNumParams = 2;

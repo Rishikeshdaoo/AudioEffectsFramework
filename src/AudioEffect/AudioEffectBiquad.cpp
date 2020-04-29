@@ -99,7 +99,7 @@ Error_t CAudioEffectBiquad::init(float fSampleRateInHz, int iNumChannels, Filter
         m_fyn2[i] = 0.f;
     }
 
-    return kNoError;
+    return setFilterConstants();
 };
 
 Error_t CAudioEffectBiquad::reset()

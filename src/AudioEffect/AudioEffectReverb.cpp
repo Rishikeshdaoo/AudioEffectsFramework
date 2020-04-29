@@ -35,7 +35,7 @@ CAudioEffectReverb::CAudioEffectReverb(float fSampleRateInHz, int iNumChannels, 
 
 CAudioEffectReverb::~CAudioEffectReverb()
 {
-
+    this->reset();
 };
 
 Error_t CAudioEffectReverb::init(float fSampleRateInHz, int iNumChannels, float fMaxDelayInSec, EffectParam_t params[], float values[], int iNumParams)
