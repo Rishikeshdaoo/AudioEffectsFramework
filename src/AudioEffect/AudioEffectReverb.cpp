@@ -14,6 +14,7 @@ CAudioEffectReverb::CAudioEffectReverb()
     m_iNumChannels = 0;
     m_fSampleRateInHz = 0;
     m_bIsInitialized = false;
+    m_fGain = 0.f;
     m_iNumFilters = 0;
     m_afFilterDelaysInSec = 0;
     m_ppCAudioEffectBiquad = 0;
@@ -25,6 +26,7 @@ CAudioEffectReverb::CAudioEffectReverb(float fSampleRateInHz, int iNumChannels, 
     m_iNumChannels = 0;
     m_fSampleRateInHz = 0;
     m_bIsInitialized = false;
+    m_fGain = 0.f;
     m_iNumFilters = 0;
     m_afFilterDelaysInSec = 0;
     m_ppCAudioEffectBiquad = 0;
@@ -56,6 +58,8 @@ Error_t CAudioEffectReverb::init(float fSampleRateInHz, int iNumChannels, float 
     m_afFilterDelaysInSec[2] = 0.2f;
     
     m_fFilterGain = 0.707f;
+    
+    m_fGain = 0.707f;
 
     for (int i = 0; i < iNumParams; i++)
     {
@@ -66,6 +70,8 @@ Error_t CAudioEffectReverb::init(float fSampleRateInHz, int iNumChannels, float 
             case kParamFilterGains:
                 m_fFilterGain = values[i];
                 break;
+            case kParamGain:
+                m_fGain = values[i];
             default:
                 return kNoError;
         }
@@ -146,6 +152,8 @@ Error_t CAudioEffectReverb::setParam(EffectParam_t eParam, float fValue)
                 m_ppCAudioEffectBiquad[i]->init(m_fSampleRateInHz, m_iNumChannels, CAudioEffectBiquad::kAllpass, param, value, 3, m_afFilterDelaysInSec[i]);
             }
             break;
+        case CAudioEffect::kParamGain:
+            m_fGain = fValue;
         default:
             return kFunctionInvalidArgsError;
     }
@@ -163,6 +171,8 @@ float CAudioEffectReverb::getParam(EffectParam_t eParam)
             return m_iNumFilters;
         case kParamFilterGains:
             return m_fFilterGain;
+        case kParamGain:
+            return m_fGain;
         default:
             return 0.f;
             break;
@@ -193,7 +203,7 @@ Error_t CAudioEffectReverb::process(float **ppfInputBuffer, float **ppfOutputBuf
         for (int i = 0; i < iNumberOfFrames; i++)
         {
             ppfTempBuffer[c][i] = ppfInputBuffer[c][i];
-            ppfOutputBuffer[c][i] = ppfInputBuffer[c][i];
+            ppfOutputBuffer[c][i] = m_fGain * ppfInputBuffer[c][i];
         }
     }
     

@@ -76,6 +76,7 @@ private:
     int m_iNumFilters;  //!<  number of filters
     float m_fFilterGain;  //!<  filter gain
     float * m_afFilterDelaysInSec;  //!<  filter delay lengths in seconds
+    float m_fGain;  //!< scaling gain for direct signal
     
 };
 
