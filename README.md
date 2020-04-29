@@ -49,7 +49,7 @@ This repository also contains an executable .cpp file. A user can enter an input
 
 - Some of the effects have an hierarchical structure, where a class hold several effect subtypes. To use a specific effect subtype, the correct subtype enum should be passed to in the constructor/init function. The below diagram explains the categorization and the enum corresponding to the subtypes.
 
-![Effect Subtype Categories](../assets/EffectSubtypes.png)
+![Effect Subtype Categories](/docs/assets/EffectSubtypes.png)
 
 ### Usage
 
