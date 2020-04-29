@@ -28,12 +28,6 @@ This projects aims to provide an easy to use API for creating audio effects proc
 - Creating plugins for Digital Audio Workstations.
 - For use in applications that require real-time audio effects.
 
-### Effect Subtype Categorization
-
-- Some of the effects have an hierarchical structure, where a class hold several effect subtypes. To use a specific effect subtype, the correct subtype enum should be passed to in the constructor/init function. The below diagram explains the categorization and the enum corresponding to the subtypes.
-
-![Effect Subtype Categories](../assets/EffectSubtypes.png)
-
 
 ## Getting Started
 
@@ -41,6 +35,12 @@ This projects aims to provide an easy to use API for creating audio effects proc
 
 - Clone the repository with the command : `git clone https://github.com/Rishikeshdaoo/AudioEffectsFramework.git` or download a zip project folder from the Download button.
 - Install <a href="https://cmake.org/">CMake</a> and compile the project.
+
+### Effect Subtype Categorization
+
+- Some of the effects have an hierarchical structure, where a class hold several effect subtypes. To use a specific effect subtype, the correct subtype enum should be passed to in the constructor/init function. The below diagram explains the categorization and the enum corresponding to the subtypes.
+
+![Effect Subtype Categories](../assets/EffectSubtypes.png)
 
 ### Usage
 

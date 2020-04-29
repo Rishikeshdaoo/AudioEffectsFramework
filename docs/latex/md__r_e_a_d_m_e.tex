@@ -21,19 +21,19 @@ This projects aims to provide an easy to use A\+PI for creating audio effects pr
 \begin{DoxyItemize}
 \item Creating plugins for Digital Audio Workstations.
 \item For use in applications that require real-\/time audio effects.
-\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysubsection{Effect Subtype Categorization}\label{md__r_e_a_d_m_e_autotoc_md4}
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysection{Getting Started}\label{md__r_e_a_d_m_e_autotoc_md4}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md5}{}\doxysubsection{Instructions}\label{md__r_e_a_d_m_e_autotoc_md5}
+
+\begin{DoxyItemize}
+\item Clone the repository with the command \+: {\ttfamily git clone \href{https://github.com/Rishikeshdaoo/AudioEffectsFramework.git}{\texttt{ https\+://github.\+com/\+Rishikeshdaoo/\+Audio\+Effects\+Framework.\+git}}} or download a zip project folder from the Download button.
+\item Install \href{https://cmake.org/}{\texttt{ C\+Make}} and compile the project.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md6}{}\doxysubsection{Effect Subtype Categorization}\label{md__r_e_a_d_m_e_autotoc_md6}
 
 \begin{DoxyItemize}
 \item Some of the effects have an hierarchical structure, where a class hold several effect subtypes. To use a specific effect subtype, the correct subtype enum should be passed to in the constructor/init function. The below diagram explains the categorization and the enum corresponding to the subtypes.
 \end{DoxyItemize}
 
-\hypertarget{md__r_e_a_d_m_e_autotoc_md5}{}\doxysection{Getting Started}\label{md__r_e_a_d_m_e_autotoc_md5}
-\hypertarget{md__r_e_a_d_m_e_autotoc_md6}{}\doxysubsection{Instructions}\label{md__r_e_a_d_m_e_autotoc_md6}
-
-\begin{DoxyItemize}
-\item Clone the repository with the command \+: {\ttfamily git clone \href{https://github.com/Rishikeshdaoo/AudioEffectsFramework.git}{\texttt{ https\+://github.\+com/\+Rishikeshdaoo/\+Audio\+Effects\+Framework.\+git}}} or download a zip project folder from the Download button.
-\item Install \href{https://cmake.org/}{\texttt{ C\+Make}} and compile the project.
-\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md7}{}\doxysubsection{Usage}\label{md__r_e_a_d_m_e_autotoc_md7}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md7}{}\doxysubsection{Usage}\label{md__r_e_a_d_m_e_autotoc_md7}
 \hypertarget{md__r_e_a_d_m_e_autotoc_md8}{}\doxysubsubsection{Create the Effect Instance}\label{md__r_e_a_d_m_e_autotoc_md8}
 \mbox{\hyperlink{class_c_audio_effect_delay}{C\+Audio\+Effect\+Delay}} $\ast$ph\+Audio\+Effect\+Delay = nullptr; ~\newline
  ph\+Audio\+Effect\+Delay = new \mbox{\hyperlink{class_c_audio_effect_delay}{C\+Audio\+Effect\+Delay(sample\+Rate,num\+Channels,max\+Delay\+In\+Secs,param,value,i\+Num\+Params)}}; ~\newline
