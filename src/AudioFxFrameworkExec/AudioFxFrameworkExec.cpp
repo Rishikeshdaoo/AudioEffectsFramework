@@ -286,11 +286,11 @@ void     showClInfo()
 
 static void show_usage(char *argv)
 {
-    std::cerr << "Usage: " << argv[0] << " <option(s)> "
+    cout << "Usage:\n"
     << "Options:\n"
     << "\t-h,--help\tShow help message\n"
     << "\t-i,--input\tInput wave file\n"
     << "\t-o,--output\tOutput wave file\n"
-    << "\t-t,--effect effect types: gain\n"
-    << std::endl;
+    << "\t-t,--effect\teffect types: gain/pan/distortion/compressor/biquad/reverb/delay\n"
+    << endl;
 }
