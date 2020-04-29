@@ -2,6 +2,8 @@
 
 Cross platform C++ library with low-latency audio effects processing algorithms designed for real-time audio processing. 
 
+Video demonstration for the framework : https://www.youtube.com/watch?v=NgGLyauAIhE
+
 The Doxygen documentation can be accessed here: http://rishikeshdaoo.github.io/AudioEffectsFramework
 
 ## Motivation
@@ -82,7 +84,3 @@ value[4] = 0.5f; <br />
 <span style="font-family:Courier; text-align:center; font-size:1.0em; text-align:center">Error_t error = phAudioEffectDelay -> process(ppfAudioInput, ppfAudioOutput, iNumFrames); <br /> </span>
 - <i>ppfAudioInput, ppfAudioOutput</i> - Input/output buffers used by the library. The user should take care of creating and destroying these buffers. <br />
 - <i>iNumFrames</i> - Argument that tells the process function the number of samples in a block of buffered audio.
-
-#### Video demonstration of the framework
-
-[![AudioFxFramework_Demo](http://img.youtube.com/vi/NgGLyauAIhE/0.jpg)](http://www.youtube.com/watch?v=NgGLyauAIhE "Audio Effects Framework - Video demonstration")
