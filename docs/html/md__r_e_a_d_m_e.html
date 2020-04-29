@@ -133,12 +133,12 @@ Create the Effect Instance</h3>
 <p><span style="font-family:Courier; text-align:center; font-size:1.0em"><a class="el" href="class_c_audio_effect_delay.html" title="audio effect class for delay related effects">CAudioEffectDelay</a> *phAudioEffectDelay = nullptr; <br  />
  phAudioEffectDelay = new <a class="el" href="class_c_audio_effect_delay.html" title="audio effect class for delay related effects">CAudioEffectDelay(fSampleRateInHz, iNumChannels, subType, fMaxDelayInSec, params[] , values[], iNumParams)</a>; <br  />
 </span></p><ul>
-<li><em>fSampleRateInHz, iNumChannels</em> - arguments that should be taken from the host application. Both are required arguments <br  />
+<li><em>fSampleRateInHz, iNumChannels</em> - Required arguments that should be taken from the host application. Both are required arguments <br  />
 </li>
-<li><em> subType</em> - required argument for the effect subtype the user wishes to use. Exists only for effects that have subtypes. Refer above section on effect subtype categorization.</li>
-<li><em>fMaxDelayInSec</em> - argument the user sets according to their requirement for parameter value range (Only delay based effects have this argument). This is a required argument<br  />
+<li><em> subType</em> - Required argument for the effect subtype the user wishes to use. Exists only for effects that have subtypes. Refer above section on effect subtype categorization.</li>
+<li><em>fMaxDelayInSec</em> - Required argument the user sets according to their requirement for parameter value range (Only delay based effects have this argument). <br  />
 </li>
-<li><em>params, values, iNumParams</em> - arguments that need to be initialized as below. These are the values of the effect parameters. These are optional arguments, which will take default values if they are not passed by the user.</li>
+<li><em>params, values, iNumParams</em> - Optional arguments that need to be initialized as below. These are the values of the effect parameters. These are optional arguments, which will take default values if they are not passed by the user.</li>
 </ul>
 <p><span style="font-family:Courier; text-align:center; font-size:1.0em; text-align:center">int iNumParams = 4; <br  />
  <a class="el" href="class_c_audio_effect.html#a3ab96031f3a38c3d6b2e78f10b1e659e">CAudioEffect::EffectParam_t</a> param[iNumParams]; <br  />
@@ -155,9 +155,9 @@ Create the Effect Instance</h3>
 Call the effect's process function</h3>
 <p><span style="font-family:Courier; text-align:center; font-size:1.0em; text-align:center">Error_t error = phAudioEffectDelay -&gt; process(ppfAudioInput, ppfAudioOutput, iNumFrames); <br  />
  </span></p><ul>
-<li><em>ppfAudioInput, ppfAudioOutput</em> - input/output buffers used by the library. The user should take care of creating and destroying these buffers. <br  />
+<li><em>ppfAudioInput, ppfAudioOutput</em> - Input/output buffers used by the library. The user should take care of creating and destroying these buffers. <br  />
 </li>
-<li><em>iNumFrames</em> - argument that tells the process function the number of samples in a block of buffered audio. </li>
+<li><em>iNumFrames</em> - Argument that tells the process function the number of samples in a block of buffered audio. </li>
 </ul>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

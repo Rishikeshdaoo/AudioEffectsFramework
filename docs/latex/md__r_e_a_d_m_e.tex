@@ -39,12 +39,12 @@ This projects aims to provide an easy to use A\+PI for creating audio effects pr
  ph\+Audio\+Effect\+Delay = new \mbox{\hyperlink{class_c_audio_effect_delay}{C\+Audio\+Effect\+Delay(f\+Sample\+Rate\+In\+Hz, i\+Num\+Channels, sub\+Type, f\+Max\+Delay\+In\+Sec, params\mbox{[}$\,$\mbox{]} , values\mbox{[}$\,$\mbox{]}, i\+Num\+Params)}}; ~\newline
 
 \begin{DoxyItemize}
-\item {\itshape f\+Sample\+Rate\+In\+Hz, i\+Num\+Channels} -\/ arguments that should be taken from the host application. Both are required arguments ~\newline
+\item {\itshape f\+Sample\+Rate\+In\+Hz, i\+Num\+Channels} -\/ Required arguments that should be taken from the host application. Both are required arguments ~\newline
 
-\item {\itshape  sub\+Type} -\/ required argument for the effect subtype the user wishes to use. Exists only for effects that have subtypes. Refer above section on effect subtype categorization.
-\item {\itshape f\+Max\+Delay\+In\+Sec} -\/ argument the user sets according to their requirement for parameter value range (Only delay based effects have this argument). This is a required argument~\newline
+\item {\itshape  sub\+Type} -\/ Required argument for the effect subtype the user wishes to use. Exists only for effects that have subtypes. Refer above section on effect subtype categorization.
+\item {\itshape f\+Max\+Delay\+In\+Sec} -\/ Required argument the user sets according to their requirement for parameter value range (Only delay based effects have this argument). ~\newline
 
-\item {\itshape params, values, i\+Num\+Params} -\/ arguments that need to be initialized as below. These are the values of the effect parameters. These are optional arguments, which will take default values if they are not passed by the user.
+\item {\itshape params, values, i\+Num\+Params} -\/ Optional arguments that need to be initialized as below. These are the values of the effect parameters. These are optional arguments, which will take default values if they are not passed by the user.
 \end{DoxyItemize}
 
 int i\+Num\+Params = 4; ~\newline
@@ -62,7 +62,7 @@ param\mbox{[}0\mbox{]} = \mbox{\hyperlink{class_c_audio_effect_a3ab96031f3a38c3d
 Error\+\_\+t error = ph\+Audio\+Effect\+Delay -\/$>$ process(ppf\+Audio\+Input, ppf\+Audio\+Output, i\+Num\+Frames); ~\newline
  
 \begin{DoxyItemize}
-\item {\itshape ppf\+Audio\+Input, ppf\+Audio\+Output} -\/ input/output buffers used by the library. The user should take care of creating and destroying these buffers. ~\newline
+\item {\itshape ppf\+Audio\+Input, ppf\+Audio\+Output} -\/ Input/output buffers used by the library. The user should take care of creating and destroying these buffers. ~\newline
 
-\item {\itshape i\+Num\+Frames} -\/ argument that tells the process function the number of samples in a block of buffered audio. 
+\item {\itshape i\+Num\+Frames} -\/ Argument that tells the process function the number of samples in a block of buffered audio. 
 \end{DoxyItemize}

@@ -49,10 +49,10 @@ This projects aims to provide an easy to use API for creating audio effects proc
 
 <span style="font-family:Courier; text-align:center; font-size:1.0em">CAudioEffectDelay       *phAudioEffectDelay = nullptr; <br />
 phAudioEffectDelay = new CAudioEffectDelay(fSampleRateInHz, iNumChannels, subType, fMaxDelayInSec, params[] , values[], iNumParams); <br /></span>
-- <i>fSampleRateInHz, iNumChannels</i> - arguments that should be taken from the host application. Both are required arguments <br />
-- <i> subType</i> - required argument for the effect subtype the user wishes to use. Exists only for effects that have subtypes. Refer above section on effect subtype categorization.
-- <i>fMaxDelayInSec</i> - argument the user sets according to their requirement for parameter value range (Only delay based effects have this argument). This is a required argument<br />
-- <i>params, values, iNumParams</i> - arguments that need to be initialized as below. These are the values of the effect parameters. These are optional arguments, which will take default values if they are not passed by the user.
+- <i>fSampleRateInHz, iNumChannels</i> - Required arguments that should be taken from the host application. Both are required arguments <br />
+- <i> subType</i> - Required argument for the effect subtype the user wishes to use. Exists only for effects that have subtypes. Refer above section on effect subtype categorization.
+- <i>fMaxDelayInSec</i> - Required argument the user sets according to their requirement for parameter value range (Only delay based effects have this argument). <br />
+- <i>params, values, iNumParams</i> - Optional arguments that need to be initialized as below. These are the values of the effect parameters. These are optional arguments, which will take default values if they are not passed by the user.
 
 <span style="font-family:Courier; text-align:center; font-size:1.0em; text-align:center">int iNumParams = 4; <br />
 CAudioEffect::EffectParam_t param[iNumParams]; <br />
@@ -72,7 +72,7 @@ value[3] = 0.7f;
 #### Call the effect's process function
     
 <span style="font-family:Courier; text-align:center; font-size:1.0em; text-align:center">Error_t error = phAudioEffectDelay -> process(ppfAudioInput, ppfAudioOutput, iNumFrames); <br /> </span>
-- <i>ppfAudioInput, ppfAudioOutput</i> - input/output buffers used by the library. The user should take care of creating and destroying these buffers. <br />
-- <i>iNumFrames</i> - argument that tells the process function the number of samples in a block of buffered audio.
+- <i>ppfAudioInput, ppfAudioOutput</i> - Input/output buffers used by the library. The user should take care of creating and destroying these buffers. <br />
+- <i>iNumFrames</i> - Argument that tells the process function the number of samples in a block of buffered audio.
 
 
