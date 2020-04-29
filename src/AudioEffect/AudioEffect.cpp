@@ -26,3 +26,8 @@ Effect_t CAudioEffect::getEffectType()
 {
     return m_eEffectType;
 }
+
+float CAudioEffect::getTailLength()
+{
+    return 0.f;
+}

@@ -75,6 +75,11 @@ public:
     */
     DelayType_t getDelayType();
     
+    /*! return the total delay in samples
+    \return float
+     */
+    float getTailLength();
+    
     /*! processes one block of audio
     \param ppfInputBuffer input buffer [numChannels][iNumberOfFrames]
     \param ppfOutputBuffer output buffer [numChannels][iNumberOfFrames]

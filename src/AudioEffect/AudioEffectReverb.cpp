@@ -192,6 +192,14 @@ Error_t CAudioEffectReverb::setFilterDelays(float fValues[], int iNumFilters)
     return kNoError;
 };
 
+float CAudioEffectReverb::getTailLength()
+{
+    float fTailTime = 0.f;
+    for (int i = 0; i < m_iNumFilters; i++)
+        fTailTime += m_ppCAudioEffectBiquad[i]->getParam(CAudioEffect::kParamDelayInSecs) * m_fSampleRateInHz;
+    return fTailTime;
+}
+
 
 Error_t CAudioEffectReverb::process(float **ppfInputBuffer, float **ppfOutputBuffer, int iNumberOfFrames)
 {

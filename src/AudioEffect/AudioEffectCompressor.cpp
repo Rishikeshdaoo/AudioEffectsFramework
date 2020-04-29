@@ -184,6 +184,10 @@ CAudioEffectCompressorExpander::EffectSubtype_t CAudioEffectCompressorExpander::
     return m_eCompressorType;
 }
 
+float CAudioEffectCompressorExpander::getTailLength() {
+    return float(m_iLookaheadBufferSize);
+}
+
 Error_t CAudioEffectCompressorExpander::process(float **ppfInputBuffer, float **ppfOutputBuffer, int iNumberOfFrames){
 
     float f_inputSample = 0.f;

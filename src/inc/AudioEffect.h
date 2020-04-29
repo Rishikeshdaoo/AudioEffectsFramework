@@ -50,6 +50,12 @@ public:
     \return Effect_t
     */
     Effect_t getEffectType();
+    
+    
+    /*! return the total delay in samples
+    \return float
+     */
+    float getTailLength();
 
 private:
     

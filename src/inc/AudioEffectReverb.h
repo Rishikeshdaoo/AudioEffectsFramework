@@ -60,6 +60,11 @@ public:
     \return Error_t
     */
     Error_t setFilterDelays(float fValues[], int iNumFilters);
+    
+    /*! return the total delay in samples
+    \return float
+     */
+    float getTailLength();
 
     /*! processes one block of audio
     \param ppfInputBuffer input buffer [numChannels][iNumberOfFrames]

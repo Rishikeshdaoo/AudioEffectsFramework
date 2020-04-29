@@ -193,6 +193,11 @@ CAudioEffectBiquad::FilterType_t CAudioEffectBiquad::getFilterType()
     return m_eFilterType;
 };
 
+float CAudioEffectBiquad::getTailLength()
+{
+    return m_fDelayInSamples;
+}
+
 Error_t CAudioEffectBiquad::process(float **ppfInputBuffer, float **ppfOutputBuffer, int iNumberOfFrames)
 {
     for (int i = 0; i < iNumberOfFrames; i++)

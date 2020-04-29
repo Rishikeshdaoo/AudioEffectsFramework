@@ -281,8 +281,10 @@ CAudioEffectDelay::DelayType_t CAudioEffectDelay::getDelayType()
     return m_eDelayType;
 };
 
-
-
+float CAudioEffectDelay::getTailLength()
+{
+    return m_fDelayInSamples + m_fModWidthInSamples;
+}
 
 Error_t CAudioEffectDelay::process(float **ppfInputBuffer, float **ppfOutputBuffer, int iNumberOfFrames)
 {
