@@ -37,6 +37,8 @@ CAudioEffectCompressorExpander::~CAudioEffectCompressorExpander(){
 
 Error_t CAudioEffectCompressorExpander::init(Effect_t effectType, float fSampleRateInHz, int iNumChannels, EffectSubtype_t subType, int iLookaheadBufferSize, EffectParam_t params[], float values[], int iNumParams)
 {
+    bool bInvalidParam = false;
+    
     m_eEffectType = effectType;
     m_eCompressorType = subType;
     m_fSampleRateInHz = fSampleRateInHz;
@@ -87,7 +89,8 @@ Error_t CAudioEffectCompressorExpander::init(Effect_t effectType, float fSampleR
                 }
                 break;
             default:
-                return kFunctionInvalidArgsError;
+                bInvalidParam = true;
+                break;
         }
     }
 
@@ -104,7 +107,10 @@ Error_t CAudioEffectCompressorExpander::init(Effect_t effectType, float fSampleR
         }
     }
 
-    return kNoError;
+    if (bInvalidParam)
+        return kFunctionInvalidArgsError;
+    else
+        return kNoError;
 }
 
 Error_t CAudioEffectCompressorExpander::reset(){

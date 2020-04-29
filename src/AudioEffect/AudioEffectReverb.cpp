@@ -42,6 +42,8 @@ CAudioEffectReverb::~CAudioEffectReverb()
 
 Error_t CAudioEffectReverb::init(float fSampleRateInHz, int iNumChannels, float fMaxDelayInSec, EffectParam_t params[], float values[], int iNumParams, float filterDelaysInSec[])
 {
+    bool bInvalidParam = false;
+    
     m_fSampleRateInHz = fSampleRateInHz;
     m_iNumChannels = iNumChannels;
 
@@ -73,7 +75,8 @@ Error_t CAudioEffectReverb::init(float fSampleRateInHz, int iNumChannels, float 
             case kParamGain:
                 m_fGain = values[i];
             default:
-                return kNoError;
+                bInvalidParam = true;
+                break;
         }
     }
     
@@ -109,7 +112,10 @@ Error_t CAudioEffectReverb::init(float fSampleRateInHz, int iNumChannels, float 
 
     m_bIsInitialized = true;
 
-    return kNoError;
+    if (bInvalidParam)
+        return kFunctionInvalidArgsError;
+    else
+        return kNoError;
 };
 
 Error_t CAudioEffectReverb::reset()
