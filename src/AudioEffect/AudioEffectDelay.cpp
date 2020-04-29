@@ -26,7 +26,7 @@ CAudioEffectDelay::CAudioEffectDelay()
     
 };
 
-CAudioEffectDelay::CAudioEffectDelay(float fSampleRateInHz, int iNumChannels, float fMaxDelayInSec, DelayType_t subType, EffectParam_t params[] , float values[], int iNumParams)
+CAudioEffectDelay::CAudioEffectDelay(float fSampleRateInHz, int iNumChannels, DelayType_t subType, float fMaxDelayInSec, EffectParam_t params[] , float values[], int iNumParams)
 {
     m_eEffectType = Effect_t::kDelay;
     m_fDryWetMix = 0.f;
@@ -39,7 +39,7 @@ CAudioEffectDelay::CAudioEffectDelay(float fSampleRateInHz, int iNumChannels, fl
     m_fMaxDelayInSamples = 0.5;
     m_fTremoloAmount = 0.5;
     m_fModWidthInSamples = 0.f;
-    init(fSampleRateInHz, iNumChannels, fMaxDelayInSec, subType, params, values, iNumParams);
+    init(fSampleRateInHz, iNumChannels, subType, fMaxDelayInSec, params, values, iNumParams);
 };
 
 
@@ -48,7 +48,7 @@ CAudioEffectDelay::~CAudioEffectDelay()
     
 };
 
-Error_t CAudioEffectDelay::init(float fSampleRateInHz, int iNumChannels, float fMaxDelayInSec, DelayType_t subType, EffectParam_t params[], float values[], int iNumParams)
+Error_t CAudioEffectDelay::init(float fSampleRateInHz, int iNumChannels, DelayType_t subType, float fMaxDelayInSec, EffectParam_t params[], float values[], int iNumParams)
 {
     m_fSampleRateInHz = fSampleRateInHz;
     m_iNumChannels = iNumChannels;

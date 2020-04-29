@@ -9,7 +9,7 @@
 CAudioEffectBiquad::CAudioEffectBiquad()
 {
     m_eEffectType = kBiquad;
-    m_fGain = 0.f;
+    m_fGain = 1.f;
     m_iNumChannels = 0;
     m_fSampleRateInHz = 0;
     m_bIsInitialized = false;
@@ -26,10 +26,12 @@ CAudioEffectBiquad::CAudioEffectBiquad()
 CAudioEffectBiquad::CAudioEffectBiquad(float fSampleRateInHz, int iNumChannels, FilterType_t filterType, EffectParam_t params[], float values[], int iNumParams, float fMaxDelayInSec)
 {
     m_eEffectType = kBiquad;
-    m_fGain = 0.f;
+    m_fGain = 1.f;
     m_iNumChannels = 0;
     m_fSampleRateInHz = 0;
     m_bIsInitialized = false;
+    
+    m_eFilterType = kLowpass;
     
     m_fCenterFrequencyInHz = 1000.f;
     m_fQ = 1.f;

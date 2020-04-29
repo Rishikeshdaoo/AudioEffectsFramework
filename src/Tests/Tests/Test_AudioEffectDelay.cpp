@@ -126,7 +126,7 @@ SUITE(Delay)
         param[4] = CAudioEffect::kParamFeedback;
         value[4] = 0.f;
 
-        m_phDelay = new CAudioEffectDelay(m_fSampleRate, m_iNumChannels,1.F,CAudioEffectDelay::kBasicDelay,param,value,iNumParams);
+        m_phDelay = new CAudioEffectDelay(m_fSampleRate, m_iNumChannels,CAudioEffectDelay::kBasicDelay,1.F,param,value,iNumParams);
         
         TestProcess();
 
@@ -154,7 +154,7 @@ SUITE(Delay)
         param[4] = CAudioEffect::kParamFeedback;
         value[4] = 0.f;
 
-        m_phDelay = new CAudioEffectDelay(m_fSampleRate, m_iNumChannels,1.F,CAudioEffectDelay::kBasicDelay,param,value,iNumParams);
+        m_phDelay = new CAudioEffectDelay(m_fSampleRate, m_iNumChannels,CAudioEffectDelay::kBasicDelay,1.F,param,value,iNumParams);
 
         for (int c = 0; c < m_iNumChannels; c++)
         CSynthesis::generateSine (m_ppfInputData[c], 440, m_fSampleRate, m_iDataLength, .8F, static_cast<float>(c*M_PI_2));
@@ -170,7 +170,7 @@ SUITE(Delay)
     // delay: zero gain -> same output
     TEST_FIXTURE(DelayData, ZeroBasicDelay)
     {
-        m_phDelay = new CAudioEffectDelay(m_fSampleRate, m_iNumChannels,1.F,CAudioEffectDelay::kBasicDelay);
+        m_phDelay = new CAudioEffectDelay(m_fSampleRate, m_iNumChannels,CAudioEffectDelay::kBasicDelay);
 
         TestProcess();
 
@@ -183,7 +183,7 @@ SUITE(Delay)
     // flanger: zero gain -> same output
     TEST_FIXTURE(DelayData, ZeroFlanger)
     {
-        m_phDelay = new CAudioEffectDelay(m_fSampleRate, m_iNumChannels,1.F,CAudioEffectDelay::kFlanger);
+        m_phDelay = new CAudioEffectDelay(m_fSampleRate, m_iNumChannels,CAudioEffectDelay::kFlanger);
 
         TestProcess();
 
@@ -196,7 +196,7 @@ SUITE(Delay)
     // chorus: zero gain -> same output
     TEST_FIXTURE(DelayData, ZeroChorus)
     {
-        m_phDelay = new CAudioEffectDelay(m_fSampleRate, m_iNumChannels,1.F,CAudioEffectDelay::kChorus);
+        m_phDelay = new CAudioEffectDelay(m_fSampleRate, m_iNumChannels,CAudioEffectDelay::kChorus);
 
         TestProcess();
 
@@ -209,7 +209,7 @@ SUITE(Delay)
     // vibrato: zero gain -> same output
     TEST_FIXTURE(DelayData, ZeroVibrato)
     {
-        m_phDelay = new CAudioEffectDelay(m_fSampleRate, m_iNumChannels,1.F,CAudioEffectDelay::kVibrato);
+        m_phDelay = new CAudioEffectDelay(m_fSampleRate, m_iNumChannels,CAudioEffectDelay::kVibrato);
 
         TestProcess();
 
@@ -222,7 +222,7 @@ SUITE(Delay)
     // tremolo: zero gain -> same output
     TEST_FIXTURE(DelayData, ZeroTremolo)
     {
-        m_phDelay = new CAudioEffectDelay(m_fSampleRate, m_iNumChannels,1.F,CAudioEffectDelay::kTremolo);
+        m_phDelay = new CAudioEffectDelay(m_fSampleRate, m_iNumChannels,CAudioEffectDelay::kTremolo);
 
         TestProcess();
 
@@ -251,7 +251,7 @@ SUITE(Delay)
         param[4] = CAudioEffect::kParamFeedback;
         value[4] = 0.f;
         
-        m_phDelay = new CAudioEffectDelay(m_fSampleRate, m_iNumChannels,1.F,CAudioEffectDelay::kBasicDelay,param,value,iNumParams);
+        m_phDelay = new CAudioEffectDelay(m_fSampleRate, m_iNumChannels,CAudioEffectDelay::kBasicDelay,1.F,param,value,iNumParams);
 
         int iDelayInSamples = static_cast<int>(value[1]*m_fSampleRate+1);
         float fAmplitude    = .77F;
@@ -296,7 +296,7 @@ SUITE(Delay)
         param[4] = CAudioEffect::kParamFeedback;
         value[4] = 0.7f;
         
-        m_phDelay = new CAudioEffectDelay(m_fSampleRate, m_iNumChannels,1.F,CAudioEffectDelay::kBasicDelay,param,value,iNumParams);
+        m_phDelay = new CAudioEffectDelay(m_fSampleRate, m_iNumChannels,CAudioEffectDelay::kBasicDelay,1.F,param,value,iNumParams);
 
         int iDelayInSamples = static_cast<int>(value[1]*m_fSampleRate+1);
         float fAmplitude    = .77F;
@@ -348,13 +348,13 @@ SUITE(Delay)
         param[4] = CAudioEffect::kParamFeedback;
         value[4] = 0.f;
         
-        m_phDelay = new CAudioEffectDelay(m_fSampleRate, m_iNumChannels,1.F,CAudioEffectDelay::kBasicDelay,param,value,iNumParams);
+        m_phDelay = new CAudioEffectDelay(m_fSampleRate, m_iNumChannels,CAudioEffectDelay::kBasicDelay,1.F,param,value,iNumParams);
 
         TestProcess();
 
         m_phDelay->reset();
 
-        m_phDelay = new CAudioEffectDelay(m_fSampleRate, m_iNumChannels,1.F,CAudioEffectDelay::kBasicDelay,param,value,iNumParams);
+        m_phDelay = new CAudioEffectDelay(m_fSampleRate, m_iNumChannels,CAudioEffectDelay::kBasicDelay,1.F,param,value,iNumParams);
         {
             int iNumFramesRemaining = m_iDataLength;
             while (iNumFramesRemaining > 0)

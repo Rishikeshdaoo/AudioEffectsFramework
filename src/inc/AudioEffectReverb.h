@@ -22,7 +22,7 @@ class CAudioEffectReverb: public CAudioEffect
 public:
     
     CAudioEffectReverb();
-    CAudioEffectReverb(float fSampleRateInHz, int iNumChannels, float fMaxDelayInSec, EffectParam_t params[], float values[], int iNumParams);
+    CAudioEffectReverb(float fSampleRateInHz, int iNumChannels, float fMaxDelayInSec = 5.f, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0, float filterDelaysInSec[] = NULL);
     ~CAudioEffectReverb();
 
     /*! initializes a reverb instance
@@ -32,9 +32,10 @@ public:
     \param params[] list of parameter types
     \param values[] list of parameter values
     \param iNumParams number of parameters
+    \param filterDelaysInSec[] list of filter delay values
     \return Error_t
     */
-    Error_t init(float fSampleRateInHz, int iNumChannels, float fMaxDelayInSec, EffectParam_t params[], float values[], int iNumParams);
+    Error_t init(float fSampleRateInHz, int iNumChannels, float fMaxDelayInSec = 5.f, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0, float filterDelaysInSec[] = NULL);
     
     /*! resets the internal variables (requires new call of init)
     \return Error_t

@@ -19,7 +19,7 @@ CAudioEffectReverb::CAudioEffectReverb()
     m_ppCAudioEffectBiquad = 0;
 };
 
-CAudioEffectReverb::CAudioEffectReverb(float fSampleRateInHz, int iNumChannels, float fMaxDelayInSec, EffectParam_t params[] = NULL, float values[] = NULL, int iNumParams = 0)
+CAudioEffectReverb::CAudioEffectReverb(float fSampleRateInHz, int iNumChannels, float fMaxDelayInSec, EffectParam_t params[], float values[], int iNumParams, float filterDelaysInSec[])
 {
     m_eEffectType = Effect_t::kReverb;
     m_iNumChannels = 0;
@@ -38,10 +38,21 @@ CAudioEffectReverb::~CAudioEffectReverb()
     this->reset();
 };
 
-Error_t CAudioEffectReverb::init(float fSampleRateInHz, int iNumChannels, float fMaxDelayInSec, EffectParam_t params[], float values[], int iNumParams)
+Error_t CAudioEffectReverb::init(float fSampleRateInHz, int iNumChannels, float fMaxDelayInSec, EffectParam_t params[], float values[], int iNumParams, float filterDelaysInSec[])
 {
     m_fSampleRateInHz = fSampleRateInHz;
     m_iNumChannels = iNumChannels;
+    
+    // Default Reverb Values
+    int iDefaultNumFilters = 3;
+    m_iNumFilters = iDefaultNumFilters;
+    
+    m_afFilterDelaysInSec = new float[iDefaultNumFilters];
+    m_afFilterDelaysInSec[0] = 0.5f;
+    m_afFilterDelaysInSec[1] = 0.3f;
+    m_afFilterDelaysInSec[2] = 0.2f;
+    
+    m_fFilterGain = 0.707f;
 
     for (int i = 0; i < iNumParams; i++)
     {
@@ -57,9 +68,19 @@ Error_t CAudioEffectReverb::init(float fSampleRateInHz, int iNumChannels, float 
         }
     }
     
-    m_afFilterDelaysInSec = new float[m_iNumFilters];
-    for (int f = 0; f < m_iNumFilters; f++)
-        m_afFilterDelaysInSec[f] = 0.f;
+    if (m_iNumFilters != iDefaultNumFilters)
+    {
+        delete [] m_afFilterDelaysInSec;
+        m_afFilterDelaysInSec = new float[m_iNumFilters];
+        for (int f = 0; f < m_iNumFilters; f++)
+            m_afFilterDelaysInSec[f] = 0.f;
+    }
+    
+    if (filterDelaysInSec != NULL)
+    {
+        for (int f = 0; f < m_iNumFilters; f++)
+            m_afFilterDelaysInSec[f] = filterDelaysInSec[f];
+    }
     
     m_ppCAudioEffectBiquad = new CAudioEffectBiquad*[m_iNumFilters];
     

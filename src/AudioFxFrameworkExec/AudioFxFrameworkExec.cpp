@@ -162,47 +162,29 @@ int main(int argc, char* argv[])
         phAudioEffectCompressorExpander = new CAudioEffectCompressorExpander(kCompressorExpander, stFileSpec.fSampleRateInHz, stFileSpec.iNumChannels, CAudioEffectCompressorExpander::kExpander);
     }else if(argEffect=="biquad"){
         cout << "Effect type: biquad" << endl;
-        int iNumParams = 3;
-        CAudioEffect::EffectParam_t param[iNumParams];
-        float value[iNumParams];
-        param[0] = CAudioEffect::kParamGain;
-        value[0] = 0.5f;
-        param[1] = CAudioEffect::kParamCenterFrequency;
-        value[1] = 1000.0f;
-        param[2] = CAudioEffect::kParamQ;
-        value[2] = 0.707f;
-        phAudioEffectBiquad = new CAudioEffectBiquad(stFileSpec.fSampleRateInHz,stFileSpec.iNumChannels,CAudioEffectBiquad::FilterType_t::kBandpass,param,value,iNumParams,5.F);
+        phAudioEffectBiquad = new CAudioEffectBiquad(stFileSpec.fSampleRateInHz,stFileSpec.iNumChannels,CAudioEffectBiquad::FilterType_t::kBandpass);
     }else if(argEffect=="reverb"){
         cout << "Effect type: reverb" << endl;
-            int iNumParams = 2;
-            CAudioEffect::EffectParam_t param[iNumParams];
-            float value[iNumParams];
-            param[0] = CAudioEffect::kParamNumFilters;
-            value[0] = 3;
-            param[1] = CAudioEffect::kParamFilterGains;
-            value[1] = 0.707;
-            phAudioEffectReverb = new CAudioEffectReverb(stFileSpec.fSampleRateInHz,stFileSpec.iNumChannels,1.F,param,value,iNumParams);
-            float a_fFilterDelays[3] = {0.5f, 0.3f, 0.2f};
-            phAudioEffectReverb->setFilterDelays(a_fFilterDelays, 3);
+        phAudioEffectReverb = new CAudioEffectReverb(stFileSpec.fSampleRateInHz,stFileSpec.iNumChannels);
     }else if(argEffect=="delay"){
         cout << "Effect type: delay" << endl;
-        phAudioEffectDelay = new CAudioEffectDelay(stFileSpec.fSampleRateInHz,stFileSpec.iNumChannels,1.F,
+        phAudioEffectDelay = new CAudioEffectDelay(stFileSpec.fSampleRateInHz,stFileSpec.iNumChannels,
                                                     CAudioEffectDelay::kBasicDelay);
     }else if(argEffect=="flanger"){
         cout << "Effect type: flanger" << endl;
-        phAudioEffectDelay = new CAudioEffectDelay(stFileSpec.fSampleRateInHz,stFileSpec.iNumChannels,1.F,
+        phAudioEffectDelay = new CAudioEffectDelay(stFileSpec.fSampleRateInHz,stFileSpec.iNumChannels,
                                                     CAudioEffectDelay::kFlanger);
     }else if(argEffect=="chorus"){
         cout << "Effect type: chorus" << endl;
-        phAudioEffectDelay = new CAudioEffectDelay(stFileSpec.fSampleRateInHz,stFileSpec.iNumChannels,1.F,
+        phAudioEffectDelay = new CAudioEffectDelay(stFileSpec.fSampleRateInHz,stFileSpec.iNumChannels,
                                                     CAudioEffectDelay::kChorus);
     }else if(argEffect=="vibrato"){
         cout << "Effect type: vibrato" << endl;
-        phAudioEffectDelay = new CAudioEffectDelay(stFileSpec.fSampleRateInHz,stFileSpec.iNumChannels,1.F,
+        phAudioEffectDelay = new CAudioEffectDelay(stFileSpec.fSampleRateInHz,stFileSpec.iNumChannels,
                                                     CAudioEffectDelay::kVibrato);
     }else if(argEffect=="tremolo"){
         cout << "Effect type: tremolo" << endl;
-        phAudioEffectDelay = new CAudioEffectDelay(stFileSpec.fSampleRateInHz,stFileSpec.iNumChannels,1.F,
+        phAudioEffectDelay = new CAudioEffectDelay(stFileSpec.fSampleRateInHz,stFileSpec.iNumChannels,
                                                     CAudioEffectDelay::kTremolo);
     }
 
