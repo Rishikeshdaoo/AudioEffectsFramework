@@ -68,8 +68,6 @@ int main(int argc, char* argv[])
         show_usage(argv[0]);
         return -1;
         }
-//        sInputFilePath = "/Users/yitingzhang/Desktop/MUSI 6106/AudioEffectsFramework/Testing/Guitar_sample.wav";
-//        sOutputFilePath = "/Users/yitingzhang/Desktop/MUSI 6106/AudioEffectsFramework/Testing/Guitar_sample_test.wav";
     }
 
     for (int i = 1; i < argc; ++i) {
@@ -124,11 +122,23 @@ int main(int argc, char* argv[])
     //////////////////////////////////////////////////////////////////////////////
     // allocate memory
     ppfAudioInput = new float*[stFileSpec.iNumChannels];
-    ppfAudioOutput = new float*[stFileSpec.iNumChannels];
+    if(argEffect=="pan"){
+        ppfAudioOutput = new float*[2];
+    }else{
+        ppfAudioOutput = new float*[stFileSpec.iNumChannels];
+    }
 
     for (int i = 0; i < stFileSpec.iNumChannels; i++){
         ppfAudioInput[i] = new float[kBlockSize];
-        ppfAudioOutput[i] = new float[kBlockSize];
+    }
+    if(argEffect=="pan"){
+        for (int i = 0; i < 2; i++){
+                ppfAudioOutput[i] = new float[kBlockSize];
+            }
+    }else{
+        for (int i = 0; i < stFileSpec.iNumChannels; i++){
+            ppfAudioOutput[i] = new float[kBlockSize];
+        }
     }
     time = clock();
 
@@ -237,7 +247,6 @@ int main(int argc, char* argv[])
             }
         }
         
-
         phAudioOutputFile->writeData(ppfAudioOutput, iNumFrames);
     }
 
@@ -248,25 +257,29 @@ int main(int argc, char* argv[])
     CAudioFileIf::destroy(phAudioInputFile);
     CAudioFileIf::destroy(phAudioOutputFile);
     
-        delete phAudioEffectGain;
-        phAudioEffectGain = 0;
-        delete phAudioEffectPan;
-        phAudioEffectPan = 0;
-        delete phAudioEffectDistortion;
-        phAudioEffectDistortion = 0;
-        delete phAudioEffectCompressorExpander;
-        phAudioEffectCompressorExpander = 0;
-        delete phAudioEffectBiquad;
-        phAudioEffectBiquad = 0;
-        delete phAudioEffectReverb;
-        phAudioEffectReverb = 0;
-        delete phAudioEffectDelay;
-        phAudioEffectDelay = 0;
+    delete phAudioEffectGain;
+    phAudioEffectGain = 0;
+    delete phAudioEffectPan;
+    phAudioEffectPan = 0;
+    delete phAudioEffectDistortion;
+    phAudioEffectDistortion = 0;
+    delete phAudioEffectCompressorExpander;
+    phAudioEffectCompressorExpander = 0;
+    delete phAudioEffectBiquad;
+    phAudioEffectBiquad = 0;
+    delete phAudioEffectReverb;
+    phAudioEffectReverb = 0;
+    delete phAudioEffectDelay;
+    phAudioEffectDelay = 0;
 
-
-    for (int i = 0; i < stFileSpec.iNumChannels; i++){
+    for (int i = 0; i < stFileSpec.iNumChannels; i++)
         delete[] ppfAudioInput[i];
-        delete[] ppfAudioOutput[i];
+    if(argEffect=="pan"){
+        for (int i = 0; i < 2; i++)
+            delete[] ppfAudioOutput[i];
+    }else{
+        for (int i = 0; i < stFileSpec.iNumChannels; i++)
+            delete[] ppfAudioOutput[i];
     }
 
     delete[] ppfAudioInput;
