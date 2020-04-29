@@ -6,7 +6,14 @@ The Doxygen documentation can be accessed here: http://rishikeshdaoo.github.io/A
 
 ## Motivation
 
-This projects aims to provide an easy to use API for creating audio effects processing applications. With well documented, low-level implementation of audio effects in C++, the library is designed to be simple and efficient.
+This project aims to provide an easy to use API for creating audio effects processing applications. With well documented, low-level implementation of audio effects in C++, the library is designed to be simple and efficient. The effects use a process function designed for variable-length input blocks, making them suitable for real-time plugin applications such as JUCE.
+
+We designed this library for users of all levels of experience. To this end, the effects in this framework contain commonly used default values for effect parameters and receive variable-length lists of parameters and values when initialized. This means that they can be used simply by instantiating the audio effect and running its process function and that more advanced users can edit any set of parameters they choose.
+
+We tested these effect implementations against reference MATLAB code from http://dafx.de/DAFX_Book_Page/index.html, as well as C++ unit testing.
+
+This repository also contains an executable .cpp file. A user can enter an input and output file path and effect type/subtype in order to generate an instance of that effect on an audio file, using default parameters.
+
 
 ## Effects included in the library
 
