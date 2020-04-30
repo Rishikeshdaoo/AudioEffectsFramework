@@ -50,6 +50,7 @@ CAudioEffectBiquad::~CAudioEffectBiquad()
 
 Error_t CAudioEffectBiquad::init(float fSampleRateInHz, int iNumChannels, FilterType_t filterType, EffectParam_t params[], float values[], int iNumParams, float fMaxDelayInSec)
 {
+    bool bInvalidParam = false;
 
     m_fSampleRateInHz = fSampleRateInHz;
     m_iNumChannels = iNumChannels;
@@ -87,7 +88,8 @@ Error_t CAudioEffectBiquad::init(float fSampleRateInHz, int iNumChannels, Filter
                 m_ppCRingBuffer[c]->setReadIdx(-1.f*m_fDelayInSamples);
                 break;
             default:
-                return kFunctionInvalidArgsError;
+                bInvalidParam = true;
+                break;
         }
     }
 
@@ -104,7 +106,12 @@ Error_t CAudioEffectBiquad::init(float fSampleRateInHz, int iNumChannels, Filter
         m_fyn2[i] = 0.f;
     }
 
-    return setFilterConstants();
+    if (bInvalidParam) {
+        setFilterConstants();
+        return kFunctionInvalidArgsError;
+    }
+    else
+        return setFilterConstants();
 };
 
 Error_t CAudioEffectBiquad::reset()

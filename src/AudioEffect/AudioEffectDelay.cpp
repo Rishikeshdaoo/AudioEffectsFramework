@@ -50,6 +50,8 @@ CAudioEffectDelay::~CAudioEffectDelay()
 
 Error_t CAudioEffectDelay::init(float fSampleRateInHz, int iNumChannels, DelayType_t subType, float fMaxDelayInSec, EffectParam_t params[], float values[], int iNumParams)
 {
+    bool bInvalidParam = false;
+    
     m_fSampleRateInHz = fSampleRateInHz;
     m_iNumChannels = iNumChannels;
     m_eDelayType = subType;
@@ -166,13 +168,17 @@ Error_t CAudioEffectDelay::init(float fSampleRateInHz, int iNumChannels, DelayTy
                 break;
                 
             default:
-                return kNoError;
+                bInvalidParam = true;
+                break;
         }
     }
     
     m_bIsInitialized = true;
     
-    return kNoError;
+    if (bInvalidParam)
+        return kFunctionInvalidArgsError;
+    else
+        return kNoError;
 };
 
 Error_t CAudioEffectDelay::reset()
