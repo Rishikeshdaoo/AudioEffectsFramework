@@ -6,6 +6,12 @@ Video demonstration for the framework : https://www.youtube.com/watch?v=NgGLyauA
 
 The Doxygen documentation can be accessed here: http://rishikeshdaoo.github.io/AudioEffectsFramework
 
+## Contributors
+Rishikesh Daoo
+Yiting Zhang
+Snehesh Nag
+Jason Smith
+
 ## Motivation
 
 This project aims to provide an easy to use API for creating audio effects processing applications. With well documented, low-level implementation of audio effects in C++, the library is designed to be simple and efficient. The effects use a process function designed for variable-length input blocks, making them suitable for real-time plugin applications such as JUCE.
